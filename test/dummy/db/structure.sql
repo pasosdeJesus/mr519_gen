@@ -169,6 +169,252 @@ CREATE TABLE public.ar_internal_metadata (
 
 
 --
+-- Name: heb412_gen_campohc; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.heb412_gen_campohc (
+    id integer NOT NULL,
+    doc_id integer NOT NULL,
+    nombrecampo character varying(127) NOT NULL,
+    columna character varying(5) NOT NULL,
+    fila integer
+);
+
+
+--
+-- Name: heb412_gen_campohc_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.heb412_gen_campohc_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: heb412_gen_campohc_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.heb412_gen_campohc_id_seq OWNED BY public.heb412_gen_campohc.id;
+
+
+--
+-- Name: heb412_gen_campoplantillahcm; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.heb412_gen_campoplantillahcm (
+    id integer NOT NULL,
+    plantillahcm_id integer,
+    nombrecampo character varying(127),
+    columna character varying(5)
+);
+
+
+--
+-- Name: heb412_gen_campoplantillahcm_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.heb412_gen_campoplantillahcm_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: heb412_gen_campoplantillahcm_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.heb412_gen_campoplantillahcm_id_seq OWNED BY public.heb412_gen_campoplantillahcm.id;
+
+
+--
+-- Name: heb412_gen_campoplantillahcr; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.heb412_gen_campoplantillahcr (
+    id bigint NOT NULL,
+    plantillahcr_id integer,
+    nombrecampo character varying(127),
+    columna character varying(5),
+    fila integer
+);
+
+
+--
+-- Name: heb412_gen_campoplantillahcr_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.heb412_gen_campoplantillahcr_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: heb412_gen_campoplantillahcr_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.heb412_gen_campoplantillahcr_id_seq OWNED BY public.heb412_gen_campoplantillahcr.id;
+
+
+--
+-- Name: heb412_gen_doc; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.heb412_gen_doc (
+    id integer NOT NULL,
+    nombre character varying(512),
+    tipodoc character varying(1),
+    dirpapa integer,
+    url character varying(1024),
+    fuente character varying(1024),
+    descripcion character varying(5000),
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL,
+    adjunto_file_name character varying,
+    adjunto_content_type character varying,
+    adjunto_file_size bigint,
+    adjunto_updated_at timestamp without time zone,
+    nombremenu character varying(127),
+    vista character varying(255),
+    filainicial integer,
+    ruta character varying(2047),
+    licencia character varying(255),
+    tdoc_id integer,
+    tdoc_type character varying
+);
+
+
+--
+-- Name: heb412_gen_doc_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.heb412_gen_doc_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: heb412_gen_doc_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.heb412_gen_doc_id_seq OWNED BY public.heb412_gen_doc.id;
+
+
+--
+-- Name: heb412_gen_plantilladoc; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.heb412_gen_plantilladoc (
+    id bigint NOT NULL,
+    ruta character varying(2047),
+    fuente character varying(1023),
+    licencia character varying(1023),
+    vista character varying(127),
+    nombremenu character varying(127)
+);
+
+
+--
+-- Name: heb412_gen_plantilladoc_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.heb412_gen_plantilladoc_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: heb412_gen_plantilladoc_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.heb412_gen_plantilladoc_id_seq OWNED BY public.heb412_gen_plantilladoc.id;
+
+
+--
+-- Name: heb412_gen_plantillahcm; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.heb412_gen_plantillahcm (
+    id integer NOT NULL,
+    ruta character varying(2047) NOT NULL,
+    fuente character varying(1023),
+    licencia character varying(1023),
+    vista character varying(127) NOT NULL,
+    nombremenu character varying(127) NOT NULL,
+    filainicial integer NOT NULL
+);
+
+
+--
+-- Name: heb412_gen_plantillahcm_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.heb412_gen_plantillahcm_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: heb412_gen_plantillahcm_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.heb412_gen_plantillahcm_id_seq OWNED BY public.heb412_gen_plantillahcm.id;
+
+
+--
+-- Name: heb412_gen_plantillahcr; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.heb412_gen_plantillahcr (
+    id bigint NOT NULL,
+    ruta character varying(2047),
+    fuente character varying(1023),
+    licencia character varying(1023),
+    vista character varying(127),
+    nombremenu character varying(127)
+);
+
+
+--
+-- Name: heb412_gen_plantillahcr_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.heb412_gen_plantillahcr_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: heb412_gen_plantillahcr_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.heb412_gen_plantillahcr_id_seq OWNED BY public.heb412_gen_plantillahcr.id;
+
+
+--
 -- Name: mr519_gen_campo; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -1066,6 +1312,55 @@ CREATE TABLE public.usuario (
 
 
 --
+-- Name: heb412_gen_campohc id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.heb412_gen_campohc ALTER COLUMN id SET DEFAULT nextval('public.heb412_gen_campohc_id_seq'::regclass);
+
+
+--
+-- Name: heb412_gen_campoplantillahcm id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.heb412_gen_campoplantillahcm ALTER COLUMN id SET DEFAULT nextval('public.heb412_gen_campoplantillahcm_id_seq'::regclass);
+
+
+--
+-- Name: heb412_gen_campoplantillahcr id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.heb412_gen_campoplantillahcr ALTER COLUMN id SET DEFAULT nextval('public.heb412_gen_campoplantillahcr_id_seq'::regclass);
+
+
+--
+-- Name: heb412_gen_doc id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.heb412_gen_doc ALTER COLUMN id SET DEFAULT nextval('public.heb412_gen_doc_id_seq'::regclass);
+
+
+--
+-- Name: heb412_gen_plantilladoc id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.heb412_gen_plantilladoc ALTER COLUMN id SET DEFAULT nextval('public.heb412_gen_plantilladoc_id_seq'::regclass);
+
+
+--
+-- Name: heb412_gen_plantillahcm id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.heb412_gen_plantillahcm ALTER COLUMN id SET DEFAULT nextval('public.heb412_gen_plantillahcm_id_seq'::regclass);
+
+
+--
+-- Name: heb412_gen_plantillahcr id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.heb412_gen_plantillahcr ALTER COLUMN id SET DEFAULT nextval('public.heb412_gen_plantillahcr_id_seq'::regclass);
+
+
+--
 -- Name: mr519_gen_campo id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -1179,6 +1474,62 @@ ALTER TABLE ONLY public.sip_clase
 
 ALTER TABLE ONLY public.sip_etiqueta
     ADD CONSTRAINT etiqueta_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: heb412_gen_campohc heb412_gen_campohc_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.heb412_gen_campohc
+    ADD CONSTRAINT heb412_gen_campohc_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: heb412_gen_campoplantillahcm heb412_gen_campoplantillahcm_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.heb412_gen_campoplantillahcm
+    ADD CONSTRAINT heb412_gen_campoplantillahcm_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: heb412_gen_campoplantillahcr heb412_gen_campoplantillahcr_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.heb412_gen_campoplantillahcr
+    ADD CONSTRAINT heb412_gen_campoplantillahcr_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: heb412_gen_doc heb412_gen_doc_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.heb412_gen_doc
+    ADD CONSTRAINT heb412_gen_doc_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: heb412_gen_plantilladoc heb412_gen_plantilladoc_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.heb412_gen_plantilladoc
+    ADD CONSTRAINT heb412_gen_plantilladoc_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: heb412_gen_plantillahcm heb412_gen_plantillahcm_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.heb412_gen_plantillahcm
+    ADD CONSTRAINT heb412_gen_plantillahcm_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: heb412_gen_plantillahcr heb412_gen_plantillahcr_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.heb412_gen_plantillahcr
+    ADD CONSTRAINT heb412_gen_plantillahcr_pkey PRIMARY KEY (id);
 
 
 --
@@ -1406,6 +1757,13 @@ ALTER TABLE ONLY public.usuario
 
 
 --
+-- Name: index_heb412_gen_doc_on_tdoc_type_and_tdoc_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_heb412_gen_doc_on_tdoc_type_and_tdoc_id ON public.heb412_gen_doc USING btree (tdoc_type, tdoc_id);
+
+
+--
 -- Name: index_sip_actorsocial_on_grupoper_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -1478,6 +1836,22 @@ ALTER TABLE ONLY public.mr519_gen_encuestausuario_valorcampo
 
 ALTER TABLE ONLY public.mr519_gen_encuestausuario
     ADD CONSTRAINT fk_rails_1b24d10e82 FOREIGN KEY (usuario_id) REFERENCES public.usuario(id);
+
+
+--
+-- Name: heb412_gen_campohc fk_rails_1e5f26c999; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.heb412_gen_campohc
+    ADD CONSTRAINT fk_rails_1e5f26c999 FOREIGN KEY (doc_id) REFERENCES public.heb412_gen_doc(id);
+
+
+--
+-- Name: heb412_gen_doc fk_rails_2dd6d3dac3; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.heb412_gen_doc
+    ADD CONSTRAINT fk_rails_2dd6d3dac3 FOREIGN KEY (dirpapa) REFERENCES public.heb412_gen_doc(id);
 
 
 --
@@ -1558,6 +1932,14 @@ ALTER TABLE ONLY public.sip_actorsocial_sectoractor
 
 ALTER TABLE ONLY public.mr519_gen_campo
     ADD CONSTRAINT fk_rails_a186e1a8a0 FOREIGN KEY (formulario_id) REFERENCES public.mr519_gen_formulario(id);
+
+
+--
+-- Name: heb412_gen_campoplantillahcm fk_rails_e0e38e0782; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.heb412_gen_campoplantillahcm
+    ADD CONSTRAINT fk_rails_e0e38e0782 FOREIGN KEY (plantillahcm_id) REFERENCES public.heb412_gen_plantillahcm(id);
 
 
 --
@@ -1712,19 +2094,36 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20150809032138'),
 ('20151020203421'),
 ('20160519195544'),
+('20161009111443'),
+('20161010152631'),
+('20161026110802'),
+('20161027233011'),
+('20161103080156'),
+('20161103081041'),
+('20161103083352'),
 ('20161108102349'),
 ('20170405104322'),
 ('20170413185012'),
 ('20170414035328'),
+('20171019133203'),
 ('20180320230847'),
+('20180427194732'),
+('20180509111948'),
 ('20180717135811'),
 ('20180720140443'),
 ('20180720171842'),
 ('20180724135332'),
 ('20180724202353'),
 ('20180810221619'),
+('20180905031342'),
+('20180905031617'),
+('20180912114413'),
+('20180914153010'),
+('20180917072914'),
+('20180920031351'),
 ('20180921120954'),
 ('20181011104537'),
+('20181012110629'),
 ('20181213103204'),
 ('20181218165548'),
 ('20181218165559'),
