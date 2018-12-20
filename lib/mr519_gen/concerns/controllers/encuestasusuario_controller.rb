@@ -10,7 +10,8 @@ module Mr519Gen
 
           before_action :set_encuestausuario, 
             only: [:show, :edit, :update, :destroy]
-          load_and_authorize_resource class: Mr519Gen::Encuestausuario
+          #load_and_authorize_resource class: Mr519Gen::Encuestausuario
+          # Mejor metodo a metodo y podrían ser solo parte de los registros
 
           def clase
             "Mr519Gen::Encuestausuario"
@@ -20,19 +21,33 @@ module Mr519Gen
             return 'F'
           end
 
+          def filtrar_ca(reg)
+            if cannot?(:manage, Mr519Gen::Encuestausuario)
+              reg = reg.where(usuario_id: current_usuario.id)
+            end
+            return reg
+          end
+
           def atributos_index
-            [ :id, 
-              :usuario,
-              :formulario,
-              :fecha_localizada, 
-              :fechainicio_localizada, 
-              :fechafin_localizada,
-              :valorcampo
+            r = [ :id ]
+            if can?(:manage, Mr519Gen::Encuestausuario)
+              r << :usuario
+            end
+            r += [ :formulario,
+                   :fecha_localizada, 
+                   :fechainicio_localizada, 
+                   :fechafin_localizada,
+                   :valorcampo
             ]
           end
 
           def atributos_form
-            atributos_show - [:id]
+            r = atributos_show - [:id]
+            if cannot?(:manage, Mr519Gen::Encuestausuario)
+              r = r - [:fechainicio_localizada, 
+                       :fechafin_localizada]
+            end
+            return r
           end
 
           def atributos_show
@@ -49,7 +64,7 @@ module Mr519Gen
             @registro = @encuestausuario = Encuestausuario.new
             @registro.usuario = current_usuario
             @registro.fechainicio = Date.today
-            @registro.formulario = Mr519Gen::Formulario.new
+            @registro.formulario = nil
             @registro.formulario.nombre = 'Encuesta'
             @registro.save!(validate: false)
             redirect_to mr519_gen.edit_encuestausuario_path(@registro)
@@ -100,8 +115,12 @@ module Mr519Gen
 
           def lista_params
             l = atributos_form
-            l[l.index(:usuario)] = :usuario_id
-            l[l.index(:formulario)] = :formulario_id
+            if l.index(:usaurio)
+              l[l.index(:usuario)] = :usuario_id
+            end
+            if l.index(:formulario)
+              l[l.index(:formulario)] = :formulario_id
+            end
             l += [ :valorcampo_attributes => [
               :id,
               :campo_id,

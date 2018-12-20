@@ -4,18 +4,18 @@
 
 <% content_for :menu do %>
   <%= menu_group do %>
-    <% if !current_usuario.nil? %>
+    <% if can? :manage, Mr519Gen::Formulario %>
       <%= drop_down "Formularios" do %>
         <%= menu_item "Listado", mr519_gen.formularios_path %>
         <% if can? :new, Mr519Gen::Formulario %>
           <%= menu_item "Nuevo", mr519_gen.new_formulario_path %>
         <% end %>
       <% end %>
-      <%= drop_down "Encuestas a usuarios respondidas/pendientes" do %>
-        <%= menu_item "Listado", mr519_gen.encuestasusuario_path %>
-        <% if can? :new, Mr519Gen::Encuestausuario %>
-          <%= menu_item "Nueva", mr519_gen.new_formulario_path %>
-        <% end %>
+    <% end %>
+    <%= drop_down "Encuestas a usuarios respondidas/pendientes" do %>
+      <%= menu_item "Listado", mr519_gen.encuestasusuario_path %>
+      <% if can? :manage, Mr519Gen::Encuestausuario %>
+        <%= menu_item "Nueva", mr519_gen.new_formulario_path %>
       <% end %>
     <% end %>
   <% end %>

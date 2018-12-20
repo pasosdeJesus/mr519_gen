@@ -6,9 +6,9 @@ es:
       "mr519_gen/encuestausuario":
         fecha_localizada: Fecha
         fechainicio_localizada: Fecha de inicio
-        fechafin_localizada: Fecha de terminación
-        Encuestausuario: Encuesta a usuario
-        Encuestasusuario: Encuestas a usuario
+        fechafin_localizada: Fecha de cierre
+        Encuestausuario: Encuesta
+        Encuestasusuario: Encuestas
         valorcampo: Respuestas
       "mr519_gen/formulario":
         Formulario: Formulario

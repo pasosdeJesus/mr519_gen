@@ -2,6 +2,30 @@
 
 class Ability  < Sip::Ability
 
+  ROLOPERADOR = 5
+
+  ROLES = [
+    ["Administrador", ROLADMIN], #1
+    ["Operador", ROLOPERADOR] #5
+  ]
+
+  # Se usa desde 1
+  ROLES_CA = [
+    'Administrar formularios. ' +
+    'Administrar encuestas. ' +
+    'Administrar tablas básicas (actores sociales, tipos de convenios, etc). ' +
+    'Administrar usuarios. ', #ROLADMIN, 1
+
+    '', #2
+
+    '', #ROLDIR, 3
+
+    '', #4
+
+    'Ver listado de usuarios y su información pública. ' +
+    'Responder encuestas que le han aplicado. ' #ROLOPERADOR, 5
+  ]
+
 
   # Se definen habilidades con cancancan
   # @usuario Usuario que hace petición
@@ -36,19 +60,29 @@ class Ability  < Sip::Ability
     if usuario && usuario.rol then
       case usuario.rol 
       when Ability::ROLANALI
+        #can :read, Mr519Gen::Formulario
+        can :read, Mr519Gen::Encuestausuario
+        can [:edit, :update], 
+            Mr519Gen::Encuestausuario.where(usuario_id: usuario.id)
+
         can :read, Sip::Actorsocial
         can :read, Sip::Persona
         can :read, Sip::Ubicacion
         can :new, Sip::Ubicacion
         can [:update, :create, :destroy], Sip::Ubicacion
+
       when Ability::ROLADMIN
+        can :manage, Mr519Gen::Encuestausuario
+        can :manage, Mr519Gen::Formulario
+
         can :manage, Sip::Actorsocial
         can :manage, Sip::Persona
         can :manage, Sip::Respaldo7z
         can :manage, Sip::Ubicacion
+        
         can :manage, ::Usuario
-        can :manage, Mr519Gen::Encuestausuario
-        can :manage, Mr519Gen::Formulario
+
+
         can :manage, :tablasbasicas
         self.tablasbasicas.each do |t|
           c = Ability.tb_clase(t)
