@@ -1,0 +1,18 @@
+<% etiqueta = v.object.campo.nombre ?  
+  v.object.campo.nombre : 'valor' %>
+<% ayudae = v.object.campo.ayudauso ? v.object.campo.ayudauso : '' %>
+<% tipo = v.object.campo.tipo ? v.object.campo.tipo : 1 %>
+<% obligatorio = v.object.campo.obligatorio ? v.object.campo.obligatorio : 
+  false %>
+
+<%= render partial: 'mr519_gen/formularios/campodinamico', 
+  locals: { obligatorio: obligatorio, 
+            etiqueta: etiqueta, 
+            ayudae: ayudae, 
+            v: v, 
+            tipo: tipo, 
+            f: f 
+} %>
+
+<%= v.input :campo_id, as: :hidden %>
+<%= v.input :id, as: :hidden %>

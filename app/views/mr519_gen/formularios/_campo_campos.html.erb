@@ -1,0 +1,36 @@
+<%= f.input :id, as: :hidden %>
+<div class="panel panel-default">
+  <div class="panel-heading">Campos en formulario</div>
+  <div class="panel-body">
+
+    <div class="div-campos">
+      <table border=1 width="100%">
+        <thead>
+          <tr>
+            <th width="25%">Nombre Campo</th>
+            <th>Tipo</th>
+            <th>Ayuda en el uso</th>
+            <th>Obligatorio</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="campos">
+          <% if f.object.campo.count > 0 %>
+            <%= f.simple_fields_for :campo, f.object.campo.order(:id) do |o| %>
+              <%= render 'fila_campos', f:  o %>
+            <% end %>
+         <% end %>
+        </tbody>
+      </table>
+      <div class="links">
+        <%= link_to_add_association 'Agregar campo', f, :campo, {
+          :"data-association-insertion-node" => "tbody#campos", 
+          :"data-association-insertion-method" => "append", 
+          partial: 'fila_campos',
+          class: 'btn-primary', 
+          "data-ajax" => mr519_gen.new_campo_url,
+          "data-ajaxdata" => "formulario_id" } %>
+      </div> <!-- links -->
+    </div> <!-- .div-campos -->
+  </div><!-- panel-body -->
+</div><!-- panel -->

@@ -1,0 +1,14 @@
+<%=  
+  if @registro.campo
+    r = ""
+    num = 1
+    @registro.campo.each do |x|
+      r += "(#{num}) #{x.nombre} : 
+      #{Sip::ModeloHelper.etiqueta_coleccion(
+      Mr519Gen::ApplicationHelper::TIPOS_CAMPO, x.tipo)}
+      #{x.obligatorio ? '*' : ''} "
+      num += 1
+    end
+    r
+  end
+%>

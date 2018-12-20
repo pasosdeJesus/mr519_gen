@@ -1,0 +1,29 @@
+# Ignore bundler config.
+/.bundle
+config/database.yml
+
+# Ignore the default SQLite database.
+/db/*.sqlite3
+/db/*.sqlite3-journal
+
+# Ignore all logfiles and tempfiles.
+/log/*.log
+/tmp
+*~
+*swp
+*.log
+*swp
+*core
+pkg/
+test/dummy/log/*.log
+test/dummy/node_modules/
+test/dummy/yarn-error.log
+test/dummy/storage/
+test/dummy/tmp/
+test/dummy/config/database.yml
+test/dummy/.sass-cache
+tmp/
+herram/
+
+.byebug_history
+coverage

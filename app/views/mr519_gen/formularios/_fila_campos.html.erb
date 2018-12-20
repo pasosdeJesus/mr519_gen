@@ -1,0 +1,25 @@
+<% f.object = Mr519Gen::Campo.new() if !f.object  %>
+<tr class='nested-fields'>
+  <td>
+    <%= f.input :nombre, 
+      label: false %>
+  </td>
+  <td>
+    <%= f.input :tipo, 
+      collection: Mr519Gen::ApplicationHelper::TIPOS_CAMPO,
+      label: false %>
+  </td>
+  <td>
+    <%= f.input :ayudauso, label: false %>
+  </td>
+  <td>
+    <%= f.input :obligatorio, label: false %>
+  </td>
+  <td>
+    <%= f.input :id, as: :hidden %>
+    <%= link_to_remove_association "Eliminar", f, 
+      :class => 'btn-danger', "data-existing" => true %>
+    <div><%= f.error_notification %></div>
+  </td>
+</tr>
+

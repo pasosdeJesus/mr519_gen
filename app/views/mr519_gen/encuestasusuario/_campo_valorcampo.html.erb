@@ -1,0 +1,6 @@
+<div id="camposdinamicos" class="valorcampo-div valorcampodiv">
+  <%= f.simple_fields_for :valorcampo, f.object.valorcampo.order(:id) do |v| %>
+    <% render partial: 'mr519_gen/formularios/valorcampo_campos', locals: { f: f, v: v} %>
+  <% end %>
+</div>
+
