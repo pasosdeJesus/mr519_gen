@@ -21,8 +21,8 @@ module Mr519Gen
             foreign_key: 'respuestafor_id', validate: true
           accepts_nested_attributes_for :valorcampo,  reject_if: :all_blank
 
-          has_many :respuestafor_usuario, dependent: :delete_all,
-            class_name: 'Mr519Gen::RespuestaforUsuario',
+          has_many :encuetausuario, dependent: :delete_all,
+            class_name: 'Mr519Gen::Encuestausuario',
             foreign_key: 'respuestafor_id', validate: true
 
           campofecha_localizado :fechaini
