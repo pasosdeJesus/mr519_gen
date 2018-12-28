@@ -8,23 +8,23 @@ Este motor Mr519Gen permite crear formularios y ayudar a aplicarlos
 
 Para ayudar a caracterizar los instrumentos para recolectar información:
 
-| Aspecto | |
-|---------|--|
-| 1. Tipo de instrumento | |
+| Aspecto | Algunas posibilidades |
+|---------|-----------------------|
+| 1. Tipo de instrumento | (a) Encuesta/Cuestionario, (b) Entrevista/Caracterización, (c) Grupo focal |
 | 2. Nombre del instrumento | |
-| 3. A quien va dirigido | |
-| 4. Quien sistematiza | |
-| 5. Que sistematiza | |
-| 6. Se recolectan datos personales | |
-| 7. Vigencia para sistematizar | |
-| 8. Como sistematiza | |
-| 9. Quien revisa/verifica | |
-| 10. Que revisa/verifica | |
-| 11. Cómo revisar/verifica | |
-| 12. A quien y como informa problemas | |
-| 12. Quien corrige | |
-| 13. Como corrige | |
-| 14. Que se hace con la información recolectada | |
+| 3. ¿A quién va dirigido? (fuente de información) | (a) Usuarios del sistema o un grupo, (b) Beneficiarios de un proyecto, (c) Contactos con actores sociales |
+| 4. ¿Quién sistematiza? | (a) Cada usuario, (b) Un usuario, (c) Personas sin usuario y clave en sistema, (d) Beneficiarios de un proyecto con usuario y clave temporal a instrumento(s) de sistematización |
+| 5. ¿Qué sistematiza y con qué validaciones automáticas?) | |
+| 6. ¿Se recolectan datos personales? (en caso afirmativo mensaje de protección de datos personales por usar) | |
+| 7. ¿Vigencia para sistematizar? | Fecha inicio, fecha fin |
+| 8. ¿Cómo sistematiza? | (a) Ingresa al sistema y desde cierta ubicación en el mismo, (b) Recibe URL por correo, (c) |
+| 9. ¿Quién revisa/verifica? | |
+| 10. ¿Qué revisa/verifica? | |
+| 11. ¿Cómo revisar/verifica? | |
+| 12. ¿A quién y cómo informar problemas? | |
+| 13. ¿Quién corrige? | |
+| 14. ¿Cómo corrige? | |
+| 15. ¿Qué se hace con la información recolectada? | (a) Aportar a la medición de indicadores, (b) generar tabla |
 
 
 ## 2. Aspectos técnicos
