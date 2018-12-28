@@ -1,9 +1,12 @@
 <% if can? :manage, Mr519Gen::Formulario %>
-  <%= f.association :formulario,
+  <%= f.input :formulario_id,
     collection: Mr519Gen::Formulario.all ,
     label_method: :presenta_nombre,
     value_method: :id,
-    input_html: { class: 'chosen-select' } %>
+    selected: f.object.formulario.nil? ? nil : f.object.formulario.id,
+    input_html: { 
+      class: 'chosen-select'
+    } %>
 <% else %>
   <h1><%= f.object.formulario.nombre %></h1>
 <% end %>

@@ -4,7 +4,8 @@ es:
     models:
     attributes:
       "mr519_gen/encuestausuario":
-        fecha_localizada: Fecha
+        fechaini_localizada: Fecha de primera aplicación
+        fechacambio_localizada: Fecha de último cambio
         fechainicio_localizada: Fecha de inicio
         fechafin_localizada: Fecha de cierre
         Encuestausuario: Encuesta

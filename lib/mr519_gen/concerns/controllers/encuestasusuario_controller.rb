@@ -33,8 +33,9 @@ module Mr519Gen
             if can?(:manage, Mr519Gen::Encuestausuario)
               r << :usuario
             end
-            r += [ :formulario,
-                   :fecha_localizada, 
+            r += [ :formulario_id,
+                   :fechaini_localizada, 
+                   :fechacambio_localizada, 
                    :fechainicio_localizada, 
                    :fechafin_localizada,
                    :valorcampo
@@ -62,33 +63,34 @@ module Mr519Gen
           # GET /encuestasusuario/new
           def new
             @registro = @encuestausuario = Encuestausuario.new
+            @registro.respuestafor = Respuestafor.new
+            @registro.respuestafor.fechaini = Date.today
+            @registro.respuestafor.fechacambio = Date.today
             @registro.usuario = current_usuario
             @registro.fechainicio = Date.today
-            @registro.formulario = nil
-            @registro.formulario.nombre = 'Encuesta'
             @registro.save!(validate: false)
             redirect_to mr519_gen.edit_encuestausuario_path(@registro)
           end
 
           def asegura_camposdinamicos(encuestausuario)
-            if encuestausuario.nil? || encuestausuario.formulario.nil?
+            if encuestausuario.nil? || encuestausuario.respuestafor.nil? ||
+                encuestausuario.respuestafor.formulario.nil? 
               return
             end
-            ci = encuestausuario.formulario.campo_ids
-            cd = encuestausuario.valorcampo.map(&:campo_id)
+            ci = encuestausuario.respuestafor.formulario.campo_ids
+            cd = encuestausuario.respuestafor.valorcampo.map(&:campo_id)
             sobran = cd - ci
-            borrar = encuestausuario.valorcampo.where(campo_id: sobran).
+            borrar = encuestausuario.respuestafor.valorcampo.where(campo_id: sobran).
               map(&:id)
-            encuestausuario.valorcampo_ids -= borrar
-            puts encuestausuario.valorcampo_ids 
+            encuestausuario.respuestafor.valorcampo_ids -= borrar
+            puts encuestausuario.respuestafor.valorcampo_ids 
             faltan = ci - cd
             faltan.each do |f|
-              vc = Mr519Gen::Valorcampo.new(campo_id: f, valor: '')
+              vc = Mr519Gen::Valorcampo.new(
+                respuestafor_id: encuestausuario.respuestafor_id, 
+                campo_id: f, 
+                valor: '')
               vc.save!(validate: false)
-              evc = Mr519Gen::EncuestausuarioValorcampo.new(
-                encuestausuario_id: encuestausuario.id, 
-                valorcampo_id: vc.id)
-              evc.save!(validate: false)
             end
           end
 

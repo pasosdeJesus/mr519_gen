@@ -16,6 +16,10 @@ module Mr519Gen
             class_name: "Mr519Gen::Campo",
             foreign_key: "campo_id", validate: true
 
+          belongs_to :respuestafor,
+            class_name: "Mr519Gen::Respuestafor",
+            foreign_key: "respuestafor_id", validate: true
+
           validates :valor, length: {maximum: 5000}
 
           def presenta_valor

@@ -1,0 +1,12 @@
+<%= f.input :busformulario,
+  collection: ::Mr519Gen::Formulario.all,
+  include_blank: true,
+  label_method: :presenta_nombre,
+  value_method: :id,
+  label: false,
+  selected: Sip::ModeloHelper.poromision(params, :busformulario),
+  input_html: {
+    class: 'chosen-select',
+    'data-enviarautomatico' => ''
+  }
+%>
