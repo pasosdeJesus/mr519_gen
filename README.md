@@ -8,6 +8,8 @@ Este motor Mr519Gen permite crear formularios y ayudar a aplicarlos
 
 Para ayudar a caracterizar los instrumentos para recolectar información:
 
+| Aspecto | |
+|---------|--|
 | 1. Tipo de instrumento | |
 | 2. Nombre del instrumento | |
 | 3. A quien va dirigido | |
