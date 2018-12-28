@@ -76,6 +76,6 @@ gem "turbolinks"
 
 group :development, :test do
   # Depurar
-  #gem 'byebug'
+  gem 'byebug'
 end
 

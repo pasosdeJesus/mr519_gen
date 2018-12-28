@@ -107,6 +107,11 @@ module Mr519Gen
             render layout: 'application'
           end
 
+          def update
+            params[:encuestausuario][:fechacambio_localizada] = 
+              Sip::FormatoFechaHelper::fecha_estandar_local(Date.today)
+            update_gen
+          end
           private
 
           def set_encuestausuario
