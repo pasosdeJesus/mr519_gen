@@ -3,13 +3,14 @@
 <% end %>
 <% ihtml = {} %>
 <% if ayudae%>
-  <% ihtml.merge({ 'data-toggle' => 'tooltip',
+  <% ihtml = ihtml.merge({ 'data-toggle' => 'tooltip',
                    "title" => ayudae 
   }) %>
 <% end %>
 <% if obligatorio %>
-  <% ihtml.merge({ 'required' => 'required' }) %>
+  <% ihtml = ihtml.merge({ 'required' => 'required' }) %>
 <% end %>
+
 
 <% case tipo %>
 <% when Mr519Gen::ApplicationHelper::TEXTO %>

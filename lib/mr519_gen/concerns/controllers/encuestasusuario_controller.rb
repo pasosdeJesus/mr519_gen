@@ -72,32 +72,11 @@ module Mr519Gen
             redirect_to mr519_gen.edit_encuestausuario_path(@registro)
           end
 
-          def asegura_camposdinamicos(encuestausuario)
-            if encuestausuario.nil? || encuestausuario.respuestafor.nil? ||
-                encuestausuario.respuestafor.formulario.nil? 
-              return
-            end
-            ci = encuestausuario.respuestafor.formulario.campo_ids
-            cd = encuestausuario.respuestafor.valorcampo.map(&:campo_id)
-            sobran = cd - ci
-            borrar = encuestausuario.respuestafor.valorcampo.where(campo_id: sobran).
-              map(&:id)
-            encuestausuario.respuestafor.valorcampo_ids -= borrar
-            puts encuestausuario.respuestafor.valorcampo_ids 
-            faltan = ci - cd
-            faltan.each do |f|
-              vc = Mr519Gen::Valorcampo.new(
-                respuestafor_id: encuestausuario.respuestafor_id, 
-                campo_id: f, 
-                valor: '')
-              vc.save!(validate: false)
-            end
-          end
 
           def edit_mr519_gen
             @registro = Mr519Gen::Encuestausuario.find(params[:id])
             authorize! :edit, @registro
-            asegura_camposdinamicos(@registro)
+            ::Mr519Gen::ApplicationHelper::asegura_camposdinamicos(@registro)
             @registro.save!(validate: false)
           end
 
@@ -143,6 +122,9 @@ module Mr519Gen
 
         end # included do
 
+        class_methods do
+
+        end
 
       end
     end
