@@ -101,7 +101,7 @@ module Mr519Gen
 
           def lista_params
             l = atributos_form
-            if l.index(:usaurio)
+            if l.index(:usuario)
               l[l.index(:usuario)] = :usuario_id
             end
             if l.index(:formulario)
