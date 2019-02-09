@@ -516,7 +516,7 @@ ALTER SEQUENCE public.mr519_gen_formulario_id_seq OWNED BY public.mr519_gen_form
 
 CREATE TABLE public.mr519_gen_respuestafor (
     id bigint NOT NULL,
-    formulario_id integer NOT NULL,
+    formulario_id integer,
     fechaini date NOT NULL,
     fechacambio date NOT NULL
 );
@@ -2206,6 +2206,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20181227114431'),
 ('20181227210510'),
 ('20190109125417'),
-('20190110191802');
+('20190110191802'),
+('20190208103518');
 
 
