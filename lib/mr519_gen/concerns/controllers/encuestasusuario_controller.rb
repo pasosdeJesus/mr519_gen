@@ -91,6 +91,54 @@ module Mr519Gen
               Sip::FormatoFechaHelper::fecha_estandar_local(Date.today)
             update_gen
           end
+
+          def resultados
+            if !params || !params[:formulario_id]
+              render inline: 'Falta parámetro formulario_id'
+              return
+            end
+            fid = Encuestausuario.connection.
+              quote_string(params[:formulario_id]).to_i
+            @registros = Encuestausuario.joins(:respuestafor).
+              where("mr519_gen_respuestafor.formulario_id" => fid)
+            if @registros.count == 0
+              render inline: 
+                "No hay encuestas respondidas para formulario #{fid}"
+              return
+            end
+            @titulo = "Resultados de encuesta: " +
+              @registros[0].respuestafor.formulario.nombre
+            @usuarios = @registros.map(&:usuario)
+            @consolidado = []
+            @registros[0].respuestafor.formulario.campo.order(:id).each do |c|
+              case c.tipo 
+              when Mr519Gen::ApplicationHelper::TEXTO, 
+                Mr519Gen::ApplicationHelper::TEXTOLARGO
+                cons = Mr519Gen::Valorcampo.where(campo_id: c.id).map(&:valor).
+                  join(". ")
+              when Mr519Gen::ApplicationHelper::ENTERO,
+                Mr519Gen::ApplicationHelper::FLOTANTE
+                cons = Mr519Gen::Valorcampo.where(campo_id: c.id).
+                  average("CASE 
+                             WHEN valor = '' THEN 0 
+                             ELSE CAST(valor AS NUMERIC) 
+                           END")
+              when Mr519Gen::ApplicationHelper::BOOLEANO
+                si = Mr519Gen::Valorcampo.where(campo_id: c.id).
+                  where(valor: 't').count
+                no = Mr519Gen::Valorcampo.where(campo_id: c.id).
+                  where("valor <> 't'").count
+                cons = "Si: #{si}.  No: #{no}"  
+              else
+                puts "Tipo desconocido"
+                cons = "Tipo desconocido"
+              end
+              @consolidado << {pregunta: c.nombre, consolidado: cons}
+            end
+            render 'resultados', layot: 'application'
+          end 
+          
+
           private
 
           def set_encuestausuario
