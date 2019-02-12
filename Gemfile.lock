@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/pasosdeJesus/heb412_gen.git
-  revision: 987b9aade2f6765600f8f41f189743097ea16b38
+  revision: 01d34519ec71f24898f9b51f4823ec9b81f61667
   specs:
     heb412_gen (1.0.a1)
       chosen-rails
@@ -113,7 +113,7 @@ GEM
     commonjs (0.2.7)
     concurrent-ruby (1.1.4)
     crass (1.0.4)
-    devise (4.6.0)
+    devise (4.6.1)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 4.1.0, < 6.0)
