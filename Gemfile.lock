@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/pasosdeJesus/heb412_gen.git
-  revision: 6c26a013aa4277a6436f5c08f567a7a7720f6f23
+  revision: f5aa8f4eb1d34d886eeb2c214bca09f3955f849b
   specs:
     heb412_gen (1.0.a1)
       chosen-rails
@@ -119,8 +119,8 @@ GEM
       railties (>= 4.1.0, < 6.0)
       responders
       warden (~> 1.2.3)
-    devise-i18n (1.7.2)
-      devise (>= 4.5)
+    devise-i18n (1.8.0)
+      devise (>= 4.6)
     erubi (1.8.0)
     execjs (2.7.0)
     ffi (1.10.0)
