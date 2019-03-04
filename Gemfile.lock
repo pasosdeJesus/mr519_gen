@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/pasosdeJesus/heb412_gen.git
-  revision: 85f75e8f78e85be767d11afda5861369ea3891d0
+  revision: 4789d78fc2b1b81a4b62024092de7428d3cc0285
   specs:
     heb412_gen (1.0.a1)
       chosen-rails
@@ -128,7 +128,7 @@ GEM
       railties (>= 3.2, < 6.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
-    i18n (1.5.3)
+    i18n (1.6.0)
       concurrent-ruby (~> 1.0)
     jquery-rails (4.3.3)
       rails-dom-testing (>= 1, < 3)
