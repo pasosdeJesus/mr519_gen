@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/pasosdeJesus/heb412_gen.git
-  revision: 0257a344d4e8e3126fe3194d885bacfa6370c30d
+  revision: f8a6cef99c44892b2e7e02ac6321806a9b66bc72
   specs:
     heb412_gen (1.0.a1)
       chosen-rails
@@ -111,7 +111,7 @@ GEM
     coffee-script-source (1.12.2)
     colorize (0.8.1)
     commonjs (0.2.7)
-    concurrent-ruby (1.1.4)
+    concurrent-ruby (1.1.5)
     crass (1.0.4)
     devise (4.6.1)
       bcrypt (~> 3.0)
