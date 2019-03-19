@@ -1,7 +1,7 @@
 language: ruby
   
 rvm:
-- 2.5.0
+      - 2.6.1
 
 addons:
         postgresql: "10"
@@ -27,6 +27,9 @@ before_install:
         - sudo /etc/init.d/postgresql start 10
         - cd test/dummy
         - psql -c 'CREATE DATABASE mr519gen_pru;' -U postgres
+        - gem install bundler
+        - gem update --system
+        - bundle update --bundler
         - bundle install
         - cp db/structure.sql db/structure.sql.copia
         - sed -e "s/provider = libc,//g" db/structure.sql.copia >db/structure.sql
