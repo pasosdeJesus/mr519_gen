@@ -25,9 +25,9 @@ before_install:
         - sudo locale-gen --no-archive es_CO.UTF-8
         - sudo /etc/init.d/postgresql stop
         - sudo /etc/init.d/postgresql start 10
-        - sudo -u postgres createuser -s sipdes
-        - sudo -u postgres psql -c "alter user sipdes with password 'sipdes'" template1
-        - sudo -u postgres createdb -U sipdes mr519gen_pru
+        - sudo -H -u postgres createuser -s sipdes
+        - sudo -H -u postgres psql -c "alter user sipdes with password 'sipdes'" template1
+        - sudo -H -u postgres createdb -U sipdes mr519gen_pru
         - cd test/dummy
         - gem install bundler
         - gem update --system
