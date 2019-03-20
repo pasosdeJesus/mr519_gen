@@ -27,6 +27,7 @@ before_install:
         - sudo /etc/init.d/postgresql start 10
         - sudo -H -u postgres createuser -s sipdes
         - sudo -H -u postgres psql -c "alter user sipdes with password 'sipdes'" template1
+        - echo '*:*:*:sipdes:sipdes' > .pgpass
         - sudo -H -u postgres createdb -U sipdes mr519gen_pru
         - cd test/dummy
         - gem install bundler
