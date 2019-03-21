@@ -1,14 +1,14 @@
 language: ruby
   
 rvm:
-- 2.5.0
+      - 2.6.1
 
 addons:
         postgresql: "10"
         apt:
-                packages:
-                - postgresql-10
-                - postgresql-client-10
+              packages:
+              - postgresql-10
+              - postgresql-client-10
 notifications:
         email: false
 
@@ -25,8 +25,14 @@ before_install:
         - sudo locale-gen --no-archive es_CO.UTF-8
         - sudo /etc/init.d/postgresql stop
         - sudo /etc/init.d/postgresql start 10
+        - sudo -H -u postgres createuser -s sipdes
+        - sudo -H -u postgres psql -c "alter user sipdes with password 'sipdes'" template1
+        - echo '*:*:*:sipdes:sipdes' > .pgpass
+        - sudo -H -u postgres createdb -U sipdes mr519gen_pru
         - cd test/dummy
-        - psql -c 'CREATE DATABASE mr519gen_pru;' -U postgres
+        - gem install bundler
+        - gem update --system
+        - bundle update --bundler
         - bundle install
         - cp db/structure.sql db/structure.sql.copia
         - sed -e "s/provider = libc,//g" db/structure.sql.copia >db/structure.sql
