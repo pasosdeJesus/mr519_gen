@@ -1,6 +1,6 @@
 # encoding: UTF-8
-require 'sip/concerns/models/usuario'
+require 'mr519_gen/concerns/models/usuario'
 
 class Usuario < ActiveRecord::Base
-  include Sip::Concerns::Models::Usuario
+  include Mr519Gen::Concerns::Models::Usuario
 end
