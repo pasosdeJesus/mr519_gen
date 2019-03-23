@@ -24,6 +24,7 @@ module Mr519Gen
             [ :id, 
               :nombre,
               :campos,
+              #:opcionescs,
             ]
           end
 
@@ -77,8 +78,15 @@ module Mr519Gen
                 :nombre,
                 :obligatorio,
                 :tipo,
-                :_destroy
-              ]
+                :_destroy,
+                :opcioncs_attributes => [
+                  :id,
+                  :campo_id,
+                  :nombre,
+                  :valor,
+                  :_destroy ]
+              ],
+
             ]
           end
 

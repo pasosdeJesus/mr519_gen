@@ -60,3 +60,17 @@ mr519_gen_prepara_eventos_comunes(root);
 4. Configure enlaces a encuestas a usuarios por ejemplo con rutas como
    mr519_gen.encuestasusuario_path
 
+## 3. Desarrollo
+
+Para un nuevo tipo de campo.
+
+Agregarlo a app/helpers/mr519_gen/application_helper.rb tanto constante como en
+arreglo TIPOS_CAMPO
+
+Si la especificación del campo requiere información adicional modificar
+app/views/mr519_gen/formularios/_campo_campos.html.erb (eventualmente junto
+con el controlador app/controllers/mr519_gen/formularios_controller.rb)
+
+Agregar como lo verá quien llene la encuesta en app/views/mr519_gen/formularios/_campodinamico.html.erb
+
+    k

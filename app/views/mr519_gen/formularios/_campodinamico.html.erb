@@ -3,12 +3,12 @@
 <% end %>
 <% ihtml = {} %>
 <% if ayudae%>
-  <% ihtml = ihtml.merge({ 'data-toggle' => 'tooltip',
+  <% ihtml.merge!({ 'data-toggle' => 'tooltip',
                    "title" => ayudae 
   }) %>
 <% end %>
 <% if obligatorio %>
-  <% ihtml = ihtml.merge({ 'required' => 'required' }) %>
+  <% ihtml.merge!({ 'required' => 'required' }) %>
 <% end %>
 
 
@@ -19,7 +19,7 @@
     input_html: ihtml
   %>
 <% when Mr519Gen::ApplicationHelper::TEXTOLARGO %>
-  <% ihtml.merge({ rows: 5}) %>
+  <% ihtml.merge!({ rows: 5}) %>
   <%= v.input :valor,
     label: etiqueta, 
     as: :text,
@@ -39,7 +39,7 @@
     input_html: ihtml
   %>
 <% when Mr519Gen::ApplicationHelper::FLOTANTE %>
-  <% ihtml.merge({
+  <% ihtml.merge!({
     type: 'number',
     step: 0.01 })
   %>
@@ -47,6 +47,28 @@
     label: etiqueta, 
     input_html: ihtml
   %>
+<% when Mr519Gen::ApplicationHelper::SELECCIONMULTIPLE %>
+  <% ihtml.merge!({
+    class: 'chosen-select',
+    multiple: true })
+  %>
+  <%= v.input :valor,
+    collection: Mr519Gen::Opcioncs.where(campo_id: v.object.campo_id),
+    label: etiqueta, 
+    label_method: :nombre,
+    input_html: ihtml
+  %>
+<% when Mr519Gen::ApplicationHelper::SELECCIONSENCILLA %>
+  <% ihtml.merge!({
+    class: 'chosen-select' }) 
+  %>
+  <%= v.input :valor,
+    collection: Mr519Gen::Opcioncs.where(campo_id: v.object.campo_id),
+    label: etiqueta, 
+    label_method: :nombre,
+    input_html: ihtml
+  %>
+
 <% else %>
   <p>Tipo <%= tipo %> no definido.</p>
 <% end %>

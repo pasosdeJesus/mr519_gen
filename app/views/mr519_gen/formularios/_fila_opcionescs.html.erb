@@ -1,0 +1,23 @@
+<div class="nested-fields opcioncs">
+  <% #byebug %>
+  <% f.object = Mr519Gen::Opcioncs.new() if !f.object  %>
+  <div>
+    <%= f.input :nombre, 
+      label: false,
+      placeholder: 'Nombre'
+    %>
+  </div>
+  <div>
+    <%= f.input :valor, 
+      label: false,
+      placeholder: 'Valor'
+    %>
+  </div>
+  <div>
+    <%= f.input :id, as: :hidden %>
+    <%= link_to_remove_association "Eliminar", f, 
+      :class => 'btn-danger', "data-existing" => true 
+    %>
+    <div><%= f.error_notification %></div>
+  </div>
+</div>

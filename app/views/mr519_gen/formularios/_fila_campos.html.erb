@@ -11,6 +11,25 @@
   </td>
   <td>
     <%= f.input :ayudauso, label: false %>
+    <% if f.object.tipo == Mr519Gen::ApplicationHelper::SELECCIONMULTIPLE ||
+      f.object.tipo == Mr519Gen::ApplicationHelper::SELECCIONSIMPLE %>
+      <hr>
+      <% if f.object.opcioncs.count > 0 %>
+        <%= f.simple_fields_for :opcioncs, f.object.opcioncs.order(:id) do |o| %>
+          <%= render 'fila_opcionescs', f:  o %>
+        <% end %>
+      <% end %>
+      <div class="links-opcionescs">
+        <%= link_to_add_association 'Agregar opción', f, :opcioncs, {
+          #:"data-association-insertion-node" => "tbody#opciones", 
+          #:"data-association-insertion-method" => "append", 
+          partial: 'fila_opcionescs',
+          class: 'btn-primary', 
+            "data-ajax" => mr519_gen.new_opcioncs_path,
+            "data-ajaxdata" => "formulario_campo_id" 
+        } %>
+      </div>
+    <% end %>
   </td>
   <td>
     <%= f.input :obligatorio, label: false %>

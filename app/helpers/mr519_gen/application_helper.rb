@@ -8,14 +8,17 @@ module Mr519Gen
     ENTERO = 3
     BOOLEANO = 4
     FLOTANTE = 5
+    SELECCIONMULTIPLE = 10
+    SELECCIONSIMPLE = 11
 
     TIPOS_CAMPO = [ ['Texto', TEXTO],
                       ['Texto largo', TEXTOLARGO],
                       ['Entero', ENTERO],
                       ['Booleano', BOOLEANO],
-                      ['Flotante', FLOTANTE]
+                      ['Flotante', FLOTANTE],
+                      ['Seleccion Múltiple', SELECCIONMULTIPLE],
+                      ['Seleccion Simple', SELECCIONSIMPLE]
     ]
-
 
     def asegura_camposdinamicos(modeloconrf)
       if modeloconrf.nil? || modeloconrf.respuestafor.nil? ||

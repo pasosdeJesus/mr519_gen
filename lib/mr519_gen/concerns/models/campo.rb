@@ -20,6 +20,12 @@ module Mr519Gen
             class_name: 'Mr519Gen::Valorcampo',
             foreign_key: 'campo_id',  validate: true
 
+          has_many :opcioncs, dependent: :delete_all,
+            class_name: 'Mr519Gen::Opcioncs',
+            foreign_key: 'campo_id',  validate: true
+          accepts_nested_attributes_for :opcioncs,
+            allow_destroy: true, reject_if: :all_blank
+
           validates :nombre, length: {maximum: 128}, presence: true
           validates :ayudauso, length: {maximum: 1024}
         end # included
