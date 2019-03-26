@@ -566,7 +566,8 @@ CREATE TABLE public.mr519_gen_valorcampo (
     id bigint NOT NULL,
     campo_id integer NOT NULL,
     valor character varying(5000),
-    respuestafor_id integer NOT NULL
+    respuestafor_id integer NOT NULL,
+    valorjson json
 );
 
 
@@ -2184,7 +2185,7 @@ ALTER TABLE ONLY public.sip_ubicacion
 -- PostgreSQL database dump complete
 --
 
-SET search_path TO "$user", public;
+SET search_path TO public, pg_catalog;
 
 INSERT INTO "schema_migrations" (version) VALUES
 ('20150413160156'),
@@ -2248,6 +2249,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20190109125417'),
 ('20190110191802'),
 ('20190208103518'),
-('20190322102311');
+('20190322102311'),
+('20190326150948');
 
 
