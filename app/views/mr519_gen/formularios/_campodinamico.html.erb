@@ -52,13 +52,13 @@
     class: 'chosen-select',
     multiple: true })
   %>
-  <%= v.input :valor,
+  <%= v.input :valor_ids,
     collection: Mr519Gen::Opcioncs.where(campo_id: v.object.campo_id),
     label: etiqueta, 
     label_method: :nombre,
     input_html: ihtml
   %>
-<% when Mr519Gen::ApplicationHelper::SELECCIONSENCILLA %>
+<% when Mr519Gen::ApplicationHelper::SELECCIONSIMPLE %>
   <% ihtml.merge!({
     class: 'chosen-select' }) 
   %>

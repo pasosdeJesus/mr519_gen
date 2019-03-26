@@ -22,6 +22,14 @@ module Mr519Gen
 
           validates :valor, length: {maximum: 5000}
 
+          def valor_ids=(v)
+            self.valorjson = v
+          end
+
+          def valor_ids
+            self.valorjson
+          end
+
           def presenta_valor
             r = "#{campo.presenta_nombre}: "
             if !campo.tipo || campo.tipo == Mr519Gen::ApplicationHelper::ENTERO || 

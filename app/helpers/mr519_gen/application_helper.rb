@@ -16,8 +16,8 @@ module Mr519Gen
                       ['Entero', ENTERO],
                       ['Booleano', BOOLEANO],
                       ['Flotante', FLOTANTE],
-                      ['Seleccion Múltiple', SELECCIONMULTIPLE],
-                      ['Seleccion Simple', SELECCIONSIMPLE]
+                      ['Selección Múltiple', SELECCIONMULTIPLE],
+                      ['Selección Simple', SELECCIONSIMPLE]
     ]
 
     def asegura_camposdinamicos(modeloconrf)

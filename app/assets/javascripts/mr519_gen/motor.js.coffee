@@ -8,3 +8,12 @@
 #//= require cocoon
 
 @mr519_gen_prepara_eventos_comunes = (root, opciones = {}) ->
+  $(document).on('change', '[id^=formulario_campo_attributes_][id$=_tipo]', (event) ->
+    root = exports ? window
+    if $(this).find('option:selected').length > 0 && ($(this).find('option:selected').text() == 'Selección Múltiple' || $(this).find('option:selected').text() == 'Selección Simple')
+      $(this).parent().parent().parent().find('.espopciones').show()
+    else
+      $(this).parent().parent().parent().find('.espopciones').hide()
+  )
+	
+

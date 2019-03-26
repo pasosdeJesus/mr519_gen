@@ -11,10 +11,14 @@
   </td>
   <td>
     <%= f.input :ayudauso, label: false %>
+    <% clasedisp = 'display: none' %>
     <% if f.object.tipo == Mr519Gen::ApplicationHelper::SELECCIONMULTIPLE ||
       f.object.tipo == Mr519Gen::ApplicationHelper::SELECCIONSIMPLE %>
-      <hr>
+      <% clasedisp = 'display: block' %>
+    <% end %>
+    <div class="espopciones" style="<%= clasedisp %>">
       <% if f.object.opcioncs.count > 0 %>
+        <hr>
         <%= f.simple_fields_for :opcioncs, f.object.opcioncs.order(:id) do |o| %>
           <%= render 'fila_opcionescs', f:  o %>
         <% end %>
@@ -29,7 +33,7 @@
             "data-ajaxdata" => "formulario_campo_id" 
         } %>
       </div>
-    <% end %>
+    </div>
   </td>
   <td>
     <%= f.input :obligatorio, label: false %>

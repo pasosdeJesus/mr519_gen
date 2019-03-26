@@ -71,6 +71,9 @@ Si la especificación del campo requiere información adicional modificar
 app/views/mr519_gen/formularios/_campo_campos.html.erb (eventualmente junto
 con el controlador app/controllers/mr519_gen/formularios_controller.rb)
 
-Agregar como lo verá quien llene la encuesta en app/views/mr519_gen/formularios/_campodinamico.html.erb
+Agregar como lo verá quien llene la encuesta en app/views/mr519_gen/formularios/_campodinamico.html.erb . Para almacenar la información la tabla
+mr519_gen_valorcampo tiene 2 campos: valor (cadena de 5000) y valorjson (campo
+json).  
+Puede usar un atributo virtual (como valor_ids) que convierta el parámetro 
+que produzca el campo al valor por guardar en la base de datos.
 
-    k
