@@ -2,8 +2,7 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: 5
-  username: sipdes 
-  password: sipdes
+  username: postgres
 
 development:
   <<: *default
