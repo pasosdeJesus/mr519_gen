@@ -1,22 +1,18 @@
 language: ruby
   
 rvm:
-      - 2.6.1
+      - 2.6.2
 
 addons:
-        postgresql: "10"
-        apt:
-              packages:
-              - postgresql-10
-              - postgresql-client-10
+        postgresql: "9.6"
+
 notifications:
         email: false
 
 env:
         global:
-        - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
-        - CC_TEST_REPORTER_ID=4f2fd215528f279ecf795d2fefdcfd7d7c97aa4e07edc6210f2edccd1cd4bbf4
-        - PGPORT=5433
+                - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
+                - CC_TEST_REPORTER_ID=4f2fd215528f279ecf795d2fefdcfd7d7c97aa4e07edc6210f2edccd1cd4bbf4
 
 before_install: 
         - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
@@ -24,19 +20,16 @@ before_install:
         - ./cc-test-reporter before-build
         - sudo locale-gen --no-archive es_CO.UTF-8
         - sudo /etc/init.d/postgresql stop
-        - sudo /etc/init.d/postgresql start 10
-        - sudo -H -u postgres createuser -s sipdes
-        - sudo -H -u postgres psql -c "alter user sipdes with password 'sipdes'" template1
-        - echo '*:*:*:sipdes:sipdes' > .pgpass
-        - sudo -H -u postgres createdb -U sipdes mr519gen_pru
+        - sudo /etc/init.d/postgresql start 9.6
         - cd test/dummy
+        - psql -c 'CREATE DATABASE mr519_prueba;' -U postgres   
         - gem install bundler
         - gem update --system
         - bundle update --bundler
         - bundle install
+        - cp config/database.travis.yml config/database.yml
         - cp db/structure.sql db/structure.sql.copia
         - sed -e "s/provider = libc,//g" db/structure.sql.copia >db/structure.sql
-        - cp config/database.travis.yml config/database.yml
         - rake db:setup
         - rake sip:indices
         - cd ../..
