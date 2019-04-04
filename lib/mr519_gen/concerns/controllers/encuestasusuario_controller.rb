@@ -159,7 +159,8 @@ module Mr519Gen
             l += [ :valorcampo_attributes => [
               :id,
               :campo_id,
-              :valor
+              :valor,
+              :valor_ids => []
             ] ]
             return l
           end
