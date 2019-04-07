@@ -23,6 +23,7 @@ module Mr519Gen
           def atributos_index
             [ :id, 
               :nombre,
+              :nombreinterno,
               :campos,
               #:opcionescs,
             ]
@@ -45,6 +46,7 @@ module Mr519Gen
           def new
             @registro = @formulario = Formulario.new
             @formulario.nombre = 'Formulario Nuevo'
+            @formulario.nombreinterno = 'formulario_nuevo'
             @registro.save!(validate: false)
             redirect_to mr519_gen.edit_formulario_path(@registro)
           end
@@ -76,6 +78,7 @@ module Mr519Gen
                 :ayudauso,
                 :id,
                 :nombre,
+                :nombreinterno,
                 :obligatorio,
                 :tipo,
                 :_destroy,
@@ -86,7 +89,6 @@ module Mr519Gen
                   :valor,
                   :_destroy ]
               ],
-
             ]
           end
 

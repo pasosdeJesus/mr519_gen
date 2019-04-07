@@ -22,6 +22,17 @@ module Mr519Gen
 
           validates :nombre, length: {maximum: 500}, presence: true,
             uniqueness: true, allow_blank: false
+          validates :nombreinterno, length: {maximum: 60}, presence: true,
+            uniqueness: true, allow_blank: false
+
+          validate :caracteres_nombre_interno
+          def caracteres_nombre_interno
+            if !(nombreinterno =~ /^[a-z0-9_]+$/)
+              errors.add(:nombreinterno,
+                         'Sólo debe tener caracteres alfanuméricos en minusculas y _')
+            end
+          end
+
         end
 
       end

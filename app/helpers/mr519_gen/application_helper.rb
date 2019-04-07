@@ -43,6 +43,12 @@ module Mr519Gen
     end
     module_function :asegura_camposdinamicos
 
+    def nombre_a_nombreinterno(nombre)
+      ni = nombre.gsub(/[^A-Za-z0-9]/, '_')
+      ni = ni.downcase
+      return ni
+    end
+    module_function :nombre_a_nombreinterno
 
   end
 end
