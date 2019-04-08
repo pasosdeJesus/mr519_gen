@@ -29,7 +29,9 @@ module Mr519Gen
           validates :nombre, length: {maximum: 128}, presence: true
           validates :ayudauso, length: {maximum: 1024}
           validates :nombreinterno, length: {maximum: 60}, presence: true,
-            uniqueness: true, allow_blank: false
+            allow_blank: false, uniqueness: {
+              scope: :formulario_id, 
+              message: 'en el mismo formulario los campos deben tener nombre interno diferente'}
 
           validate :caracteres_nombre_interno
           def caracteres_nombre_interno
