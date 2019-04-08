@@ -7,12 +7,9 @@ class NombreANombreinterno < ActiveRecord::Migration[5.2]
       begin 
         c.nombreinterno=::Mr519Gen::ApplicationHelper.
           nombre_a_nombreinterno(c.nombre) + sec.to_s
-        byebug
         if !c.save
-          byebug
           sec = sec == '' ? 1 : sec.to_i + 1
         else
-          byebug
           guardado = true
         end
       end while !guardado
