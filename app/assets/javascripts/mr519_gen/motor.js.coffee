@@ -7,6 +7,12 @@
 #//= require jquery-ui/widgets/autocomplete
 #//= require cocoon
 
+@mr519_gen_nombre_a_nombreinterno = (nombre) ->
+  ni = nombre.replace(/[^A-Za-z0-9_]/g, '_') 
+  ni = ni.toLowerCase()
+  ni = ni.substring(0, 60)
+  ni
+	
 @mr519_gen_prepara_eventos_comunes = (root, opciones = {}) ->
   $(document).on('change', '[id^=formulario_campo_attributes_][id$=_tipo]', (event) ->
     root = exports ? window
@@ -15,5 +21,12 @@
     else
       $(this).parent().parent().parent().find('.espopciones').hide()
   )
+  $(document).on('change', '[id^=formulario_campo_attributes_][id$=_nombre]', (event) ->
+    root = exports ? window
+    idni = $(this).attr('id').replace('nombre', 'nombreinterno')
+    if  $('#' + idni).length == 1 && $('#' + idni).val() == 'n'
+      $('#' + idni).val(mr519_gen_nombre_a_nombreinterno($(this).val()))
+  )
 	
+
 

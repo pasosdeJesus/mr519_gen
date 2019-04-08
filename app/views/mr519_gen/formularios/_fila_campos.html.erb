@@ -3,6 +3,11 @@
   <td>
     <%= f.input :nombre, 
       label: false %>
+    <%= f.input :nombreinterno, 
+      label: false,
+      input_html: { 'data-toggle' => 'tooltip',
+        'title' => 'Sugerimos una palabra o algunas separadas por _. Máximo 60 caracteres. Puede constar de minúsculas, digitos y _.'
+    } %>
   </td>
   <td>
     <%= f.input :tipo, 

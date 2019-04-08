@@ -20,6 +20,9 @@ module Mr519Gen
                       ['Selección Simple', SELECCIONSIMPLE]
     ]
 
+    # La misma constante debe estar en app/javascript/motor.coffee
+    LONG_NOMBREINTERNO=60
+
     def asegura_camposdinamicos(modeloconrf)
       if modeloconrf.nil? || modeloconrf.respuestafor.nil? ||
           modeloconrf.respuestafor.formulario.nil? 
@@ -44,8 +47,9 @@ module Mr519Gen
     module_function :asegura_camposdinamicos
 
     def nombre_a_nombreinterno(nombre)
-      ni = nombre.gsub(/[^A-Za-z0-9]/, '_')
+      ni = nombre.gsub(/[^A-Za-z0-9_]/, '_')
       ni = ni.downcase
+      ni = ni[0..(LONG_NOMBREINTERNO-1)]
       return ni
     end
     module_function :nombre_a_nombreinterno

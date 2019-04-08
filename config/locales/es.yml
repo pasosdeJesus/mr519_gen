@@ -14,4 +14,5 @@ es:
       "mr519_gen/formulario":
         Formulario: Formulario
         Formularios: Formularios
+        nombreinterno: Nombre interno para exportar/importar
 
