@@ -7,6 +7,7 @@ module Mr519Gen
   class CampoTest < ActiveSupport::TestCase
     PRUEBA_CAMPO = {
       nombre: 'c',
+      nombreinterno: 'c',
     }
 
     setup do

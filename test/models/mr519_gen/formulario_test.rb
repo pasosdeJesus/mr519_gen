@@ -6,6 +6,7 @@ module Mr519Gen
   class FormularioTest < ActiveSupport::TestCase
     PRUEBA_FORMULARIO = {
       nombre:'n',
+      nombreinterno:'n',
     }
 
     setup do
