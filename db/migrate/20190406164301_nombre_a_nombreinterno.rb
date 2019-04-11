@@ -8,6 +8,7 @@ class NombreANombreinterno < ActiveRecord::Migration[5.2]
         c.nombreinterno=::Mr519Gen::ApplicationHelper.
           nombre_a_nombreinterno(c.nombre) + sec.to_s
         if !c.save
+          puts c.errors.messages
           sec = sec == '' ? 1 : sec.to_i + 1
         else
           guardado = true
@@ -22,6 +23,7 @@ class NombreANombreinterno < ActiveRecord::Migration[5.2]
         f.nombreinterno=::Mr519Gen::ApplicationHelper.
           nombre_a_nombreinterno(f.nombre) + sec.to_s
         if !f.save
+          puts f.errors.messages
           sec = sec == '' ? 1 : sec.to_i + 1
         else
           guardado = true
