@@ -30,8 +30,11 @@ module Mr519Gen
             self.valorjson
           end
 
-          def presenta_valor
-            r = "#{campo.presenta_nombre}: "
+          def presenta_valor(con_nombre_campo = true)
+            r = ''
+            if con_nombre_campo
+              r = "#{campo.presenta_nombre}: "
+            end
             if !campo.tipo || campo.tipo == Mr519Gen::ApplicationHelper::ENTERO || 
                 campo.tipo == Mr519Gen::ApplicationHelper::FLOTANTE || 
                 campo.tipo == Mr519Gen::ApplicationHelper::TEXTO ||
@@ -39,6 +42,8 @@ module Mr519Gen
               r += "#{valor.to_s}"
             elsif campo.tipo == Mr519Gen::ApplicationHelper::BOOLEANO
               r += valor.to_i == 0 ? "NO" : "SI"
+            elsif campo.tipo == Mr519Gen::ApplicationHelper::SELECCIONMULTIPLE
+              r += valorjson.to_s
             end
             r
           end
