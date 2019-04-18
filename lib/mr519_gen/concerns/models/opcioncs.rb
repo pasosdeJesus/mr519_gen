@@ -16,8 +16,14 @@ module Mr519Gen
             class_name: "Mr519Gen::Campo",
             foreign_key: "campo_id", validate: true
 
-          validates :valor, length: {maximum: 60}, presence: true
-          validates :nombre, length: {maximum: 1024}, presence: true
+          validates :valor, length: {maximum: 60}, presence: true,
+            uniqueness: { 
+              scope: :campo_id, 
+              message: 'En el mismo campo los valores de las opciones deben ser diferentes'}
+          validates :nombre, length: {maximum: 1024}, presence: true,
+            allow_blank: false, uniqueness: {
+              scope: :campo_id, 
+              message: 'En el mismo campo las opciones deben tener nombre diferente'}
 
         end # included
 
