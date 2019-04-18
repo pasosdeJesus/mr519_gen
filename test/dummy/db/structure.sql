@@ -506,7 +506,7 @@ CREATE TABLE public.mr519_gen_opcioncs (
     id bigint NOT NULL,
     campo_id integer NOT NULL,
     nombre character varying(1024) NOT NULL,
-    valor character varying(1024) NOT NULL
+    valor character varying(60) NOT NULL
 );
 
 
@@ -2256,6 +2256,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20190331111015'),
 ('20190401175521'),
 ('20190406141156'),
-('20190406164301');
+('20190406164301'),
+('20190418014012');
 
 

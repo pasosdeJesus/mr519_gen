@@ -16,7 +16,7 @@ module Mr519Gen
             class_name: "Mr519Gen::Campo",
             foreign_key: "campo_id", validate: true
 
-          validates :valor, length: {maximum: 1024}
+          validates :valor, length: {maximum: 60}
           validates :nombre, length: {maximum: 1024}
 
         end # included
