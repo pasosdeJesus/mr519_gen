@@ -71,7 +71,7 @@ module Mr519Gen
             )
           end
 
-          def lista_params
+          def mr519_gen_params
             atributos_form + 
             [ 
               :campo_attributes => [
@@ -90,6 +90,10 @@ module Mr519Gen
                   :_destroy ]
               ],
             ]
+          end
+
+          def lista_params
+            mr519_gen_params
           end
 
           # Lista blanca de parametros
