@@ -20,6 +20,11 @@ module Mr519Gen
           accepts_nested_attributes_for :campo,
             allow_destroy: true, reject_if: :all_blank
 
+          has_many :respuestafor,
+            class_name: "Mr519Gen::Respuestafor",
+            foreign_key: "formulario_id", validate: true,
+            dependent: :destroy
+
           validates :nombre, length: {maximum: 500}, presence: true,
             uniqueness: true, allow_blank: false
           validates :nombreinterno, length: {maximum: 60}, presence: true,
