@@ -12,6 +12,8 @@ gemspec
 # your gem to rubygems.org.
 
 
+gem 'webpacker'
+
 # Motor Sip
 gem 'sip', git: "https://github.com/pasosdeJesus/sip.git", branch: :rails6
 #gem 'sip', path: '../sip'
