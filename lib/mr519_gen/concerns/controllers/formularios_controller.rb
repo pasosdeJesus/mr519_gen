@@ -48,6 +48,9 @@ module Mr519Gen
             @formulario.nombre = 'Formulario Nuevo'
             @formulario.nombreinterno = 'formulario_nuevo'
             @registro.save!(validate: false)
+            @formulario.nombre += " " + @registro.id.to_s
+            @formulario.nombreinterno += "_" + @registro.id.to_s
+            @registro.save!(validate: false)
             redirect_to mr519_gen.edit_formulario_path(@registro)
           end
 

@@ -8,7 +8,7 @@ class NombreANombreinterno < ActiveRecord::Migration[5.2]
         c.nombreinterno=::Mr519Gen::ApplicationHelper.
           nombre_a_nombreinterno(c.nombre) + sec.to_s
         if !c.save
-          puts c.errors.messages
+          puts c.formulario_id + " " + c.nombre + ": " + c.errors.messages
           sec = sec == '' ? 1 : sec.to_i + 1
         else
           guardado = true

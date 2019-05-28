@@ -14,6 +14,8 @@ module Mr519Gen
               @campo = Campo.new
               @campo.formulario_id = params[:formulario_id]
               @campo.nombre = "N"
+              @campo.save!(validate: false)
+              @campo.nombre += "_" + @campo.id.to_s
               if @campo.save(validate: false)
                 respond_to do |format|
                   format.js { 
