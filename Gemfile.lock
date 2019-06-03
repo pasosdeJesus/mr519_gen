@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/pasosdeJesus/heb412_gen.git
-  revision: 39780368a89c42ee4a153211bcd68f830d0ac05f
+  revision: b898f59243fdfdac4f7e910ee256288e13527fe1
   specs:
     heb412_gen (1.0.b6)
       chosen-rails
@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: a5f25a7441d45b2df62d4c28d2c99e6c9107abaf
+  revision: 04494bda14eeab306031bcbd23f117029a0bae37
   specs:
     sip (2.0.b6)
       bootstrap-datepicker-rails
@@ -104,7 +104,7 @@ GEM
       tzinfo (~> 1.1)
       zeitwerk (~> 2.1, >= 2.1.4)
     andand (1.3.3)
-    bcrypt (3.1.12)
+    bcrypt (3.1.13)
     bootstrap-datepicker-rails (1.8.0.1)
       railties (>= 3.0)
     builder (3.2.3)
@@ -224,7 +224,7 @@ GEM
     responders (2.4.1)
       actionpack (>= 4.2.0, < 6.0)
       railties (>= 4.2.0, < 6.0)
-    rspreadsheet (0.4.8)
+    rspreadsheet (0.4.9)
       andand (~> 1.3)
       rubyzip (~> 1.1)
     rubyzip (1.2.3)
@@ -270,7 +270,7 @@ GEM
       thread_safe (~> 0.1)
     warden (1.2.8)
       rack (>= 2.0.6)
-    webpacker (4.0.4)
+    webpacker (4.0.7)
       activesupport (>= 4.2)
       rack-proxy (>= 0.6.1)
       railties (>= 4.2)
