@@ -26,7 +26,7 @@ module Mr519Gen
           accepts_nested_attributes_for :opcioncs,
             allow_destroy: true, reject_if: :all_blank
 
-          validates :nombre, length: {maximum: 128}, presence: true,
+          validates :nombre, length: {maximum: 512}, presence: true,
             allow_blank: false, uniqueness: {
               scope: :formulario_id, 
               message: 'en el mismo formulario los campos deben tener nombre diferente'}
