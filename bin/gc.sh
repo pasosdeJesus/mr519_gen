@@ -12,7 +12,8 @@ function cableado {
 	done
 }
 
-cableado sip
+d=`grep "gem.*pasosdeJesus" Gemfile | sed -e "s/gem ['\"]//g;s/['\"].*//g"`
+cableado $d
 
 grep "^ *gem *.debugger*" Gemfile > /dev/null 2> /dev/null
 if (test "$?" = "0") then {
