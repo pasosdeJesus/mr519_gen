@@ -18,10 +18,6 @@ gem 'webpacker'
 gem 'sip', git: "https://github.com/pasosdeJesus/sip.git"
 #gem 'sip', path: '../sip'
 
-# Motor heb412_gen para manejar archivos como nube y plantillas
-gem 'heb412_gen', git: 'https://github.com/pasosdeJesus/heb412_gen.git'
-#gem 'heb412_gen', path: '../heb412_gen/'
-
 # Descripciones en heb412_gen
 gem 'redcarpet'
 
@@ -68,7 +64,8 @@ gem 'bootstrap-datepicker-rails'
 gem 'twitter_cldr'               
 
 # Campos de selección más funcionales
-gem 'chosen-rails'               
+gem 'chosen-rails', git: 'https://github.com/vtamara/chosen-rails.git', branch: 'several-fixes'
+
 
 # Usamos jquery
 gem 'jquery-rails'               

@@ -11,7 +11,6 @@
 // about supported directives.
 //
 //= require sip/motor
-//= require heb412_gen/motor
 //= require mr519_gen/motor
 //= require_tree .
 
@@ -20,7 +19,6 @@ $(document).on('turbolinks:load ready page:load', function() {
   	root = typeof exports !== "undefined" && exports !== null ? 
 	  exports : window;
 	sip_prepara_eventos_comunes(root);
-	heb412_gen_prepara_eventos_comunes(root);
 	mr519_gen_prepara_eventos_comunes(root);
 });
 
