@@ -12,6 +12,9 @@
   <td>
     <%= f.input :tipo, 
       collection: Mr519Gen::ApplicationHelper::TIPOS_CAMPO,
+      input_html: {
+        style: 'width: 9em'
+      },
       label: false %>
   </td>
   <td>
@@ -42,6 +45,9 @@
   </td>
   <td>
     <%= f.input :obligatorio, label: false %>
+  </td>
+  <td>
+    <%= f.input :fila, label: false %>
   </td>
   <td>
     <%= f.input :id, as: :hidden %>
