@@ -411,7 +411,10 @@ CREATE TABLE public.mr519_gen_campo (
     tipo integer DEFAULT 1 NOT NULL,
     obligatorio boolean,
     formulario_id integer NOT NULL,
-    nombreinterno character varying(60)
+    nombreinterno character varying(60),
+    fila integer,
+    columna integer,
+    ancho integer
 );
 
 
@@ -2263,6 +2266,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20190418123920'),
 ('20190426125052'),
 ('20190605143420'),
-('20190612111043');
+('20190612111043'),
+('20190703044126');
 
 

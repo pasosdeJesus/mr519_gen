@@ -79,6 +79,7 @@ module Mr519Gen
             [ 
               :campo_attributes => [
                 :ayudauso,
+                :fila,
                 :id,
                 :nombre,
                 :nombreinterno,

@@ -26,11 +26,18 @@ module Mr519Gen
           accepts_nested_attributes_for :opcioncs,
             allow_destroy: true, reject_if: :all_blank
 
+          validates :ancho, numericality: {greater_than: 0},
+            allow_nil: true
+          validates :ayudauso, length: {maximum: 1024}
+          validates :columna, allow_nil: true,
+            numericality: {greater_than: 0, less_than: 13}
+          validates :fila, allow_nil: true,
+            numericality: {greater_than: 0}
+            
           validates :nombre, length: {maximum: 512}, presence: true,
             allow_blank: false, uniqueness: {
               scope: :formulario_id, 
               message: 'en el mismo formulario los campos deben tener nombre diferente'}
-          validates :ayudauso, length: {maximum: 1024}
           validates :nombreinterno, length: {maximum: 60}, presence: true,
             allow_blank: false, uniqueness: {
               scope: :formulario_id, 
@@ -44,6 +51,11 @@ module Mr519Gen
             end
           end
 
+          validate :campos_no_se_traslapan
+          def campos_no_se_traslapan
+             
+          end
+ 
         end # included
 
       end
