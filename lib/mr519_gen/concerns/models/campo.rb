@@ -26,14 +26,13 @@ module Mr519Gen
           accepts_nested_attributes_for :opcioncs,
             allow_destroy: true, reject_if: :all_blank
 
-          validates :ancho, numericality: {greater_than: 0},
-            allow_nil: true
+          validates :ancho, allow_nil: true,
+            numericality: {greater_than: 0, less_than: 13}
           validates :ayudauso, length: {maximum: 1024}
           validates :columna, allow_nil: true,
             numericality: {greater_than: 0, less_than: 13}
           validates :fila, allow_nil: true,
             numericality: {greater_than: 0}
-            
           validates :nombre, length: {maximum: 512}, presence: true,
             allow_blank: false, uniqueness: {
               scope: :formulario_id, 
@@ -53,7 +52,23 @@ module Mr519Gen
 
           validate :campos_no_se_traslapan
           def campos_no_se_traslapan
-             
+            if columna && ancho && columna+ancho > 13
+              errors.add(:columna,
+                         'columna + ancho debe ser inferior a 13')
+            end
+            Mr519Gen::Campo.where(formulario_id: self.formulario_id,
+                               fila: self.fila).each do |oc|
+              if oc.columna && self.columna && oc.ancho && self.ancho && 
+                oc.id != self.id &&
+                ((oc.columna <= self.columna && 
+                self.columna < oc.columna+oc.ancho) ||
+                (oc.columna < self.columna+self.ancho &&
+                  self.columna+self.ancho < oc.columna+oc.ancho))
+                errors.add(:columna,
+                           'Se traslapa con campo que comienza en ' +
+                           "columna #{oc.columna} de ancho #{oc.ancho}")
+              end
+            end
           end
  
         end # included

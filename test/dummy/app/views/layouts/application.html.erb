@@ -15,7 +15,7 @@
     <%= drop_down "Encuestas a usuarios respondidas/pendientes" do %>
       <%= menu_item "Listado", mr519_gen.encuestasusuario_path %>
       <% if can? :manage, Mr519Gen::Encuestausuario %>
-        <%= menu_item "Nueva", mr519_gen.new_formulario_path %>
+        <%= menu_item "Nueva", mr519_gen.new_encuestausuario_path %>
       <% end %>
     <% end %>
   <% end %>

@@ -78,7 +78,9 @@ module Mr519Gen
             atributos_form + 
             [ 
               :campo_attributes => [
+                :ancho,
                 :ayudauso,
+                :columna,
                 :fila,
                 :id,
                 :nombre,
