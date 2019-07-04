@@ -38,6 +38,16 @@
     as: :boolean,
     input_html: ihtml
   %>
+<% when Mr519Gen::ApplicationHelper::FECHA %>
+  <% ihtml.merge!({
+    "data-behaviour" => "datepicker"
+    })
+  %>
+  <%= v.input :valor,
+    label: etiqueta, 
+    :as => :string,
+    input_html: ihtml
+  %>
 <% when Mr519Gen::ApplicationHelper::FLOTANTE %>
   <% ihtml.merge!({
     type: 'number',

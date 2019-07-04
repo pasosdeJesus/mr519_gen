@@ -10,10 +10,12 @@ module Mr519Gen
     FLOTANTE = 5
     SELECCIONMULTIPLE = 10
     SELECCIONSIMPLE = 11
+    FECHA = 12
 
     TIPOS_CAMPO = [ ['Texto', TEXTO],
                       ['Texto largo', TEXTOLARGO],
                       ['Entero', ENTERO],
+                      ['Fecha', FECHA],
                       ['Booleano', BOOLEANO],
                       ['Flotante', FLOTANTE],
                       ['Selección Múltiple', SELECCIONMULTIPLE],
