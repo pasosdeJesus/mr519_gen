@@ -15,7 +15,7 @@ gemspec
 gem 'webpacker'
 
 # Motor Sip
-gem 'sip', git: "https://github.com/pasosdeJesus/sip.git"
+gem 'sip', git: "https://github.com/pasosdeJesus/sip.git", branch: :temas
 #gem 'sip', path: '../sip'
 
 # Descripciones en heb412_gen
@@ -23,6 +23,10 @@ gem 'redcarpet'
 
 # Anexos
 gem 'paperclip'                  
+
+gem 'pick-a-color-rails'
+
+gem 'tiny-color-rails'
 
 # Formularios
 gem 'simple_form'  
