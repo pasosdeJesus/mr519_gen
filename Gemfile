@@ -24,6 +24,10 @@ gem 'redcarpet'
 # Anexos
 gem 'paperclip'                  
 
+gem 'pick-a-color-rails'
+
+gem 'tiny-color-rails'
+
 # Formularios
 gem 'simple_form'  
 

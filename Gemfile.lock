@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: 8487da3ad4a1870193b4f26b433d2aea9e40090f
+  revision: 1c0790c8944815d8f5cddcf96579177fd03bb70d
   specs:
     sip (2.0.b6)
       bootstrap-datepicker-rails
@@ -176,6 +176,10 @@ GEM
       mimemagic (~> 0.3.0)
       terrapin (~> 0.6.0)
     pg (1.1.4)
+    pick-a-color-rails (0.0.1)
+      jquery-rails
+      railties (>= 3.0)
+      tiny-color-rails
     rack (2.0.7)
     rack-proxy (0.6.5)
       rack
@@ -244,6 +248,8 @@ GEM
     thor (0.20.3)
     thread_safe (0.3.6)
     tilt (2.0.9)
+    tiny-color-rails (0.0.2)
+      railties (>= 3.0)
     turbolinks (5.2.0)
       turbolinks-source (~> 5.2)
     turbolinks-source (5.2.0)
@@ -268,7 +274,7 @@ GEM
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.4)
     will_paginate (3.1.7)
-    zeitwerk (2.1.8)
+    zeitwerk (2.1.9)
 
 PLATFORMS
   ruby
@@ -286,10 +292,12 @@ DEPENDENCIES
   mr519_gen!
   paperclip
   pg
+  pick-a-color-rails
   rails-i18n
   redcarpet
   simple_form
   sip!
+  tiny-color-rails
   turbolinks
   twitter-bootstrap-rails
   twitter_cldr
