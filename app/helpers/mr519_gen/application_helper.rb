@@ -11,13 +11,16 @@ module Mr519Gen
     SELECCIONMULTIPLE = 10
     SELECCIONSIMPLE = 11
     FECHA = 12
+    PRESENTATEXTO = 13
 
-    TIPOS_CAMPO = [ ['Texto', TEXTO],
-                      ['Texto largo', TEXTOLARGO],
+    TIPOS_CAMPO = [ 
+                      ['Booleano', BOOLEANO],
                       ['Entero', ENTERO],
                       ['Fecha', FECHA],
-                      ['Booleano', BOOLEANO],
                       ['Flotante', FLOTANTE],
+                      ['Pregunta abierta', TEXTO],  
+                      ['Pregunta abierta larga', TEXTOLARGO],
+                      ['Presentar texto', PRESENTATEXTO],
                       ['Selección Múltiple', SELECCIONMULTIPLE],
                       ['Selección Simple', SELECCIONSIMPLE]
     ]
