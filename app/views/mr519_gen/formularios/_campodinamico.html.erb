@@ -46,7 +46,7 @@
     input_html: ihtml
   %>
 <% when Mr519Gen::ApplicationHelper::PRESENTATEXTO %>
-  <%= etiqueta %>
+  <span style="font-weight: bold"><%= etiqueta %></span>
 <% when Mr519Gen::ApplicationHelper::SELECCIONMULTIPLE %>
   <% ihtml.merge!({
     class: 'chosen-select',
