@@ -34,9 +34,7 @@ module Mr519Gen
           validates :fila, allow_nil: true,
             numericality: {greater_than: 0}
           validates :nombre, length: {maximum: 512}, presence: true,
-            allow_blank: false, uniqueness: {
-              scope: :formulario_id, 
-              message: 'en el mismo formulario los campos deben tener nombre diferente'}
+            allow_blank: true
           validates :nombreinterno, length: {maximum: 60}, presence: true,
             allow_blank: false, uniqueness: {
               scope: :formulario_id, 
