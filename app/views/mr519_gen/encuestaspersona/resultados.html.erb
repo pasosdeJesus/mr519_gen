@@ -1,0 +1,24 @@
+<h1><%= @titulo %></h1>
+<h2>Usuario que la respondieron: <%= @usuarios.count %></h2>
+<table class="table table-striped">
+  <tr>
+    <th>Nombres y apellidos</th>
+  </tr>
+  <% @usuarios.each do |u| %>
+    <tr><td><%= u.presenta_nombre %></td></tr>
+  <% end %>
+</table>
+
+<h2>Consolidados</h2>
+<table class="table table-striped">
+  <tr>
+    <th>Pregunta</th>
+    <th>Consolidado</th>
+  </tr>
+  <% @consolidado.each do |c| %>
+    <tr>
+      <td><%= c[:pregunta] %></td>
+      <td><%= c[:consolidado] %></td>
+    </tr>
+  <% end %>
+</table>

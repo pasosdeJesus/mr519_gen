@@ -61,7 +61,7 @@ class Ability  < Sip::Ability
       case usuario.rol 
       when Ability::ROLANALI
         #can :read, Mr519Gen::Formulario
-        can :read, Mr519Gen::Encuestausuario
+        can :read, [Mr519Gen::Encuestausuario, Mr519Gen::Encuestapersona]
         can [:edit, :update], 
             Mr519Gen::Encuestausuario.where(usuario_id: usuario.id)
 
@@ -72,7 +72,7 @@ class Ability  < Sip::Ability
         can [:update, :create, :destroy], Sip::Ubicacion
 
       when Ability::ROLADMIN
-        can :manage, Mr519Gen::Encuestausuario
+        can :manage, [Mr519Gen::Encuestausuario, Mr519Gen::Encuestapersona]
         can :manage, Mr519Gen::Formulario
 
         can :manage, Sip::Actorsocial

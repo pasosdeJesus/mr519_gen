@@ -1,6 +1,22 @@
 GIT
-  remote: https://github.com/pasosdeJesus/sip.git
-  revision: 751012a3f07ea740c986ba9542036f5e857b25b6
+  remote: https://github.com/vtamara/chosen-rails.git
+  revision: 48c457fc9ef1c4c573b4dcdb9dc07034b46ed6b4
+  branch: several-fixes
+  specs:
+    chosen-rails (1.8.7)
+      coffee-rails (>= 3.2)
+      railties (>= 3.0)
+      sass-rails (>= 3.2)
+
+GIT
+  remote: https://github.com/vtamara/cocoon.git
+  revision: 088c8d9dcce7f51cf3a968398047eaac7a37718b
+  branch: new_id_with_ajax
+  specs:
+    cocoon (1.2.11)
+
+PATH
+  remote: ../sip
   specs:
     sip (2.0.b6)
       bootstrap-datepicker-rails
@@ -19,23 +35,6 @@ GIT
       twitter-bootstrap-rails
       twitter_cldr
       will_paginate
-
-GIT
-  remote: https://github.com/vtamara/chosen-rails.git
-  revision: 48c457fc9ef1c4c573b4dcdb9dc07034b46ed6b4
-  branch: several-fixes
-  specs:
-    chosen-rails (1.8.7)
-      coffee-rails (>= 3.2)
-      railties (>= 3.0)
-      sass-rails (>= 3.2)
-
-GIT
-  remote: https://github.com/vtamara/cocoon.git
-  revision: 088c8d9dcce7f51cf3a968398047eaac7a37718b
-  branch: new_id_with_ajax
-  specs:
-    cocoon (1.2.11)
 
 PATH
   remote: .
@@ -106,6 +105,7 @@ GEM
     bootstrap-datepicker-rails (1.8.0.1)
       railties (>= 3.0)
     builder (3.2.3)
+    byebug (11.0.1)
     camertron-eprun (1.1.1)
     cancancan (3.0.1)
     cldr-plurals-runtime-rb (1.0.1)
@@ -218,7 +218,7 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
-    redcarpet (3.4.0)
+    redcarpet (3.5.0)
     responders (3.0.0)
       actionpack (>= 5.0)
       railties (>= 5.0)
@@ -281,6 +281,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-datepicker-rails
+  byebug
   cancancan
   chosen-rails!
   cocoon!

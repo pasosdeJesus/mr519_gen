@@ -444,12 +444,12 @@ ALTER SEQUENCE public.mr519_gen_campo_id_seq OWNED BY public.mr519_gen_campo.id;
 
 CREATE TABLE public.mr519_gen_encuestapersona (
     id bigint NOT NULL,
-    persona_id integer NOT NULL,
+    persona_id integer,
     formulario_id integer,
     fecha date,
     fechainicio date NOT NULL,
     fechafin date,
-    condensandourl character varying,
+    adurl character varying(32),
     respuestafor_id integer
 );
 
@@ -1943,6 +1943,13 @@ ALTER TABLE ONLY public.usuario
 --
 
 CREATE INDEX index_heb412_gen_doc_on_tdoc_type_and_tdoc_id ON public.heb412_gen_doc USING btree (tdoc_type, tdoc_id);
+
+
+--
+-- Name: index_mr519_gen_encuestapersona_on_adurl; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE UNIQUE INDEX index_mr519_gen_encuestapersona_on_adurl ON public.mr519_gen_encuestapersona USING btree (adurl);
 
 
 --

@@ -12,10 +12,14 @@
         <% end %>
       <% end %>
     <% end %>
-    <%= drop_down "Encuestas a usuarios respondidas/pendientes" do %>
-      <%= menu_item "Listado", mr519_gen.encuestasusuario_path %>
+    <%= drop_down "Encuestas respondidas/pendientes" do %>
+      <%= menu_item "Listado a usuario", mr519_gen.encuestasusuario_path %>
       <% if can? :manage, Mr519Gen::Encuestausuario %>
-        <%= menu_item "Nueva", mr519_gen.new_encuestausuario_path %>
+        <%= menu_item "Nueva a usuario", mr519_gen.new_encuestausuario_path %>
+      <% end %>
+      <%= menu_item "Listado a personas", mr519_gen.encuestaspersona_path %>
+      <% if can? :manage, Mr519Gen::Encuestapersona %>
+        <%= menu_item "Nueva a persona", mr519_gen.new_encuestapersona_path %>
       <% end %>
     <% end %>
   <% end %>

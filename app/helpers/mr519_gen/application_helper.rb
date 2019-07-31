@@ -18,8 +18,8 @@ module Mr519Gen
                       ['Entero', ENTERO],
                       ['Fecha', FECHA],
                       ['Flotante', FLOTANTE],
-                      ['Pregunta abierta', TEXTO],  
-                      ['Pregunta abierta larga', TEXTOLARGO],
+                      ['Respuesta abierta', TEXTO],  
+                      ['Respuesta abierta larga', TEXTOLARGO],
                       ['Presentar texto', PRESENTATEXTO],
                       ['Selección Múltiple', SELECCIONMULTIPLE],
                       ['Selección Simple', SELECCIONSIMPLE]
