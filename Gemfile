@@ -15,8 +15,8 @@ gemspec
 gem 'webpacker'
 
 # Motor Sip
-#gem 'sip', git: "https://github.com/pasosdeJesus/sip.git"
-gem 'sip', path: '../sip'
+gem 'sip', git: "https://github.com/pasosdeJesus/sip.git"
+#gem 'sip', path: '../sip'
 
 # Descripciones en heb412_gen
 gem 'redcarpet'
@@ -79,6 +79,6 @@ gem "turbolinks"
 
 group :development, :test do
   # Depurar
-  gem 'byebug'
+  #gem 'byebug'
 end
 

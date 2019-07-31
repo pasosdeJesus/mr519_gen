@@ -32,13 +32,14 @@ module Mr519Gen
             r = [ :id ]
             if can?(:manage, Mr519Gen::Encuestapersona)
               r << :persona
+              r << :formulariodec
+              r << :fechaini_localizada
+              r << :fechafin_localizada
+              r << :fechacambio_localizada
+              r << :adurl
             end
-            r += [ :formulariodec,
-                   :fechaini_localizada, 
-                   :fechacambio_localizada, 
-                   :fechainicio_localizada, 
-                   :fechafin_localizada,
-                   :valorcampo
+            r += [
+                   :respuestafor
             ]
           end
 
@@ -90,6 +91,18 @@ module Mr519Gen
           def edit
             edit_mr519_gen
             render layout: 'application'
+          end
+
+          def externa
+            adurl = params[:adurl]
+            if Mr519Gen::Encuestapersona.where(adurl: adurl).count != 1
+              raise CanCan::AccessDenied.new("Not authorized!", :read, 
+                                            Mr519Gen::Encuestapersona)
+            end
+            @registro = Mr519Gen::Encuestapersona.where(adurl: adurl).take
+            ::Mr519Gen::ApplicationHelper::asegura_camposdinamicos(@registro)
+            @registro.save!(validate: false)
+            render action: 'edit', layout: 'application'
           end
 
           def update
@@ -162,12 +175,15 @@ module Mr519Gen
             if l.index(:formulariodec)
               l[l.index(:formulariodec)] = :formulario_id
             end
-            l += [ :valorcampo_attributes => [
+            l += [ respuestafor_attributes: [
               :id,
-              :campo_id,
-              :valor,
-              :valor_ids => []
-            ] ]
+              valorcampo_attributes: [
+                :valor,
+                :campo_id,
+                :id 
+              ] + 
+              [:valor_ids => []]
+            ]]
             return l
           end
 

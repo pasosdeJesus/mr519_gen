@@ -15,6 +15,7 @@
 #   inflect.acronym 'RESTful'
 # end
 ActiveSupport::Inflector.inflections do |inflect|
+  inflect.irregular 'encuestapersona', 'encuestaspersona'
   inflect.irregular 'encuestausuario', 'encuestasusuario'
   inflect.irregular 'encuestapersona', 'encuestaspersona'
   inflect.irregular 'opcioncs', 'opcionescs'
