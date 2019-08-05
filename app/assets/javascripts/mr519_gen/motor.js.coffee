@@ -19,6 +19,11 @@
       $(this).parent().parent().parent().find('.espopciones').show()
     else
       $(this).parent().parent().parent().find('.espopciones').hide()
+    if $(this).find('option:selected').length > 0 && ($(this).find('option:selected').text() == 'Selección Múltiple con Tabla Básica' || $(this).find('option:selected').text() == 'Selección Simple con Tabla Básica')
+      $(this).parent().parent().parent().find('.tablabasica').show()
+    else
+      $(this).parent().parent().parent().find('.tablabasica').hide()
+
   )
 
   $(document).on('change', '#formulario_nombre', (event) ->

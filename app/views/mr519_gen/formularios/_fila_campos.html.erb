@@ -52,7 +52,7 @@
     <% ntablas = {} %>
     <% tablasor = Sip::ModeloHelper.lista_tablas_basicas(current_ability, ntablas) %>
     <% ntablas = ntablas.map {|k,v| [k, v.delete_prefix('admin/')]}.to_h %>
-    <% byebug %>
+    <% #byebug %>
     <div class="tablabasica" style="<%= clasetb %>">
       <%= f.input :tablabasica, 
         collection: ntablas.sort.to_h,
