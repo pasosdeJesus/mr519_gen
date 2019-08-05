@@ -64,16 +64,12 @@ mr519_gen_prepara_eventos_comunes(root);
 
 Para un nuevo tipo de campo.
 
-Agregarlo a app/helpers/mr519_gen/application_helper.rb tanto constante como en
-arreglo TIPOS_CAMPO
-
-Si la especificación del campo requiere información adicional modificar
-app/views/mr519_gen/formularios/_campo_campos.html.erb (eventualmente junto
-con el controlador app/controllers/mr519_gen/formularios_controller.rb)
-
-Agregar como lo verá quien llene la encuesta en app/views/mr519_gen/formularios/_campodinamico.html.erb . Para almacenar la información la tabla
-mr519_gen_valorcampo tiene 2 campos: valor (cadena de 5000) y valorjson (campo
+1. Agreguelo en `app/helpers/mr519_gen/application_helper.rb` como una constante (sin repetir número) y la constante agregela al arreglo `TIPOS_CAMPO`
+2. Si la especificación del campo requiere información adicional modificar
+`app/views/mr519_gen/formularios/_campo_campos.html.erb` (eventualmente junto
+con el controlador `app/controllers/mr519_gen/formularios_controller.rb`)
+3. Agregar como lo verá quien llene la encuesta en `app/views/mr519_gen/formularios/_campodinamico.html.erb`. Para almacenar la información la tabla `mr519_gen_valorcampo` tiene 2 campos: `valor` (cadena de 5000) y `valorjson` (campo
 json).  
-Puede usar un atributo virtual (como valor_ids) que convierta el parámetro 
+4. Puede usar un atributo virtual (como valor_ids) que convierta el parámetro 
 que produzca el campo al valor por guardar en la base de datos.
 
