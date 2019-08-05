@@ -12,6 +12,8 @@ module Mr519Gen
     SELECCIONSIMPLE = 11
     FECHA = 12
     PRESENTATEXTO = 13
+    SMTABLABASICA =14  
+    SSTABLABASICA =15
 
     TIPOS_CAMPO = [ 
                       ['Booleano', BOOLEANO],
@@ -22,7 +24,9 @@ module Mr519Gen
                       ['Respuesta abierta larga', TEXTOLARGO],
                       ['Presentar texto', PRESENTATEXTO],
                       ['Selección Múltiple', SELECCIONMULTIPLE],
-                      ['Selección Simple', SELECCIONSIMPLE]
+                      ['Selección Múltiple con Tabla Básica', SMTABLABASICA],
+                      ['Selección Simple', SELECCIONSIMPLE],
+                      ['Selección Simple con Tabla Básica', SSTABLABASICA ]
     ]
 
     # La misma constante debe estar en app/javascript/motor.coffee

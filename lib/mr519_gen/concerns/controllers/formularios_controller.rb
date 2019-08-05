@@ -87,6 +87,7 @@ module Mr519Gen
                 :nombreinterno,
                 :obligatorio,
                 :tipo,
+                :tablabasica,
                 :_destroy,
                 :opcioncs_attributes => [
                   :id,
