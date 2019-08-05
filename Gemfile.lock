@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: 7fbbe904a5bcd7344e0ed26c35de43fe94f2915e
+  revision: eb3780e5f4ef811a2e10b3c7cde03458c636c8f3
   specs:
     sip (2.0.b6)
       bootstrap-datepicker-rails
@@ -203,7 +203,7 @@ GEM
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
-    rails-html-sanitizer (1.0.4)
+    rails-html-sanitizer (1.1.0)
       loofah (~> 2.2, >= 2.2.2)
     rails-i18n (5.1.3)
       i18n (>= 0.7, < 2)
