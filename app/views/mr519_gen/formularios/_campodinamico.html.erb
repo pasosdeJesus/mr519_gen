@@ -73,20 +73,23 @@
     class: 'chosen-select',
     multiple: true })
   %>
-  <% tb = current_ability.tablasbasicas.select {|l| l[1] == tablabasica.singularize } %>
-  <% if tb.count != 1 %>
-    Problema con tablabasica <%= tablabasica %> porque hay <%= tb.count %>
+  <% if tablabasica.nil? %>
+    Problema tablabasica es nil
   <% else %>
-    <% cla = Ability::tb_clase(tb[0]) %>
-    <% col = Sip::ModeloHelper.opciones_tabla_basica(cla, v, :valor_ids) %>
-    <%= v.input :valor_ids,
-      collection: col,
-      label: etiqueta, 
-      label_method: :nombre,
-      input_html: ihtml
-    %>
+    <% tb = current_ability.tablasbasicas.select {|l| l[1] == tablabasica.singularize } %>
+    <% if tb.count != 1 %>
+      Problema con tablabasica <%= tablabasica %> porque hay <%= tb.count %>
+    <% else %>
+      <% cla = Ability::tb_clase(tb[0]) %>
+      <% col = Sip::ModeloHelper.opciones_tabla_basica(cla, v, :valor_ids) %>
+      <%= v.input :valor_ids,
+        collection: col,
+        label: etiqueta, 
+        label_method: :nombre,
+        input_html: ihtml
+      %>
+    <% end %>
   <% end %>
-
 <% when Mr519Gen::ApplicationHelper::SSTABLABASICA %>
   <% ihtml.merge!({
     class: 'chosen-select' }) 
