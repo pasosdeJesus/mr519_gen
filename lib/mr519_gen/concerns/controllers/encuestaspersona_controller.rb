@@ -61,20 +61,15 @@ module Mr519Gen
             return c
           end
 
-          def modelos_path(registros)
-            byebug
-          end
-
           # GET /encuestaspersona/new
           def new
             @registro = @encuestapersona = Encuestapersona.new
             @registro.respuestafor = Respuestafor.new
-            @registro.respuestafor.fechaini = Date.today
+            @registro.respuestafor.fechainicio = Date.today
             @registro.respuestafor.fechacambio = Date.today
             @registro.persona = Sip::Persona.all.take
-            byebug
             #@registro.regenerate_adurl
-            @registro.fechainicio = Date.today
+            @registro.fecha = Date.today
             @registro.save!(validate: false)
             redirect_to mr519_gen.edit_encuestapersona_path(@registro)
           end
@@ -102,13 +97,25 @@ module Mr519Gen
             @registro = Mr519Gen::Encuestapersona.where(adurl: adurl).take
             ::Mr519Gen::ApplicationHelper::asegura_camposdinamicos(@registro)
             @registro.save!(validate: false)
-            render action: 'edit', layout: 'application'
+            render action: 'externa'#, layout: 'nil
           end
 
           def update
             params[:encuestapersona][:fechacambio_localizada] = 
               Sip::FormatoFechaHelper::fecha_estandar_local(Date.today)
-            update_gen
+            @encuestapersona = @registro = Mr519Gen::Encuestapersona.find(params[:id])
+            authorize! :update, @registro
+            if @registro.update(encuestapersona_params) 
+              if current_usuario.nil? || URI(request.referer).path.
+                starts_with?('/encuestaexterna/')
+                render action: 'gracias'
+              else
+                redirect_to modelo_path(@registro), 
+                  notice: 'Encuesta actualizada'
+              end  
+            else
+              render action: 'edit'#, layout: 'application'
+            end
           end
 
           def resultados
