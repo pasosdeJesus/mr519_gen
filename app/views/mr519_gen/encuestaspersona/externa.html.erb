@@ -1,0 +1,22 @@
+<%= simple_form_for @registro, 
+    url: modelo_path(@registro),
+    defaults: { input_html: { class: 'span10' } } do |f| 
+%>
+  <%= render partial: 'sip/hogar/errores', locals: { f: f } %> 
+  
+  <%= render partial: 'externa_intro', locals: { f: f } %> 
+  
+  <%= render partial: 'mr519_gen/encuestaspersona/campo_respuestafor', 
+    locals: { f: f } %> 
+ 
+  <div class="form-actions">
+    <%= f.button :submit, (f.object.new_record? ? 'Responder' : 
+                           'Actualizar Repuesta'), 
+      :class => 'btn-primary' 
+    %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+      modelos_path(@registro), :class => 'btn' 
+    %>
+  </div>
+  
+<% end %>

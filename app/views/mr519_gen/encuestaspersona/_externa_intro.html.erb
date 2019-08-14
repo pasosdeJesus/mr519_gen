@@ -1,0 +1,14 @@
+<h1><%= @registro.respuestafor.formulario.nombre %></h1>
+<p>
+  Encuesta para <%= @registro.persona.presenta_nombre %>
+</p>
+<p>
+  Por responder entre el <%= @registro.fechainicio_localizada %> y el
+  <%= @registro.fechafin_localizada %>
+</p>
+<p>
+  <% if @registro.respuestafor.fechacambio %>
+    Última edición el <%= @registro.respuestafor.fechacambio_localizada %>
+  <% end %>
+</p>
+
