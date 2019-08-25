@@ -64,8 +64,9 @@ module Mr519Gen
           # GET /encuestaspersona/new
           def new
             @registro = @encuestapersona = Encuestapersona.new
+            @registro.fechainicio = Date.today
             @registro.respuestafor = Respuestafor.new
-            @registro.respuestafor.fechainicio = Date.today
+            @registro.respuestafor.fechaini = Date.today
             @registro.respuestafor.fechacambio = Date.today
             @registro.persona = Sip::Persona.all.take
             #@registro.regenerate_adurl
