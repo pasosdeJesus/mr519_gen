@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: da30d95754e5abdbdce55682eba3651541c83a20
+  revision: 2c8b16f4de350d7eb948cef827e58d91cda4fd07
   specs:
     sip (2.0.b6)
       bootstrap-datepicker-rails
@@ -270,7 +270,7 @@ GEM
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.4)
     will_paginate (3.1.8)
-    zeitwerk (2.1.9)
+    zeitwerk (2.1.10)
 
 PLATFORMS
   ruby
