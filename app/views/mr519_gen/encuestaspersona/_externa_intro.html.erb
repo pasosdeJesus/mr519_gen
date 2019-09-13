@@ -1,11 +1,18 @@
-<% byebug %>
-<h1><%= @registro.respuestafor.formulario.nombre %></h1>
+<% if @registro.respuestafor && @registro.respuestafor.formulario %>
+  <h1><%= @registro.respuestafor.formulario.nombre %></h1>
+<% else %>
+  <h1>
+    Error con encuesta <%= @registro.id %>: 
+    falta formulario en respuestafor
+  </h1>
+<% end %>
 <p>
   Encuesta para <%= @registro.persona.presenta_nombre %>
 </p>
 <p>
-  Por responder entre el <%= @registro.fechainicio_localizada %> y el
-  <%= @registro.fechafin_localizada %>
+  Por responder entre el 
+  <%= @registro.planencuesta.fechaini_localizada %> 
+  y el <%= @registro.planencuesta.fechafin_localizada %>
 </p>
 <p>
   <% if @registro.respuestafor.fechacambio %>
