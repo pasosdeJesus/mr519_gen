@@ -2,17 +2,27 @@
   <h1><%= @registro.respuestafor.formulario.nombre %></h1>
 <% else %>
   <h1>
-    Error con encuesta <%= @registro.id %>: 
+    Error con aplicación de encuesta <%= @registro.id %>: 
     falta formulario en respuestafor
   </h1>
 <% end %>
 <p>
-  Encuesta para <%= @registro.persona.presenta_nombre %>
+  <% if @registro.persona %>
+    Encuesta para <%= @registro.persona.presenta_nombre %>
+  <% else %>
+    Error con aplicación de encuesta <%= @registro.id %>: 
+    no tiene persona
+  <% end %>
 </p>
 <p>
-  Por responder entre el 
-  <%= @registro.planencuesta.fechaini_localizada %> 
-  y el <%= @registro.planencuesta.fechafin_localizada %>
+  <% if @registro.planencuesta %>
+    Por responder entre el 
+    <%= @registro.planencuesta.fechaini_localizada %> 
+    y el <%= @registro.planencuesta.fechafin_localizada %>
+  <% else %>
+    Error con aplicación de encuesta <%= @registro.id %>: 
+    no tiene planencuesta
+  <% end %>
 </p>
 <p>
   <% if @registro.respuestafor.fechacambio %>
