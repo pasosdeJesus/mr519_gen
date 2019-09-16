@@ -44,6 +44,11 @@ module Mr519Gen
               r += valor.to_i == 0 ? "NO" : "SI"
             elsif campo.tipo == Mr519Gen::ApplicationHelper::SELECCIONMULTIPLE
               r += valorjson.to_s
+            elsif campo.tipo == Mr519Gen::ApplicationHelper::SELECCIONSIMPLE
+              op = Mr519Gen::Opcioncs.where(id: valor.to_i)
+              if op.count == 1
+                r += op.take.nombre
+              end
             end
             r
           end
