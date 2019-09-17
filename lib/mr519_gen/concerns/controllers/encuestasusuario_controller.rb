@@ -76,7 +76,8 @@ module Mr519Gen
           def edit_mr519_gen
             @registro = Mr519Gen::Encuestausuario.find(params[:id])
             authorize! :edit, @registro
-            ::Mr519Gen::ApplicationHelper::asegura_camposdinamicos(@registro)
+            ::Mr519Gen::ApplicationHelper::asegura_camposdinamicos(
+              @registro, current_usuario.id)
             @registro.save!(validate: false)
           end
 

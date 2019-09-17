@@ -32,7 +32,7 @@ module Mr519Gen
     # La misma constante debe estar en app/javascript/motor.coffee
     LONG_NOMBREINTERNO=60
 
-    def asegura_camposdinamicos(modeloconrf)
+    def asegura_camposdinamicos(modeloconrf, current_usuario_id)
       if modeloconrf.nil? || modeloconrf.respuestafor.nil? ||
           modeloconrf.respuestafor.formulario.nil? 
         return
