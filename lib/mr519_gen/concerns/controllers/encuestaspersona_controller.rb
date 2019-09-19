@@ -76,13 +76,15 @@ module Mr519Gen
           end
 
           def self.asegura_camposdinamicos(encuesta, current_usuario_id)
-            if (!encuesta.respuestafor_id) 
+            if !encuesta.respuestafor_id
               encuesta.respuestafor = Mr519Gen::Respuestafor.create(
                 formulario_id = encuesta.planencuesta.formulario_id,
                 fechaini = Date.today,
                 fechacambio = Date.today
               )
-            elsif (!encuesta.respuestafor.formulario_id) 
+            elsif !encuesta.respuestafor.formulario_id && 
+                   encuesta.planencuesta && 
+                   encuesta.planencuesta.formulario_id
               encuesta.respuestafor.formulario_id = 
                 encuesta.planencuesta.formulario_id
               encuesta.save!(validate: false)
