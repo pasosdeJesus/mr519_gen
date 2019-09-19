@@ -116,7 +116,7 @@ module Mr519Gen
             @registro = Mr519Gen::Encuestapersona.where(adurl: adurl).
               take
             self.class.asegura_camposdinamicos(
-              @registro, current_usuario.id)
+              @registro, current_usuario ? current_usuario.id : nil)
             render action: 'externa'#, layout: 'nil
           end
 
