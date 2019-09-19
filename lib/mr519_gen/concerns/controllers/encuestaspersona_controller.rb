@@ -75,13 +75,28 @@ module Mr519Gen
             redirect_to mr519_gen.edit_encuestapersona_path(@registro)
           end
 
+          def self.asegura_camposdinamicos(encuesta, current_usuario_id)
+            if (!encuesta.respuestafor_id) 
+              encuesta.respuestafor = Mr519Gen::Respuestafor.create(
+                formulario_id = encuesta.planencuesta.formulario_id,
+                fechaini = Date.today,
+                fechacambio = Date.today
+              )
+            elsif (!encuesta.respuestafor.formulario_id) 
+              encuesta.respuestafor.formulario_id = 
+                encuesta.planencuesta.formulario_id
+              encuesta.save!(validate: false)
+            end
+            ::Mr519Gen::ApplicationHelper::asegura_camposdinamicos(
+              encuesta, current_usuario_id)
+            encuesta.save!(validate: false)
+          end
 
           def edit_mr519_gen
             @registro = Mr519Gen::Encuestapersona.find(params[:id])
             authorize! :edit, @registro
-            ::Mr519Gen::ApplicationHelper::asegura_camposdinamicos(
+            self.class.asegura_camposdinamicos(
               @registro, current_usuario.id)
-            @registro.save!(validate: false)
           end
 
           # GET /encuestaspersona/1/edit
@@ -96,9 +111,10 @@ module Mr519Gen
               raise CanCan::AccessDenied.new("Not authorized!", :read, 
                                             Mr519Gen::Encuestapersona)
             end
-            @registro = Mr519Gen::Encuestapersona.where(adurl: adurl).take
-            ::Mr519Gen::ApplicationHelper::asegura_camposdinamicos(@registro)
-            @registro.save!(validate: false)
+            @registro = Mr519Gen::Encuestapersona.where(adurl: adurl).
+              take
+            self.class.asegura_camposdinamicos(
+              @registro, current_usuario.id)
             render action: 'externa'#, layout: 'nil
           end
 

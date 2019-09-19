@@ -1,5 +1,5 @@
 <% if can?(:edit, registro) %>
-  <%= link_to t('.responder', :default => t("helpers.links.responer")),
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
     edit_modelo_path(registro), :class => 'btn btn-xs' %>
 <% end %>
 <%= render partial: 'index_mas_acciones', locals: {f: f, registro: registro} %>
