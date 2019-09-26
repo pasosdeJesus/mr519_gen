@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: b13d46332450b91e48725a6ee85fcb296f33f20e
+  revision: 021f4ae51ce33b62cf2c58374100a9a64c39030e
   specs:
     sip (2.0.b6)
       bootstrap-datepicker-rails
@@ -129,7 +129,7 @@ GEM
       warden (~> 1.2.3)
     devise-i18n (1.8.2)
       devise (>= 4.6)
-    erubi (1.8.0)
+    erubi (1.9.0)
     execjs (2.7.0)
     ffi (1.11.1)
     font-awesome-rails (4.7.0.5)
