@@ -17,7 +17,8 @@
         </thead>
         <tbody id="campos">
           <% if f.object.campo.count > 0 %>
-            <%= f.simple_fields_for :campo, f.object.campo.order(:id) do |o| %>
+            <%= f.simple_fields_for :campo, f.object.campo.
+              order(:fila, :columna, :id) do |o| %>
               <%= render 'fila_campos', f:  o %>
             <% end %>
          <% end %>

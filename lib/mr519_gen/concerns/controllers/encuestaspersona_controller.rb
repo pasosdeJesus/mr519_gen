@@ -63,6 +63,7 @@ module Mr519Gen
 
           # GET /encuestaspersona/new
           def new
+            authorize! :manage, Mr519Gen::Encuestapersona
             @registro = @encuestapersona = Encuestapersona.new
             @registro.fechainicio = Date.today
             @registro.respuestafor = Respuestafor.new
@@ -117,7 +118,7 @@ module Mr519Gen
               take
             self.class.asegura_camposdinamicos(
               @registro, current_usuario ? current_usuario.id : nil)
-            render action: 'externa'#, layout: 'nil
+            render action: 'externa', layout: 'externo'
           end
 
           def update
@@ -128,7 +129,7 @@ module Mr519Gen
             if @registro.update(encuestapersona_params) 
               if current_usuario.nil? || URI(request.referer).path.
                 starts_with?('/encuestaexterna/')
-                render action: 'gracias'
+                render action: 'gracias', layout: 'externo'
               else
                 redirect_to modelo_path(@registro), 
                   notice: 'Encuesta actualizada'
@@ -139,6 +140,7 @@ module Mr519Gen
           end
 
           def resultados
+            authorize! :manage, Mr519Gen::Encuestapersona
             if !params || !params[:formulario_id]
               render inline: 'Falta parámetro formulario_id'
               return
@@ -184,7 +186,14 @@ module Mr519Gen
             end
             render 'resultados', layot: 'application'
           end 
-          
+
+          def show
+            if can? :read, Mr519Gen::Encuestapersona
+              render action: :show, layout: 'application'
+            else
+              redirect_to main_app.root_path
+            end
+          end
 
           private
 
