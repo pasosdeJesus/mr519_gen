@@ -5,6 +5,10 @@ rvm:
 
 addons:
         postgresql: "10"
+apt:
+        packages:
+                - postgresql-10
+                - postgresql-client-10
 
 notifications:
         email: false
