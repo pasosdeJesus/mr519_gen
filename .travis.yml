@@ -27,7 +27,7 @@ before_install:
         - sudo /etc/init.d/postgresql stop
         - sudo /etc/init.d/postgresql start 10
         - cd test/dummy
-        - psql -c 'CREATE DATABASE mr519gen_pru;' -U postgres   
+        - psql -h 127.0.0.1 -c 'CREATE DATABASE mr519gen_pru;' -U postgres   
         - gem install bundler
         - gem update --system
         - bundle update --bundler
