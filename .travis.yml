@@ -17,7 +17,7 @@ env:
         global:
                 - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
                 - CC_TEST_REPORTER_ID=4f2fd215528f279ecf795d2fefdcfd7d7c97aa4e07edc6210f2edccd1cd4bbf4
-                - PGPORT=5433
+                - PGPORT=5432
 
 before_install: 
         - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
