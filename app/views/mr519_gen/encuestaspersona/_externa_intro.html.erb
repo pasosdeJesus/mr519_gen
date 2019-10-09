@@ -24,6 +24,11 @@
     no tiene planencuesta
   <% end %>
 </p>
+<% if current_usuario  && can?(:read, @registro) %>
+  <p>
+    Encuesta enviada el <%= @registro.fechainv %> a <%= @registro.destcorreoinv %> con confirmación <%= @registro.evidenciacorreoinv %>
+  </p>
+<% end %>
 <p>
   <% if @registro.respuestafor.fechacambio %>
     Última edición el <%= @registro.respuestafor.fechacambio_localizada %>
