@@ -26,7 +26,11 @@
 </p>
 <% if current_usuario  && can?(:read, @registro) %>
   <p>
+  <% if @registro.fechainv %>
     Encuesta enviada el <%= @registro.fechainv %> a <%= @registro.destcorreoinv %> con confirmación <%= @registro.evidenciacorreoinv %>
+  <% else %>
+    Encuesta no enviada por correo 
+  <% end %>
   </p>
 <% end %>
 <p>
