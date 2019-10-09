@@ -1,2 +1,4 @@
-<% e = encuestaexterna_url(@registro.adurl) %>
-<%= link_to e, e %>
+<% if @registro && @registro.adurl %>
+  <% e = encuestaexterna_url(@registro.adurl) %>
+  <%= link_to e, e %>
+<% end %>
