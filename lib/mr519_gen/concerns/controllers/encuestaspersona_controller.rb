@@ -79,9 +79,9 @@ module Mr519Gen
           def self.asegura_camposdinamicos(encuesta, current_usuario_id)
             if !encuesta.respuestafor_id
               encuesta.respuestafor = Mr519Gen::Respuestafor.create(
-                formulario_id = encuesta.planencuesta.formulario_id,
-                fechaini = Date.today,
-                fechacambio = Date.today
+                {formulario_id: encuesta.planencuesta.formulario_id,
+                fechaini: Date.today,
+                fechacambio: Date.today}
               )
             elsif !encuesta.respuestafor.formulario_id && 
                    encuesta.planencuesta && 
@@ -124,13 +124,16 @@ module Mr519Gen
           def update
             params[:encuestapersona][:fechacambio_localizada] = 
               Sip::FormatoFechaHelper::fecha_estandar_local(Date.today)
-            @encuestapersona = @registro = Mr519Gen::Encuestapersona.find(params[:id])
-            authorize! :update, @registro
+            @encuestapersona = @registro = 
+              Mr519Gen::Encuestapersona.find(params[:id])
             if @registro.update(encuestapersona_params) 
               if current_usuario.nil? || URI(request.referer).path.
                 starts_with?('/encuestaexterna/')
                 render action: 'gracias', layout: 'externo'
               else
+                # Con usuarios autenticados si verificamos posibilidad
+                # de actualizar
+                authorize! :update, @registro
                 redirect_to modelo_path(@registro), 
                   notice: 'Encuesta actualizada'
               end  
