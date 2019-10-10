@@ -9,6 +9,8 @@
   <%= render partial: 'mr519_gen/encuestaspersona/campo_respuestafor', 
     locals: { f: f } %> 
  
+  <%= render partial: 'externa_post', locals: { f: f } %> 
+
   <div class="form-actions">
     <%= f.button :submit, (f.object.new_record? ? 'Responder' : 
                            'Actualizar Repuesta'), 

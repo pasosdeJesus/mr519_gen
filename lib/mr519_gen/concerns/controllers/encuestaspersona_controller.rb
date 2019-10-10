@@ -57,7 +57,7 @@ module Mr519Gen
           end
 
           def index_reordenar(c)
-            c = c.reorder('mr519_gen_encuestapersona.fecha DESC')
+            c = c.reorder('mr519_gen_encuestapersona.fecha DESC') if c
             return c
           end
 
@@ -203,7 +203,7 @@ module Mr519Gen
             )
           end
 
-          def lista_params
+          def lista_params_mr519_gen
             l = atributos_form
             if l.index(:persona)
               l[l.index(:persona)] = :persona_id
@@ -221,6 +221,10 @@ module Mr519Gen
               [:valor_ids => []]
             ]]
             return l
+          end
+
+          def lista_params
+            lista_params_mr519_gen
           end
 
           # Lista blanca de parametros
