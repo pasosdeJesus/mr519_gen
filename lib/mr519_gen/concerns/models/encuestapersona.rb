@@ -149,8 +149,8 @@ module  Mr519Gen
               'mr519_gen_respuestafor.fechaini <= ?', f)
           }
 
-          scope :filtro_persona, lambda { |p|
-            where("unaccent(nombre) ILIKE '%' || unaccent(?) || '%'", p)
+          scope :filtro_persona, lambda { |idp|
+            where(persona_id: idp)
           }
  
 #          scope :filtro_usuario, lambda { |uid|
