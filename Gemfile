@@ -5,7 +5,7 @@ gemspec
 
 
 
-gem 'bootstrap-datepicker-rails' # Control para elegir fechas
+#gem 'bootstrap-datepicker-rails' # Control para elegir fechas
 
 gem 'cancancan'                   # Control de acceso
 
@@ -35,16 +35,14 @@ gem 'redcarpet' # Descripciones en heb412_gen
 gem 'simple_form'   # Formularios
 
 # Motor Sip
-gem 'sip', git: "https://github.com/pasosdeJesus/sip.git"
-#gem 'sip', path: '../sip'
+gem 'sip', git: "https://github.com/pasosdeJesus/sip.git", branch: :bs4
+#gem 'sip', path: '../sip-bs4'
 
 gem 'tiny-color-rails'
 
 gem "turbolinks" # Seguir enlaces más rápido. 
 
 gem 'twitter_cldr'               # Localiación e internacionalización
-
-gem 'twitter-bootstrap-rails'    # Entorno CSS Bootstrap
 
 gem 'will_paginate'               # Pagina listados
 
