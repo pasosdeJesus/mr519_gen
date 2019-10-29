@@ -34,10 +34,6 @@ gem 'redcarpet' # Descripciones en heb412_gen
 
 gem 'simple_form'   # Formularios
 
-# Motor Sip
-gem 'sip', git: "https://github.com/pasosdeJesus/sip.git", branch: :bs4
-#gem 'sip', path: '../sip-bs4'
-
 gem 'tiny-color-rails'
 
 gem "turbolinks" # Seguir enlaces más rápido. 
@@ -47,6 +43,15 @@ gem 'twitter_cldr'               # Localiación e internacionalización
 gem 'will_paginate'               # Pagina listados
 
 gem 'webpacker'
+
+
+#####
+# Motores que se sobrecargan vistas (deben ponerse en orden de apilamiento 
+# lógico y no alfabetico como las gemas anteriores) 
+
+gem 'sip', # Motor generico
+  git: 'https://github.com/pasosdeJesus/sip.git'
+#gem 'sip', path: '../sip'
 
 
 group :development, :test do
