@@ -39,14 +39,14 @@ gem 'webpacker'
 # Motores que se sobrecargan vistas (deben ponerse en orden de apilamiento 
 # lógico y no alfabetico como las gemas anteriores) 
 
-#gem 'sip', # Motor generico
-#  git: 'https://github.com/pasosdeJesus/sip.git', branch: :bs4
-gem 'sip', path: '../sip'
+gem 'sip', # Motor generico
+  git: 'https://github.com/pasosdeJesus/sip.git', branch: :bs4
+#  path: '../sip'
 
 
 group :development, :test do
   # Depurar
-  gem 'byebug'
+  #gem 'byebug'
 
   gem 'colorize'
 end

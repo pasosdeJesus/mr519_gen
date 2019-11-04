@@ -1,6 +1,5 @@
 module Mr519Gen
   module ApplicationHelper
-    include ::FontAwesome::Rails::IconHelper
     include Sip::PaginacionAjaxHelper
 
     TEXTO = 1

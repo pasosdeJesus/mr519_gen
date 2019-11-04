@@ -5,24 +5,24 @@
 <% content_for :menu do %>
   <%= grupo_menus do %>
     <% if can? :manage, Mr519Gen::Formulario %>
-      <%= drop_down "Formularios" do %>
-        <%= menu_item "Listado", mr519_gen.formularios_path, false %> 
+      <%= despliega_abajo "Formularios" do %>
+        <%= opcion_menu "Listado", mr519_gen.formularios_path, false %> 
         <% if can? :new, Mr519Gen::Formulario %>  
-          <%= menu_item "Nuevo", mr519_gen.new_formulario_path, false %> 
+          <%= opcion_menu "Nuevo", mr519_gen.new_formulario_path, false %> 
         <% end %>   
       <% end %>   
     <% end %>
-    <%= drop_down "Encuestas respondidas/pendientes" do %>
-      <%= menu_item "Listado a usuario", mr519_gen.encuestasusuario_path,
+    <%= despliega_abajo "Encuestas respondidas/pendientes" do %>
+      <%= opcion_menu "Listado a usuario", mr519_gen.encuestasusuario_path,
         false %>
       <% if can? :manage, Mr519Gen::Encuestausuario %> 
-        <%= menu_item "Nueva a usuario", mr519_gen.new_encuestausuario_path,
+        <%= opcion_menu "Nueva a usuario", mr519_gen.new_encuestausuario_path,
           false%>
       <% end %>
-      <%= menu_item "Listado a personas", mr519_gen.encuestaspersona_path,
+      <%= opcion_menu "Listado a personas", mr519_gen.encuestaspersona_path,
         false %> 
       <% if can? :manage, Mr519Gen::Encuestapersona %>
-        <%= menu_item "Nueva a persona", 
+        <%= opcion_menu "Nueva a persona", 
           mr519_gen.new_encuestapersona_path, false %>
       <% end %> 
     <% end %> 
@@ -44,14 +44,14 @@
         <% if can? :manage, :tablasbasicas %>
           <%= opcion_menu 'Tablas básicas', sip.tablasbasicas_path, false %>
         <% end %>
-        <%= opcion_menu 'Ayuda CA', sip.ayuda_controldeacceso_path, false %>
+        <%= opcion_menu 'Ayuda CA', sip.ayuda_controldeacceso_path %>
         <%= opcion_menu "Salir #{current_usuario.nusuario}", 
-          main_app.sign_out_path, false %>
+          main_app.sign_out_path %>
       <% end %>
     <% else %>
-      <%= opcion_menu 'Ayuda CA', sip.ayuda_controldeacceso_path, false %>
+      <%= opcion_menu 'Ayuda CA', sip.ayuda_controldeacceso_path %>
       <%= opcion_menu 'Iniciar Sesión', 
-        main_app.new_usuario_session_path, false %>
+        main_app.new_usuario_session_path %>
     <% end %>
   <% end %>
 <% end %>
