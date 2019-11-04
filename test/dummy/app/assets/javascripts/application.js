@@ -10,7 +10,7 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require rails-ujs
+//= rails-ujs
 //= require activestorage
 //= require mr519_gen/application
 //= require_tree .

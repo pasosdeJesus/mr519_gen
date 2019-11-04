@@ -3,50 +3,57 @@
 <% end %>
 
 <% content_for :menu do %>
-  <ul class="navbar-nav mr-auto navbar-right">
-    <%= link_to 'Documentación',
-      "https://github.com/pasosdeJesus/sip/wiki",
-      class: 'dropdown-item' %>
-    <% if current_usuario %>
-      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Administrar</a>
-      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <%= link_to 'Clave',
-          main_app.editar_registro_usuario_path,
-          class: 'dropdown-item' %>
+  <%= grupo_menus do %>
+    <% if can? :manage, Mr519Gen::Formulario %>
+      <%= drop_down "Formularios" do %>
+        <%= menu_item "Listado", mr519_gen.formularios_path, false %> 
+        <% if can? :new, Mr519Gen::Formulario %>  
+          <%= menu_item "Nuevo", mr519_gen.new_formulario_path, false %> 
+        <% end %>   
+      <% end %>   
+    <% end %>
+    <%= drop_down "Encuestas respondidas/pendientes" do %>
+      <%= menu_item "Listado a usuario", mr519_gen.encuestasusuario_path,
+        false %>
+      <% if can? :manage, Mr519Gen::Encuestausuario %> 
+        <%= menu_item "Nueva a usuario", mr519_gen.new_encuestausuario_path,
+          false%>
+      <% end %>
+      <%= menu_item "Listado a personas", mr519_gen.encuestaspersona_path,
+        false %> 
+      <% if can? :manage, Mr519Gen::Encuestapersona %>
+        <%= menu_item "Nueva a persona", 
+          mr519_gen.new_encuestapersona_path, false %>
+      <% end %> 
+    <% end %> 
+  <% end %>
+  <%= grupo_menus empuja: :derecha do %>
+    <%= opcion_menu 'Documentación', 
+      'https://github.com/pasosdeJesus/sip/wiki' %>
+    <% if !current_usuario.nil? %>
+      <%= despliega_abajo 'Administrar' do %>
+        <%= opcion_menu 'Clave', main_app.editar_registro_usuario_path, 
+          false %>
         <% if can? :manage, Sip::Respaldo7z %>
-          <%= link_to 'Copia de respaldo cifrada', 
-            sip.respaldo7z_path, 
-            class: 'dropdown-item' %>
+          <%= opcion_menu 'Copia de respaldo cifrada', 
+            sip.respaldo7z_path, false %>
         <% end %>
         <% if can? :manage, ::Usuario %>
-          <%= link_to 'Usuarios', 
-            main_app.usuarios_path,
-            class: 'dropdown-item' %>
+          <%= opcion_menu 'Usuarios', main_app.usuarios_path, false %>
         <% end %>
         <% if can? :manage, :tablasbasicas %>
-          <%= link_to 'Tablas Básicas', 
-            sip.tablasbasicas_path,
-            class: 'dropdown-item' %>
+          <%= opcion_menu 'Tablas básicas', sip.tablasbasicas_path, false %>
         <% end %>
-        <%= link_to 'Tablas Básicas', 
-          sip.tablasbasicas_path,
-          class: 'dropdown-item' %>
-        <%= link_to 'Ayuda CA', 
-          sip.ayuda_controldeacceso_path,
-          class: 'dropdown-item' %>
-        <%= link_to "Salir #{current_usuario.nusuario}", 
-          main_app.sign_out_path,
-          class: 'dropdown-item' %>
-      </div>
+        <%= opcion_menu 'Ayuda CA', sip.ayuda_controldeacceso_path, false %>
+        <%= opcion_menu "Salir #{current_usuario.nusuario}", 
+          main_app.sign_out_path, false %>
+      <% end %>
     <% else %>
-      <%= link_to 'Acerca de', 
-        sip.acercade_path,
-        class: 'dropdown-item' %>
-      <%= link_to 'Iniciar Sesión', 
-        main_app.new_usuario_session_path,
-        class: 'dropdown-item' %>
+      <%= opcion_menu 'Ayuda CA', sip.ayuda_controldeacceso_path, false %>
+      <%= opcion_menu 'Iniciar Sesión', 
+        main_app.new_usuario_session_path, false %>
     <% end %>
-  </ul>
+  <% end %>
 <% end %>
 
 <% content_for :piedepagina do %>

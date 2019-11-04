@@ -27,3 +27,4 @@ herram/
 
 .byebug_history
 coverage
+test/dummy/public/mr519/

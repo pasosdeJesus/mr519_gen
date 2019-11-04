@@ -15,17 +15,13 @@
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-console.log('Hello World from Webpacker')
+console.log('Hola mundo desde Webpacker')
 
-var $ = require("jquery"); 
+require("@rails/ujs").start()
+require("turbolinks").start()
+
+import {$, jQuery} from "jquery";
+
 import "popper.js"
 import "bootstrap"
-import "bootstrap/js/dist/dropdown"
-
-//require("@rails/ujs").start()
-//require("turbolinks").start()
-//require("@rails/activestorage").start()
-//require("channels")
-
-import "bootstrap"
-import "../stylesheets/application"
+import "chosen-js/chosen.jquery"

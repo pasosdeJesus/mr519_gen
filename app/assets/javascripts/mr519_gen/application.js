@@ -14,12 +14,12 @@
 //= require mr519_gen/motor
 //= require_tree .
 
-$(document).on('turbolinks:load ready page:load', function() {
-	var root;
-  	root = typeof exports !== "undefined" && exports !== null ? 
-	  exports : window;
-	sip_prepara_eventos_comunes(root);
-	mr519_gen_prepara_eventos_comunes(root);
+document.addEventListener('turbolinks:load', function() {
+  var root;
+  root = typeof exports !== "undefined" && exports !== null ? 
+    exports : window;
+  sip_prepara_eventos_comunes(root);
+  mr519_gen_prepara_eventos_comunes(root);
 });
 
 
