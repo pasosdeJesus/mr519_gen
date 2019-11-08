@@ -14,3 +14,35 @@
 //= require activestorage
 //= require mr519_gen/application
 //= require_tree .
+
+$(function () {
+  $('.grid-stack').gridstack({
+    resizable: {
+              handles: 'e, w'
+          }
+  });
+  var self = this;
+  this.grid = $('.grid-stack').data('gridstack');
+  $('.grid-stack').on('added', function(event, items) {
+    // add anijs data to gridstack item
+    for (var i = 0; i < items.length; i++) {
+      $(items[i].el[0]).attr('data-anijs', 'if: added, do: swing animated, after: $removeAnimations, on: $gridstack');
+    }
+    AniJS.run();
+    self.gridstackNotifier = AniJS.getNotifier('gridstack');
+    // fire added event!
+    self.gridstackNotifier.dispatchEvent('added');
+  });
+  $('#add-widget').click(function() {
+    addNewWidget();
+  });
+  function addNewWidget() {
+    var grid = $('.grid-stack').data('gridstack');
+    grid.addWidget($('<div><div class="grid-stack-item-content"></div></div>'), 0, 0, Math.floor(1 + 3 * Math.random()),1, true);
+  }
+  var animationHelper = AniJS.getHelper();
+  //Defining removeAnimations to remove existing animations
+  animationHelper.removeAnimations = function(e, animationContext){
+    $('.grid-stack-item').attr('data-anijs', '');
+  };
+});
