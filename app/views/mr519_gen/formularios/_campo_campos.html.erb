@@ -1,8 +1,14 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.0/jquery-ui.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.0/lodash.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gridstack.js/0.4.0/gridstack.all.js"></script>
 <%= f.input :id, as: :hidden %>
 <div class="panel panel-default">
   <div class="panel-heading">Campos en formulario</div>
+  <h4>Tu Formulario</h4>
+   <br/>
+  <div class="grid-stack">
+  </div>
   <div class="panel-body">
-
     <div class="div-campos">
       <table border=1 width="100%">
         <thead>
@@ -36,3 +42,5 @@
     </div> <!-- .div-campos -->
   </div><!-- panel-body -->
 </div><!-- panel -->
+<%= stylesheet_link_tag "grillaForm" %>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/AniJS/0.9.3/anijs-min.js"></script>
