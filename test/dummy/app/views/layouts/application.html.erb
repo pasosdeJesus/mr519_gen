@@ -6,24 +6,26 @@
   <%= grupo_menus do %>
     <% if can? :manage, Mr519Gen::Formulario %>
       <%= despliega_abajo "Formularios" do %>
-        <%= opcion_menu "Listado", mr519_gen.formularios_path, false %> 
+        <%= opcion_menu "Listado", mr519_gen.formularios_path, 
+          desplegable: true %> 
         <% if can? :new, Mr519Gen::Formulario %>  
-          <%= opcion_menu "Nuevo", mr519_gen.new_formulario_path, false %> 
+          <%= opcion_menu "Nuevo", mr519_gen.new_formulario_path, 
+            desplegable: true %> 
         <% end %>   
       <% end %>   
     <% end %>
     <%= despliega_abajo "Encuestas respondidas/pendientes" do %>
       <%= opcion_menu "Listado a usuario", mr519_gen.encuestasusuario_path,
-        false %>
+        desplegable: true %>
       <% if can? :manage, Mr519Gen::Encuestausuario %> 
         <%= opcion_menu "Nueva a usuario", mr519_gen.new_encuestausuario_path,
-          false%>
+          desplegable: true%>
       <% end %>
       <%= opcion_menu "Listado a personas", mr519_gen.encuestaspersona_path,
-        false %> 
+        desplegable: true %> 
       <% if can? :manage, Mr519Gen::Encuestapersona %>
         <%= opcion_menu "Nueva a persona", 
-          mr519_gen.new_encuestapersona_path, false %>
+          mr519_gen.new_encuestapersona_path, desplegable: true %>
       <% end %> 
     <% end %> 
   <% end %>
@@ -33,21 +35,24 @@
     <% if !current_usuario.nil? %>
       <%= despliega_abajo 'Administrar' do %>
         <%= opcion_menu 'Clave', main_app.editar_registro_usuario_path, 
-          false %>
+          desplegable: true %>
         <% if can? :manage, Sip::Respaldo7z %>
           <%= opcion_menu 'Copia de respaldo cifrada', 
-            sip.respaldo7z_path, false %>
+            sip.respaldo7z_path, desplegable: true %>
         <% end %>
         <% if can? :manage, ::Usuario %>
-          <%= opcion_menu 'Usuarios', main_app.usuarios_path, false %>
+          <%= opcion_menu 'Usuarios', main_app.usuarios_path, 
+            desplegable: true %>
         <% end %>
         <% if can? :manage, :tablasbasicas %>
-          <%= opcion_menu 'Tablas básicas', sip.tablasbasicas_path, false %>
+          <%= opcion_menu 'Tablas básicas', sip.tablasbasicas_path, 
+            desplegable: true %>
         <% end %>
-        <%= opcion_menu 'Ayuda CA', sip.ayuda_controldeacceso_path %>
-        <%= opcion_menu "Salir #{current_usuario.nusuario}", 
-          main_app.sign_out_path %>
+        <%= opcion_menu 'Ayuda CA', sip.ayuda_controldeacceso_path, 
+          desplegable: true %>
       <% end %>
+      <%= opcion_menu "Salir #{current_usuario.nusuario}", 
+          main_app.sign_out_path %>
     <% else %>
       <%= opcion_menu 'Ayuda CA', sip.ayuda_controldeacceso_path %>
       <%= opcion_menu 'Iniciar Sesión', 

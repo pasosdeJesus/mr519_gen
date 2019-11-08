@@ -3,8 +3,6 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 gemspec
 
-gem 'bootstrap-datepicker-rails' # Control para elegir fechas
-
 gem 'cancancan'                   # Control de acceso
 
 gem "cocoon", git: "https://github.com/vtamara/cocoon.git", 
@@ -14,19 +12,15 @@ gem 'devise'   # Autenticación
 
 gem 'devise-i18n'                
 
-gem 'jquery-ui-rails'            
-
 gem 'paperclip'                   # Anexos
 
-gem 'pick-a-color-rails'
+gem 'rails'                 
 
 gem 'rails-i18n'                 
 
 gem 'redcarpet' # Descripciones en heb412_gen
 
 gem 'simple_form'   # Formularios
-
-gem 'tiny-color-rails'
 
 gem 'twitter_cldr'               # Localiación e internacionalización
 

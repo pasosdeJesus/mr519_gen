@@ -3,7 +3,6 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 #//= require sip/motor
-#//= require jquery-ui/widgets/autocomplete
 #//= require cocoon
 
 @mr519_gen_nombre_a_nombreinterno = (nombre) ->
