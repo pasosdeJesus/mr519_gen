@@ -21,5 +21,3 @@ document.addEventListener('turbolinks:load', function() {
   sip_prepara_eventos_comunes(root);
   mr519_gen_prepara_eventos_comunes(root);
 });
-
-
