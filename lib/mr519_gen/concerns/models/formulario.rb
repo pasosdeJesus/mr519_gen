@@ -13,11 +13,11 @@ module Mr519Gen
           # Evita que rails la suponga en plural
           self.table_name = 'mr519_gen_formulario'
 
-          has_many :campo,
+          has_many :campos,
             class_name: "Mr519Gen::Campo",
             foreign_key: "formulario_id", validate: true,
             dependent: :destroy
-          accepts_nested_attributes_for :campo,
+          accepts_nested_attributes_for :campos,
             allow_destroy: true, reject_if: :all_blank
 
           has_many :respuestafor,
@@ -44,4 +44,3 @@ module Mr519Gen
     end
   end
 end
-
