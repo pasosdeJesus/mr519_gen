@@ -1,5 +1,3 @@
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.0/knockout-min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.0/jquery-ui.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.0/lodash.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gridstack.js/0.4.0/gridstack.all.js"></script>
@@ -24,16 +22,16 @@
           </tr>
         </thead>
         <tbody id="campos">
-          <% if f.object.campo.count > 0 %>
-            <%= f.simple_fields_for :campo, f.object.campo.
+          <% if f.object.campos.count > 0 %>
+            <%= f.simple_fields_for :campos, f.object.campos.
               order(:fila, :columna, :id) do |o| %>
-              <%= render 'fila_campos', f:  o %>
+                <%= render 'fila_campos', f:  o %>
             <% end %>
          <% end %>
         </tbody>
       </table>
       <div class="links">
-        <%= link_to_add_association 'Agregar campo', f, :campo, {
+        <%= link_to_add_association 'Agregar campo', f, :campos, {
           :"data-association-insertion-node" => "tbody#campos", 
           :"data-association-insertion-method" => "append", 
           partial: 'fila_campos',
@@ -41,6 +39,7 @@
           "data-bind": "click: addNewWidget",
           "data-ajax" => mr519_gen.new_campo_path,
           "data-ajaxdata" => "formulario_id" } %>
+        <a class='btn-primary' id='obtendatos'>Obtener datos</a>
       </div> <!-- links -->
     </div> <!-- .div-campos -->
   </div><!-- panel-body -->
@@ -48,39 +47,41 @@
 <%= stylesheet_link_tag "grillaForm" %>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/AniJS/0.9.3/anijs-min.js"></script>
   <script type="text/javascript">
-ko.components.register('dashboard-grid', {
-  viewModel: {
-    createViewModel: function (controller, componentInfo) {
-      var ViewModel = function (controller, componentInfo) {
-        var grid = null;
-        this.widgets = controller.widgets;
-        this.afterAddWidget = function (items) {
-          if (grid == null) {
-            grid = $(componentInfo.element).find('.grid-stack').gridstack({
-              auto: false
-            }).data('gridstack');
-          }
-          var item = items.find(function (i) { return i.nodeType == 1 });
-          grid.addWidget(item);
-          ko.utils.domNodeDisposal.addDisposeCallback(item, function () {
-            grid.removeWidget(item);
-          });
+  <% f.object = Mr519Gen::Campo.new() if !f.object %>    
+  ko.components.register('dashboard-grid', {
+    viewModel: {
+      createViewModel: function (controller, componentInfo) {
+        var ViewModel = function (controller, componentInfo) {
+          var grid = null;
+          this.widgets = controller.widgets;
+          this.afterAddWidget = function (items) {
+            if (grid == null) {
+              grid = $(componentInfo.element).find('.grid-stack').gridstack({
+                auto: false,
+                resizable: { handles: 'e, w'}
+              }).data('gridstack');
+            }
+            var item = items.find(function (i) { return i.nodeType == 1 });
+            grid.addWidget(item);
+            ko.utils.domNodeDisposal.addDisposeCallback(item, function () {
+              grid.removeWidget(item);
+            });
+          };
         };
-      };
-      return new ViewModel(controller, componentInfo);
-    }
-  },
-  template:
-  [
-    '<div class="grid-stack" data-bind="foreach: {data: widgets, afterRender: afterAddWidget}">',
-    '   <div class="grid-stack-item" data-bind="attr: {\'data-gs-x\': $data.x, \'data-gs-y\': $data.y, \'data-gs-width\': $data.width, \'data-gs-height\': $data.height, \'data-gs-auto-position\': $data.auto_position}">',
-    '       <div class="grid-stack-item-content"><center><button data-bind="click: $root.deleteWidget">Delete me</button><br></center><br><p>Campo N° </p></div>',
-    '   </div>',
-    '</div> '
-  ].join('')
-});
+        return new ViewModel(controller, componentInfo);
+      }
+    },
+    template:
+    [
+      '<div class="grid-stack" data-bind="foreach: {data: widgets, afterRender: afterAddWidget}">',
+      '   <div class="grid-stack-item" data-bind="attr: {\'data-gs-x\': $data.x, \'data-gs-y\': $data.y, \'data-gs-width\': $data.width, \'data-gs-height\': $data.height,\'data-gs-min-width\': $data.minWidth, \'data-gs-auto-position\': $data.auto_position}">',
+      '       <div class="grid-stack-item-content"><center><button data-bind="click: $root.deleteWidget">Delete me</button><br></center></div>',
+      '   </div>',
+      '</div> '
+    ].join('')
+  });
 $(function () {
-    var Controller = function (widgets) {
+  var Controller = function (widgets) {
     var self = this;
     this.widgets = ko.observableArray(widgets);
     this.addNewWidget = function () {
@@ -89,6 +90,7 @@ $(function () {
         y: 0,
         width: Math.floor(1 + 3 * Math.random()),
         height: 1,
+        minWidth: 2,
         auto_position: true,
       });
       return false;
@@ -101,5 +103,18 @@ $(function () {
   var widgets = [];
   var controller = new Controller(widgets);
   ko.applyBindings(controller);
+  $('#obtendatos').click(function(){
+    var serializedData = $('.grid-stack > .grid-stack-item:visible').map(function (i, el) {
+      el = $(el);
+      var node = el.data('_gridstack_node');
+      return {
+        x: node.x,
+        y: node.y,
+        width: node.width,
+        height: node.height
+      };
+    }).toArray();
+    console.log(serializedData);
+  });
 });
   </script>
