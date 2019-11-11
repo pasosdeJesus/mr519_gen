@@ -12,5 +12,6 @@
 //
 //= rails-ujs
 //= require activestorage
+//= require knockout
 //= require mr519_gen/application
 //= require_tree .

@@ -77,7 +77,7 @@ module Mr519Gen
           def mr519_gen_params
             atributos_form + 
             [ 
-              :campo_attributes => [
+              :campos_attributes => [
                 :ancho,
                 :ayudauso,
                 :columna,
