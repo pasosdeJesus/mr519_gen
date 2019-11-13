@@ -69,10 +69,9 @@
     <%= f.input :ancho, label: false %>
   </td>
   <td>
-    <%= f.input :id, as: :hidden %>
+    <%= f.input :id%>
     <%= link_to_remove_association "Eliminar", f, 
       :class => 'btn-danger', "data-existing" => true %>
     <div><%= f.error_notification %></div>
   </td>
 </tr>
-

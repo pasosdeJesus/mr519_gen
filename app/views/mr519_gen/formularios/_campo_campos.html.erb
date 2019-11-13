@@ -103,6 +103,7 @@ $(function () {
   var widgets = [];
   var controller = new Controller(widgets);
   ko.applyBindings(controller);
+
   $('#obtendatos').click(function(){
     var serializedData = $('.grid-stack > .grid-stack-item:visible').map(function (i, el) {
       el = $(el);
@@ -117,4 +118,5 @@ $(function () {
     console.log(serializedData);
   });
 });
-  </script>
+
+</script>
