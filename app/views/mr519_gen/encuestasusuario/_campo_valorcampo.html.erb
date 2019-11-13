@@ -24,7 +24,7 @@
     <% cl = '' %>
     <% columna = campo.columna || 1 %>
     <% ancho = campo.ancho || 12 %>
-    <% cl += " col-md-offset-#{columna - proxcol}" %>
+    <% cl += " offset-md-#{columna - proxcol}" %>
     <% cl += " col-md-#{ancho}" %>
     <% proxcol = columna + ancho %>
     <div class="<%= cl %>">
