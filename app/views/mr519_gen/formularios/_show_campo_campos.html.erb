@@ -1,8 +1,8 @@
 <%=  
-  if @registro.campos
+  if @registro.campo
     r = ""
     num = 1
-    @registro.campos.each do |x|
+    @registro.campo.each do |x|
       r += "(#{num}) #{x.nombre} : 
       #{Sip::ModeloHelper.etiqueta_coleccion(
       Mr519Gen::ApplicationHelper::TIPOS_CAMPO, x.tipo)}
