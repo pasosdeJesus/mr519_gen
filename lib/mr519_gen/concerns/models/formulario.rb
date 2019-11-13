@@ -44,4 +44,3 @@ module Mr519Gen
     end
   end
 end
-

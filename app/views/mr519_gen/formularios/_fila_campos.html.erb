@@ -1,4 +1,4 @@
-<% f.object = Mr519Gen::Campo.new() if !f.object  %>
+<% f.object = Mr519Gen::Campo.new() if !f.object %>
 <tr class='nested-fields'>
   <td>
     <%= f.input :nombre, 
@@ -68,10 +68,9 @@
     <%= f.input :ancho, label: false %>
   </td>
   <td>
-    <%= f.input :id, as: :hidden %>
+    <%= f.input :id%>
     <%= link_to_remove_association "Eliminar", f, 
       :class => 'btn-danger', "data-existing" => true %>
     <div><%= f.error_notification %></div>
   </td>
 </tr>
-

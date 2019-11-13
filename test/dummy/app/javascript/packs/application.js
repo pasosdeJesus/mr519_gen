@@ -27,7 +27,10 @@ import "bootstrap"
 import "chosen-js/chosen.jquery"
 import 'bootstrap-datepicker'
 import 'bootstrap-datepicker/dist/locales/bootstrap-datepicker.es.min.js'
+import 'knockout'
 import 'jquery-ui'
 import 'pick-a-color'
 import tinycolor from 'tinycolor2'
-
+import 'jquery-ui/ui/widgets/autocomplete'
+import 'gridstack/dist/gridstack'
+import 'gridstack/dist/gridstack.all'
