@@ -22,8 +22,8 @@
           </tr>
         </thead>
         <tbody id="campos">
-          <% if f.object.campos.count > 0 %>
-            <%= f.simple_fields_for :campos, f.object.campos.
+          <% if f.object.campo.count > 0 %>
+            <%= f.simple_fields_for :campo, f.object.campos.
               order(:fila, :columna, :id) do |o| %>
                 <%= render 'fila_campos', f:  o %>
             <% end %>
@@ -31,7 +31,7 @@
         </tbody>
       </table>
       <div class="links">
-        <%= link_to_add_association 'Agregar campo', f, :campos, {
+        <%= link_to_add_association 'Agregar campo', f, :campo, {
           :"data-association-insertion-node" => "tbody#campos", 
           :"data-association-insertion-method" => "append", 
           partial: 'fila_campos',
