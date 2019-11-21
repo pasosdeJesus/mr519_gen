@@ -34,7 +34,7 @@ gem 'webpacker'
 # lógico y no alfabetico como las gemas anteriores) 
 
 gem 'sip', # Motor generico
-  git: 'https://github.com/pasosdeJesus/sip.git', branch: :bs4
+  git: 'https://github.com/pasosdeJesus/sip.git'
 #  path: '../sip'
 
 
