@@ -23,7 +23,7 @@
         </thead>
         <tbody id="campos">
           <% if f.object.campo.count > 0 %>
-            <%= f.simple_fields_for :campo, f.object.campos.
+            <%= f.simple_fields_for :campo, f.object.campo.
               order(:fila, :columna, :id) do |o| %>
                 <%= render 'fila_campos', f:  o %>
             <% end %>
@@ -80,6 +80,7 @@
       '</div> '
     ].join('')
   });
+
 $(function () {
   var Controller = function (widgets) {
     var self = this;
@@ -118,5 +119,4 @@ $(function () {
     console.log(serializedData);
   });
 });
-
 </script>
