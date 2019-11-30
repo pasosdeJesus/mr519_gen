@@ -64,14 +64,15 @@
     <%= f.input :obligatorio, label: false %>
   </td>
   <td>
-    <%= f.input :fila, label: false %>
-    <%= f.input :columna, label: false %>
-    <%= f.input :ancho, label: false %>
+    <%= f.input :fila, input_html: { 'data-bind': 'x' }, label: false %>
+    <%= f.input :columna, input_html: { 'data-bind': 'y' }, label: false %>
+    <%= f.input :ancho, input_html: { 'data-bind': 'ancho' }, label: false %>
   </td>
   <td>
-    <%= f.input :id%>
-    <%= link_to_remove_association "Eliminar", f, 
-      :class => 'btn-danger', "data-existing" => true %>
+    <%= f.input :id, label: false%>
+    <%= link_to_remove_association 'Eliminar', f, 
+      :class => 'btn-danger eliminaCampos',
+      "data-existing" => true %>
     <div><%= f.error_notification %></div>
   </td>
 </tr>
