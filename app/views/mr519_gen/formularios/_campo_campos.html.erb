@@ -47,6 +47,8 @@
 <%= stylesheet_link_tag "grillaForm" %>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/AniJS/0.9.3/anijs-min.js"></script>
   <script type="text/javascript">
+
+
   <% f.object = Mr519Gen::Campo.new() if !f.object %>    
   ko.components.register('dashboard-grid', {
     viewModel: {
@@ -74,7 +76,7 @@
     template:
     [
       '<div class="grid-stack" data-bind="foreach: {data: widgets, afterRender: afterAddWidget}">',
-      '   <div class="grid-stack-item" data-bind="attr: {\'data-gs-x\': $data.x, \'data-gs-y\': $data.y, \'data-gs-width\': $data.width, \'data-gs-height\': $data.height,\'data-gs-min-width\': $data.minWidth, \'data-gs-auto-position\': $data.auto_position}">',
+      '   <div class="grid-stack-item" data-bind="attr: {\'data-gs-x\': $data.x, \'data-gs-y\': $data.y, \'data-gs-width\': $data.width, \'data-gs-height\': $data.height,\'data-gs-min-width\': $data.minWidth, \'data-gs-auto-position\': $data.auto_position, \'data-gs-id\': $data.id}">',
       '       <div class="grid-stack-item-content"><center><button data-bind="click: $root.deleteWidget">Delete me</button><br></center></div>',
       '   </div>',
       '</div> '
@@ -93,30 +95,88 @@ $(function () {
         height: 1,
         minWidth: 2,
         auto_position: true,
+        id: 0
       });
       return false;
     };
+
+    $('#campos').on('cocoon:before-remove', function(e, campo){
+      var enlacesEliminar = $("[class=eliminaCampos]")
+    });
     this.deleteWidget = function (item) {
       self.widgets.remove(item);
       return false;
     };
   };
+  $('#campos').on('cocoon:after-insert', function(e, campo){
+    var bloques = $("[data-gs-id=0]");
+    var itemid = bloques.attr('data-gs-id');
+    if (itemid == 0) {
+      var ultimafila = e.target.lastElementChild;
+      var ultimacolumna = ultimafila.lastElementChild;
+      var elementoid = ultimacolumna.firstElementChild;
+      var elid = elementoid.firstElementChild;
+      bloques.attr('data-gs-id', elid.value);
+      var coordenadas = obteneruna(elid.value);
+      console.log(coordenadas);
+
+      var camposfila = $("[data-bind='x']");
+      var valorbindf = camposfila.attr('data-bind');
+      var camposcol = $("[data-bind='y']");
+      var valorbindc = camposcol.attr('data-bind');
+      var camposancho = $("[data-bind='ancho']");
+      var valorbinda = camposancho.attr('data-bind');
+      if (valorbindf == 'x' && valorbindc == 'y' && valorbinda == 'ancho' ){
+        valorbindf = 'x'+ elid.value;
+        camposfila.attr('data-bind', valorbindf)
+        valorbindc = 'y'+ elid.value;
+        camposcol.attr('data-bind', valorbindc)
+        valorbinda = 'ancho'+ elid.value;
+        camposancho.attr('data-bind', valorbinda)
+      
+      var coor = {
+        ['x'+ elid.value] : coordenadas.x,
+        ['y'+ elid.value] : coordenadas.y,
+        ['ancho'+ elid.value] : coordenadas.width,
+      };
+      console.log(coor);
+      $.bindings(coor);
+    }
+    }
+  });
   var widgets = [];
   var controller = new Controller(widgets);
   ko.applyBindings(controller);
 
   $('#obtendatos').click(function(){
+    obtenerCoor(); 
+  });
+
+  function obteneruna(identificador){
+    var serializado = $('[data-gs-id='+identificador+']');
+    var item = serializado.data('_gridstack_node');
+    return {
+      x: item.x + 1,
+      y: item.y + 1,
+      width: item.width
+    };
+  };
+
+  function  obtenerCoor(){
     var serializedData = $('.grid-stack > .grid-stack-item:visible').map(function (i, el) {
       el = $(el);
       var node = el.data('_gridstack_node');
+      console.log(node);
       return {
         x: node.x,
         y: node.y,
         width: node.width,
-        height: node.height
+        height: node.height,
+        id: node.id
       };
     }).toArray();
     console.log(serializedData);
-  });
+  };
+
 });
 </script>
