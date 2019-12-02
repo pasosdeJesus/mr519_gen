@@ -8,6 +8,7 @@ environment.plugins.prepend(
          $: 'jquery',
           jQuery: 'jquery',
           jquery: 'jquery',
+          'window.jQuery':'jquery',
           Popper: ['popper.js', 'default'],
           tinycolor: 'tinycolor2'
         })
@@ -22,4 +23,8 @@ environment.loaders.append('expose', {
                 ]
 })
 
+environment.resolve = {'alias': {
+                'jquery-ui': 'jquery-ui/ui'
+            }
+}
 module.exports = environment
