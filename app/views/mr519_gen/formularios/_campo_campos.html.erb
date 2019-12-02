@@ -9,6 +9,7 @@
   <div onmouseup="actualizaBloque(event)", data-bind ="component: {name: 'dashboard-grid', params: $data}">
   </div>
   <br/>
+
   <div class="panel-body">
     <div class="div-campos">
       <table border=1 width="100%">
@@ -24,9 +25,9 @@
         </thead>
         <tbody id="campos">
           <% if f.object.campo.count > 0 %>
-            <%= f.simple_fields_for :campo, f.object.campo.
+            <%= f.simple_fields_for :campo, f.object.campos.
               order(:fila, :columna, :id) do |o| %>
-              <%= render 'fila_campos', f:  o %>
+                <%= render 'fila_campos', f:  o %>
             <% end %>
           <% end %>
         </tbody>
@@ -47,6 +48,7 @@
 <%= stylesheet_link_tag "grillaForm" %>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/AniJS/0.9.3/anijs-min.js"></script>
 <script type="text/javascript">
+
 
   <% f.object = Mr519Gen::Campo.new() if !f.object %>    
   ko.components.register('dashboard-grid', {
@@ -81,6 +83,7 @@
       '</div> '
     ].join('')
   });
+
 var coordenadas;
 function cargarCoordenadas(id, coordenada){
   $('#formulario_campo_attributes_' + id + '_fila').attr('value', coordenada.x);
@@ -131,6 +134,7 @@ function obteneruna(identificador){
     width: item.width
   };
 };
+
 $(function () {
   var Controller = function (widgets) {
     var self = this;
@@ -143,6 +147,7 @@ $(function () {
         height: 1,
         minWidth: 2,
         auto_position: true,
+
         id: 0
       });
       return false;
@@ -151,9 +156,12 @@ $(function () {
     $('#campos').on('cocoon:before-remove', function(e, campo){
       var enlacesEliminar = $("[class=eliminaCampos]")
     });
+
   };
   var widgets = [];
   var controller = new Controller(widgets);
   ko.applyBindings(controller);
+
 });
+
 </script>
