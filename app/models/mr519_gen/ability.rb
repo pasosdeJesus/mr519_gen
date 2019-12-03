@@ -1,5 +1,5 @@
 # encoding: utf-8
-module Mr519
+module Mr519Gen
   class Ability  < Sip::Ability
 
     BASICAS_PROPIAS = []
