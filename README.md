@@ -39,9 +39,11 @@ Para incluirlo en su aplicación rails que ya usa sip:
 1. Agregue las gemas necesarias en Gemfile:
 ```
 	gem 'mr519_gen', git: 'https://github.com/pasosdeJesus/mr519_gen.git'
-	gem 'font-awesome-rails'
-	gem 'chosen-rails'
-	gem 'rspreadsheet'
+```
+2. Agregue los paquetes npm típicos requeridos por sip y además:
+```
+CXX=c++ yarn add gridstack
+CXX=c++ yarn install
 ```
 
 2. Incluya el motor javascript en su app/assets/javascript/application.js
