@@ -11,7 +11,6 @@
 // about supported directives.
 //
 //= require sip/motor
-//= require gridstack/dist/gridstack.all
 //= require mr519_gen/motor
 //= require_tree .
 
@@ -21,7 +20,4 @@ document.addEventListener('turbolinks:load', function() {
     exports : window;
   sip_prepara_eventos_comunes(root);
   mr519_gen_prepara_eventos_comunes(root);
-  if  ($('.grid-stack').length > 0) {
-    mr519ef_prepara();
-  }
 });

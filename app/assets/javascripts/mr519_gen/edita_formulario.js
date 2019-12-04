@@ -1,3 +1,5 @@
+//= require gridstack/dist/gridstack.all
+
 
 // Pasa ubicaciones de elementos del formulario del
 // esquema visual al esquema texto
@@ -92,7 +94,6 @@ function mr519ef_prepara() {
     var ultimaColumna = ultimaFila.lastElementChild;
     var elementoId = ultimaColumna.firstElementChild;
     var laid = elementoId.firstElementChild.value
-    debugger
     var maxy = 0
     document.querySelectorAll('.grid-stack-item').forEach( i => {
       y = +i.getAttribute('data-gs-y')

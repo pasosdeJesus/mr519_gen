@@ -4,6 +4,7 @@
 
 #//= require sip/motor
 #//= require cocoon
+#//= require mr519_gen/edita_formulario
 
 @mr519_gen_nombre_a_nombreinterno = (nombre) ->
   ni = nombre.replace(/[^A-Za-z0-9_]/g, '_') 
@@ -41,6 +42,9 @@
     if  $('#' + idni).length == 1 && ($('#' + idni).val() == '' || $('#' + idni).val() == 'N')
       $('#' + idni).val(mr519_gen_nombre_a_nombreinterno($(this).val()))
   )
+
+  if  $('.grid-stack').length > 0
+    mr519ef_prepara();
 
   0
 	
