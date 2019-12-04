@@ -48,27 +48,6 @@ module Mr519Gen
             end
           end
 
-          validate :campos_no_se_traslapan
-          def campos_no_se_traslapan
-            if columna && ancho && columna+ancho > 13
-              errors.add(:columna,
-                         'columna + ancho debe ser inferior a 13')
-            end
-            Mr519Gen::Campo.where(formulario_id: self.formulario_id,
-                               fila: self.fila).each do |oc|
-              if oc.columna && self.columna && oc.ancho && self.ancho && 
-                oc.id != self.id &&
-                ((oc.columna <= self.columna && 
-                self.columna < oc.columna+oc.ancho) ||
-                (oc.columna < self.columna+self.ancho &&
-                  self.columna+self.ancho < oc.columna+oc.ancho))
-                errors.add(:columna,
-                           'Se traslapa con campo que comienza en ' +
-                           "columna #{oc.columna} de ancho #{oc.ancho}")
-              end
-            end
-          end
- 
         end # included
 
       end

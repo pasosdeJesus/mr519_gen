@@ -1,20 +1,20 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.0/lodash.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gridstack.js/0.4.0/gridstack.all.js"></script>
+<% f.object = Mr519Gen::Campo.new() if !f.object %>    
 <%= f.input :id, as: :hidden %>
-<div class="panel panel-default">
+<div class='panel panel-default container-fluid'>
   <br/>
-  <div class="panel-heading"><h4>Campos de tu formulario</h4></div>
+  <div class='panel-heading'><h4>Esquema visual de tu formulario</h4></div>
   <br/>
-  <div onmouseup="actualizaBloque(event)", data-bind ="component: {name: 'dashboard-grid', params: $data}">
+  <div class='grid-stack'>
   </div>
   <br/>
 
-  <div class="panel-body">
-    <div class="div-campos">
-      <table border=1 width="100%">
+  <div class='panel-heading'><h4>Esquema de tu formulario como texto</h4></div>
+  <div class='panel-body'>
+    <div class='div-campos'>
+      <table border=1 width='100%'>
         <thead>
           <tr>
-            <th width="25%">Pregunta-Texto<br> Nombre interno</th>
+            <th width='25%'>Pregunta-Texto<br> Nombre interno</th>
             <th>Tipo</th>
             <th>Ayuda en el uso<br> Opciones</th>
             <th>Obligatorio</th>
@@ -22,7 +22,7 @@
             <th>Acciones</th>
           </tr>
         </thead>
-        <tbody id="campos">
+        <tbody id='campos'>
           <% if f.object.campo.count > 0 %>
             <%= f.simple_fields_for :campo, f.object.campo.
               order(:fila, :columna, :id) do |o| %>
@@ -31,22 +31,16 @@
           <% end %>
         </tbody>
       </table>
-      <div class="links">
+      <div class='links'>
         <%= link_to_add_association 'Agregar campo', f, :campo, {
-          :"data-association-insertion-node" => "tbody#campos", 
-          :"data-association-insertion-method" => "append", 
+          :'data-association-insertion-node' => 'tbody#campos', 
+          :'data-association-insertion-method' => 'append', 
           partial: 'fila_campos',
           class: 'btn-primary',
-          "data-bind": "click: addNewWidget",
-          "data-ajax" => mr519_gen.new_campo_path,
-          "data-ajaxdata" => "formulario_id" } %>
+          'data-ajax' => mr519_gen.new_campo_path,
+          'data-ajaxdata' => 'formulario_id' } %>
     </div> <!-- links -->
     </div> <!-- .div-campos -->
   </div><!-- panel-body -->
 </div><!-- panel -->
-<%= stylesheet_link_tag "grillaForm" %>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/AniJS/0.9.3/anijs-min.js"></script>
-<% f.object = Mr519Gen::Campo.new() if !f.object %>    
-<script type="text/javascript">
-  mr519_gen_edita_formulario_registra()
-</script>
+

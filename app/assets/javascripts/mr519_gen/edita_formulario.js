@@ -1,125 +1,134 @@
-// Apoyo visual para el editor de formularios
-// Desarrollado por Luis Alejandro Cruz luisalejo@unicauca.edu.co
-// Financiado por CINEP/PPP con recursos de la Universidad de Sheffield y por JRS-LAC
-// Cedido al dominio publico de acuerdo a la legislacion colombiana
 
-var coordenadas;
+// Pasa ubicaciones de elementos del formulario del
+// esquema visual al esquema texto
+function mr519ef_visual_a_texto() {
+  document.querySelectorAll('.grid-stack-item').forEach((i) => {
+    var vx = i.getAttribute('data-gs-x');
+    var vy = i.getAttribute('data-gs-y');
+    var vwidth = i.getAttribute('data-gs-width');
+    if (!i.getAttribute('class').includes('grid-stack-placeholder')) {
+      var vid = +i.getAttribute('data-gs-id');
+      $('#formulario_campo_attributes_' + vid + '_fila').attr('value', 
+        +vy + 1);
+      $('#formulario_campo_attributes_' + vid + '_columna').attr('value', 
+        +vx + 1 );
+      $('#formulario_campo_attributes_' + vid + '_ancho').attr('value', 
+        +vwidth);
+    }
+  })
+}
+ 
+// Pasa ubicaciones de elementos del formulario del
+// esquema texto al esquema visual
+function mr519ef_texto_a_visual() {
+  document.querySelectorAll('[id^=formulario_campo_attributes_][id$=_id]').forEach((i) => {
+    if (i.parentElement.parentElement.parentElement.getAttribute('style') === null  || !i.parentElement.parentElement.parentElement.getAttribute('style').includes('display: none')) {
+      // No agrega a esquema visual los eliminados
+      let idc = i.getAttribute('id').split('_')[3]
+      let vx = +document.querySelector('#formulario_campo_attributes_' + idc + 
+        '_columna').value
+      let vy = +document.querySelector('#formulario_campo_attributes_' + idc + 
+        '_fila').value
+      let vancho = +document.querySelector('#formulario_campo_attributes_' + 
+        idc + '_ancho').value
+      let vnombre = document.querySelector('#formulario_campo_attributes_' + 
+        idc + '_nombre').value
 
-function cargarCoordenadas(id, coordenada){
-  $('#formulario_campo_attributes_' + id + '_fila').attr('value', coordenada.x);
-  $('#formulario_campo_attributes_' + id + '_columna').attr('value', coordenada.y);
-  $('#formulario_campo_attributes_' + id + '_ancho').attr('value', coordenada.width);
-};
+      document.addNewWidget({
+        x: vx > 0 ? vx - 1 : 0,
+        y: vy > 0 ? vy - 1 : 0,
+        width: vancho > 0 ? vancho : 1,
+        height: 1,
+        minWidth: 1,
+        auto_position: true,
+        id: idc,
+        contenido: vnombre ,
+      })
+    }
+  })
+}
 
-function actualizaBloque(e){
-  var bloqueClickeado;
-  if (e.srcElement){
-    tag = e.srcElement.parentElement;}
-  else if (e.target){
-    tag = e.target.parentElement;}
-  bloqueClickeado = tag.getAttribute('data-gs-id');
-  coordenadas = obteneruna(bloqueClickeado);
-  cargarCoordenadas(bloqueClickeado, coordenadas);
-};
+// Prepara esquema visual de formulario y sincronización con esquema texto
+// y configura primer esquema visual con esquema texto desplegado
+function mr519ef_prepara() {
 
-function eliminaBloque(e, idBloque){
-  if (e.srcElement){
-    tag = e.srcElement.parentElement;}
-  else if (e.target){
-    tag = e.target.parentElement;}
-  enlace = tag.firstElementChild;
-  enlaceClickeado = enlace.firstElementChild.getAttribute('value');
-  var bloqueAEliminar = $("[data-gs-id="+enlaceClickeado+"]");
-  bloqueAEliminar.remove();
-};
-
-$(document).on('cocoon:after-insert', '#campos', function(e, campo){
-  var bloques = $("[data-gs-id=0]");
-  var itemid = bloques.attr('data-gs-id');
-  if (itemid == 0) {
-    var ultimafila = e.target.lastElementChild;
-    var ultimacolumna = ultimafila.lastElementChild;
-    var elementoid = ultimacolumna.firstElementChild;
-    var elid = elementoid.firstElementChild;
-    bloques.attr('data-gs-id', elid.value);
-    coordenadas = obteneruna(elid.value);
-    cargarCoordenadas(elid.value, coordenadas);
+  var opciones = {
+    float: true,
+    auto: false,
+    resizable: { handles: 'e, w'},
   };
-});
+  if (typeof $.fn.gridstack === 'undefined') {
+    return
+  }
 
-function obteneruna(identificador) {
-  var serializado = $('[data-gs-id='+identificador+']');
-  var item = serializado.data('_gridstack_node');
-  return {
-    x: item.x + 1,
-    y: item.y + 1,
-    width: item.width
-  };
-};
+  $('.grid-stack').gridstack(opciones);
+  document.grid = $('.grid-stack').data('gridstack');
 
-// Prepara visualizacion de formulario que se edita
-function mr519_gen_edita_formulario_registra() {
-  ko.components.register('dashboard-grid', {
-    viewModel: {
-      createViewModel: function (controller, componentInfo) {
-        var ViewModel = function (controller, componentInfo) {
-          var grid = null;
-          this.widgets = controller.widgets;
-          this.afterAddWidget = function (items) {
-            if (grid == null) {
-              grid = $(componentInfo.element).find('.grid-stack').gridstack({
-                auto: false,
-                resizable: { handles: 'e, w'}
-              }).data('gridstack');
-            }
-            var item = items.find(function (i) { return i.nodeType == 1 });
-            grid.addWidget(item);
-            ko.utils.domNodeDisposal.addDisposeCallback(item, function () {
-              grid.removeWidget(item);
-            });
-          };
-        };
-        return new ViewModel(controller, componentInfo);
-      }
-    },
-    template:
-    [
-      '<div class="grid-stack" data-bind="foreach: {data: widgets, afterRender: afterAddWidget}">',
-      '   <div class="grid-stack-item" data-bind="attr: {\'data-gs-x\': $data.x, \'data-gs-y\': $data.y, \'data-gs-width\': $data.width, \'data-gs-height\': $data.height,\'data-gs-min-width\': $data.minWidth, \'data-gs-auto-position\': $data.auto_position, \'data-gs-id\': $data.id}">',
-      '       <div class="grid-stack-item-content"></div>',
-      '   </div>',
-      '</div> '
-    ].join('')
-  });
-
-
-  $(function () {
-    var Controller = function (widgets) {
-      var self = this;
-      this.widgets = ko.observableArray(widgets);
-      this.addNewWidget = function () {
-        this.widgets.push({
-          x: 0,
-          y: 0,
-          width: Math.floor(1 + 3 * Math.random()),
-          height: 1,
-          minWidth: 2,
-          auto_position: true,
-
-          id: 0
-        });
-        return false;
-      };
-
-      $(document).on('cocoon:before-remove', '#campos', function(e, campo){
-        var enlacesEliminar = $("[class=eliminaCampos]")
-      });
-
+  document.addNewWidget = function (datos = null) {
+    var node = {
+      x: 12 * Math.random(),
+      y: 5 * Math.random(),
+      width: 1 + 3 * Math.random(),
+      height: 1,
     };
-    var widgets = [];
-    var controller = new Controller(widgets);
-    ko.applyBindings(controller);
+    if (datos != null) {
+      node = {
+        x: datos.x,
+        y: datos.y,
+        width: datos.width,
+        height: 1,
+        auto_position: true,
+        id: datos.id
+      };
+    }
+    document.grid.addWidget($('<div><div class="grid-stack-item-content">' +
+      datos.contenido + '</div></div>'), node);
+    return false;
+  }.bind(document);  
 
+
+  $(document).on('cocoon:after-insert', '#campos', function(e, campo){
+    var ultimaFila = e.target.lastElementChild;
+    var ultimaColumna = ultimaFila.lastElementChild;
+    var elementoId = ultimaColumna.firstElementChild;
+    var laid = elementoId.firstElementChild.value
+    debugger
+    var maxy = 0
+    document.querySelectorAll('.grid-stack-item').forEach( i => {
+      y = +i.getAttribute('data-gs-y')
+      if (y > maxy) {
+        maxy = y
+      }
+    })
+    var node = {
+        x: 0,
+        y: maxy+1,
+        width: 12,
+        height: 1,
+        minWidth: 1,
+        auto_position: true,
+        id: laid,
+        contenido: laid
+    }
+    document.grid.addWidget($('<div><div class="grid-stack-item-content">' +
+      node.contenido + '</div></div>'), node);
   });
+
+  $(document).on('cocoon:after-remove', '#campos', function(e, campo){
+    document.grid.removeAll()
+    mr519ef_texto_a_visual()
+  })
+
+  $(document).on('change', '#campos',function(event, items) {
+    document.grid.removeAll()
+    mr519ef_texto_a_visual()
+  })
+
+  $(document).on('change', '.grid-stack',function(event, items) {
+    mr519ef_visual_a_texto()
+  })
+
+  mr519ef_texto_a_visual();
 
 }
+

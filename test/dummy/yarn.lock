@@ -999,11 +999,6 @@ amdefine@>=0.0.4:
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
   integrity sha1-SlKCrBZHKek2Gbz9OtFR+BfOkfU=
 
-anicollection@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/anicollection/-/anicollection-1.0.0.tgz#f5724dedf7adbf851ad8811fa00b88e8f33dc315"
-  integrity sha1-9XJN7fetv4Ua2IEfoAuI6PM9wxU=
-
 ansi-colors@^3.0.0:
   version "3.2.4"
   resolved "https://registry.yarnpkg.com/ansi-colors/-/ansi-colors-3.2.4.tgz#e3a3da4bfbae6c86a9c285625de124a234026fbf"
@@ -3835,11 +3830,6 @@ jest-worker@^24.9.0:
   dependencies:
     merge-stream "^2.0.0"
     supports-color "^6.1.0"
-
-jquery-bindings@^1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/jquery-bindings/-/jquery-bindings-1.1.1.tgz#f64ecc7fab0ab19fa9d132e4d6934d959fb345da"
-  integrity sha512-TVrE/EnGRAcYCkCvJ8Pay4PCVHCmR+BFuprs/t/sTcTJCzQKc6VC/eBKVShYzAh6jyH0ypxQMKFQKV0oKmSfmA==
 
 jquery-ui@^1.12.1:
   version "1.12.1"

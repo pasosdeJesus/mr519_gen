@@ -1,3 +1,7 @@
+/*
+ *= requiere gridstack/dist/gridstack.css
+ *= requiere gridstack/dist/gridstack-extra.css
+*/
 .grid-stack {
   background: lightgoldenrodyellow;
 }

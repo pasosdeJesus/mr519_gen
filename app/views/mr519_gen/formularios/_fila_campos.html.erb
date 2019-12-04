@@ -72,7 +72,6 @@
     <%= f.input :id, as: :hidden %>
     <%= link_to_remove_association 'Eliminar', f, 
       :class => 'btn-danger eliminaCampos',
-      :onmousedown => 'eliminaBloque(event)',
       "data-existing" => true %>
     <div><%= f.error_notification %></div>
   </td>
