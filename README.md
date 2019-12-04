@@ -36,17 +36,18 @@ basados en sip, ver por ejemplo:
 	https://github.com/pasosdeJesus/sal7711_gen
 
 Para incluirlo en su aplicación rails que ya usa sip:
+
 1. Agregue las gemas necesarias en Gemfile:
 ```
 	gem 'mr519_gen', git: 'https://github.com/pasosdeJesus/mr519_gen.git'
 ```
-2. Agregue los paquetes npm típicos requeridos por sip y además:
+2. Agregue los paquetes npm típicos requeridos por `sip` (ver <https://github.com/pasosdeJesus/sip/blob/master/doc/iniciar-si-usando-sip.md>) y además:
 ```
 CXX=c++ yarn add gridstack
 CXX=c++ yarn install
 ```
 
-2. Incluya el motor javascript en su app/assets/javascript/application.js
+3. Incluya el motor javascript en su app/assets/javascript/application.js
    por ejemplo después de ```//= require sip/motor``` agregue:
 ```
 //= require mr519_gen/motor
@@ -56,10 +57,10 @@ CXX=c++ yarn install
 mr519_gen_prepara_eventos_comunes(root);
 ```
 
-3. Configure su aplicación para enlazar al gestor de formularios 
+4. Configure su aplicación para enlazar al gestor de formularios 
    con rutas como mr519_gen.formularios_path 
 
-4. Configure enlaces a encuestas a usuarios por ejemplo con rutas como
+5. Configure enlaces a encuestas a usuarios por ejemplo con rutas como
    mr519_gen.encuestasusuario_path
 
 ## 3. Desarrollo
