@@ -39,7 +39,7 @@ function mr519ef_texto_a_visual() {
       document.addNewWidget({
         x: vx > 0 ? vx - 1 : 0,
         y: vy > 0 ? vy - 1 : 0,
-        width: vancho > 0 ? vancho : 1,
+        width: vancho > 0 ? vancho : 12,
         height: 1,
         minWidth: 1,
         auto_position: true,
