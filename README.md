@@ -16,7 +16,7 @@ Para ayudar a caracterizar los instrumentos para recolectar información:
 | 2. Nombre del instrumento | |
 | 3. ¿A quién va dirigido? (fuente de información) | (a) Usuarios del sistema o un grupo, (b) Beneficiarios de un proyecto, (c) Contactos con actores sociales |
 | 4. ¿Quién sistematiza? | (a) Cada usuario, (b) Un usuario, (c) Personas sin usuario y clave en sistema, (d) Beneficiarios de un proyecto con usuario y clave temporal a instrumento(s) de sistematización |
-| 5. ¿Qué sistematiza y con qué validaciones automáticas?) | |
+| 5. ¿Qué sistematiza y con qué validaciones automáticas? | |
 | 6. ¿Se recolectan datos personales? (en caso afirmativo mensaje de protección de datos personales por usar) | |
 | 7. ¿Vigencia para sistematizar? | Fecha inicio, fecha fin |
 | 8. ¿Cómo sistematiza? | (a) Ingresa al sistema y desde cierta ubicación en el mismo, (b) Recibe URL por correo, (c) |
@@ -39,9 +39,11 @@ Para incluirlo en su aplicación rails que ya usa sip:
 1. Agregue las gemas necesarias en Gemfile:
 ```
 	gem 'mr519_gen', git: 'https://github.com/pasosdeJesus/mr519_gen.git'
-	gem 'font-awesome-rails'
-	gem 'chosen-rails'
-	gem 'rspreadsheet'
+```
+2. Agregue los paquetes npm típicos requeridos por sip y además:
+```
+CXX=c++ yarn add gridstack
+CXX=c++ yarn install
 ```
 
 2. Incluya el motor javascript en su app/assets/javascript/application.js
