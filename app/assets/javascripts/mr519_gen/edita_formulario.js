@@ -24,28 +24,31 @@ function mr519ef_visual_a_texto() {
 // esquema texto al esquema visual
 function mr519ef_texto_a_visual() {
   document.querySelectorAll('[id^=formulario_campo_attributes_][id$=_id]').forEach((i) => {
+    console.log(i)
     if (i.parentElement.parentElement.parentElement.getAttribute('style') === null  || !i.parentElement.parentElement.parentElement.getAttribute('style').includes('display: none')) {
       // No agrega a esquema visual los eliminados
-      let idc = i.getAttribute('id').split('_')[3]
-      let vx = +document.querySelector('#formulario_campo_attributes_' + idc + 
-        '_columna').value
-      let vy = +document.querySelector('#formulario_campo_attributes_' + idc + 
-        '_fila').value
-      let vancho = +document.querySelector('#formulario_campo_attributes_' + 
-        idc + '_ancho').value
-      let vnombre = document.querySelector('#formulario_campo_attributes_' + 
-        idc + '_nombre').value
+      if (i.getAttribute('id').split('_')[4] == 'id'){
+        let idc = i.getAttribute('id').split('_')[3]
+        let vx = +document.querySelector('#formulario_campo_attributes_' + idc + 
+          '_columna').value
+        let vy = +document.querySelector('#formulario_campo_attributes_' + idc + 
+          '_fila').value
+        let vancho = +document.querySelector('#formulario_campo_attributes_' + 
+          idc + '_ancho').value
+        let vnombre = document.querySelector('#formulario_campo_attributes_' + 
+          idc + '_nombre').value
 
-      document.addNewWidget({
-        x: vx > 0 ? vx - 1 : 0,
-        y: vy > 0 ? vy - 1 : 0,
-        width: vancho > 0 ? vancho : 12,
-        height: 1,
-        minWidth: 1,
-        auto_position: true,
-        id: idc,
-        contenido: vnombre ,
-      })
+        document.addNewWidget({
+          x: vx > 0 ? vx - 1 : 0,
+          y: vy > 0 ? vy - 1 : 0,
+          width: vancho > 0 ? vancho : 12,
+          height: 1,
+          minWidth: 1,
+          auto_position: true,
+          id: idc,
+          contenido: vnombre ,
+        })
+      }
     }
   })
 }
@@ -126,7 +129,7 @@ function mr519ef_prepara() {
 
   $(document).on('change', '#campos',function(event, items) {
     if (event.target.id == "campos") { 
-    document.grid.removeAll()
+      document.grid.removeAll()
     mr519ef_texto_a_visual()
     }
   })
