@@ -90,39 +90,45 @@ function mr519ef_prepara() {
 
 
   $(document).on('cocoon:after-insert', '#campos', function(e, campo){
-    var ultimaFila = e.target.lastElementChild;
-    var ultimaColumna = ultimaFila.lastElementChild;
-    var elementoId = ultimaColumna.firstElementChild;
-    var laid = elementoId.firstElementChild.value
-    var maxy = 0
-    document.querySelectorAll('.grid-stack-item').forEach( i => {
-      y = +i.getAttribute('data-gs-y')
-      if (y > maxy) {
-        maxy = y
-      }
-    })
-    var node = {
+    if (e.target.id == "campos") { 
+      var ultimaFila = e.target.lastElementChild;
+      var ultimaColumna = ultimaFila.lastElementChild;
+      var elementoId = ultimaColumna.firstElementChild;
+      var laid = elementoId.firstElementChild.value
+      var maxy = 0
+      document.querySelectorAll('.grid-stack-item').forEach( i => {
+        y = +i.getAttribute('data-gs-y')
+        if (y > maxy) {
+          maxy = y
+        }
+      })
+      var node = {
         x: 0,
-        y: maxy+1,
+        y: maxy,
         width: 12,
         height: 1,
         minWidth: 1,
         auto_position: true,
         id: laid,
         contenido: laid
+      }
+      document.grid.addWidget($('<div><div class="grid-stack-item-content">' +
+        node.contenido + '</div></div>'), node);
     }
-    document.grid.addWidget($('<div><div class="grid-stack-item-content">' +
-      node.contenido + '</div></div>'), node);
   });
 
   $(document).on('cocoon:after-remove', '#campos', function(e, campo){
-    document.grid.removeAll()
-    mr519ef_texto_a_visual()
+    if (e.target.id == "campos") { 
+      document.grid.removeAll()
+      mr519ef_texto_a_visual()
+    }  
   })
 
   $(document).on('change', '#campos',function(event, items) {
+    if (event.target.id == "campos") { 
     document.grid.removeAll()
     mr519ef_texto_a_visual()
+    }
   })
 
   $(document).on('change', '.grid-stack',function(event, items) {
