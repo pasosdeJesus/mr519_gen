@@ -58,7 +58,7 @@ mr519_gen_prepara_eventos_comunes(root);
 ```
 
 4. Configure su aplicación para enlazar al gestor de formularios 
-   con rutas como mr519_gen.formularios_path 
+   con rutas como `mr519_gen.formularios_path` 
 
 5. Configure enlaces a encuestas a usuarios por ejemplo con rutas como
    mr519_gen.encuestasusuario_path
