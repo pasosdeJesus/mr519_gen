@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: 32db02022eab4569985ec11c81d60db0aa68553d
+  revision: ad94453d2f45c945b1fca19e06f1cd1c71b7c8d0
   specs:
     sip (2.0.b7)
       cancancan
@@ -121,7 +121,7 @@ GEM
     ffi (1.11.3)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
-    i18n (1.7.0)
+    i18n (1.8.1)
       concurrent-ruby (~> 1.0)
     jquery-ui-rails (6.0.1)
       railties (>= 3.2.16)
@@ -150,7 +150,7 @@ GEM
       mime-types
       mimemagic (~> 0.3.0)
       terrapin (~> 0.6.0)
-    pg (1.2.1)
+    pg (1.2.2)
     rack (2.0.8)
     rack-proxy (0.6.5)
       rack
