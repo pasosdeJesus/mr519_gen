@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: ad94453d2f45c945b1fca19e06f1cd1c71b7c8d0
+  revision: bdc77263dcc0d380ca65702e73c4a600b35b5982
   specs:
     sip (2.0.b7)
       cancancan
@@ -107,7 +107,7 @@ GEM
     coffee-script-source (1.12.2)
     colorize (0.8.1)
     concurrent-ruby (1.1.5)
-    crass (1.0.5)
+    crass (1.0.6)
     devise (4.7.1)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -118,10 +118,10 @@ GEM
       devise (>= 4.7.1)
     erubi (1.9.0)
     execjs (2.7.0)
-    ffi (1.11.3)
+    ffi (1.12.1)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
-    i18n (1.8.1)
+    i18n (1.8.2)
       concurrent-ruby (~> 1.0)
     jquery-ui-rails (6.0.1)
       railties (>= 3.2.16)
@@ -139,7 +139,7 @@ GEM
     mimemagic (0.3.3)
     mini_mime (1.0.2)
     mini_portile2 (2.4.0)
-    minitest (5.13.0)
+    minitest (5.14.0)
     nio4r (2.5.2)
     nokogiri (1.10.7)
       mini_portile2 (~> 2.4.0)
@@ -151,7 +151,7 @@ GEM
       mimemagic (~> 0.3.0)
       terrapin (~> 0.6.0)
     pg (1.2.2)
-    rack (2.1.0)
+    rack (2.1.1)
     rack-proxy (0.6.5)
       rack
     rack-test (1.1.0)
