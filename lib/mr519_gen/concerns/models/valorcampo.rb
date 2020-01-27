@@ -78,7 +78,10 @@ module Mr519Gen
                     " porque hay #{tb.count}"
                 else
                   cla = ::Ability::tb_clase(tb[0])
-                  r += cla.where(id: self.valor).take.nombre
+                  o = cla.where(id: self.valor).take
+                  if o.respond_to?(:nombre)
+                    r += o.nombre
+                  end
                 end
               end
             end
