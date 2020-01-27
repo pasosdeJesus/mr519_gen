@@ -49,8 +49,42 @@ module Mr519Gen
               if op.count == 1
                 r += op.take.nombre
               end
+            elsif campo.tipo == Mr519Gen::ApplicationHelper::SMTABLABASICA
+              if self.campo.tablabasica.nil? 
+                r += 'Problema tablabasica es nil'
+              else
+                ab = ::Ability.new
+                tb = ab.tablasbasicas.select {|l| 
+                  l[1] == self.campo.tablabasica.singularize 
+                } 
+                if tb.count != 1 
+                  r += "Problema con tablabasica #{self.campo.tablabasica} " +
+                    " porque hay #{tb.count}"
+                else
+                  cla = ::Ability::tb_clase(tb[0])
+                  r += cla.where(id: self.valor_ids).map(&:nombre).join("; ")
+                end
+              end
+            elsif campo.tipo == Mr519Gen::ApplicationHelper::SSTABLABASICA
+              if self.campo.tablabasica.nil? 
+                r += 'Problema tablabasica es nil'
+              else
+                ab = ::Ability.new
+                tb = ab.tablasbasicas.select {|l| 
+                  l[1] == self.campo.tablabasica.singularize 
+                } 
+                if tb.count != 1 
+                  r += "Problema con tablabasica #{self.campo.tablabasica} " +
+                    " porque hay #{tb.count}"
+                else
+                  cla = ::Ability::tb_clase(tb[0])
+                  r += cla.where(id: self.valor).take.nombre
+                end
+              end
             end
+
             r
+
           end
 
           def presenta_nombre
