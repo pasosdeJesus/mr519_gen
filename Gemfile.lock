@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: 4f29b16d409623e86d2c3ace9c428ebc5e09e5ad
+  revision: 93d122500a596323700d4fd77e545dc9b26548a8
   specs:
     sip (2.0.b10)
       cancancan
@@ -213,7 +213,7 @@ GEM
     thor (1.0.1)
     thread_safe (0.3.6)
     tilt (2.0.10)
-    twitter_cldr (5.3.0)
+    twitter_cldr (5.4.0)
       camertron-eprun
       cldr-plurals-runtime-rb (~> 1.0)
       tzinfo
@@ -228,7 +228,7 @@ GEM
     websocket-driver (0.7.1)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.4)
-    will_paginate (3.2.1)
+    will_paginate (3.3.0)
     zeitwerk (2.2.2)
 
 PLATFORMS
