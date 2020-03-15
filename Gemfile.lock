@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: a7ed8f5cf265fe7ec78bef7fc812b5d15b89cc56
+  revision: 7c02e1404e776c558a10aaf35137452aa7c7a514
   specs:
     sip (2.0.b10)
       cancancan
@@ -91,7 +91,7 @@ GEM
     bcrypt (3.1.13)
     builder (3.2.4)
     camertron-eprun (1.1.1)
-    cancancan (3.0.2)
+    cancancan (3.1.0)
     chosen-rails (1.9.0)
       coffee-rails (>= 3.2)
       railties (>= 3.0)
