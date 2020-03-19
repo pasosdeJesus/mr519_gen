@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: 68ee4ce6e579273441018224df28149c484cb829
+  revision: 43ac74a06b7568cc2886d6d648f5d527c411e2c1
   specs:
     sip (2.0.b10)
       cancancan
@@ -150,7 +150,7 @@ GEM
       mime-types
       mimemagic (~> 0.3.0)
       terrapin (~> 0.6.0)
-    pg (1.2.2)
+    pg (1.2.3)
     rack (2.2.2)
     rack-proxy (0.6.5)
       rack
