@@ -21,6 +21,7 @@ env:
                 - PGPORT=5432
 
 before_install: 
+        - nvm install node
         - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
         - chmod +x ./cc-test-reporter
         - ./cc-test-reporter before-build
@@ -33,6 +34,7 @@ before_install:
         - gem update --system
         - bundle update --bundler
         - bundle install
+        - yarn install
         - cp config/database.travis.yml config/database.yml
         - cp db/structure.sql db/structure.sql.copia
         - sed -e 's/provider = libc,//g;s/SET default_table_access_method.*/-- &/g' db/structure.sql.copia > db/structure.sql 
