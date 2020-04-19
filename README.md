@@ -46,8 +46,24 @@ Para incluirlo en su aplicación rails que ya usa sip:
 CXX=c++ yarn add gridstack
 CXX=c++ yarn install
 ```
-
-3. Incluya el motor javascript en su app/assets/javascript/application.js
+3. Asegure que en su archivo `app/javascript/packs/application.js` incluye `jquery`, `jquery-ui` y de `jquery-ui` que incluye `ui/data` y `ui/focusable`.  Es decir puede ser algo como:
+```
+require("@rails/ujs").start() 
+require("turbolinks").start() 
+ 
+import {$, jQuery} from "jquery"; 
+ 
+import "popper.js" 
+import "bootstrap" 
+import "chosen-js/chosen.jquery" 
+import 'bootstrap-datepicker' 
+import 'bootstrap-datepicker/dist/locales/bootstrap-datepicker.es.min.js' 
+import 'jquery-ui' 
+import 'jquery-ui/ui/widgets/autocomplete' 
+import 'jquery-ui/ui/data' 
+import 'jquery-ui/ui/focusable'
+```
+4. Incluya el motor javascript en su app/assets/javascript/application.js
    por ejemplo después de ```//= require sip/motor``` agregue:
 ```
 //= require mr519_gen/motor
@@ -57,10 +73,10 @@ CXX=c++ yarn install
 mr519_gen_prepara_eventos_comunes(root);
 ```
 
-4. Configure su aplicación para enlazar al gestor de formularios 
+5. Configure su aplicación para enlazar al gestor de formularios 
    con rutas como `mr519_gen.formularios_path` 
 
-5. Configure enlaces a encuestas a usuarios por ejemplo con rutas como
+6. Configure enlaces a encuestas a usuarios por ejemplo con rutas como
    mr519_gen.encuestasusuario_path
 
 ## 3. Desarrollo
