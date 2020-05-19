@@ -1,0 +1,41 @@
+<% if !@registro || !@registro.campo %>
+  <% return %>
+<% end %>
+
+<div id="camposdinamicos" class="valorcampo-div valorcampodiv">
+  <% ultfila = 0 # Ultima fila escrita %>
+  <% proxcol = 1 # Proxima columna por escribir en fila ultfila %>
+  <% divabierto = false %>
+  <% @registro.campo.order('mr519_gen_campo.fila', 'mr519_gen_campo.columna').each do |campo| %> 
+    <% fila = (campo.fila && campo.fila > 0) ? campo.fila : ultfila + 1 %>
+    <% while ultfila < fila - 1 %>
+      <div class="row"><div class="col-md-12">   </div></div>
+      <% ultfila += 1 %>
+      <% proxcol = 1 %>
+    <% end %>
+    <% if ultfila != fila %>
+      <% if divabierto %>
+        </div>
+      <% end %> 
+      <div class="row">
+      <% divabierto = true %> 
+      <% proxcol = 1 %> 
+      <% ultfila = fila %>
+    <% end %>
+    <% cl = '' %>
+    <% columna = campo.columna || 1 %>
+    <% ancho = campo.ancho || 12 %>
+    <% cl += " offset-md-#{columna - proxcol}" %>
+    <% cl += " col-md-#{ancho}" %>
+    <% proxcol = columna + ancho %>
+    <div class="<%= cl %>" style='border: 1px solid black'>
+      <div style='height: 3rem'>
+        <%= campo.nombre %>
+      </div>
+    </div>
+  <% end %>
+  <% if divabierto %>
+    </div>
+  <% end %>
+</div>
+

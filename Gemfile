@@ -35,7 +35,7 @@ gem 'webpacker'
 
 gem 'sip', # Motor generico
   git: 'https://github.com/pasosdeJesus/sip.git'
-#  path: '../sip'
+  #path: '../sip'
 
 
 group :development, :test do

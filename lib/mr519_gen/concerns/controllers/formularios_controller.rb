@@ -30,11 +30,11 @@ module Mr519Gen
           end
 
           def atributos_form
-            atributos_show - [:id]
+            atributos_show - [:id, :camposdinamicos]
           end
 
           def atributos_show
-            atributos_index
+            atributos_index + [:camposdinamicos]
           end
 
           def index_reordenar(c)
