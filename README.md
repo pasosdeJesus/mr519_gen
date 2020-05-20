@@ -35,7 +35,7 @@ Aplican practicamente las mismas instrucciones de otros motores genéricos
 basados en sip, ver por ejemplo:
 	https://github.com/pasosdeJesus/sal7711_gen
 
-Para incluirlo en su aplicación rails que ya usa sip:
+Para incluirlo en su aplicación rails que ya usa sip, tenga en cuenta que deben incluirse CSS y Javascript sin módulos servidos por sprockets y además otro Javascript con módulos servido por Webpacker y paquetes manejados por yarn.
 
 1. Agregue las gemas necesarias en Gemfile:
 ```
@@ -72,11 +72,14 @@ import 'jquery-ui/ui/focusable'
 ```
 mr519_gen_prepara_eventos_comunes(root);
 ```
-
-5. Configure su aplicación para enlazar al gestor de formularios 
+5. Incluya los CSS de mr519 agregando en `app/assets/stylesheets/application.css` la línea:
+```
+ *= require mr519_gen/application.css
+```
+6. Configure su aplicación para enlazar al gestor de formularios 
    con rutas como `mr519_gen.formularios_path` 
 
-6. Configure enlaces a encuestas a usuarios por ejemplo con rutas como
+7. Configure enlaces a encuestas a usuarios por ejemplo con rutas como
    mr519_gen.encuestasusuario_path
 
 ## 3. Desarrollo
