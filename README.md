@@ -80,7 +80,7 @@ mr519_gen_prepara_eventos_comunes(root);
    con rutas como `mr519_gen.formularios_path` 
 
 7. Configure enlaces a encuestas a usuarios por ejemplo con rutas como
-   mr519_gen.encuestasusuario_path
+   `mr519_gen.encuestasusuario_path`
 
 ## 3. Desarrollo
 
