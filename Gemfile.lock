@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: 61bc5e31d86722dc909dd423263035f1529ff5a1
+  revision: 13101535b7d5671959d3f161cbd04b05bef21d0d
   specs:
     sip (2.0.b10)
       cancancan
@@ -227,7 +227,7 @@ GEM
       rack-proxy (>= 0.6.1)
       railties (>= 5.2)
       semantic_range (>= 2.3.0)
-    websocket-driver (0.7.1)
+    websocket-driver (0.7.2)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.4)
     will_paginate (3.3.0)
