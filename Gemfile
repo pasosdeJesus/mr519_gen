@@ -14,7 +14,7 @@ gem 'devise-i18n'
 
 gem 'paperclip'                   # Anexos
 
-gem 'rails'                 
+gem 'rails'                 , '>= 6.0.3.1'
 
 gem 'rails-i18n'                 
 
