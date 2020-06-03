@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: 13101535b7d5671959d3f161cbd04b05bef21d0d
+  revision: 41548b236180d6860463683ea4c06ce27422db6a
   specs:
     sip (2.0.b10)
       cancancan
@@ -118,7 +118,7 @@ GEM
       devise (>= 4.7.1)
     erubi (1.9.0)
     execjs (2.7.0)
-    ffi (1.12.2)
+    ffi (1.13.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     i18n (1.8.2)
@@ -187,10 +187,10 @@ GEM
       thor (>= 0.20.3, < 2.0)
     rake (13.0.1)
     redcarpet (3.5.0)
-    responders (3.0.0)
+    responders (3.0.1)
       actionpack (>= 5.0)
       railties (>= 5.0)
-    sassc (2.3.0)
+    sassc (2.4.0)
       ffi (~> 1.9)
     sassc-rails (2.1.2)
       railties (>= 4.0.0)
@@ -229,7 +229,7 @@ GEM
       semantic_range (>= 2.3.0)
     websocket-driver (0.7.2)
       websocket-extensions (>= 0.1.0)
-    websocket-extensions (0.1.4)
+    websocket-extensions (0.1.5)
     will_paginate (3.3.0)
     zeitwerk (2.3.0)
 
