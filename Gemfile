@@ -8,25 +8,25 @@ gem 'cancancan'                   # Control de acceso
 gem "cocoon", git: "https://github.com/vtamara/cocoon.git", 
   branch: 'new_id_with_ajax' # Formularios anidados (algunos con ajax)
 
-gem 'devise'   # Autenticación
+gem 'devise'   , '>= 4.7.2' # Autenticación
 
-gem 'devise-i18n'                
+gem 'devise-i18n'                , '>= 1.9.1'
 
 gem 'paperclip'                   # Anexos
 
-gem 'rails'                 
+gem 'rails'                 , '>= 6.0.3.1'
 
-gem 'rails-i18n'                 
+gem 'rails-i18n'                 , '>= 6.0.0'
 
 gem 'redcarpet' # Descripciones en heb412_gen
 
-gem 'simple_form'   # Formularios
+gem 'simple_form'   , '>= 5.0.2' # Formularios
 
 gem 'twitter_cldr'               # Localiación e internacionalización
 
 gem 'will_paginate'               # Pagina listados
 
-gem 'webpacker'
+gem 'webpacker', '>= 5.1.1'
 
 
 #####
