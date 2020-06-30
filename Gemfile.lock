@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: 62415e62a6e0c308a50219ba3dc02a2ec1df50ae
+  revision: e4cffdbf9fd83916eccb5f7f488e0becfb1c529f
   specs:
     sip (2.0.b10)
       cancancan
@@ -231,7 +231,7 @@ GEM
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
     will_paginate (3.3.0)
-    zeitwerk (2.3.0)
+    zeitwerk (2.3.1)
 
 PLATFORMS
   ruby
