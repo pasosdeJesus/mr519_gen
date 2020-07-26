@@ -1,6 +1,6 @@
 <%= f.simple_fields_for :respuestafor do |r| %>
   <%= r.simple_fields_for :respuestafor_valorcampo do |rv| %>
-    <%= render partial: 'respuestafor_valorcampo', 
+    <%= render partial: 'campo_valorcampo', 
       locals: {f: r, fencuestausuario: f} 
     %>
   <% end %>

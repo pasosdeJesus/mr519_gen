@@ -159,12 +159,15 @@ module Mr519Gen
             if l.index(:formulario)
               l[l.index(:formulario)] = :formulario_id
             end
-            l += [ :valorcampo_attributes => [
+            l += [ respuestafor_attributes: [
               :id,
-              :campo_id,
-              :valor,
-              :valor_ids => []
-            ] ]
+              valorcampo_attributes: [
+                :valor,
+                :campo_id,
+                :id 
+              ] + 
+              [:valor_ids => []]
+            ]]
             return l
           end
 

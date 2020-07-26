@@ -9,4 +9,7 @@
     } %>
 <% else %>
   <h1><%= f.object.formulario.nombre %></h1>
+  <% if can? :update, Mr519Gen::Encuestausuario%>
+    <%= render partial: 'campo_respuestafor', locals: {f: f} %>
+  <% end %>
 <% end %>
