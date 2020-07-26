@@ -31,22 +31,24 @@ module Mr519Gen
           def atributos_index
             r = [ :id ]
             if can?(:manage, Mr519Gen::Encuestausuario)
-              r << :usuario
+              r += [ :usuario,
+                      :fechaini_localizada, 
+                      :fechainicio_localizada ]
             end
-            r += [ :formulario_id,
-                   :fechaini_localizada, 
+            r += [ :formulario,
                    :fechacambio_localizada, 
-                   :fechainicio_localizada, 
                    :fechafin_localizada,
-                   :valorcampo
             ]
           end
 
           def atributos_form
-            r = atributos_show - [:id]
+            r = atributos_show - [:id, :formulario]
+            r += [:formulario_id]
             if cannot?(:manage, Mr519Gen::Encuestausuario)
-              r = r - [:fechainicio_localizada, 
-                       :fechafin_localizada]
+              r -= [
+                :fechainicio_localizada, 
+                :fechafin_localizada
+              ]
             end
             return r
           end
