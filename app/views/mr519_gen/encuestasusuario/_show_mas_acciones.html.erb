@@ -1,5 +1,5 @@
 <% if can? :manage, Mr519Gen::Encuestausuario %>
-  <%= link_to t('.generarparatodos', :default => 'Crear para todos los usuarios'),
+  <%= link_to t('.generarparatodos', :default => 'Configurar para todos los usuarios'),
     creartodousuario_path(@registro),
     {class: 'btn', "data-turbolinks" => false }
   %>
