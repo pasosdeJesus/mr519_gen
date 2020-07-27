@@ -95,6 +95,42 @@ module Mr519Gen
             update_gen
           end
 
+          def creartodousuario
+            if !params || !params[:encuestausuario_id]
+              render inline: 'Falta parámetro encuestausuario_id'
+              return
+            end
+            if Mr519Gen::Encuestausuario.where(id: params[:encuestausuario_id].to_i).count != 1
+              render inline: "Se esperaba una encuesta con id #{params[:encuestausuario_id].to_i}"
+              return
+            end
+            e = Mr519Gen::Encuestausuario.find(params[:encuestausuario_id].to_i)
+            lu = ::Usuario.where(
+              "id NOT IN (SELECT DISTINCT usuario_id " +
+              " FROM mr519_gen_encuestausuario AS eu" +
+              " JOIN mr519_gen_respuestafor AS rf ON eu.respuestafor_id=rf.id"+
+              " WHERE rf.formulario_id= ? AND eu.fechainicio=? " +
+              " AND eu.fechafin = ?)", e.formulario_id, e.fechainicio, 
+              e.fechafin)
+
+            numu = 0 
+            lu.each  do |u|
+              ne = Encuestausuario.new
+              ne.usuario_id = u.id
+              ne.fechainicio = e.fechainicio
+              ne.fechafin = e.fechafin
+              ne.respuestafor = Respuestafor.new
+              ne.respuestafor.fechaini = Date.today
+              ne.respuestafor.fechacambio = Date.today
+              ne.respuestafor.formulario_id = e.formulario_id
+              ne.respuestafor.save!(validate: false)
+              ne.save!(validate: false)
+              numu += 1
+            end
+            redirect_to encuestausuario_path(e), 
+              notice:  "Creadas encuestas para #{numu} usuarios"
+          end
+
           def resultados
             if !params || !params[:formulario_id]
               render inline: 'Falta parámetro formulario_id'

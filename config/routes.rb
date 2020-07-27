@@ -10,6 +10,11 @@ Mr519Gen::Engine.routes.draw do
     "encuestasusuario#resultados",
     as: :resultadosencuesta
 
+    get '/encuestasusuario/creartodousuario/:encuestausuario_id' => 
+    "encuestasusuario#creartodousuario",
+    as: :creartodousuario
+
+
   get '/encuestaexterna/:adurl' => 'encuestaspersona#externa', 
     as: :encuestaexterna
 end
