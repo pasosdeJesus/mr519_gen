@@ -1,7 +1,12 @@
-<%= f.simple_fields_for :respuestafor do |r| %>
-  <%= r.simple_fields_for :respuestafor_valorcampo do |rv| %>
-    <%= render partial: 'campo_valorcampo', 
-      locals: {f: r, fencuestausuario: f} 
-    %>
+<div id="camposdinamicos">
+  <%= f.simple_fields_for :respuestafor do |r| %>
+    <div class="card border-primary">
+      <div class="card-body">
+        <h4 class="card-title"><%= r.object.formulario.nombre if r.object.formulario %></h4>
+        <%= render partial: 'mr519_gen/encuestasusuario/campo_valorcampo', 
+          locals: {f: r, fencuestapersona: f} 
+        %>
+      </div>
+    </div>
   <% end %>
-<% end %>
+</div>
