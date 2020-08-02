@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: 1501f4828cc04773ad9df52297534369675ef53b
+  revision: 56d2309d8f04c4667097303a2260570c129b4d28
   specs:
     sip (2.0.b10)
       cancancan
@@ -214,7 +214,7 @@ GEM
     thor (1.0.1)
     thread_safe (0.3.6)
     tilt (2.0.10)
-    twitter_cldr (6.0.1)
+    twitter_cldr (6.0.2)
       camertron-eprun
       cldr-plurals-runtime-rb (~> 1.0)
       tzinfo
