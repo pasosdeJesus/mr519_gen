@@ -1,4 +1,4 @@
-<% if can? :manage, Mr519Gen::Formulario %>
+<% if can?(:manage, Mr519Gen::Formulario) %>
   <%= f.input :formulario_id,
     collection: Mr519Gen::Formulario.all ,
     label_method: :presenta_nombre,
