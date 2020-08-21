@@ -129,15 +129,11 @@ module  Mr519Gen
               'mr519_gen_respuestafor.fechaini <= ?', f)
           }
 
-          scope :filtro_usuario, lambda { |u|
-            where("usuunaccent(nombre) ILIKE '%' || unaccent(?) || '%'", n)
-          }
- 
           scope :filtro_usuario, lambda { |uid|
             where(usuario_id: uid)
           }
           
-          scope :filtro_formulario_id, lambda { |fid|
+          scope :filtro_formulario, lambda { |fid|
             joins(:respuestafor).where(
               'mr519_gen_respuestafor.formulario_id=?', fid)
           }
