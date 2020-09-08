@@ -152,10 +152,16 @@ module Mr519Gen
             @registros[0].respuestafor.formulario.campo.order(:id).each do |c|
               case c.tipo 
               when Mr519Gen::ApplicationHelper::TEXTO, 
-                Mr519Gen::ApplicationHelper::TEXTOLARGO
-                cons = Mr519Gen::Valorcampo.where(campo_id: c.id).map(&:valor).
-                  join(".<hr>")
-                cons = cons.html_safe
+                Mr519Gen::ApplicationHelper::TEXTOLARGO,
+                Mr519Gen::ApplicationHelper::FECHA
+                cons = ''.html_safe
+                sep = ''.html_safe
+                Mr519Gen::Valorcampo.where(campo_id: c.id).each do |vc|
+                  if vc.valor && vc.valor.strip != ''
+                    cons += sep.html_safe + vc.valor.to_s.html_safe
+                    sep = '.<hr>'.html_safe
+                  end
+                end
               when Mr519Gen::ApplicationHelper::ENTERO,
                 Mr519Gen::ApplicationHelper::FLOTANTE
                 cons = Mr519Gen::Valorcampo.where(campo_id: c.id).
@@ -169,13 +175,46 @@ module Mr519Gen
                 no = Mr519Gen::Valorcampo.where(campo_id: c.id).
                   where("valor <> 't'").count
                 cons = "Si: #{si}.  No: #{no}"  
+              when Mr519Gen::ApplicationHelper::SSTABLABASICA
+                tb = current_ability.tablasbasicas.select {|l| 
+                  l[1] == c.tablabasica.singularize
+                }
+                cons = ''.html_safe
+                sep = ''.html_safe
+                cla = Ability::tb_clase(tb[0])
+                col1 = cla.all 
+                if col1.respond_to?(:habilitados)
+                  col1 = col1.habilitados
+                end 
+                col1.each do |rb|
+                  cuenta = Mr519Gen::Valorcampo.where(campo_id: c.id).
+                    where("valor = ?", rb.id.to_s).count
+                  cons += sep.html_safe + "#{rb.nombre}: #{cuenta}".html_safe
+                  sep = "<br> ".html_safe
+                  cons = cons.html_safe
+                end
+
+              when Mr519Gen::ApplicationHelper::SELECCIONSIMPLE
+                cons = ''.html_safe
+                sep = ''.html_safe
+                Mr519Gen::Opcioncs.where(campo_id: c.id).each do |op|
+                  cuenta = Mr519Gen::Valorcampo.where(campo_id: c.id).
+                    where("valor = ?", op.id.to_s).count
+                  cons += sep.html_safe + "#{op.nombre}: #{cuenta}".html_safe
+                  sep = "<br> ".html_safe
+                  cons = cons.html_safe
+                end
+
+
               else
                 puts "Tipo desconocido"
                 cons = "Tipo desconocido"
               end
-              @consolidado << {pregunta: c.nombre, consolidado: cons}
+              if c.tipo != Mr519Gen::ApplicationHelper::PRESENTATEXTO
+                @consolidado << {pregunta: c.nombre, consolidado: cons}
+              end
             end
-            render 'resultados', layot: 'application'
+            render 'resultados', layout: 'application'
           end 
           
 

@@ -187,7 +187,7 @@ module Mr519Gen
               end
               @consolidado << {pregunta: c.nombre, consolidado: cons}
             end
-            render 'resultados', layot: 'application'
+            render 'resultados', layout: 'application'
           end 
 
           def show
