@@ -38,6 +38,11 @@ module Mr519Gen
             end
           end
 
+
+          scope :filtro_nombre, lambda {|n|
+            where("unaccent(nombre) ILIKE '%' || unaccent(?) || '%'", n)
+          }
+
         end
 
       end
