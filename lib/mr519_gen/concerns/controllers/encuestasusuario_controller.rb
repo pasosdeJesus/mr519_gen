@@ -191,7 +191,11 @@ module Mr519Gen
                     where("valor = ?", rb.id.to_s).count
                   cons += sep.html_safe + "#{rb.nombre}: #{cuenta}".html_safe
                   sep = "<br> ".html_safe
-                  cons = cons.html_safe
+                end
+                cuenta = Mr519Gen::Valorcampo.where(campo_id: c.id).
+                  where("valor = '' OR valor IS NULL").count
+                if cuenta > 0
+                  cons += sep.html_safe + "No respondida: #{cuenta}".html_safe
                 end
 
               when Mr519Gen::ApplicationHelper::SELECCIONSIMPLE
@@ -202,9 +206,12 @@ module Mr519Gen
                     where("valor = ?", op.id.to_s).count
                   cons += sep.html_safe + "#{op.nombre}: #{cuenta}".html_safe
                   sep = "<br> ".html_safe
-                  cons = cons.html_safe
                 end
-
+                cuenta = Mr519Gen::Valorcampo.where(campo_id: c.id).
+                  where("valor = '' OR valor IS NULL").count
+                if cuenta > 0
+                  cons += sep.html_safe + "No respondida: #{cuenta}".html_safe
+                end
 
               else
                 puts "Tipo desconocido"
