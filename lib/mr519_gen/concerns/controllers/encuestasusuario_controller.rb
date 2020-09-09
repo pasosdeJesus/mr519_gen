@@ -156,7 +156,10 @@ module Mr519Gen
                 Mr519Gen::ApplicationHelper::FECHA
                 cons = ''.html_safe
                 sep = ''.html_safe
-                Mr519Gen::Valorcampo.where(campo_id: c.id).each do |vc|
+                Mr519Gen::Valorcampo.where(campo_id: c.id).
+                  where('respuestafor_id IN (SELECT respuestafor_id FROM
+                          mr519_gen_encuestausuario)').
+                  each do |vc|
                   if vc.valor && vc.valor.strip != ''
                     cons += sep.html_safe + vc.valor.to_s.html_safe
                     sep = '.<hr>'.html_safe
@@ -165,13 +168,17 @@ module Mr519Gen
               when Mr519Gen::ApplicationHelper::ENTERO,
                 Mr519Gen::ApplicationHelper::FLOTANTE
                 cons = Mr519Gen::Valorcampo.where(campo_id: c.id).
+                  where('respuestafor_id IN (SELECT respuestafor_id FROM
+                          mr519_gen_encuestausuario)').
                   average("CASE 
                              WHEN valor = '' THEN 0 
                              ELSE CAST(valor AS NUMERIC) 
                            END")
               when Mr519Gen::ApplicationHelper::BOOLEANO
                 si = Mr519Gen::Valorcampo.where(campo_id: c.id).
-                  where(valor: 't').count
+                  where('respuestafor_id IN (SELECT respuestafor_id FROM
+                          mr519_gen_encuestausuario)').
+                          where(valor: 't').count
                 no = Mr519Gen::Valorcampo.where(campo_id: c.id).
                   where("valor <> 't'").count
                 cons = "Si: #{si}.  No: #{no}"  
@@ -188,11 +195,15 @@ module Mr519Gen
                 end 
                 col1.each do |rb|
                   cuenta = Mr519Gen::Valorcampo.where(campo_id: c.id).
+                    where('respuestafor_id IN (SELECT respuestafor_id FROM
+                          mr519_gen_encuestausuario)').
                     where("valor = ?", rb.id.to_s).count
                   cons += sep.html_safe + "#{rb.nombre}: #{cuenta}".html_safe
                   sep = "<br> ".html_safe
                 end
                 cuenta = Mr519Gen::Valorcampo.where(campo_id: c.id).
+                    where('respuestafor_id IN (SELECT respuestafor_id FROM
+                          mr519_gen_encuestausuario)').
                   where("valor = '' OR valor IS NULL").count
                 if cuenta > 0
                   cons += sep.html_safe + "No respondida: #{cuenta}".html_safe
@@ -203,12 +214,16 @@ module Mr519Gen
                 sep = ''.html_safe
                 Mr519Gen::Opcioncs.where(campo_id: c.id).each do |op|
                   cuenta = Mr519Gen::Valorcampo.where(campo_id: c.id).
+                    where('respuestafor_id IN (SELECT respuestafor_id FROM
+                          mr519_gen_encuestausuario)').
                     where("valor = ?", op.id.to_s).count
                   cons += sep.html_safe + "#{op.nombre}: #{cuenta}".html_safe
                   sep = "<br> ".html_safe
                 end
                 cuenta = Mr519Gen::Valorcampo.where(campo_id: c.id).
-                  where("valor = '' OR valor IS NULL").count
+                  where('respuestafor_id IN (SELECT respuestafor_id FROM
+                          mr519_gen_encuestausuario)').
+                          where("valor = '' OR valor IS NULL").count
                 if cuenta > 0
                   cons += sep.html_safe + "No respondida: #{cuenta}".html_safe
                 end
