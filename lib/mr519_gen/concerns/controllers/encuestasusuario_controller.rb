@@ -131,114 +131,35 @@ module Mr519Gen
               notice:  "Creadas encuestas para #{numu} usuarios"
           end
 
+          def resultados_antes_presentar(formulario_id)
+          end
+
+
           def resultados
-            if !params || !params[:formulario_id]
-              render inline: 'Falta parámetro formulario_id'
+            if !params || !params[:encuestausuario_id]
+              render inline: 'Falta parámetro encuestausuario_id'
               return
             end
-            fid = Encuestausuario.connection.
-              quote_string(params[:formulario_id]).to_i
+            eu = Encuestausuario.find(params[:encuestausuario_id].to_i)
+            fid = eu.respuestafor.formulario_id
+            authorize! :resultados, Mr519Gen::Formulario.find(fid)
             @registros = Encuestausuario.joins(:respuestafor).
               where("mr519_gen_respuestafor.formulario_id" => fid)
-            if @registros.count == 0
-              render inline: 
-                "No hay encuestas respondidas para formulario #{fid}"
+            @titulo = ''
+            @consolidado = []
+            menserr = ''
+            if !Mr519Gen::ApplicationHelper.analiza_respuestas(
+              @registros.map(&:respuestafor_id),
+              @titulo,
+              @consolidado,
+              menserr)
+              render inline: menserr
               return
             end
-            @titulo = "Resultados de encuesta: " +
-              @registros[0].respuestafor.formulario.nombre
+            resultados_antes_presentar(fid)
             @usuarios = @registros.map(&:usuario)
-            @consolidado = []
-            @registros[0].respuestafor.formulario.campo.order(:id).each do |c|
-              case c.tipo 
-              when Mr519Gen::ApplicationHelper::TEXTO, 
-                Mr519Gen::ApplicationHelper::TEXTOLARGO,
-                Mr519Gen::ApplicationHelper::FECHA
-                cons = ''.html_safe
-                sep = ''.html_safe
-                Mr519Gen::Valorcampo.where(campo_id: c.id).
-                  where('respuestafor_id IN (SELECT respuestafor_id FROM
-                          mr519_gen_encuestausuario)').
-                  each do |vc|
-                  if vc.valor && vc.valor.strip != ''
-                    cons += sep.html_safe + vc.valor.to_s.html_safe
-                    sep = '.<hr>'.html_safe
-                  end
-                end
-              when Mr519Gen::ApplicationHelper::ENTERO,
-                Mr519Gen::ApplicationHelper::FLOTANTE
-                cons = Mr519Gen::Valorcampo.where(campo_id: c.id).
-                  where('respuestafor_id IN (SELECT respuestafor_id FROM
-                          mr519_gen_encuestausuario)').
-                  average("CASE 
-                             WHEN valor = '' THEN 0 
-                             ELSE CAST(valor AS NUMERIC) 
-                           END")
-              when Mr519Gen::ApplicationHelper::BOOLEANO
-                si = Mr519Gen::Valorcampo.where(campo_id: c.id).
-                  where('respuestafor_id IN (SELECT respuestafor_id FROM
-                          mr519_gen_encuestausuario)').
-                          where(valor: 't').count
-                no = Mr519Gen::Valorcampo.where(campo_id: c.id).
-                  where("valor <> 't'").count
-                cons = "Si: #{si}.  No: #{no}"  
-              when Mr519Gen::ApplicationHelper::SSTABLABASICA
-                tb = current_ability.tablasbasicas.select {|l| 
-                  l[1] == c.tablabasica.singularize
-                }
-                cons = ''.html_safe
-                sep = ''.html_safe
-                cla = Ability::tb_clase(tb[0])
-                col1 = cla.all 
-                if col1.respond_to?(:habilitados)
-                  col1 = col1.habilitados
-                end 
-                col1.each do |rb|
-                  cuenta = Mr519Gen::Valorcampo.where(campo_id: c.id).
-                    where('respuestafor_id IN (SELECT respuestafor_id FROM
-                          mr519_gen_encuestausuario)').
-                    where("valor = ?", rb.id.to_s).count
-                  cons += sep.html_safe + "#{rb.nombre}: #{cuenta}".html_safe
-                  sep = "<br> ".html_safe
-                end
-                cuenta = Mr519Gen::Valorcampo.where(campo_id: c.id).
-                    where('respuestafor_id IN (SELECT respuestafor_id FROM
-                          mr519_gen_encuestausuario)').
-                  where("valor = '' OR valor IS NULL").count
-                if cuenta > 0
-                  cons += sep.html_safe + "No respondida: #{cuenta}".html_safe
-                end
-
-              when Mr519Gen::ApplicationHelper::SELECCIONSIMPLE
-                cons = ''.html_safe
-                sep = ''.html_safe
-                Mr519Gen::Opcioncs.where(campo_id: c.id).each do |op|
-                  cuenta = Mr519Gen::Valorcampo.where(campo_id: c.id).
-                    where('respuestafor_id IN (SELECT respuestafor_id FROM
-                          mr519_gen_encuestausuario)').
-                    where("valor = ?", op.id.to_s).count
-                  cons += sep.html_safe + "#{op.nombre}: #{cuenta}".html_safe
-                  sep = "<br> ".html_safe
-                end
-                cuenta = Mr519Gen::Valorcampo.where(campo_id: c.id).
-                  where('respuestafor_id IN (SELECT respuestafor_id FROM
-                          mr519_gen_encuestausuario)').
-                          where("valor = '' OR valor IS NULL").count
-                if cuenta > 0
-                  cons += sep.html_safe + "No respondida: #{cuenta}".html_safe
-                end
-
-              else
-                puts "Tipo desconocido"
-                cons = "Tipo desconocido"
-              end
-              if c.tipo != Mr519Gen::ApplicationHelper::PRESENTATEXTO
-                @consolidado << {pregunta: c.nombre, consolidado: cons}
-              end
-            end
             render 'resultados', layout: 'application'
           end 
-          
 
           private
 

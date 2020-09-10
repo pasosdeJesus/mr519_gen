@@ -2,6 +2,11 @@
   <%= link_to t('.responder', :default => t("helpers.links.responer")),
     edit_modelo_path(registro), :class => 'btn btn-sm' %>
 <% end %>
+<% if can?(:resultado, registro) %>
+  <%= link_to t('.ver_resultado', :default => t("helpers.links.ver_resultado")),
+    resultadosencuestausuario_path(registro), :class => 'btn btn-sm' %>
+<% end %>
+
 <%= render partial: 'index_mas_acciones', locals: {f: f, registro: registro} %>
 <% if can?(:destroy, registro) %>
   <%= link_to t('.destroy', :default => t("helpers.links.destroy")),

@@ -62,5 +62,102 @@ module Mr519Gen
     end
     module_function :nombre_a_nombreinterno
 
+
+    # resps es una serie de registros con asociación respuestafor a
+    # Mr519::Respuestafor para una
+    # mismo formulario
+    def analiza_respuestas(respuestafor_ids, titulo, consolidado, menserr)
+      resps = Mr519Gen::Respuestafor.where(id: respuestafor_ids)
+      if resps.count == 0
+        menserr = "No hay encuestas respondidas"
+        return false
+      end
+      titulo << "Resultados de encuesta: " + 
+        resps[0].formulario.nombre
+      resps[0].formulario.campo.order(:id).each do |c|
+        case c.tipo 
+        when Mr519Gen::ApplicationHelper::TEXTO, 
+          Mr519Gen::ApplicationHelper::TEXTOLARGO,
+          Mr519Gen::ApplicationHelper::FECHA
+          cons = ''.html_safe
+          sep = ''.html_safe
+          Mr519Gen::Valorcampo.where(campo_id: c.id).
+            where("respuestafor_id IN (#{resps.map(&:id).join(',')})").
+            each do |vc|
+            if vc.valor && vc.valor.strip != ''
+              cons += sep.html_safe + vc.valor.to_s.html_safe
+              sep = '.<hr>'.html_safe
+            end
+          end
+        when Mr519Gen::ApplicationHelper::ENTERO,
+          Mr519Gen::ApplicationHelper::FLOTANTE
+          cons = Mr519Gen::Valorcampo.where(campo_id: c.id).
+            where("respuestafor_id IN (#{resps.map(&:id).join(',')})").
+            average("CASE 
+                             WHEN valor = '' THEN 0 
+                             ELSE CAST(valor AS NUMERIC) 
+                           END")
+        when Mr519Gen::ApplicationHelper::BOOLEANO
+          si = Mr519Gen::Valorcampo.where(campo_id: c.id).
+            where("respuestafor_id IN (#{resps.map(&:id).join(',')})").
+            where(valor: 't').count
+            no = Mr519Gen::Valorcampo.where(campo_id: c.id).
+              where("valor <> 't'").count
+            cons = "Si: #{si}.  No: #{no}"  
+        when Mr519Gen::ApplicationHelper::SSTABLABASICA
+          ab = ::Ability.new
+          tb = ab.tablasbasicas.select {|l| 
+            l[1] == c.tablabasica.singularize
+          }
+          cons = ''.html_safe
+          sep = ''.html_safe
+          cla = Ability::tb_clase(tb[0])
+          col1 = cla.all 
+          if col1.respond_to?(:habilitados)
+            col1 = col1.habilitados
+          end 
+          col1.each do |rb|
+            cuenta = Mr519Gen::Valorcampo.where(campo_id: c.id).
+              where("respuestafor_id IN (#{resps.map(&:id).join(',')})").
+              where("valor = ?", rb.id.to_s).count
+              cons += sep.html_safe + "#{rb.nombre}: #{cuenta}".html_safe
+              sep = "<br> ".html_safe
+          end
+          cuenta = Mr519Gen::Valorcampo.where(campo_id: c.id).
+            where("respuestafor_id IN (#{resps.map(&:id).join(',')})").
+            where("valor = '' OR valor IS NULL").count
+          if cuenta > 0
+            cons += sep.html_safe + "No respondida: #{cuenta}".html_safe
+          end
+
+        when Mr519Gen::ApplicationHelper::SELECCIONSIMPLE
+          cons = ''.html_safe
+          sep = ''.html_safe
+          Mr519Gen::Opcioncs.where(campo_id: c.id).each do |op|
+            cuenta = Mr519Gen::Valorcampo.where(campo_id: c.id).
+              where("respuestafor_id IN (#{resps.map(&:id).join(',')})").
+              where("valor = ?", op.id.to_s).count
+              cons += sep.html_safe + "#{op.nombre}: #{cuenta}".html_safe
+              sep = "<br> ".html_safe
+          end
+          cuenta = Mr519Gen::Valorcampo.where(campo_id: c.id).
+            where("respuestafor_id IN (#{resps.map(&:id).join(',')})").
+            where("valor = '' OR valor IS NULL").count
+          if cuenta > 0
+            cons += sep.html_safe + "No respondida: #{cuenta}".html_safe
+          end
+
+        else
+          puts "Tipo desconocido"
+          cons = "Tipo desconocido"
+        end
+        if c.tipo != Mr519Gen::ApplicationHelper::PRESENTATEXTO
+          consolidado << {pregunta: c.nombre, consolidado: cons}
+        end
+      end
+      return true
+    end 
+    module_function :analiza_respuestas
+
   end
 end
