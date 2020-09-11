@@ -4,6 +4,10 @@ Mr519Gen::Engine.routes.draw do
   resources :encuestaspersona, path_names: { new: 'nueva', edit: 'edita' }
   resources :encuestasusuario, path_names: { new: 'nueva', edit: 'edita' }
   resources :formularios, path_names: { new: 'nuevo', edit: 'edita' }
+  get '/formularios/copia/:formulario_id' =>
+  'formularios#copia',
+    as: :copia_formulario
+
   resources :opcionescs, only: [:new, :destroy]
 
   get '/encuestasusuario/resultados/:encuestausuario_id' => 

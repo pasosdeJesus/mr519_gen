@@ -66,6 +66,38 @@ module Mr519Gen
             render layout: 'application'
           end
 
+          def copia
+            if !params || !params[:formulario_id] 
+              render inline: 'Falta parámetro formulario_id'
+              return
+            end
+            if Mr519Gen::Formulario.where(id: params[:formulario_id].to_i).count != 1
+              render inline: 'No existe formulario con el formulario_id dado'
+              return
+            end
+            f = Mr519Gen::Formulario.find(params[:formulario_id].to_i)
+            authorize! :create, Mr519Gen::Formulario
+            @registro = f.dup
+            @registro.nombre += ' ' + Time.now.to_i.to_s
+            @registro.nombreinterno += '_' + Time.now.to_i.to_s
+            if !@registro.save  # Elegir otra id
+                redirect_to formularios_path(f)
+            end
+            f.campo.each do |c|
+              nc = c.dup
+              nc.formulario_id = @registro.id
+              if !nc.save
+                redirect_to formularios_path(f)
+              end
+            end
+            byebug
+            if !@registro.save  # Elegir otra id
+                redirect_to formularios_path(f)
+            end
+            redirect_to formulario_path(@registro)
+          end
+
+
           private
 
           def set_formulario
