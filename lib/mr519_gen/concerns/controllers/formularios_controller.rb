@@ -90,7 +90,6 @@ module Mr519Gen
                 redirect_to formularios_path(f)
               end
             end
-            byebug
             if !@registro.save  # Elegir otra id
                 redirect_to formularios_path(f)
             end
