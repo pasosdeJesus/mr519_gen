@@ -81,17 +81,20 @@ module Mr519Gen
             @registro.nombre += ' ' + Time.now.to_i.to_s
             @registro.nombreinterno += '_' + Time.now.to_i.to_s
             if !@registro.save  # Elegir otra id
-                redirect_to formularios_path(f)
+              render inline: 'No pudo salvar copia sin campos'
+              return
             end
             f.campo.each do |c|
               nc = c.dup
               nc.formulario_id = @registro.id
               if !nc.save
-                redirect_to formularios_path(f)
+                render inline: 'No pudo salvar copia de campo'
+                return
               end
             end
             if !@registro.save  # Elegir otra id
-                redirect_to formularios_path(f)
+                render inline: 'No pudo salvar copia con campos'
+                return
             end
             redirect_to formulario_path(@registro)
           end
