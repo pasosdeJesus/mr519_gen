@@ -10,6 +10,9 @@ Mr519Gen::Engine.routes.draw do
 
   resources :opcionescs, only: [:new, :destroy]
 
+  resources :planesencuesta,
+    path_names: { new: 'nuevo', edit: 'edita' }
+
   get '/encuestasusuario/resultados/:encuestausuario_id' => 
     "encuestasusuario#resultados",
     as: :resultadosencuestausuario
