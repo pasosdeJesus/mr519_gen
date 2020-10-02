@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: 9cb0829dc2a59726c26107c5e3dc07c0fa3be2de
+  revision: 5a61c98c37d8cfe97a6deba1f66f6fc890f47661
   specs:
     sip (2.0.b10)
       cancancan
@@ -199,7 +199,7 @@ GEM
       sprockets-rails
       tilt
     semantic_range (2.3.0)
-    simple_form (5.0.2)
+    simple_form (5.0.3)
       actionpack (>= 5.0)
       activemodel (>= 5.0)
     sprockets (4.0.2)
@@ -214,7 +214,7 @@ GEM
     thor (1.0.1)
     thread_safe (0.3.6)
     tilt (2.0.10)
-    twitter_cldr (6.1.0)
+    twitter_cldr (6.2.0)
       camertron-eprun
       cldr-plurals-runtime-rb (~> 1.0)
       tzinfo
