@@ -17,7 +17,7 @@ notifications:
 env:
         global:
                 - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
-                - CC_TEST_REPORTER_ID=4f2fd215528f279ecf795d2fefdcfd7d7c97aa4e07edc6210f2edccd1cd4bbf4
+                - CC_TEST_REPORTER_ID=0c6f51e46015cd9a30f217aa5eb0007c8166f91d03b8c150a8539234b3fcf1bd
                 - PGPORT=5432
 
 before_install: 
