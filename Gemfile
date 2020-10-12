@@ -45,3 +45,6 @@ group :development, :test do
   gem 'colorize'
 end
 
+group :test do
+  gem 'simplecov', '~>0.10', '<0.18'
+end
