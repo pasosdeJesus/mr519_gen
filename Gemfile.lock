@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: 4689617d47921b3373b31ce8d268379b634da629
+  revision: 77c779b98b6a5abd2bd13fbac025b9da453b30c5
   specs:
     sip (2.0.b10)
       cancancan
@@ -18,7 +18,7 @@ GIT
 
 GIT
   remote: https://github.com/vtamara/cocoon.git
-  revision: 088c8d9dcce7f51cf3a968398047eaac7a37718b
+  revision: 9f1892403c3dbdb8f7d457a06f237ff58e7dfb07
   branch: new_id_with_ajax
   specs:
     cocoon (1.2.11)
