@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: 3050aa4f2c5ac4ca0e3908ce3fa56a8fe5e80a34
+  revision: e9fea25b32b41665f8e4c6c258004ab4cefd132e
   specs:
     sip (2.0.b10)
       cancancan
@@ -137,7 +137,7 @@ GEM
     method_source (1.0.0)
     mime-types (3.3.1)
       mime-types-data (~> 3.2015)
-    mime-types-data (3.2020.0512)
+    mime-types-data (3.2020.1104)
     mimemagic (0.3.5)
     mini_mime (1.0.2)
     mini_portile2 (2.4.0)
