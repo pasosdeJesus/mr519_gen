@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: 6766e1d80065f9c3a15bbf43239b7545f1aae157
+  revision: 1f339551a513c049900634a1bd382a494e7d889a
   specs:
     sip (2.0.b10)
       cancancan
@@ -96,7 +96,7 @@ GEM
       coffee-rails (>= 3.2)
       railties (>= 3.0)
       sassc-rails (>= 2.1.2)
-    cldr-plurals-runtime-rb (1.0.1)
+    cldr-plurals-runtime-rb (1.1.0)
     climate_control (0.2.0)
     coffee-rails (5.0.0)
       coffee-script (>= 2.2.0)
@@ -127,7 +127,7 @@ GEM
     jquery-ui-rails (6.0.1)
       railties (>= 3.2.16)
     json (2.3.1)
-    loofah (2.7.0)
+    loofah (2.8.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
     mail (2.7.1)
@@ -221,9 +221,9 @@ GEM
     thor (1.0.1)
     thread_safe (0.3.6)
     tilt (2.0.10)
-    twitter_cldr (6.3.0)
+    twitter_cldr (6.4.0)
       camertron-eprun
-      cldr-plurals-runtime-rb (~> 1.0)
+      cldr-plurals-runtime-rb (~> 1.1)
       tzinfo
     tzinfo (1.2.8)
       thread_safe (~> 0.1)
