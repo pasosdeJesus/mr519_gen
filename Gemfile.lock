@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: 3ad0b2864c634b7fe695952df5dfc162f025a82f
+  revision: f0d33b5974a7284e580619572338395763bcc137
   specs:
     sip (2.0.b10)
       cancancan
@@ -200,7 +200,7 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
-    semantic_range (2.3.0)
+    semantic_range (2.3.1)
     simple_form (5.0.3)
       actionpack (>= 5.0)
       activemodel (>= 5.0)
