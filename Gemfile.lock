@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: f0d33b5974a7284e580619572338395763bcc137
+  revision: f2690d5cce0c3a46d8686bac2ad29219d24a240a
   specs:
     sip (2.0.b10)
       cancancan
@@ -91,7 +91,7 @@ GEM
     bcrypt (3.1.16)
     builder (3.2.4)
     camertron-eprun (1.1.1)
-    cancancan (3.1.0)
+    cancancan (3.2.0)
     chosen-rails (1.9.0)
       coffee-rails (>= 3.2)
       railties (>= 3.0)
@@ -252,7 +252,7 @@ DEPENDENCIES
   mr519_gen!
   paperclip
   pg
-  rails
+  rails (~> 6.0.3.4)
   rails-i18n
   redcarpet
   simple_form
