@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: 7162fbb2b0d6cbbdc4ac3e763709ad9108547dc0
+  revision: e83041f12689ab8b70a9e490543eab2ea5c40d5e
   branch: rails6.1
   specs:
     sip (2.0.b10)
@@ -192,7 +192,7 @@ GEM
       method_source
       rake (>= 0.8.7)
       thor (~> 1.0)
-    rake (13.0.2)
+    rake (13.0.3)
     redcarpet (3.5.1)
     responders (3.0.1)
       actionpack (>= 5.0)
