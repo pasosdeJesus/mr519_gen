@@ -8,7 +8,7 @@ require "mr519_gen"
 module Dummy
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 6.0
+    config.load_defaults 6.1
 
     config.time_zone = 'America/Bogota'
     config.i18n.default_locale = :es
