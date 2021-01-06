@@ -1,6 +1,7 @@
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: df9f85a77adf6076effad5a48588cb4e6967237b
+  revision: 9ae3d9c539d249530911ce83fe77bdc27c5a5d38
+  branch: rails61
   specs:
     sip (2.0.b10)
       cancancan
@@ -126,7 +127,7 @@ GEM
     ffi (1.14.2)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
-    i18n (1.8.5)
+    i18n (1.8.7)
       concurrent-ruby (~> 1.0)
     jquery-ui-rails (6.0.1)
       railties (>= 3.2.16)
@@ -145,9 +146,9 @@ GEM
     mimemagic (0.3.5)
     mini_mime (1.0.2)
     mini_portile2 (2.5.0)
-    minitest (5.14.2)
+    minitest (5.14.3)
     nio4r (2.5.4)
-    nokogiri (1.11.0.rc4)
+    nokogiri (1.11.1)
       mini_portile2 (~> 2.5.0)
       racc (~> 1.4)
     orm_adapter (0.5.0)
