@@ -159,5 +159,23 @@ module Mr519Gen
     end 
     module_function :analiza_respuestas
 
+
+    # Dado un objeto que puede tener varios respuestafor  y un formulario_id
+    # y un campo_id retorna el valor del campo en el formulario o nil
+    def presenta_valor(objeto, formulario_id, campo_id)
+      rf = objeto.respuestafor.where(formulario_id: formulario_id).take
+      if !rf
+        return nil
+      end
+      vc = rf.valorcampo.where(campo_id: campo_id).take 
+      if !vc
+        return nil
+      end
+      vc.presenta_valor(false)
+    end
+    module_function :presenta_valor
+
+
+
   end
 end
