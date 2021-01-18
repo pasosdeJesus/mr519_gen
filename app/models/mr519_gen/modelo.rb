@@ -26,11 +26,7 @@ module Mr519Gen
                 vc = rf.valorcampo.where(
                   campo_id: ca.take.id)
                 if vc.count == 1
-                  if ca.take.tipo == Mr519Gen::ApplicationHelper::SELECCIONMULTIPLE
-                    return vc.take.valorjson.to_s
-                  else
-                    return vc.take.valor.to_s
-                  end
+                  return vc.take.presenta_valor(false)
                 else
                   return "Hay más de un valor para campo '#{pa[1]}' de formulario '#{pa[0]}'"
                 end
@@ -38,7 +34,8 @@ module Mr519Gen
                 return "No hay campo '#{pa[1]}' en formulario '#{pa[0]}'"
               end
             else
-              return "No hay respuesta para formulario '#{pa[0]}"
+              puts "No hay respuesta para formulario '#{pa[0]}"
+              return ''
             end
           elsif f.count == 0
             return "No hay formulario '#{pa[0]}'"
