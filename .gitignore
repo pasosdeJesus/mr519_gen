@@ -1,6 +1,7 @@
 # Ignore bundler config.
 /.bundle
 config/database.yml
+.env
 
 # Ignore the default SQLite database.
 /db/*.sqlite3
@@ -20,6 +21,7 @@ test/dummy/node_modules/
 test/dummy/yarn-error.log
 test/dummy/storage/
 test/dummy/tmp/
+test/dummy/public/packs/
 test/dummy/config/database.yml
 test/dummy/.sass-cache
 tmp/

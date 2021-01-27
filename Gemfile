@@ -16,6 +16,8 @@ gem 'nokogiri', '>=1.11.1'
 
 gem 'paperclip'                   # Anexos
 
+gem 'puma'
+
 gem 'rails', '~> 6.0.3.4'
 
 gem 'rails-i18n'
