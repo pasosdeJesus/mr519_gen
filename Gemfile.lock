@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: bc3b6f17736af5e0e9f32ffc9619e5267a212c84
+  revision: 442e2281c33715eb8a135fad10eb9e7f98e4f900
   specs:
     sip (2.0.b10)
       cancancan
@@ -154,7 +154,7 @@ GEM
       mimemagic (~> 0.3.0)
       terrapin (~> 0.6.0)
     pg (1.2.3)
-    puma (5.1.1)
+    puma (5.2.0)
       nio4r (~> 2.0)
     racc (1.5.2)
     rack (2.2.3)
