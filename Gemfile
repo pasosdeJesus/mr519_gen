@@ -38,15 +38,16 @@ gem 'webpacker'
 # lógico y no alfabetico como las gemas anteriores)
 
 gem 'sip', # Motor generico
-  git: 'https://github.com/pasosdeJesus/sip.git'
+  git: 'https://github.com/pasosdeJesus/sip.git', branch: 'main'
   #path: '../sip'
 
 
 group :development, :test do
   # Depurar
   #gem 'byebug'
-
   gem 'colorize'
+
+  gem 'dotenv-rails'
 end
 
 group :test do
