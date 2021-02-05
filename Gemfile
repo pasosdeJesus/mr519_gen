@@ -16,8 +16,6 @@ gem 'nokogiri', '>=1.11.1'
 
 gem 'paperclip'                   # Anexos
 
-gem 'puma'
-
 gem 'rails', '~> 6.0.3.4'
 
 gem 'rails-i18n'
@@ -38,9 +36,17 @@ gem 'webpacker'
 # lógico y no alfabetico como las gemas anteriores)
 
 gem 'sip', # Motor generico
-  git: 'https://github.com/pasosdeJesus/sip.git', branch: 'main'
+  git: 'https://github.com/pasosdeJesus/sip.git', branch: :main
   #path: '../sip'
 
+
+group :development do
+  gem 'puma'
+
+  gem 'spring'
+
+  gem 'web-console'
+end
 
 group :development, :test do
   # Depurar

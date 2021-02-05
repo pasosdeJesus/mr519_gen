@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  scope 'mr519' do
+
+  rutarel = ENV.fetch('RUTA_RELATIVA', 'mr519/')
+  scope rutarel do 
     devise_scope :usuario do
       get 'sign_out' => 'devise/sessions#destroy'
     end
@@ -14,6 +16,6 @@ Rails.application.routes.draw do
   
     root 'sip/hogar#index'
   end
-  mount Sip::Engine, at: "/mr519"
-  mount Mr519Gen::Engine, at: "/mr519"
+  mount Sip::Engine, at: rutarel, as: 'sip'
+  mount Mr519Gen::Engine, at: rutarel, as: 'mr519_gen'
 end
