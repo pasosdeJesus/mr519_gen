@@ -16,8 +16,8 @@ gem 'nokogiri', '>=1.11.1'
 
 gem 'paperclip'                   # Anexos
 
-gem 'rails', #'~> 6.0.3.4'
-  git: 'https://github.com/rails/rails.git', branch: '6-1-stable'
+gem 'rails', '~> 6.1'
+  #git: 'https://github.com/rails/rails.git', branch: '6-1-stable'
 
 gem 'rails-i18n'
 
