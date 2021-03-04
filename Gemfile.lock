@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: 0bfebc3466de1f5a9919b4fbaa7cfd48d5bc00e1
+  revision: e272200577a25729de81e46d228512661a273c0d
   branch: main
   specs:
     sip (2.0.b11)
@@ -152,7 +152,7 @@ GEM
     mini_mime (1.0.2)
     mini_portile2 (2.5.0)
     minitest (5.14.4)
-    nio4r (2.5.5)
+    nio4r (2.5.7)
     nokogiri (1.11.1)
       mini_portile2 (~> 2.5.0)
       racc (~> 1.4)
@@ -214,7 +214,7 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
-    semantic_range (2.3.1)
+    semantic_range (3.0.0)
     simple_form (5.1.0)
       actionpack (>= 5.2)
       activemodel (>= 5.2)
