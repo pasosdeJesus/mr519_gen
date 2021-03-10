@@ -32,31 +32,6 @@ module  Mr519Gen
             class_name: 'Mr519Gen::Valorcampo'
           accepts_nested_attributes_for :valorcampo,  reject_if: :all_blank
 
-          #campofecha_localizado :fechainicio
-          #campofecha_localizado :fechafin
-
-          #validates :fechainicio, presence: true
-
-          #validate :fechas_en_orden
-          #def fechas_en_orden
-          #  if (fechafin && fechainicio && fechafin < fechainicio) then
-          #        errors.add(:fechainicio, "La fecha de inicio debe ser " +
-          #                   " anterior a la de terminación")
-          #  end
-          # if (fechainicio && respuestafor && respuestafor.fechaini && 
-          #      respuestafor.fechaini < fechainicio) then
-          #        errors.add(:fechainicio, "La fecha de comienzo de " +
-          #                  "aplicación debe ser posterior " +
-          #                  "a la de inicio")
-          # end
-          # if (fechainicio && respuestafor && respuestafor.fechacambio && 
-          #     respuestafor.fechacambio < fechainicio) then
-          #       errors.add(:fechainicio, "La fecha de actualización " +
-          #                  "debe ser posterior " +
-          #                  "a la de inicio")
-          # end
-          #end
-
           attr_accessor :fechaini_localizada
           def fechaini_localizada
             !self.respuestafor.nil? && 
