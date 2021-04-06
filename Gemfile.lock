@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: e887073f48429196c7a390d9b4553820c659d6d5
+  revision: c3b8119b2761ea252b14fb94d2de8792eb198be4
   branch: main
   specs:
     sip (2.0.b11)
@@ -132,7 +132,7 @@ GEM
     ffi (1.15.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
-    i18n (1.8.9)
+    i18n (1.8.10)
       concurrent-ruby (~> 1.0)
     jquery-ui-rails (6.0.1)
       railties (>= 3.2.16)
@@ -142,7 +142,7 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.7.1)
       mini_mime (>= 0.1.1)
-    marcel (1.0.0)
+    marcel (1.0.1)
     method_source (1.0.0)
     mime-types (3.3.1)
       mime-types-data (~> 3.2015)
