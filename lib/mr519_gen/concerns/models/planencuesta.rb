@@ -13,8 +13,8 @@ module Mr519Gen
 
           belongs_to :formulario, class_name: 'Mr519Gen::Formulario',
             foreign_key: :formulario_id
-          belongs_to :plantillacorreoinv, class_name: '::Plantillacorreo',
-            foreign_key: :plantillacorreoinv_id, optional: true
+          #belongs_to :plantillacorreoinv, class_name: '::Plantillacorreo',
+          #  foreign_key: :plantillacorreoinv_id, optional: true
 
           has_secure_token :adurl
 
