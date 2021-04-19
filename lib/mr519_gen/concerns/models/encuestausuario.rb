@@ -24,9 +24,9 @@ module  Mr519Gen
           accepts_nested_attributes_for :formulario,  reject_if: :all_blank
 
 
-          has_many :valorcampo, through: :respuestafor,
-            class_name: 'Mr519Gen::Valorcampo'
-          accepts_nested_attributes_for :valorcampo,  reject_if: :all_blank
+          #has_many :valorcampo, through: :respuestafor,
+          #  class_name: 'Mr519Gen::Valorcampo'
+          #accepts_nested_attributes_for :valorcampo,  reject_if: :all_blank
 
           campofecha_localizado :fechainicio
           campofecha_localizado :fechafin
