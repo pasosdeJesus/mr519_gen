@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: 309f8ef49de94a1fac799d008a04896686f2eca2
+  revision: d370cdbcaa1d226ded61549a2e75690996ab1d04
   branch: main
   specs:
     sip (2.0.b11)
@@ -154,7 +154,7 @@ GEM
     mini_portile2 (2.5.1)
     minitest (5.14.4)
     nio4r (2.5.7)
-    nokogiri (1.11.4)
+    nokogiri (1.11.5)
       mini_portile2 (~> 2.5.0)
       racc (~> 1.4)
     orm_adapter (0.5.0)
@@ -249,7 +249,7 @@ GEM
       activemodel (>= 6.0.0)
       bindex (>= 0.4.0)
       railties (>= 6.0.0)
-    webpacker (5.3.0)
+    webpacker (5.4.0)
       activesupport (>= 5.2)
       rack-proxy (>= 0.6.1)
       railties (>= 5.2)
