@@ -1,13 +1,3 @@
-// Siguiendo ejemplo de https://github.com/rails/webpacker/blob/master/docs/webpack.md
-
-module.exports = {
-  resolve: {
-    alias: {
-      'jquery-ui': 'jquery-ui/ui',
-    }
-  }
-}
-
 const { environment } = require('@rails/webpacker')
 const webpack = require('webpack')
 
@@ -17,17 +7,16 @@ environment.plugins.prepend(
     $: 'jquery',
     jQuery: 'jquery',
     jquery: 'jquery',
-    'window.jQuery':'jquery',
-    Popper: ['popper.js', 'default'],
+    Popper: ['popper.js', 'default']
   })
 )
 
-environment.loaders.append('expose', {
+environment.loaders.append('jquery', {
   test: require.resolve('jquery'),
-  use: [
-    { loader: 'expose-loader', options: '$' },
-    { loader: 'expose-loader', options: 'jQuery' },
-  ]
+  loader: 'expose-loader',
+  options: {
+    exposes: ['$', 'jQuery']
+  }
 })
 
 module.exports = environment
