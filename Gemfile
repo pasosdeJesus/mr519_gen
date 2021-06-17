@@ -12,9 +12,10 @@ gem 'devise'   # Autenticación
 
 gem 'devise-i18n'
 
-gem 'nokogiri', '>=1.11.1'
+gem 'kt-paperclip',                 # Anexos
+  git: 'https://github.com/kreeti/kt-paperclip.git'
 
-gem 'paperclip'                   # Anexos
+gem 'nokogiri', '>=1.11.1'
 
 gem 'rails', '~> 6.1'
   #git: 'https://github.com/rails/rails.git', branch: '6-1-stable'
