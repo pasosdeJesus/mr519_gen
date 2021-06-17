@@ -889,6 +889,16 @@ CREATE TABLE public.sip_etiqueta (
 
 
 --
+-- Name: sip_etiqueta_municipio; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.sip_etiqueta_municipio (
+    etiqueta_id bigint NOT NULL,
+    municipio_id bigint NOT NULL
+);
+
+
+--
 -- Name: sip_fuenteprensa; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -2334,6 +2344,14 @@ ALTER TABLE ONLY public.sip_municipio
 
 
 --
+-- Name: sip_etiqueta_municipio fk_rails_10d88626c3; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.sip_etiqueta_municipio
+    ADD CONSTRAINT fk_rails_10d88626c3 FOREIGN KEY (etiqueta_id) REFERENCES public.sip_etiqueta(id);
+
+
+--
 -- Name: mr519_gen_encuestausuario fk_rails_1b24d10e82; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -2403,6 +2421,14 @@ ALTER TABLE ONLY public.sip_orgsocial_persona
 
 ALTER TABLE ONLY public.mr519_gen_encuestapersona
     ADD CONSTRAINT fk_rails_54b3e0ed5c FOREIGN KEY (persona_id) REFERENCES public.sip_persona(id);
+
+
+--
+-- Name: sip_etiqueta_municipio fk_rails_5672729520; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.sip_etiqueta_municipio
+    ADD CONSTRAINT fk_rails_5672729520 FOREIGN KEY (municipio_id) REFERENCES public.sip_municipio(id);
 
 
 --
@@ -2792,6 +2818,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20210401194637'),
 ('20210401210102'),
 ('20210414201956'),
-('20210614120835');
+('20210614120835'),
+('20210616003251');
 
 
