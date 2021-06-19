@@ -33,11 +33,25 @@ module Mr519Gen
             if con_nombre_campo
               r = "#{campo.presenta_nombre}: "
             end
-            if !campo.tipo || campo.tipo == Mr519Gen::ApplicationHelper::ENTERO || 
-                campo.tipo == Mr519Gen::ApplicationHelper::FLOTANTE || 
+            if !campo.tipo ||
                 campo.tipo == Mr519Gen::ApplicationHelper::TEXTO ||
-                campo.tipo == Mr519Gen::ApplicationHelper::TEXTOLARGO
+                campo.tipo == Mr519Gen::ApplicationHelper::TEXTOLARGO ||
+                campo.tipo == Mr519Gen::ApplicationHelper::FECHA
               r += "#{valor.to_s}"
+            elsif campo.tipo == Mr519Gen::ApplicationHelper::ENTERO
+              if r == ''
+                r = valor.to_i
+              else
+                r += "#{valor.to_s}"
+              end
+            elsif campo.tipo == Mr519Gen::ApplicationHelper::FLOTANTE
+              if r == ''
+                r = valor.to_f
+              else
+                r += "#{valor.to_s}"
+              end
+            elsif campo.tipo == Mr519Gen::ApplicationHelper::PRESENTATEXTO
+              r += campo.nombre
             elsif campo.tipo == Mr519Gen::ApplicationHelper::BOOLEANO
               r += valor.to_i == 0 ? "NO" : "SI"
             elsif campo.tipo == Mr519Gen::ApplicationHelper::SELECCIONMULTIPLE
