@@ -11,10 +11,10 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: e2278cdd5263bca4f406d71ec4ce0cee368f8f15
-  branch: orgsocial
+  revision: be07c0d79e0f377086448b5d780bd506e42dc2bc
+  branch: main
   specs:
-    sip (2.0.b11)
+    sip (2.0.b12)
       cancancan
       chosen-rails
       devise
