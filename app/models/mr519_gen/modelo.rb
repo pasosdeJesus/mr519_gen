@@ -27,6 +27,8 @@ module Mr519Gen
                   campo_id: ca.take.id)
                 if vc.count == 1
                   return vc.take.presenta_valor(false)
+                elsif vc.count == 0
+                  return ""
                 else
                   return "Hay más de un valor para campo '#{pa[1]}' de formulario '#{pa[0]}'"
                 end
