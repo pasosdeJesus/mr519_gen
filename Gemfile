@@ -39,7 +39,7 @@ gem 'webpacker',#, '~> 5.4'       # Traduce y compila modulos Javascript
 # lógico y no alfabetico como las gemas anteriores)
 
 gem 'sip', # Motor generico
-  git: 'https://github.com/pasosdeJesus/sip.git', branch: :webpacker6
+  git: 'https://github.com/pasosdeJesus/sip.git', branch: :main
   #path: '../sip'
 
 
