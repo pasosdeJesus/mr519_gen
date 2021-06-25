@@ -20,7 +20,8 @@ console.log('Hola mundo desde Webpacker')
 require("@rails/ujs").start()
 require("turbolinks").start()
 
-import {$, jQuery} from "jquery";
+
+import $ from "expose-loader?exposes=$,jQuery!jquery";
 
 import "popper.js"
 import "bootstrap"
