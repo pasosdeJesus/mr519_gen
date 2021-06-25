@@ -30,7 +30,8 @@ gem 'twitter_cldr'               # Localiación e internacionalización
 
 gem 'will_paginate'               # Pagina listados
 
-gem 'webpacker'
+gem 'webpacker',#, '~> 5.4'       # Traduce y compila modulos Javascript
+  git: 'https://github.com/rails/webpacker'
 
 
 #####
