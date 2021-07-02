@@ -32,7 +32,6 @@ test:
   before_script:
     - echo "HOME=$HOME"
     - pwd
-    - lsb_release --all
     - ruby -v
     - which ruby
     - export APT_CACHE_DIR=`pwd`/apt-cache && mkdir -pv $APT_CACHE_DIR
