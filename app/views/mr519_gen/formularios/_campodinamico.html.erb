@@ -28,7 +28,8 @@
   %>
 <% when Mr519Gen::ApplicationHelper::FECHA %>
   <% ihtml.merge!({
-    "data-behaviour" => "datepicker"
+    "data-behaviour" => "datepicker",
+     class: "datepicker"
     })
   %>
   <%= v.input :valor,
@@ -36,6 +37,16 @@
     :as => :string,
     input_html: ihtml
   %>
+  <script>
+  $( function() {
+    $( ".datepicker" ).datepicker({
+      format: 'yyyy-mm-dd',
+      autoclose: true,
+      todayHighlight: true,
+      language: 'es'
+    });
+  } );
+  </script>
 <% when Mr519Gen::ApplicationHelper::FLOTANTE %>
   <% ihtml.merge!({
     type: 'number',
