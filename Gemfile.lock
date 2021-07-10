@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: e35094edba13b6fdf0a24ceaa70ac1504751dea5
+  revision: 3f3cfa8e9c1767f1ab361352a4215ee28267b4c5
   branch: main
   specs:
     sip (2.0.b12)
@@ -30,7 +30,7 @@ GIT
 
 GIT
   remote: https://github.com/rails/webpacker
-  revision: 032c2d11a3758035305fe34e6795ab133128ee32
+  revision: 5dae8b51956e9cd739bdfae44f8214fa1e0f49b2
   specs:
     webpacker (6.0.0.beta.7)
       activesupport (>= 5.2)
@@ -167,7 +167,7 @@ GEM
     method_source (1.0.0)
     mime-types (3.3.1)
       mime-types-data (~> 3.2015)
-    mime-types-data (3.2021.0225)
+    mime-types-data (3.2021.0704)
     mimemagic (0.3.10)
       nokogiri (~> 1)
       rake
@@ -223,7 +223,7 @@ GEM
       method_source
       rake (>= 0.13)
       thor (~> 1.0)
-    rake (13.0.3)
+    rake (13.0.6)
     redcarpet (3.5.1)
     responders (3.0.1)
       actionpack (>= 5.0)
@@ -257,7 +257,7 @@ GEM
       climate_control (>= 0.0.3, < 1.0)
     thor (1.1.0)
     tilt (2.0.10)
-    twitter_cldr (6.6.1)
+    twitter_cldr (6.6.2)
       camertron-eprun
       cldr-plurals-runtime-rb (~> 1.1)
       tzinfo
