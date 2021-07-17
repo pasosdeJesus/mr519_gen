@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: 0ea4c134bb648fadfb92b99b953afcc90b08f3ac
+  revision: 0a0992c47e3bee6873853627654cad85ab051620
   branch: main
   specs:
     sip (2.0.b12)
