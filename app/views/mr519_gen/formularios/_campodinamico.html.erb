@@ -1,7 +1,7 @@
 <% if obligatorio %>
   <% etiqueta += ' *' %>
 <% end %>
-<% ihtml = {} %>
+<% ihtml = { "data-mr519-gen" => "campo_#{v.object.campo_id}" } %>
 <% if ayudae%>
   <% ihtml.merge!({ 'data-toggle' => 'tooltip',
                    "title" => ayudae 
