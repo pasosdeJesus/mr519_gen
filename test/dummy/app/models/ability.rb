@@ -65,7 +65,7 @@ class Ability  < Sip::Ability
         can [:edit, :update], 
             Mr519Gen::Encuestausuario.where(usuario_id: usuario.id)
 
-        can :read, Sip::Actorsocial
+        can :read, Sip::Orgsocial
         can :read, Sip::Persona
         can :read, Sip::Ubicacion
         can :new, Sip::Ubicacion
@@ -75,7 +75,7 @@ class Ability  < Sip::Ability
         can :manage, [Mr519Gen::Encuestausuario, Mr519Gen::Encuestapersona]
         can :manage, Mr519Gen::Formulario
 
-        can :manage, Sip::Actorsocial
+        can :manage, Sip::Orgsocial
         can :manage, Sip::Persona
         can :manage, Sip::Respaldo7z
         can :manage, Sip::Ubicacion
