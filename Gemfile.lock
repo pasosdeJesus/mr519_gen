@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: 88791d6ed425c2280586a7989495902232e49857
+  revision: 637813e3d4870a0401fbfdea729120ec2483ae7a
   branch: main
   specs:
     sip (2.0.b12)
@@ -235,7 +235,7 @@ GEM
       json (>= 1.8, < 3)
       simplecov-html (~> 0.10.0)
     simplecov-html (0.10.2)
-    spring (2.1.1)
+    spring (3.0.0)
     sprockets (4.0.2)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
