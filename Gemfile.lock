@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: 637813e3d4870a0401fbfdea729120ec2483ae7a
+  revision: 17055e8656f2f0a8ae5718ac8c0bdfdeaaf436b8
   branch: main
   specs:
     sip (2.0.b12)
@@ -26,7 +26,6 @@ GIT
       rails-i18n
       simple_form
       twitter_cldr
-      will_paginate
 
 GIT
   remote: https://github.com/vtamara/cocoon.git
@@ -176,7 +175,7 @@ GEM
       mimemagic (~> 0.3.0)
       terrapin (~> 0.6.0)
     pg (1.2.3)
-    puma (5.4.0)
+    puma (5.5.0)
       nio4r (~> 2.0)
     racc (1.5.2)
     rack (2.2.3)
