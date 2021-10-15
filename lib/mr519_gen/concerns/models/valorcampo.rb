@@ -48,7 +48,7 @@ module Mr519Gen
               if r == ''
                 r = valor.to_f
               else
-                r += "#{valor.to_s}"
+                r += "#{valor.to_f.to_s}"
               end
             elsif campo.tipo == Mr519Gen::ApplicationHelper::PRESENTATEXTO
               r += campo.nombre

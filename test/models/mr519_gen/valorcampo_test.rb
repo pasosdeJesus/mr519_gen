@@ -22,6 +22,7 @@ module Mr519Gen
       c = Mr519Gen::Campo.new(Mr519Gen::CampoTest::PRUEBA_CAMPO)
       c.formulario = f
       assert c.valid?
+      c.save
       r = Mr519Gen::Respuestafor.new(
         Mr519Gen::RespuestaforTest::PRUEBA_RESPUESTAFOR)
       r.formulario = f
@@ -34,16 +35,44 @@ module Mr519Gen
       assert v.valid?
       assert_equal 'c: 1', v.presenta_valor
       assert_equal '1', v.presenta_valor(false)
+
+      v.campo.tipo = Mr519Gen::ApplicationHelper::ENTERO
+      assert_equal 1, v.presenta_valor(false)
+      assert_equal 'c: 1', v.presenta_valor(true)
       v.campo.tipo = Mr519Gen::ApplicationHelper::FLOTANTE
       assert_equal 1.0, v.presenta_valor(false)
+      assert_equal 'c: 1.0', v.presenta_valor(true)
       v.campo.tipo = Mr519Gen::ApplicationHelper::PRESENTATEXTO
       assert_equal 'c', v.presenta_valor(false)
       v.campo.tipo = Mr519Gen::ApplicationHelper::BOOLEANO
       assert_equal 'SI', v.presenta_valor(false)
+      o = Mr519Gen::Opcioncs.new(id: 1, campo_id: 1, nombre: 'x', valor: 'x')
+      o.save
       v.campo.tipo = Mr519Gen::ApplicationHelper::SELECCIONMULTIPLE
       v.valor_ids = [1, 2]
       assert_equal '[1, 2]', v.valor_ids.to_s 
       assert_equal '[1, 2]', v.presenta_valor(false).to_s 
+      v.campo.tipo = Mr519Gen::ApplicationHelper::SELECCIONSIMPLE
+      o = Mr519Gen::Opcioncs.new(
+        id: 1, campo_id: c.id, nombre: 'x', valor: 'x')
+      o.save
+      assert_equal 'x', v.presenta_valor(false)
+      v.campo.tipo = Mr519Gen::ApplicationHelper::SMTABLABASICA
+      assert_equal 'Problema tablabasica es nil', v.presenta_valor(false)
+      v.campo.tablabasica = 'Pais'
+      assert_equal 'Problema con tablabasica Pais  porque hay 0', v.presenta_valor(false)
+      v.campo.tablabasica = 'pais'
+      v.valor_ids = [170, 686]
+      assert_equal 'COLOMBIA; SENEGAL', v.presenta_valor(false)
+      v.campo.tipo = Mr519Gen::ApplicationHelper::SSTABLABASICA
+      v.campo.tablabasica = nil
+      assert_equal 'Problema tablabasica es nil', v.presenta_valor(false)
+      v.campo.tablabasica = 'Pais'
+      assert_equal 'Problema con tablabasica Pais  porque hay 0', v.presenta_valor(false)
+      v.campo.tablabasica = 'pais'
+      v.valor = 686
+      assert_equal 'SENEGAL', v.presenta_valor(false)
+      
       v.destroy
       r.destroy
       c.destroy
