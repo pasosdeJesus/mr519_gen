@@ -32,6 +32,18 @@ module Mr519Gen
       v.campo = c
       v.respuestafor = r
       assert v.valid?
+      assert_equal 'c: 1', v.presenta_valor
+      assert_equal '1', v.presenta_valor(false)
+      v.campo.tipo = Mr519Gen::ApplicationHelper::FLOTANTE
+      assert_equal 1.0, v.presenta_valor(false)
+      v.campo.tipo = Mr519Gen::ApplicationHelper::PRESENTATEXTO
+      assert_equal 'c', v.presenta_valor(false)
+      v.campo.tipo = Mr519Gen::ApplicationHelper::BOOLEANO
+      assert_equal 'SI', v.presenta_valor(false)
+      v.campo.tipo = Mr519Gen::ApplicationHelper::SELECCIONMULTIPLE
+      v.valor_ids = [1, 2]
+      assert_equal '[1, 2]', v.valor_ids.to_s 
+      assert_equal '[1, 2]', v.presenta_valor(false).to_s 
       v.destroy
       r.destroy
       c.destroy
