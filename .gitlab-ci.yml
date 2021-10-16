@@ -17,7 +17,7 @@ variables:
   POSTGRES_HOST_AUTH_METHOD: trust
   NOKOGIRI_USE_SYSTEM_LIBRARIES: "true"
   SELENIUM_REMOTE_URL: http://chrome:4444/wd/hub
-  NODE_VERSION: 12.22.7
+  NODE_VERSION: 
 
 
 stages:
@@ -37,8 +37,8 @@ test:
     - which ruby
     - export APT_CACHE_DIR=`pwd`/apt-cache && mkdir -pv $APT_CACHE_DIR
     - apt-get update -yy && apt-get install build-essential libpq-dev postgresql-client -y
-    - curl -fsSLO --compressed "https://nodejs.org/dist/v/node-v$NODE_VERSION-linux-x64.tar.xz"
-    - tar -xJf "node-v$NODE_VERSION-linux-$ARCH.tar.xz" -C /usr/local --strip-components=1 --no-same-owner
+    - curl -fsSLO --compressed "https://nodejs.org/dist/v/node-v12.22.7-linux-x64.tar.xz"
+    - tar -xJf "node-v12.22.7-linux-x64.tar.xz" -C /usr/local --strip-components=1 --no-same-owner
     - ln -s /usr/local/bin/node /usr/local/bin/nodejs
     - curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
     - echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
