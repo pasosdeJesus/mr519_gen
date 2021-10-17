@@ -1,6 +1,6 @@
 # Basado entre otros en: https://dev.to/mpressen/rails-minitest-gitlab-ci-31ap
 
-image: "ruby:3.0.1"
+image: "ruby:3.0.2"
 
 services:
   - name: vtamara/postgis-es_co:13.3-1
@@ -36,9 +36,8 @@ test:
     - which ruby
     - export APT_CACHE_DIR=`pwd`/apt-cache && mkdir -pv $APT_CACHE_DIR
     - apt-get update -yy && apt-get install build-essential libpq-dev postgresql-client -y
-    - curl -fsSLO --compressed "https://nodejs.org/dist/v/node-v12.22.7-linux-x64.tar.xz"
-    - tar -xJf "node-v12.22.7-linux-x64.tar.xz" -C /usr/local --strip-components=1 --no-same-owner
-    - ln -s /usr/local/bin/node /usr/local/bin/nodejs
+    - apt-get install -y -qq nodejs
+    - node -v
     - curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
     - echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
     - apt-get update -qq && apt-get -o dir::cache::archives="$APT_CACHE_DIR" install -yqq yarn
