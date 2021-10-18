@@ -58,7 +58,6 @@ test:
     - cd ../..
   script:
     - CONFIG_HOSTS=www.example.com bin/rails test
-  after-script:
     - ./cc-test-reporter after-build -t simplecov --exit-code $?
 
 
