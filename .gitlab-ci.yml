@@ -16,7 +16,7 @@ variables:
   POSTGRES_DB: mr519_pru
   POSTGRES_HOST_AUTH_METHOD: trust
   NOKOGIRI_USE_SYSTEM_LIBRARIES: "true"
-  CC_TEST_REPORTER_ID=ABC123: ""
+  CC_TEST_REPORTER_ID="0c6f51e46015cd9a30f217aa5eb0007c8166f91d03b8c150a8539234b3fcf1bd"
 
 
 stages:
@@ -45,6 +45,7 @@ test:
     - bundle install --jobs $(nproc) "${FLAGS[@]}"
     - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
     - chmod +x ./cc-test-reporter
+    - echo "CC_TEST_REPORTER_ID=${CC_TEST_REPORTER_ID}"
     - ./cc-test-reporter before-build
     - cd test/dummy
     - cp .env.gitlab .env
