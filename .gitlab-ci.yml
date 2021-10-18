@@ -16,7 +16,7 @@ variables:
   POSTGRES_DB: mr519_pru
   POSTGRES_HOST_AUTH_METHOD: trust
   NOKOGIRI_USE_SYSTEM_LIBRARIES: "true"
-  SELENIUM_REMOTE_URL: http://chrome:4444/wd/hub
+  CC_TEST_REPORTER_ID=ABC123: ""
 
 
 stages:
@@ -52,8 +52,13 @@ test:
     - bin/rails db:drop db:create db:setup
     - bin/rails sip:indices
     - yarn
+    - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+    - chmod +x ./cc-test-reporter
+    - ./cc-test-reporter before-build
     - cd ../..
   script:
     - CONFIG_HOSTS=www.example.com bin/rails test
+  after-script:
+    - ./cc-test-reporter after-build -t simplecov --exit-code $?
 
 
