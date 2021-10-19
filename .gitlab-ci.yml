@@ -45,7 +45,6 @@ test:
     - bundle install --jobs $(nproc) "${FLAGS[@]}"
     - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
     - chmod +x ./cc-test-reporter
-    - echo "CC_TEST_REPORTER_ID=${CC_TEST_REPORTER_ID}"
     - ./cc-test-reporter before-build
     - cd test/dummy
     - cp .env.gitlab .env
