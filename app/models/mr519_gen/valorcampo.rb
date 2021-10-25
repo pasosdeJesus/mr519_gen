@@ -1,5 +1,3 @@
-# encoding: UTF-8
-
 require 'mr519_gen/concerns/models/valorcampo'
 
 module Mr519Gen

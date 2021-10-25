@@ -1,5 +1,3 @@
-# encoding: UTF-8
-
 module Mr519Gen
   module Concerns
     module Models

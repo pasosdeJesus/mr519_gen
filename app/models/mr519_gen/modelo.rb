@@ -1,5 +1,3 @@
-# encoding: UTF-8
-
 # Extiende Sip::Modelo para facilitar presentar
 # información de formularios
 module Mr519Gen

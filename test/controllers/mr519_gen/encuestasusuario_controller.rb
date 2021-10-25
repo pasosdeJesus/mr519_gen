@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 require_relative '../../test_helper'
 require_relative '../../models/mr519_gen/encuestausuario_test.rb'
 

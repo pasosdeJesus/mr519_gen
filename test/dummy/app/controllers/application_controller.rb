@@ -1,5 +1,3 @@
-# encoding: UTF-8
-
 require 'sip/application_controller'
 class ApplicationController < Sip::ApplicationController
   # Previente ataques CSRF elevando una excepción

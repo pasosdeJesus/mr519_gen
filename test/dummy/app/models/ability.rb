@@ -1,5 +1,3 @@
-# encoding: UTF-8
-
 class Ability  < Sip::Ability
 
   ROLOPERADOR = 5

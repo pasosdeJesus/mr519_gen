@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 class CreaRespuestafor < ActiveRecord::Migration[5.2]
   def change
     create_table :mr519_gen_respuestafor do |t|

@@ -1,5 +1,3 @@
-# encoding: UTF-8
-
 require 'mr519_gen/concerns/models/formulario'
 
 module Mr519Gen

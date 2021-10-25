@@ -1,4 +1,3 @@
-# encoding: UTF-8
 require_dependency "mr519_gen/concerns/controllers/encuestasusuario_controller"
 
 module Mr519Gen

@@ -1,5 +1,3 @@
-# encoding: UTF-8
-
 require_relative './formulario_test'
 require_relative './respuestafor_test'
 require_relative '../../test_helper'

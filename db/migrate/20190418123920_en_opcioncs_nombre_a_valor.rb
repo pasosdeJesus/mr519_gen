@@ -1,5 +1,3 @@
-# encoding: UTF-8
-
 class EnOpcioncsNombreAValor < ActiveRecord::Migration[5.2]
 
   def up
