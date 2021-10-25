@@ -6,11 +6,6 @@ module Mr519Gen
 
         included do
 
-          before_action :set_encuestausuario, 
-            only: [:show, :edit, :update, :destroy]
-          #load_and_authorize_resource class: Mr519Gen::Encuestausuario
-          # Mejor metodo a metodo y podrían ser solo parte de los registros
-
           def clase
             "Mr519Gen::Encuestausuario"
           end

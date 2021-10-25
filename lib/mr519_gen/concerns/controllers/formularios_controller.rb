@@ -6,10 +6,6 @@ module Mr519Gen
 
         included do
 
-          before_action :set_formulario, 
-            only: [:show, :edit, :update, :destroy]
-          load_and_authorize_resource class: Mr519Gen::Formulario
-
           def clase
             "Mr519Gen::Formulario"
           end

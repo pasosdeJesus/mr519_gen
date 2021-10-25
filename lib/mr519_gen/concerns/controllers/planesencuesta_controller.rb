@@ -10,7 +10,6 @@ module Mr519Gen
 
           before_action :set_planencuesta, 
             only: [:show, :edit, :update, :destroy]
-          load_and_authorize_resource  class: Mr519Gen::Planencuesta
 
           def clase 
             "Mr519Gen::Planencuesta"
