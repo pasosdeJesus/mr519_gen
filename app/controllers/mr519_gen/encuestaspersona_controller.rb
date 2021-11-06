@@ -1,4 +1,4 @@
-require_dependency "mr519_gen/concerns/controllers/encuestaspersona_controller"
+require 'mr519_gen/concerns/controllers/encuestaspersona_controller'
 
 module Mr519Gen
   class EncuestaspersonaController < Sip::ModelosController

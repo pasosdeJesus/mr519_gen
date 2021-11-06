@@ -1,4 +1,4 @@
-require_dependency "mr519_gen/concerns/controllers/campos_controller"
+require 'mr519_gen/concerns/controllers/campos_controller'
 
 module Mr519Gen
   class CamposController < Sip::ModelosController
