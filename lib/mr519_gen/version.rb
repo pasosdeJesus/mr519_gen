@@ -1,3 +1,3 @@
 module Mr519Gen
-  VERSION = '0.2.1'
+  VERSION = '2.0'
 end
