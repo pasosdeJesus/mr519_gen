@@ -35,8 +35,10 @@ function mr519ef_texto_a_visual() {
           '_fila').value
         let vancho = +document.querySelector('#formulario_campo_attributes_' + 
           idc + '_ancho').value
-        let vnombre = document.querySelector('#formulario_campo_attributes_' + 
+        let vnombre = sip_escapaHtml(
+          document.querySelector('#formulario_campo_attributes_' + 
           idc + '_nombre').value
+        )
 
         document.addNewWidget({
           x: vx > 0 ? vx - 1 : 0,

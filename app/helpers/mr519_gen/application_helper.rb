@@ -79,13 +79,13 @@ module Mr519Gen
         when Mr519Gen::ApplicationHelper::TEXTO, 
           Mr519Gen::ApplicationHelper::TEXTOLARGO,
           Mr519Gen::ApplicationHelper::FECHA
-          cons = ''.html_safe
-          sep = ''.html_safe
+          cons = ''
+          sep = ''
           Mr519Gen::Valorcampo.where(campo_id: c.id).
             where("respuestafor_id IN (#{resps.map(&:id).join(',')})").
             each do |vc|
             if vc.valor && vc.valor.strip != ''
-              cons += sep.html_safe + vc.valor.to_s.html_safe
+              cons += sep + vc.valor.to_s
               sep = '.<hr>'.html_safe
             end
           end
@@ -109,8 +109,8 @@ module Mr519Gen
           tb = ab.tablasbasicas.select {|l| 
             l[1] == c.tablabasica.singularize
           }
-          cons = ''.html_safe
-          sep = ''.html_safe
+          cons = ''
+          sep = ''
           cla = Ability::tb_clase(tb[0])
           col1 = cla.all 
           if col1.respond_to?(:habilitados)
@@ -120,31 +120,31 @@ module Mr519Gen
             cuenta = Mr519Gen::Valorcampo.where(campo_id: c.id).
               where("respuestafor_id IN (#{resps.map(&:id).join(',')})").
               where("valor = ?", rb.id.to_s).count
-              cons += sep.html_safe + "#{rb.nombre}: #{cuenta}".html_safe
+              cons += sep + "#{rb.nombre}: #{cuenta}"
               sep = "<br> ".html_safe
           end
           cuenta = Mr519Gen::Valorcampo.where(campo_id: c.id).
             where("respuestafor_id IN (#{resps.map(&:id).join(',')})").
             where("valor = '' OR valor IS NULL").count
           if cuenta > 0
-            cons += sep.html_safe + "No respondida: #{cuenta}".html_safe
+            cons += sep + "No respondida: #{cuenta}"
           end
 
         when Mr519Gen::ApplicationHelper::SELECCIONSIMPLE
-          cons = ''.html_safe
-          sep = ''.html_safe
+          cons = ''
+          sep = ''
           Mr519Gen::Opcioncs.where(campo_id: c.id).each do |op|
             cuenta = Mr519Gen::Valorcampo.where(campo_id: c.id).
               where("respuestafor_id IN (#{resps.map(&:id).join(',')})").
               where("valor = ?", op.id.to_s).count
-              cons += sep.html_safe + "#{op.nombre}: #{cuenta}".html_safe
+              cons += sep + "#{op.nombre}: #{cuenta}"
               sep = "<br> ".html_safe
           end
           cuenta = Mr519Gen::Valorcampo.where(campo_id: c.id).
             where("respuestafor_id IN (#{resps.map(&:id).join(',')})").
             where("valor = '' OR valor IS NULL").count
           if cuenta > 0
-            cons += sep.html_safe + "No respondida: #{cuenta}".html_safe
+            cons += sep + "No respondida: #{cuenta}"
           end
 
         else
