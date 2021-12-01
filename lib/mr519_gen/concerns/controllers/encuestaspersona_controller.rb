@@ -158,9 +158,8 @@ module Mr519Gen
               case c.tipo 
               when Mr519Gen::ApplicationHelper::TEXTO, 
                 Mr519Gen::ApplicationHelper::TEXTOLARGO
-                cons = Mr519Gen::Valorcampo.where(campo_id: c.id).map(&:valor).
-                  join(".<hr>")
-                cons = cons.html_safe
+                cons = Mr519Gen::Valorcampo.where(campo_id: c.id).map(&:valor) +
+                  ".<hr>".html_safe
               when Mr519Gen::ApplicationHelper::ENTERO,
                 Mr519Gen::ApplicationHelper::FLOTANTE
                 cons = Mr519Gen::Valorcampo.where(campo_id: c.id).
