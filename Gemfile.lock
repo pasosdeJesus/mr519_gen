@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: b91d3ce7df63c432aaa6d5b4f70d55ab381186e8
+  revision: 79ce35e383f0519299809c59b7ff884b3e126bd0
   branch: v2.0
   specs:
     sip (2.0)
@@ -246,7 +246,7 @@ GEM
       climate_control (>= 0.0.3, < 1.0)
     thor (1.1.0)
     tilt (2.0.10)
-    twitter_cldr (6.8.0)
+    twitter_cldr (6.9.0)
       camertron-eprun
       cldr-plurals-runtime-rb (~> 1.1)
       tzinfo
