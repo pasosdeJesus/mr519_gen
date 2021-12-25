@@ -17,7 +17,7 @@ gem 'kt-paperclip',                 # Anexos
 
 gem 'nokogiri', '>=1.11.1'
 
-gem 'rails', '~> 6.1'
+gem 'rails', '~> 7'
   #git: 'https://github.com/rails/rails.git', branch: '6-1-stable'
 
 gem 'rails-i18n'
@@ -25,6 +25,8 @@ gem 'rails-i18n'
 gem 'redcarpet' # Descripciones en heb412_gen
 
 gem 'simple_form'   # Formularios
+
+gem 'sprockets-rails'
 
 gem 'twitter_cldr'               # Localiación e internacionalización
 
@@ -38,7 +40,7 @@ gem 'webpacker', '~> 6.0.0.rc.1'       # Traduce y compila modulos Javascript
 # lógico y no alfabetico como las gemas anteriores)
 
 gem 'sip', # Motor generico
-  git: 'https://github.com/pasosdeJesus/sip.git', branch: :main
+  git: 'https://github.com/pasosdeJesus/sip.git', branch: :rails7jses
   #path: '../sip'
 
 
@@ -52,7 +54,7 @@ end
 
 group :development, :test do
   # Depurar
-  #gem 'byebug'
+  gem 'byebug'
   gem 'colorize'
 
   gem 'dotenv-rails'

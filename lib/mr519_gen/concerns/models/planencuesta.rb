@@ -12,7 +12,7 @@ module Mr519Gen
           self.table_name = 'mr519_gen_valorcampo'
 
           belongs_to :formulario, class_name: 'Mr519Gen::Formulario',
-            foreign_key: :formulario_id
+            foreign_key: :formulario_id, optional: false
           #belongs_to :plantillacorreoinv, class_name: '::Plantillacorreo',
           #  foreign_key: :plantillacorreoinv_id, optional: true
 

@@ -12,9 +12,9 @@ module  Mr519Gen
           self.table_name = 'mr519_gen_encuestausuario'
 
           belongs_to :usuario, class_name: '::Usuario', 
-            foreign_key: 'usuario_id', validate: true
+            foreign_key: 'usuario_id', validate: true, optional: false
           belongs_to :respuestafor, class_name: 'Mr519Gen::Respuestafor', 
-            foreign_key: 'respuestafor_id', validate: true
+            foreign_key: 'respuestafor_id', validate: true, optional: false
           accepts_nested_attributes_for :respuestafor,  reject_if: :all_blank
 
           has_one :formulario, through: :respuestafor,

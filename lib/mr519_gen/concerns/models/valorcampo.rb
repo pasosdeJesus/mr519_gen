@@ -11,10 +11,10 @@ module Mr519Gen
           self.table_name = 'mr519_gen_valorcampo'
 
           belongs_to :campo,
-            class_name: "Mr519Gen::Campo",
+            class_name: "Mr519Gen::Campo", optional: false,
             foreign_key: "campo_id", validate: true
 
-          belongs_to :respuestafor,
+          belongs_to :respuestafor, optional: false,
             class_name: "Mr519Gen::Respuestafor",
             foreign_key: "respuestafor_id", validate: true
 
