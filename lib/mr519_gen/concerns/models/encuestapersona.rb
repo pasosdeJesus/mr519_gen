@@ -18,7 +18,7 @@ module  Mr519Gen
           belongs_to :formulariodec, class_name: 'Mr519Gen::Formulario', 
             foreign_key: 'formulario_id', validate: true, optional: true
           belongs_to :respuestafor, class_name: 'Mr519Gen::Respuestafor', 
-            foreign_key: 'respuestafor_id', validate: true
+            foreign_key: 'respuestafor_id', validate: true, optional: false
           accepts_nested_attributes_for :respuestafor,  reject_if: :all_blank
 
           has_one :formulario, through: :respuestafor,

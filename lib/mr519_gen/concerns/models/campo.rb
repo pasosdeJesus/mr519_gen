@@ -11,10 +11,10 @@ module Mr519Gen
           self.table_name = 'mr519_gen_campo'
 
           belongs_to :formulario,
-            class_name: "Mr519Gen::Formulario",
-            foreign_key: "formulario_id", validate: true
+            class_name: "Mr519Gen::Formulario", foreign_key: "formulario_id", 
+            validate: true, optional: false
 
-          has_many :valorcampo, dependent: :delete_all,
+          has_many :valorcampo, dependent: :delete_all, 
             class_name: 'Mr519Gen::Valorcampo',
             foreign_key: 'campo_id',  validate: true
 

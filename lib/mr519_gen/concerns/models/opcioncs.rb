@@ -11,7 +11,7 @@ module Mr519Gen
           self.table_name = 'mr519_gen_opcioncs'
 
           belongs_to :campo,
-            class_name: "Mr519Gen::Campo",
+            class_name: "Mr519Gen::Campo", optional: false,
             foreign_key: "campo_id", validate: true
 
           validates :valor, length: {maximum: 60}, presence: true,
