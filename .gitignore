@@ -24,6 +24,7 @@ test/dummy/tmp/
 test/dummy/public/packs/
 test/dummy/config/database.yml
 test/dummy/.sass-cache
+test/dummy/app/assets/builds/
 tmp/
 herram/
 
