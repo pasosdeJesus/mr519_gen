@@ -12,6 +12,8 @@ gem 'devise'   # Autenticación
 
 gem 'devise-i18n'
 
+gem 'jsbundling-rails'
+
 gem 'kt-paperclip',                 # Anexos
   git: 'https://github.com/kreeti/kt-paperclip.git'
 
@@ -31,8 +33,6 @@ gem 'sprockets-rails'
 gem 'twitter_cldr'               # Localiación e internacionalización
 
 gem 'will_paginate'               # Pagina listados
-
-gem 'webpacker', '~> 6.0.0.rc.1'       # Traduce y compila modulos Javascript
 
 
 #####
@@ -54,7 +54,7 @@ end
 
 group :development, :test do
   # Depurar
-  gem 'byebug'
+  #gem 'byebug'
   gem 'colorize'
 
   gem 'dotenv-rails'

@@ -1,2 +1,3 @@
-//= link_directory ../javascripts/mr519_gen .js
-//= link_directory ../stylesheets/mr519_gen .css
+//= link_directory ../javascripts/ .js
+//= link_directory ../stylesheets/ .css
+//= link_tree ../builds
