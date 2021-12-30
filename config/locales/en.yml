@@ -1,4 +1,6 @@
 en:
+  Formulario: Form
+  Formularios: Forms
   attributes:
   activerecord:
     models:
