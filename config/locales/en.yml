@@ -1,0 +1,29 @@
+en:
+  attributes:
+  activerecord:
+    models:
+    attributes:
+      "mr519_gen/encuestapersona":
+        adurl: Pass for public address
+        Encuestapersona: Poll
+        Encuestaspersona: Polls
+        fechaini_localizada: Date of first application
+        fechacambio_localizada: Last change date
+        fechainicio_localizada: Start date
+        fechafin_localizada: Deadline
+        formulariodec: Form
+        respuestafor: Answer
+        valorcampo: Answers
+      "mr519_gen/encuestausuario":
+        fechaini_localizada: Date of first application
+        fechacambio_localizada: Last change date
+        fechainicio_localizada: Start date
+        fechafin_localizada: Deadline
+        Encuestausuario: Poll
+        Encuestasusuario: Polls
+        valorcampo: Answers
+      "mr519_gen/formulario":
+        Formulario: Form
+        Formularios: Forms
+        nombreinterno: Internal name to export / import
+
