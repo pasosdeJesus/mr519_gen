@@ -33,7 +33,7 @@
         <% end %>
       <% end %>
       <div class="links-opcionescs">
-        <%= link_to_add_association 'Agregar opción', f, :opcioncs, {
+        <%= link_to_add_association t('Agregar opción'), f, :opcioncs, {
           #:"data-association-insertion-node" => "tbody#opciones", 
           #:"data-association-insertion-method" => "append", 
           partial: 'fila_opcionescs',
@@ -57,7 +57,7 @@
     <div class="tablabasica" style="<%= clasetb %>">
       <%= f.input :tablabasica, 
         collection: ntablas.sort.to_h,
-        label: "Tabla básica" %>
+        label: t("Tabla básica") %>
     </div>
   </td>
   <td>
@@ -70,7 +70,7 @@
   </td>
   <td>
     <%= f.input :id, as: :hidden %>
-    <%= link_to_remove_association 'Eliminar', f, 
+    <%= link_to_remove_association t('Eliminar'), f, 
       :class => 'btn-danger eliminaCampos',
       "data-existing" => true %>
     <div><%= f.error_notification %></div>
