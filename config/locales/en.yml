@@ -1,6 +1,18 @@
 en:
+  "Agregar campo": Add field
+  Ancho: Width
+  "Ayuda en el uso": Usage help
+  Columna: Column
+  "Esquema visual de tu formulario": Visual design of your form
+  "Esquema de tu formulario como texto": Design of your form as text
+  Fila: Row
   Formulario: Form
   Formularios: Forms
+  "Nombre interno": Internal name
+  Opciones: Options
+  Obligatorio: Required
+  "Pregunta-Texto": Question-Text
+  Tipo: Type
   attributes:
   activerecord:
     models:
@@ -27,5 +39,9 @@ en:
       "mr519_gen/formulario":
         Formulario: Form
         Formularios: Forms
+        campos: Fields
+        camposdinamicos: Design
+        caracterizacion: Characterization
         nombreinterno: Internal name to export / import
+        nombre: Name
 

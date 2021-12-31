@@ -2,24 +2,24 @@
 <%= f.input :id, as: :hidden %>
 <div class='panel panel-default container-fluid'>
   <br/>
-  <div class='panel-heading'><h4>Esquema visual de tu formulario</h4></div>
+  <div class='panel-heading'><h4><%= t('Esquema visual de tu formulario') %></h4></div>
   <br/>
   <div class='grid-stack'>
   </div>
   <br/>
 
-  <div class='panel-heading'><h4>Esquema de tu formulario como texto</h4></div>
+  <div class='panel-heading'><h4><%= t('Esquema de tu formulario como texto') %></h4></div>
   <div class='panel-body'>
     <div class='div-campos'>
       <table class='table table-bordered' border=1 width='100%'>
         <thead>
           <tr>
-            <th width='25%'>Pregunta-Texto<br> Nombre interno</th>
-            <th>Tipo</th>
-            <th>Ayuda en el uso<br> Opciones</th>
-            <th>Obligatorio</th>
-            <th>Fila <br> Columna <br> Ancho</th>
-            <th>Acciones</th>
+            <th width='25%'><%= t('Pregunta-Texto') %><br> <%= t('Nombre interno') %></th>
+            <th><%= t('Tipo') %></th>
+            <th><%= t('Ayuda en el uso') %><br> <%= t('Opciones') %></th>
+            <th><%= t('Obligatorio') %></th>
+            <th><%= t('Fila') %> <br> <%= t('Columna') %> <br> <%= t('Ancho') %></th>
+            <th><%= t('Acciones') %></th>
           </tr>
         </thead>
         <tbody id='campos'>
@@ -32,7 +32,7 @@
         </tbody>
       </table>
       <div class='links'>
-        <%= link_to_add_association 'Agregar campo', f, :campo, {
+        <%= link_to_add_association t('Agregar campo'), f, :campo, {
           :'data-association-insertion-node' => 'tbody#campos', 
           :'data-association-insertion-method' => 'append', 
           partial: 'fila_campos',
