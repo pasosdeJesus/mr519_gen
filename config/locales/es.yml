@@ -1,4 +1,18 @@
 es:
+  "Agregar campo": Agregar campo
+  Ancho: Ancho
+  "Ayuda en el uso": Ayuda en el uso
+  Columna: Columna
+  "Esquema visual de tu formulario": Esquema visual de tu formulario
+  "Esquema de tu formulario como texto": Esquema de tu formulario como texto
+  Fila: Fila
+  Formulario: Formulario
+  Formularios: Formularios
+  "Nombre interno": Nombre interno
+  Opciones: Opciones
+  Obligatorio: Obligatorio
+  "Pregunta-Texto": Pregunta-Texto
+  Tipo: Tipo
   attributes:
   activerecord:
     models:
