@@ -14,7 +14,7 @@
 	
 @mr519_gen_prepara_eventos_comunes = (root, opciones = {}) ->
   $(document).on('change', '[id^=formulario_campo_attributes_][id$=_tipo]', (event) ->
-    root = exports ? window
+    root = window
     if $(this).find('option:selected').length > 0 && ($(this).find('option:selected').text() == 'Selección Múltiple' || $(this).find('option:selected').text() == 'Selección Simple')
       $(this).parent().parent().parent().find('.espopciones').show()
     else
@@ -27,7 +27,7 @@
   )
 
   $(document).on('change', '#formulario_nombre', (event) ->
-    root = exports ? window
+    root = window
     idni = $(this).attr('id').replace('nombre', 'nombreinterno')
     if  $('#' + idni).length == 1 && ($('#' + idni).val() == '' || $('#' + idni).val() == 'N')
       $('#' + idni).val(mr519_gen_nombre_a_nombreinterno($(this).val()))
@@ -35,7 +35,7 @@
 
   # Cubre tanto nombre de campos como nombre de opciones
   $(document).on('change', 'input[id^=formulario_campo_attributes_][id$=_nombre]', (event) ->
-    root = exports ? window
+    root = window
     idni = $(this).attr('id').replace('nombre', 'nombreinterno')
     if  $('#' + idni).length == 0
     	idni = $(this).attr('id').replace('nombre', 'valor')
