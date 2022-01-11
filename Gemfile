@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 gemspec
 
+gem 'babel-transpiler'
+
 gem 'cancancan'                   # Control de acceso
 
 gem "cocoon", git: "https://github.com/vtamara/cocoon.git",
@@ -29,6 +31,10 @@ gem 'redcarpet' # Descripciones en heb412_gen
 gem 'simple_form'   # Formularios
 
 gem 'sprockets-rails'
+
+gem 'stimulus-rails'
+
+gem 'turbo-rails'
 
 gem 'twitter_cldr'               # Localiación e internacionalización
 

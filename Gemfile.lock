@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/kreeti/kt-paperclip.git
-  revision: c9e6f9d0018f3913b67fed5860a5d439ac72ac78
+  revision: 1328a1a69f88c9bab911c305455e67ca4daa0b5a
   specs:
     kt-paperclip (7.0.1)
       activemodel (>= 4.2.0)
@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: 2e61011909b90f7b1451c37fd4e624fd9a844577
+  revision: 42ad20191780d627663849a5adfab168d0430f2e
   branch: rails7jses
   specs:
     sip (2.1a1)
@@ -107,6 +107,10 @@ GEM
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
       tzinfo (~> 2.0)
+    babel-source (5.8.35)
+    babel-transpiler (0.7.0)
+      babel-source (>= 4.0, < 6)
+      execjs (~> 2.0)
     bcrypt (3.1.16)
     bindex (0.8.1)
     builder (3.2.4)
@@ -132,6 +136,7 @@ GEM
       dotenv (= 2.7.6)
       railties (>= 3.2)
     erubi (1.10.0)
+    execjs (2.8.1)
     globalid (1.0.0)
       activesupport (>= 5.0)
     i18n (1.8.11)
@@ -230,11 +235,15 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
+    stimulus-rails (1.0.2)
+      railties (>= 6.0.0)
     strscan (3.0.1)
     terrapin (0.6.0)
       climate_control (>= 0.0.3, < 1.0)
     thor (1.2.1)
     timeout (0.2.0)
+    turbo-rails (7.1.1)
+      rails (>= 6.0.0)
     twitter_cldr (6.11.0)
       camertron-eprun
       cldr-plurals-runtime-rb (~> 1.1)
@@ -258,6 +267,7 @@ PLATFORMS
   x86_64-openbsd
 
 DEPENDENCIES
+  babel-transpiler
   cancancan
   cocoon!
   colorize
@@ -278,6 +288,8 @@ DEPENDENCIES
   sip!
   spring
   sprockets-rails
+  stimulus-rails
+  turbo-rails
   twitter_cldr
   web-console
   will_paginate
