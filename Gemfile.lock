@@ -118,6 +118,13 @@ GEM
     cancancan (3.3.0)
     cldr-plurals-runtime-rb (1.1.0)
     climate_control (0.2.0)
+    coffee-rails (5.0.0)
+      coffee-script (>= 2.2.0)
+      railties (>= 5.2.0)
+    coffee-script (2.4.1)
+      coffee-script-source
+      execjs
+    coffee-script-source (1.12.2)
     colorize (0.8.1)
     concurrent-ruby (1.1.9)
     crass (1.0.6)
@@ -137,6 +144,7 @@ GEM
       railties (>= 3.2)
     erubi (1.10.0)
     execjs (2.8.1)
+    ffi (1.15.5)
     globalid (1.0.0)
       activesupport (>= 5.0)
     i18n (1.8.11)
@@ -219,6 +227,14 @@ GEM
     responders (3.0.1)
       actionpack (>= 5.0)
       railties (>= 5.0)
+    sassc (2.4.0)
+      ffi (~> 1.9)
+    sassc-rails (2.1.2)
+      railties (>= 4.0.0)
+      sassc (>= 2.0)
+      sprockets (> 3.0)
+      sprockets-rails
+      tilt
     simple_form (5.1.0)
       actionpack (>= 5.2)
       activemodel (>= 5.2)
@@ -241,6 +257,7 @@ GEM
     terrapin (0.6.0)
       climate_control (>= 0.0.3, < 1.0)
     thor (1.2.1)
+    tilt (2.0.10)
     timeout (0.2.0)
     turbo-rails (7.1.1)
       rails (>= 6.0.0)
@@ -270,6 +287,7 @@ DEPENDENCIES
   babel-transpiler
   cancancan
   cocoon!
+  coffee-rails
   colorize
   devise
   devise-i18n
@@ -283,6 +301,7 @@ DEPENDENCIES
   rails (~> 7)
   rails-i18n
   redcarpet
+  sassc-rails
   simple_form
   simplecov (~> 0.10, < 0.18)
   sip!
