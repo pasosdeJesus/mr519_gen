@@ -11,17 +11,19 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: 42ad20191780d627663849a5adfab168d0430f2e
+  revision: 54e170700c6a3cd0b7496bb213e7e8580f97436f
   branch: rails7jses
   specs:
     sip (2.1a1)
       cancancan
+      coffee-rails
       devise
       devise-i18n
       kt-paperclip
       minitest
       rails
       rails-i18n
+      sassc-rails
       simple_form
       twitter_cldr
 
