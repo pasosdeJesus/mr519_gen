@@ -51,7 +51,7 @@ gem 'will_paginate'               # Pagina listados
 
 gem 'sip', # Motor generico
   git: 'https://github.com/pasosdeJesus/sip.git', branch: :rails7jses
-  #path: '../sip'
+  #path: '../sip-rails7'
 
 
 group :development do
