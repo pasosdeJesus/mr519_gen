@@ -64,12 +64,15 @@ end
 
 group :development, :test do
   # Depurar
-  #gem 'byebug'
+  gem 'debug'
+
   gem 'colorize'
 
   gem 'dotenv-rails'
 end
 
 group :test do
+  gem 'cuprite'
+
   gem 'simplecov', '~>0.10', '<0.18'
 end
