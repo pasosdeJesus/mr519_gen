@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: e70ec9afa508794d74ec15d86d4bb95902836876
+  revision: f195f8c2ce1af3144ec15847e86b442fd44cfc63
   branch: main
   specs:
     sip (2.1a1)
@@ -294,7 +294,7 @@ GEM
     timeout (0.2.0)
     turbo-rails (7.1.1)
       rails (>= 6.0.0)
-    twitter_cldr (6.11.0)
+    twitter_cldr (6.11.1)
       camertron-eprun
       cldr-plurals-runtime-rb (~> 1.1)
       tzinfo
