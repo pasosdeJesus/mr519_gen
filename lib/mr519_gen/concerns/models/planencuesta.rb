@@ -9,7 +9,7 @@ module Mr519Gen
           include Sip::Localizacion
 
           # Evita que rails la suponga en plural
-          self.table_name = 'mr519_gen_valorcampo'
+          self.table_name = 'mr519_gen_planencuesta'
 
           belongs_to :formulario, class_name: 'Mr519Gen::Formulario',
             foreign_key: :formulario_id
