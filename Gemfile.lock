@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/kreeti/kt-paperclip.git
-  revision: c9e6f9d0018f3913b67fed5860a5d439ac72ac78
+  revision: a077561f75d6ef064dbd4f4806b519cb3df28c88
   specs:
     kt-paperclip (7.0.1)
       activemodel (>= 4.2.0)
@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: 80ba15b9b54cc864a848931fa2baa3a9af9297b1
+  revision: 56f5dcf14468039a280bf2835c25ae6df3782505
   branch: v2.0
   specs:
     sip (2.0)
@@ -139,7 +139,7 @@ GEM
       railties (>= 3.2)
     erubi (1.10.0)
     execjs (2.8.1)
-    ffi (1.15.4)
+    ffi (1.15.5)
     globalid (1.0.0)
       activesupport (>= 5.0)
     i18n (1.8.11)
@@ -161,11 +161,11 @@ GEM
       nokogiri (~> 1)
       rake
     mini_mime (1.1.2)
-    mini_portile2 (2.6.1)
+    mini_portile2 (2.7.1)
     minitest (5.15.0)
     nio4r (2.5.8)
-    nokogiri (1.12.5)
-      mini_portile2 (~> 2.6.1)
+    nokogiri (1.13.1)
+      mini_portile2 (~> 2.7.0)
       racc (~> 1.4)
     orm_adapter (0.5.0)
     paperclip (6.1.0)
@@ -246,7 +246,7 @@ GEM
       climate_control (>= 0.0.3, < 1.0)
     thor (1.2.1)
     tilt (2.0.10)
-    twitter_cldr (6.11.0)
+    twitter_cldr (6.11.1)
       camertron-eprun
       cldr-plurals-runtime-rb (~> 1.1)
       tzinfo
