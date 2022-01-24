@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: d52b13dcbef41eab4d3f2a4bc4213c866fb188d4
+  revision: 7afd05a5e81984543e2eb417b83d499cb828e083
   branch: v2.0
   specs:
     sip (2.0)
@@ -174,7 +174,7 @@ GEM
       mime-types
       mimemagic (~> 0.3.0)
       terrapin (~> 0.6.0)
-    pg (1.2.3)
+    pg (1.3.0)
     puma (5.5.2)
       nio4r (~> 2.0)
     racc (1.6.0)
