@@ -1,7 +1,7 @@
 # Motor Mr519Gen para crear formularios y ayudar a aplicarlos
 
 
-[![Revisado por Hound](https://img.shields.io/badge/Reviewed_by-Hound-8E64B0.svg)](https://houndci.com) [![Estado Construcción](https://gitlab.com/pasosdeJesus/mr519_gen/badges/v2.0/pipeline.svg)](https://gitlab.com/pasosdeJesus/mr519_gen/-/pipelines?page=1&scope=all&ref=v2.0)[![Clima del Código](https://codeclimate.com/github/pasosdeJesus/mr519_gen/badges/gpa.svg)](https://codeclimate.com/github/pasosdeJesus/mr519_gen) [![Cobertura de Pruebas](https://codeclimate.com/github/pasosdeJesus/mr519_gen/badges/coverage.svg)](https://codeclimate.com/github/pasosdeJesus/mr519_gen) [![Seguridad](https://gitlab.com/pasosdeJesus/mr519_gen/badges/v2.0/pipeline.svg)](https://gitlab.com/pasosdeJesus/mr519_gen/-/pipelines?page=1&scope=all&ref=v2.0)
+[![Revisado por Hound](https://img.shields.io/badge/Reviewed_by-Hound-8E64B0.svg)](https://houndci.com) Pruebas y seguridad: [![Estado Construcción](https://gitlab.com/pasosdeJesus/mr519_gen/badges/v2.0/pipeline.svg)](https://gitlab.com/pasosdeJesus/mr519_gen/-/pipelines?page=1&scope=all&ref=v2.0) [![Clima del Código](https://codeclimate.com/github/pasosdeJesus/mr519_gen/badges/gpa.svg)](https://codeclimate.com/github/pasosdeJesus/mr519_gen) [![Cobertura de Pruebas](https://codeclimate.com/github/pasosdeJesus/mr519_gen/badges/coverage.svg)](https://codeclimate.com/github/pasosdeJesus/mr519_gen)
 
 ![Logo de mr519_gen](https://raw.githubusercontent.com/pasosdeJesus/mr519_gen/master/test/dummy/app/assets/images/logo.jpg)
 
