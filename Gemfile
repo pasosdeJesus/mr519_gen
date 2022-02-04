@@ -38,7 +38,7 @@ gem 'sprockets-rails'
 
 gem 'stimulus-rails'
 
-gem 'turbo-rails'
+gem 'turbo-rails', '~> 1.0'
 
 gem 'twitter_cldr'               # Localiación e internacionalización
 
