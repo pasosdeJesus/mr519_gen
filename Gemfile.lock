@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/kreeti/kt-paperclip.git
-  revision: 6d3cfb9b2dae7a04111411172b803ee4884b56d0
+  revision: 4d95c60665fbb5d453a3f710977a259760996cd9
   specs:
-    kt-paperclip (7.1.0)
+    kt-paperclip (7.1.1)
       activemodel (>= 4.2.0)
       activesupport (>= 4.2.0)
       marcel (~> 1.0.1)
@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: f79b50070aaba01a4ac9b7fab5471b750eb4393b
+  revision: e67dff6f91ba8379f7d88839af7b4bfc07978cf1
   branch: v2.0
   specs:
     sip (2.0)
@@ -130,7 +130,7 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
-    devise-i18n (1.10.1)
+    devise-i18n (1.10.2)
       devise (>= 4.8.0)
     docile (1.4.0)
     dotenv (2.7.6)
@@ -161,11 +161,11 @@ GEM
       nokogiri (~> 1)
       rake
     mini_mime (1.1.2)
-    mini_portile2 (2.7.1)
+    mini_portile2 (2.8.0)
     minitest (5.15.0)
     nio4r (2.5.8)
-    nokogiri (1.13.1)
-      mini_portile2 (~> 2.7.0)
+    nokogiri (1.13.2)
+      mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
     orm_adapter (0.5.0)
     paperclip (6.1.0)
