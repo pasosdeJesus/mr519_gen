@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: d839f913ea8b582d8c851c69ac9aac6d91a71959
+  revision: e58bfa89c8954bb8cc10df483bba75241634eeef
   branch: v2.0
   specs:
     sip (2.0)
@@ -122,7 +122,7 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     colorize (0.8.1)
-    concurrent-ruby (1.1.9)
+    concurrent-ruby (1.1.10)
     crass (1.0.6)
     devise (4.8.1)
       bcrypt (~> 3.0)
