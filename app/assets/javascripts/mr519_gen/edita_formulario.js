@@ -1,5 +1,4 @@
-//= require gridstack/dist/gridstack.all
-
+// Ahora gridstack se carga como módulo 
 
 // Pasa ubicaciones de elementos del formulario del
 // esquema visual al esquema texto

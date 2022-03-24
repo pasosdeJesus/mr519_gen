@@ -17,7 +17,8 @@ module Dummy
     config.railties_order = [:main_app, Sip::Engine, :all]
 
 
-    config.hosts << ENV['CONFIG_HOSTS'] || '127.0.0.1'
+    config.hosts.concat(
+      ENV.fetch('CONFIG_HOSTS', 'defensor.info').downcase.split(";"))
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
