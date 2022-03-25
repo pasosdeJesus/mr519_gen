@@ -29,15 +29,13 @@ window.Rails = Rails
 import Turbolinks from "turbolinks"
 Turbolinks.start()
 
-import '../../../node_modules/jquery/dist/jquery.js'
-import '../../../vendedor/recursos/javascript/jquery-ui'
+import $ from "expose-loader?exposes=$,jQuery!jquery";
 
-/*import $ from "expose-loader?exposes=$,jQuery!jquery";
 import 'jquery-ui'
 import 'jquery-ui/ui/widgets/autocomplete'
 import 'jquery-ui/ui/focusable'
 import 'jquery-ui/ui/data'
-import 'jquery-ui/ui/widgets/tooltip' */
+import 'jquery-ui/ui/widgets/tooltip' 
 
 import 'popper.js'              // Dialogos emergentes usados por bootstrap
 import * as bootstrap from 'bootstrap'              // Maquetacion y elementos de diseño
