@@ -61,7 +61,7 @@ module Mr519Gen
       assert_equal 'Problema con tablabasica Pais  porque hay 0', v.presenta_valor(false)
       v.campo.tablabasica = 'pais'
       v.valor_ids = [170, 686]
-      assert_equal 'COLOMBIA; SENEGAL', v.presenta_valor(false)
+      assert_equal 'Colombia; Senegal', v.presenta_valor(false)
       v.campo.tipo = Mr519Gen::ApplicationHelper::SSTABLABASICA
       v.campo.tablabasica = nil
       assert_equal 'Problema tablabasica es nil', v.presenta_valor(false)
@@ -69,8 +69,8 @@ module Mr519Gen
       assert_equal 'Problema con tablabasica Pais  porque hay 0', v.presenta_valor(false)
       v.campo.tablabasica = 'pais'
       v.valor = 686
-      assert_equal 'SENEGAL', v.presenta_valor(false)
-      
+      assert_equal 'Senegal', v.presenta_valor(false)
+
       v.destroy
       r.destroy
       c.destroy
