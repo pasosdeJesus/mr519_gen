@@ -849,6 +849,8 @@ CREATE TABLE public.sip_departamento (
     created_at timestamp without time zone,
     updated_at timestamp without time zone,
     observaciones character varying(5000) COLLATE public.es_co_utf_8,
+    codiso character varying(6),
+    catiso character varying(64),
     CONSTRAINT departamento_check CHECK (((fechadeshabilitacion IS NULL) OR (fechadeshabilitacion >= fechacreacion)))
 );
 
@@ -2907,6 +2909,8 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20220413123127'),
 ('20220417203841'),
 ('20220417220914'),
-('20220417221010');
+('20220417221010'),
+('20220420143020'),
+('20220420154535');
 
 
