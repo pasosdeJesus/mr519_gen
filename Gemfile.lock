@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: 35a41e1ebb9a8180266768ae3fd4ea7dfb843d32
+  revision: fd0ce76f99103896b1f7fb2570dd41e03191de59
   branch: main
   specs:
     sip (2.1a1)
@@ -218,7 +218,7 @@ GEM
     puma (5.6.4)
       nio4r (~> 2.0)
     racc (1.6.0)
-    rack (2.2.3)
+    rack (2.2.3.1)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rails (7.0.3)
@@ -252,7 +252,7 @@ GEM
       zeitwerk (~> 2.5)
     rake (13.0.6)
     redcarpet (3.5.1)
-    regexp_parser (2.4.0)
+    regexp_parser (2.5.0)
     reline (0.3.1)
       io-console (~> 0.5)
     responders (3.0.1)
@@ -289,9 +289,10 @@ GEM
       climate_control (>= 0.0.3, < 1.0)
     thor (1.2.1)
     tilt (2.0.10)
-    timeout (0.2.0)
-    turbo-rails (1.0.1)
+    timeout (0.3.0)
+    turbo-rails (1.1.1)
       actionpack (>= 6.0.0)
+      activejob (>= 6.0.0)
       railties (>= 6.0.0)
     twitter_cldr (6.11.3)
       camertron-eprun
@@ -350,4 +351,4 @@ DEPENDENCIES
   will_paginate
 
 BUNDLED WITH
-   2.3.13
+   2.3.14
