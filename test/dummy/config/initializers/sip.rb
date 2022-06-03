@@ -9,5 +9,20 @@ Sip.setup do |config|
   if !ENV["HEROKU_POSTGRESQL_GREEN_URL"].nil?
     config.ruta_anexos = "#{Rails.root}/tmp/"
   end
-  config.titulo = "Aplicación mínima que usa mr519_gen #{Mr519Gen::VERSION}"
+  config.titulo = "mr519_gen #{Mr519Gen::VERSION}"
+  config.descripcion = "Motor para manejar formularios y encuestas"
+  config.codigofuente = "https://github.com/pasosdeJesus/mr519_gen"
+  config.urlcontribuyentes = "https://github.com/pasosdeJesus/mr519_gen/graphs/contributors"
+  config.urlcreditos = "https://github.com/pasosdeJesus/mr519_gen/blob/master/CREDITOS.md"
+  config.agradecimientoDios = "<p>
+Agradecemos a Jesús/Dios por su misericordia.
+</p>
+<blockquote>
+<p>
+Mas Jesús no se lo permitió, sino que le dijo: Vete a tu casa, a los tuyos, 
+y cuéntales cuán grandes cosas el Señor ha hecho contigo, 
+y cómo ha tenido misericordia de ti.
+</p>
+<p>Marcos 5:19</p>
+</blockquote>".html_safe
 end

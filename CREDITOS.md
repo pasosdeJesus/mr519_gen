@@ -1,12 +1,32 @@
+Puede ver el listado de personas que han implementado en:
+<https://github.com/pasosdeJesus/mr519_gen/graphs/contributors>
+
+Logo es imagen de dominio público de Khanke disponible en:
+	https://openclipart.org/detail/218679/survey
+
+
+Este motor usa los motores 
+[sip](https://github.com/pasosdeJesus/sip),
+y [mr519_gen](https://github.com/pasosdeJesus/mr519_gen) 
+también mantenidos y re-factorizados por Pasos de Jesús de 
+aplicaciones web desarrolladas voluntariamente o financiadas por 
+diversas organizaciones que han cedido al dominio público lo desarrollado, 
+ver por ejemplo
+<https://github.com/pasosdeJesus/sivel2/blob/master/CREDITOS.md>
+
+También usa una pila tecnológica de código abierto que incluye 
+PostgreSQL, nginx, Ruby, nodejs y Ruby on Rails, así como muchas
+gemas ruby y paquetes npm.
+
+El sistema operativo de desarrollo y objetivo principal para producción
+ha sido adJ/OpenBSD, ver https://aprendiendo.pasosdeJesus.org
+
+
+Agradecemos a Jesús/Dios por su misericordia.
+
 Mas Jesús no se lo permitió, sino que le dijo: Vete a tu casa, a los tuyos, 
 y cuéntales cuán grandes cosas el Señor ha hecho contigo, 
 y cómo ha tenido misericordia de ti.
 
-Mr 5:19
-
-Favor ver créditos completos en 
-	https://github.com/pasosdeJesus/heb412/blob/master/CREDITOS.md
-
-Logo es imagen de dominio público de Khanke disponible en:
-	https://openclipart.org/detail/218679/survey
+Marcos 5:19
 
