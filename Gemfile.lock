@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: f575ae20d1cb7763ffefb70c26924ad41ea731e7
+  revision: 26dfa9cc0ff62ffe1857b5cdf1fb89c3d623acda
   branch: v2.0
   specs:
     sip (2.0)
@@ -201,7 +201,7 @@ GEM
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
-    rails-html-sanitizer (1.4.2)
+    rails-html-sanitizer (1.4.3)
       loofah (~> 2.3)
     rails-i18n (7.0.3)
       i18n (>= 0.7, < 2)
@@ -268,7 +268,7 @@ GEM
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
     will_paginate (3.3.1)
-    zeitwerk (2.5.4)
+    zeitwerk (2.6.0)
 
 PLATFORMS
   x86_64-openbsd
