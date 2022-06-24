@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: bc14b468e0f4afa2a8fac52b462ac97ac6a1b8a4
+  revision: 3cbd48183b672d1586668926bf9579f3ac2edc71
   branch: v2.0
   specs:
     sip (2.0)
@@ -107,7 +107,7 @@ GEM
     bindex (0.8.1)
     builder (3.2.4)
     camertron-eprun (1.1.1)
-    cancancan (3.3.0)
+    cancancan (3.4.0)
     chosen-rails (1.10.0)
       coffee-rails (>= 3.2)
       railties (>= 3.0)
@@ -162,7 +162,7 @@ GEM
       rake
     mini_mime (1.1.2)
     mini_portile2 (2.8.0)
-    minitest (5.16.0)
+    minitest (5.16.1)
     nio4r (2.5.8)
     nokogiri (1.13.6)
       mini_portile2 (~> 2.8.0)
@@ -174,7 +174,7 @@ GEM
       mime-types
       mimemagic (~> 0.3.0)
       terrapin (~> 0.6.0)
-    pg (1.4.0)
+    pg (1.4.1)
     puma (5.6.4)
       nio4r (~> 2.0)
     racc (1.6.0)
