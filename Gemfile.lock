@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: 7ec07e0db7bf125179e9cbfa551683811e9dd694
+  revision: 146b9a28279c492332527477a445f5b9dc0d298f
   branch: v2.0
   specs:
     sip (2.0)
@@ -178,7 +178,7 @@ GEM
     puma (5.6.4)
       nio4r (~> 2.0)
     racc (1.6.0)
-    rack (2.2.3.1)
+    rack (2.2.4)
     rack-proxy (0.7.2)
       rack
     rack-test (2.0.2)
