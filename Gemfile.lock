@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: ed78e506e0b09cb308edaaedf347ff351379d580
+  revision: 6b70281ed7f2f5ab572b68a6825410f75430f202
   branch: v2.0
   specs:
     sip (2.0)
@@ -142,7 +142,7 @@ GEM
     ffi (1.15.5)
     globalid (1.0.0)
       activesupport (>= 5.0)
-    i18n (1.11.0)
+    i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     jquery-ui-rails (6.0.1)
       railties (>= 3.2.16)
