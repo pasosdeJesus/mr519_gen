@@ -19,5 +19,6 @@ ActiveSupport::Inflector.inflections do |inflect|
   inflect.irregular 'encuestausuario', 'encuestasusuario'
   inflect.irregular 'encuestapersona', 'encuestaspersona'
   inflect.irregular 'opcioncs', 'opcionescs'
+  inflect.irregular 'planencuesta', 'planesencuesta'
   inflect.irregular 'valorcampo', 'valorescampo'
 end

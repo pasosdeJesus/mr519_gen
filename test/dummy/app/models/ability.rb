@@ -72,12 +72,13 @@ class Ability  < Sip::Ability
       when Ability::ROLADMIN
         can :manage, [Mr519Gen::Encuestausuario, Mr519Gen::Encuestapersona]
         can :manage, Mr519Gen::Formulario
+        can :manage, Mr519Gen::Planencuesta
 
         can :manage, Sip::Orgsocial
         can :manage, Sip::Persona
         can :manage, Sip::Respaldo7z
         can :manage, Sip::Ubicacion
-        
+
         can :manage, ::Usuario
 
 
