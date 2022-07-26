@@ -11,8 +11,8 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: 4814f58e59048f629472777d7a48aa7dd2b83651
-  branch: sexoel2
+  revision: 6bbed3b646d21aca1e814d5d9913b13a57288e3a
+  branch: main
   specs:
     sip (2.1a2)
       cancancan
@@ -158,9 +158,9 @@ GEM
       devise (>= 4.8.0)
     digest (3.1.0)
     docile (1.4.0)
-    dotenv (2.7.6)
-    dotenv-rails (2.7.6)
-      dotenv (= 2.7.6)
+    dotenv (2.8.0)
+    dotenv-rails (2.8.0)
+      dotenv (= 2.8.0)
       railties (>= 3.2)
     erubi (1.10.0)
     execjs (2.8.1)
