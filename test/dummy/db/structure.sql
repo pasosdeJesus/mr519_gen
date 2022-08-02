@@ -224,6 +224,7 @@ CREATE TABLE public.heb412_gen_campohc (
 --
 
 CREATE SEQUENCE public.heb412_gen_campohc_id_seq
+    AS integer
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -255,6 +256,7 @@ CREATE TABLE public.heb412_gen_campoplantillahcm (
 --
 
 CREATE SEQUENCE public.heb412_gen_campoplantillahcm_id_seq
+    AS integer
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -302,38 +304,6 @@ ALTER SEQUENCE public.heb412_gen_campoplantillahcr_id_seq OWNED BY public.heb412
 
 
 --
--- Name: heb412_gen_carpetaexclusiva; Type: TABLE; Schema: public; Owner: -
---
-
-CREATE TABLE public.heb412_gen_carpetaexclusiva (
-    id bigint NOT NULL,
-    carpeta character varying(2048),
-    grupo_id integer,
-    created_at timestamp(6) without time zone NOT NULL,
-    updated_at timestamp(6) without time zone NOT NULL
-);
-
-
---
--- Name: heb412_gen_carpetaexclusiva_id_seq; Type: SEQUENCE; Schema: public; Owner: -
---
-
-CREATE SEQUENCE public.heb412_gen_carpetaexclusiva_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
---
--- Name: heb412_gen_carpetaexclusiva_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
---
-
-ALTER SEQUENCE public.heb412_gen_carpetaexclusiva_id_seq OWNED BY public.heb412_gen_carpetaexclusiva.id;
-
-
---
 -- Name: heb412_gen_doc; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -349,7 +319,7 @@ CREATE TABLE public.heb412_gen_doc (
     updated_at timestamp without time zone NOT NULL,
     adjunto_file_name character varying,
     adjunto_content_type character varying,
-    adjunto_file_size integer,
+    adjunto_file_size bigint,
     adjunto_updated_at timestamp without time zone,
     nombremenu character varying(127),
     vista character varying(255),
@@ -366,6 +336,7 @@ CREATE TABLE public.heb412_gen_doc (
 --
 
 CREATE SEQUENCE public.heb412_gen_doc_id_seq
+    AS integer
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -378,46 +349,6 @@ CREATE SEQUENCE public.heb412_gen_doc_id_seq
 --
 
 ALTER SEQUENCE public.heb412_gen_doc_id_seq OWNED BY public.heb412_gen_doc.id;
-
-
---
--- Name: heb412_gen_formulario_plantillahcm; Type: TABLE; Schema: public; Owner: -
---
-
-CREATE TABLE public.heb412_gen_formulario_plantillahcm (
-    formulario_id integer,
-    plantillahcm_id integer
-);
-
-
---
--- Name: heb412_gen_formulario_plantillahcr; Type: TABLE; Schema: public; Owner: -
---
-
-CREATE TABLE public.heb412_gen_formulario_plantillahcr (
-    id bigint NOT NULL,
-    plantillahcr_id integer,
-    formulario_id integer
-);
-
-
---
--- Name: heb412_gen_formulario_plantillahcr_id_seq; Type: SEQUENCE; Schema: public; Owner: -
---
-
-CREATE SEQUENCE public.heb412_gen_formulario_plantillahcr_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
---
--- Name: heb412_gen_formulario_plantillahcr_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
---
-
-ALTER SEQUENCE public.heb412_gen_formulario_plantillahcr_id_seq OWNED BY public.heb412_gen_formulario_plantillahcr.id;
 
 
 --
@@ -473,6 +404,7 @@ CREATE TABLE public.heb412_gen_plantillahcm (
 --
 
 CREATE SEQUENCE public.heb412_gen_plantillahcm_id_seq
+    AS integer
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -1053,6 +985,13 @@ CREATE TABLE public.sip_grupoper (
     nombre character varying(500) NOT NULL COLLATE public.es_co_utf_8,
     anotaciones character varying(1000)
 );
+
+
+--
+-- Name: TABLE sip_grupoper; Type: COMMENT; Schema: public; Owner: -
+--
+
+COMMENT ON TABLE public.sip_grupoper IS 'Creado por sip en sipdes_des';
 
 
 --
@@ -1694,7 +1633,6 @@ CREATE SEQUENCE public.usuario_id_seq
 CREATE TABLE public.usuario (
     nusuario character varying(15) NOT NULL,
     password character varying(64) DEFAULT ''::character varying NOT NULL,
-    nombre character varying(50) COLLATE public.es_co_utf_8,
     descripcion character varying(50),
     rol integer DEFAULT 4,
     idioma character varying(6) DEFAULT 'es_CO'::character varying NOT NULL,
@@ -1717,6 +1655,7 @@ CREATE TABLE public.usuario (
     created_at timestamp without time zone,
     updated_at timestamp without time zone,
     regionsjr_id integer,
+    nombre character varying(50) COLLATE public.es_co_utf_8,
     tema_id integer,
     CONSTRAINT usuario_check CHECK (((fechadeshabilitacion IS NULL) OR (fechadeshabilitacion >= fechacreacion))),
     CONSTRAINT usuario_rol_check CHECK ((rol >= 1))
@@ -1745,24 +1684,10 @@ ALTER TABLE ONLY public.heb412_gen_campoplantillahcr ALTER COLUMN id SET DEFAULT
 
 
 --
--- Name: heb412_gen_carpetaexclusiva id; Type: DEFAULT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.heb412_gen_carpetaexclusiva ALTER COLUMN id SET DEFAULT nextval('public.heb412_gen_carpetaexclusiva_id_seq'::regclass);
-
-
---
 -- Name: heb412_gen_doc id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.heb412_gen_doc ALTER COLUMN id SET DEFAULT nextval('public.heb412_gen_doc_id_seq'::regclass);
-
-
---
--- Name: heb412_gen_formulario_plantillahcr id; Type: DEFAULT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.heb412_gen_formulario_plantillahcr ALTER COLUMN id SET DEFAULT nextval('public.heb412_gen_formulario_plantillahcr_id_seq'::regclass);
 
 
 --
@@ -1983,27 +1908,11 @@ ALTER TABLE ONLY public.heb412_gen_campoplantillahcr
 
 
 --
--- Name: heb412_gen_carpetaexclusiva heb412_gen_carpetaexclusiva_pkey; Type: CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.heb412_gen_carpetaexclusiva
-    ADD CONSTRAINT heb412_gen_carpetaexclusiva_pkey PRIMARY KEY (id);
-
-
---
 -- Name: heb412_gen_doc heb412_gen_doc_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.heb412_gen_doc
     ADD CONSTRAINT heb412_gen_doc_pkey PRIMARY KEY (id);
-
-
---
--- Name: heb412_gen_formulario_plantillahcr heb412_gen_formulario_plantillahcr_pkey; Type: CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.heb412_gen_formulario_plantillahcr
-    ADD CONSTRAINT heb412_gen_formulario_plantillahcr_pkey PRIMARY KEY (id);
 
 
 --
@@ -2489,14 +2398,6 @@ ALTER TABLE ONLY public.mr519_gen_encuestausuario
 
 
 --
--- Name: heb412_gen_formulario_plantillahcr fk_rails_1bdf79898c; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.heb412_gen_formulario_plantillahcr
-    ADD CONSTRAINT fk_rails_1bdf79898c FOREIGN KEY (plantillahcr_id) REFERENCES public.heb412_gen_plantillahcr(id);
-
-
---
 -- Name: heb412_gen_campohc fk_rails_1e5f26c999; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -2553,14 +2454,6 @@ ALTER TABLE ONLY public.sip_orgsocial_persona
 
 
 --
--- Name: sip_ubicacion fk_rails_4dd7a7f238; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.sip_ubicacion
-    ADD CONSTRAINT fk_rails_4dd7a7f238 FOREIGN KEY (id_departamento) REFERENCES public.sip_departamento(id);
-
-
---
 -- Name: mr519_gen_encuestapersona fk_rails_54b3e0ed5c; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -2590,30 +2483,6 @@ ALTER TABLE ONLY public.sip_orgsocial
 
 ALTER TABLE ONLY public.mr519_gen_opcioncs
     ADD CONSTRAINT fk_rails_656b4a3ca7 FOREIGN KEY (campo_id) REFERENCES public.mr519_gen_campo(id);
-
-
---
--- Name: heb412_gen_formulario_plantillahcr fk_rails_696d27d6f5; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.heb412_gen_formulario_plantillahcr
-    ADD CONSTRAINT fk_rails_696d27d6f5 FOREIGN KEY (formulario_id) REFERENCES public.mr519_gen_formulario(id);
-
-
---
--- Name: heb412_gen_formulario_plantillahcm fk_rails_6e214a7168; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.heb412_gen_formulario_plantillahcm
-    ADD CONSTRAINT fk_rails_6e214a7168 FOREIGN KEY (formulario_id) REFERENCES public.mr519_gen_formulario(id);
-
-
---
--- Name: sip_ubicacion fk_rails_6ed05ed576; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.sip_ubicacion
-    ADD CONSTRAINT fk_rails_6ed05ed576 FOREIGN KEY (id_pais) REFERENCES public.sip_pais(id);
 
 
 --
@@ -2713,22 +2582,6 @@ ALTER TABLE ONLY public.mr519_gen_campo
 
 
 --
--- Name: sip_ubicacion fk_rails_a1d509c79a; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.sip_ubicacion
-    ADD CONSTRAINT fk_rails_a1d509c79a FOREIGN KEY (id_clase) REFERENCES public.sip_clase(id);
-
-
---
--- Name: sip_ubicacion fk_rails_b82283d945; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.sip_ubicacion
-    ADD CONSTRAINT fk_rails_b82283d945 FOREIGN KEY (id_municipio) REFERENCES public.sip_municipio(id);
-
-
---
 -- Name: sip_ubicacionpre fk_rails_c08a606417; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -2761,14 +2614,6 @@ ALTER TABLE ONLY public.heb412_gen_campoplantillahcm
 
 
 --
--- Name: heb412_gen_carpetaexclusiva fk_rails_ea1add81e6; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.heb412_gen_carpetaexclusiva
-    ADD CONSTRAINT fk_rails_ea1add81e6 FOREIGN KEY (grupo_id) REFERENCES public.sip_grupo(id);
-
-
---
 -- Name: sip_ubicacionpre fk_rails_eba8cc9124; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -2790,14 +2635,6 @@ ALTER TABLE ONLY public.sip_orgsocial_sectororgsocial
 
 ALTER TABLE ONLY public.sip_clase
     ADD CONSTRAINT fk_rails_fb09f016e4 FOREIGN KEY (id_municipio) REFERENCES public.sip_municipio(id);
-
-
---
--- Name: heb412_gen_formulario_plantillahcm fk_rails_fc3149fc44; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.heb412_gen_formulario_plantillahcm
-    ADD CONSTRAINT fk_rails_fc3149fc44 FOREIGN KEY (plantillahcm_id) REFERENCES public.heb412_gen_plantillahcm(id);
 
 
 --
@@ -2994,7 +2831,6 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20190612111043'),
 ('20190618135559'),
 ('20190625112649'),
-('20190625140232'),
 ('20190703044126'),
 ('20190715083916'),
 ('20190715182611'),
@@ -3006,7 +2842,6 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20191205202150'),
 ('20191205204511'),
 ('20191219011910'),
-('20191231102721'),
 ('20200228235200'),
 ('20200319183515'),
 ('20200722210144'),
@@ -3017,17 +2852,12 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20200916022934'),
 ('20200919003430'),
 ('20200921123831'),
-('20201009004421'),
 ('20201119125643'),
-('20201214215209'),
 ('20210401194637'),
 ('20210401210102'),
 ('20210414201956'),
-('20210430160739'),
 ('20210614120835'),
-('20210615081748'),
 ('20210616003251'),
-('20210619191706'),
 ('20210728214424'),
 ('20211024105450'),
 ('20211117200456'),
