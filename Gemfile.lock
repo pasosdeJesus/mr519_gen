@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: 1fbbb0119103461b953dfc100f9ceb5a13030570
+  revision: 75556550ee024918ca137cc29c063af4761298d3
   branch: main
   specs:
     sip (2.1a2)
@@ -162,7 +162,7 @@ GEM
     dotenv-rails (2.8.1)
       dotenv (= 2.8.1)
       railties (>= 3.2)
-    erubi (1.10.0)
+    erubi (1.11.0)
     execjs (2.8.1)
     ferrum (0.11)
       addressable (~> 2.5)
@@ -351,4 +351,4 @@ DEPENDENCIES
   will_paginate
 
 BUNDLED WITH
-   2.3.14
+   2.3.19
