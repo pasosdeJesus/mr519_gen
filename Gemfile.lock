@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: 355150b10ef5c9f4f49684dc6e4cd4189b72b263
+  revision: 00f65123f3fd8bd9b0060f76fb371554f4c7ec1f
   branch: v2.0
   specs:
     sip (2.0)
@@ -298,4 +298,4 @@ DEPENDENCIES
   will_paginate
 
 BUNDLED WITH
-   2.3.20
+   2.3.21
