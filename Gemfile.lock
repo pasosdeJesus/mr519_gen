@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/kreeti/kt-paperclip.git
-  revision: b020191b3fc150d10b536757cdc2e263b7ce3a28
+  revision: 705092aa709076fc2d8d066f23e678f4d9323bc4
   specs:
     kt-paperclip (7.1.1)
       activemodel (>= 4.2.0)
@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: 964896c053090d375ef95dd8b8864adc0371e350
+  revision: d4da42efdd295f387d44bb7e992cfaa2e629b71b
   branch: main
   specs:
     sip (2.1a2)
