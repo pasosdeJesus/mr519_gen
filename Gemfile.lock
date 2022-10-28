@@ -11,10 +11,10 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: 18e1e2d2acd4961df5d892e580e9b5fb93d8503d
+  revision: 2965ab8c5bd42a69abfe0720c395c4b7283b8864
   branch: main
   specs:
-    sip (2.1a2)
+    sip (2.1.0.beta1)
       cancancan
       coffee-rails
       devise
@@ -37,7 +37,7 @@ GIT
 PATH
   remote: .
   specs:
-    mr519_gen (2.1a1)
+    mr519_gen (2.1.0.beta1)
       rails
       sip
 
