@@ -8,6 +8,21 @@ module Mr519Gen
         Mimotor::Ability::BASICAS_PROPIAS
     end
 
+    NOBASICAS_INDSEQID = [
+      ['Mr519Gen', 'campo'], 
+      ['Mr519Gen', 'encuestapersona'], 
+      ['Mr519Gen', 'encuestausuario'], 
+      ['Mr519Gen', 'formulario'], 
+      ['Mr519Gen', 'planencuesta'], 
+      ['Mr519Gen', 'respuestafor'], 
+      ['Mr519Gen', 'valorcampo'], 
+    ]
+
+    # Tablas no básicas pero que tienen índice *_seq_id
+    def nobasicas_indice_seq_con_id
+      NOBASICAS_INDSEQID
+    end
+
     # Se definen habilidades con cancancan
     # Util en motores y aplicaciones de prueba
     # En aplicaciones es mejor escribir completo el modelo de autorización
