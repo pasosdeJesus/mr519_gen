@@ -20,7 +20,8 @@ module Mr519Gen
 
     # Tablas no básicas pero que tienen índice *_seq_id
     def nobasicas_indice_seq_con_id
-      NOBASICAS_INDSEQID
+      Sip::Ability::NOBASICAS_INDSEQ +
+        NOBASICAS_INDSEQID
     end
 
     # Se definen habilidades con cancancan
