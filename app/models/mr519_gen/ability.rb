@@ -20,7 +20,7 @@ module Mr519Gen
 
     # Tablas no básicas pero que tienen índice *_seq_id
     def nobasicas_indice_seq_con_id
-      Sip::Ability::NOBASICAS_INDSEQ +
+      Sip::Ability::NOBASICAS_INDSEQID +
         NOBASICAS_INDSEQID
     end
 
