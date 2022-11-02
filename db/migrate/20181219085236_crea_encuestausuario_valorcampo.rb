@@ -1,9 +1,8 @@
-class CreaEncuestausuarioValorcampo < ActiveRecord::Migration[5.2]
+class CreaEncuestausuarioValorcampo < ActiveRecord::Migration[6.1]
   def change
     create_join_table :mr519_gen_encuestausuario,
-      :mr519_gen_valorcampo, {
-      table_name: 'mr519_gen_encuestausuario_valorcampo'
-    }
+      :mr519_gen_valorcampo, 
+      table_name: :mr519_gen_encuestausuario_valorcampo
     add_foreign_key :mr519_gen_encuestausuario_valorcampo,
       :mr519_gen_encuestausuario
     add_foreign_key :mr519_gen_encuestausuario_valorcampo,
