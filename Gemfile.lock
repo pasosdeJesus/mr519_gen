@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: 8f6651f9cc8fd59e1997845750e3b076f8d0e6ae
+  revision: c7e71e7f1959a9b628b79737253560481e79dd4e
   branch: v2.0
   specs:
     sip (2.0)
@@ -246,7 +246,7 @@ GEM
       climate_control (>= 0.0.3, < 1.0)
     thor (1.2.1)
     tilt (2.0.11)
-    twitter_cldr (6.11.3)
+    twitter_cldr (6.11.4)
       camertron-eprun
       cldr-plurals-runtime-rb (~> 1.1)
       tzinfo
@@ -268,7 +268,7 @@ GEM
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
     will_paginate (3.3.1)
-    zeitwerk (2.6.3)
+    zeitwerk (2.6.4)
 
 PLATFORMS
   x86_64-openbsd
@@ -298,4 +298,4 @@ DEPENDENCIES
   will_paginate
 
 BUNDLED WITH
-   2.3.24
+   2.3.25
