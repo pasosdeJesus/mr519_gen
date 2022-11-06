@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: c7e71e7f1959a9b628b79737253560481e79dd4e
+  revision: d2334fd768167d557a3237e24e39bf43315f34b6
   branch: v2.0
   specs:
     sip (2.0)
@@ -268,7 +268,7 @@ GEM
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
     will_paginate (3.3.1)
-    zeitwerk (2.6.4)
+    zeitwerk (2.6.5)
 
 PLATFORMS
   x86_64-openbsd
