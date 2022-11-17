@@ -15,7 +15,7 @@
     <%= f.button :submit, 
       (f.object.new_record? ? 'Responder' : 
        'Actualizar Repuesta'), 
-       :class => 'btn-primary',
+       :class => 'btn btn-sm btn-primary',
        'data-turbo' => false %>
      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
        modelos_path(@registro), :class => 'btn' 
