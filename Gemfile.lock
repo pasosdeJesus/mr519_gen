@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: 955fa5819d956753f216602667e85e77644a48b7
+  revision: 74ee967439d817901234c3eefb3318c3feb7f79d
   branch: main
   specs:
     sip (2.1.0.beta1)
@@ -173,7 +173,7 @@ GEM
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     io-console (0.5.11)
-    irb (1.4.2)
+    irb (1.4.3)
       reline (>= 0.3.0)
     jsbundling-rails (1.0.3)
       railties (>= 6.0.0)
@@ -205,7 +205,7 @@ GEM
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
     orm_adapter (0.5.0)
-    pg (1.4.4)
+    pg (1.4.5)
     public_suffix (5.0.0)
     puma (6.0.0)
       nio4r (~> 2.0)
@@ -244,7 +244,7 @@ GEM
       zeitwerk (~> 2.5)
     rake (13.0.6)
     redcarpet (3.5.1)
-    regexp_parser (2.6.0)
+    regexp_parser (2.6.1)
     reline (0.3.1)
       io-console (~> 0.5)
     responders (3.0.1)
@@ -343,4 +343,4 @@ DEPENDENCIES
   will_paginate
 
 BUNDLED WITH
-   2.3.25
+   2.3.26
