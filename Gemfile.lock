@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: 3b7f650f436fb2cdc2ab22c0703beddb19bbae5d
+  revision: 2abc343633b3341fb08fe7c45500edf72cdde34a
   branch: v2.0
   specs:
     sip (2.0)
@@ -174,7 +174,7 @@ GEM
       mime-types
       mimemagic (~> 0.3.0)
       terrapin (~> 0.6.0)
-    pg (1.4.4)
+    pg (1.4.5)
     puma (6.0.0)
       nio4r (~> 2.0)
     racc (1.6.0)
@@ -298,4 +298,4 @@ DEPENDENCIES
   will_paginate
 
 BUNDLED WITH
-   2.3.25
+   2.3.26
