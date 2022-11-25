@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/kreeti/kt-paperclip.git
-  revision: 705092aa709076fc2d8d066f23e678f4d9323bc4
+  revision: 11abf222dc31bff71160a1d138b445214f434b2b
   specs:
     kt-paperclip (7.1.1)
       activemodel (>= 4.2.0)
@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: 684198787e0b31260d490081ae865196c84aa8a3
+  revision: 74f5893c2f955a5f375d5d09eea7aaea93830afb
   branch: main
   specs:
     sip (2.1.0.beta1)
@@ -173,7 +173,7 @@ GEM
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     io-console (0.5.11)
-    irb (1.4.3)
+    irb (1.5.0)
       reline (>= 0.3.0)
     jsbundling-rails (1.0.3)
       railties (>= 6.0.0)
