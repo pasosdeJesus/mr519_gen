@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,lib}/**/*", "LICENCIA", "Rakefile", "README.md"]
 
   s.add_dependency "rails"
-  s.add_dependency "sip"
+  s.add_dependency "msip"
 
   s.add_development_dependency "pg"
 end

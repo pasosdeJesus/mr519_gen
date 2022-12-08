@@ -1,5 +1,5 @@
 <% content_for :titulo do %>
-  <%= Sip.titulo %>
+  <%= Msip.titulo %>
 <% end %>
 
 <% content_for :menu do %>
@@ -31,14 +31,14 @@
   <% end %>
   <%= grupo_menus empuja: :derecha do %>
     <%= opcion_menu 'Documentación', 
-      'https://github.com/pasosdeJesus/sip/wiki' %>
+      'https://github.com/pasosdeJesus/msip/wiki' %>
     <% if !current_usuario.nil? %>
       <%= despliega_abajo 'Administrar' do %>
         <%= opcion_menu 'Clave', main_app.editar_registro_usuario_path, 
           desplegable: true %>
-        <% if can? :manage, Sip::Respaldo7z %>
+        <% if can? :manage, Msip::Respaldo7z %>
           <%= opcion_menu 'Copia de respaldo cifrada', 
-            sip.respaldo7z_path, desplegable: true %>
+            msip.respaldo7z_path, desplegable: true %>
         <% end %>
         <% if can? :manage, Mr519Gen::Encuestausuario %>
           <%= opcion_menu 'Planes de encuestas', 
@@ -50,16 +50,16 @@
             desplegable: true %>
         <% end %>
         <% if can? :manage, :tablasbasicas %>
-          <%= opcion_menu 'Tablas básicas', sip.tablasbasicas_path, 
+          <%= opcion_menu 'Tablas básicas', msip.tablasbasicas_path, 
             desplegable: true %>
         <% end %>
-        <%= opcion_menu 'Ayuda CA', sip.ayuda_controldeacceso_path, 
+        <%= opcion_menu 'Ayuda CA', msip.ayuda_controldeacceso_path, 
           desplegable: true %>
       <% end %>
       <%= opcion_menu "Salir #{current_usuario.nusuario}", 
           main_app.sign_out_path %>
     <% else %>
-      <%= opcion_menu 'Ayuda CA', sip.ayuda_controldeacceso_path %>
+      <%= opcion_menu 'Ayuda CA', msip.ayuda_controldeacceso_path %>
       <%= opcion_menu 'Iniciar Sesión', 
         main_app.new_usuario_session_path %>
     <% end %>
@@ -69,10 +69,10 @@
 <% content_for :piedepagina do %>
   <p><span class='derechos'>Sistema de información de 
     <a href='https://github.com/pasosdeJesus/mr519_gen'>código abierto</a> con 
-    <a href="https://github.com/pasosdeJesus/sip/blob/main/LICENCIA.md">licencia ISC</a>
+    <a href="https://github.com/pasosdeJesus/msip/blob/main/LICENCIA.md">licencia ISC</a>
     <br/>
     Desarrollado por <a id='pasosdeJesus' href="http://www.pasosdeJesus.org" target="_blank">Pasos de Jesús</a>. 2022. 
   </span></p>
 <% end %>
 
-<%= render template: "layouts/sip/application" %>
+<%= render template: "layouts/msip/application" %>

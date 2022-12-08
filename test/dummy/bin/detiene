@@ -1,0 +1,36 @@
+#!/bin/sh
+# Detiene servicio
+
+if (test -f ".env") then {
+  . .env
+} fi;
+if (test "$RC" = "") then {
+  echo "Falta RC en .env"
+  exit 1
+} fi;
+if (test "$RAILS_ENV" = "production") then {
+  if (test ! -f /etc/rc.d/$RC) then {
+    echo "Falta script /etc/rc.d/$RC"
+    exit 1;
+  } fi;
+
+  doas sh /etc/rc.d/$RC -d stop
+} elif (test "$RAILS_ENV" = "development") then {
+  # Intentando detener rails
+  if (test -f tmp/pids/server.pid) then { 
+    pp=`cat tmp/pids/server.pid`
+    ps -p $pp | grep "ruby: puma" > /dev/null
+    if (test "$?" = "0") then {
+      # Proceso activo y con ruby y puma seguramente es el de este
+      echo "Matando proceso con rails $pp"
+      kill -9 $pp
+    } fi;
+  } fi;
+  # Intentand detener proceso de recarga viva
+  pn=`fstat | grep $PUERTORECVIVA | sed -e "s/^[^\s]* node *\([0-9][0-9]*\) .*/\1/g" | sort -u`
+  if (test "$pn" != "") then {
+    echo "Matando proceso con node $pn"
+    kill -9 $pn
+  } fi;
+} fi;
+

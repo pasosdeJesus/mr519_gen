@@ -6,7 +6,7 @@ Logo es imagen de dominio público de Khanke disponible en:
 
 
 Este motor usa los motores 
-[sip](https://github.com/pasosdeJesus/sip),
+[msip](https://github.com/pasosdeJesus/msip),
 y [mr519_gen](https://github.com/pasosdeJesus/mr519_gen) 
 también mantenidos y re-factorizados por Pasos de Jesús de 
 aplicaciones web desarrolladas voluntariamente o financiadas por 

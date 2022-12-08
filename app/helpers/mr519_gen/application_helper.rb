@@ -1,6 +1,6 @@
 module Mr519Gen
   module ApplicationHelper
-    include Sip::PaginacionAjaxHelper
+    include Msip::PaginacionAjaxHelper
 
     TEXTO = 1
     TEXTOLARGO = 2

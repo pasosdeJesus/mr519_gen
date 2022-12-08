@@ -5,7 +5,7 @@ module Mr519Gen
         extend ActiveSupport::Concern
 
         included do
-          include Sip::Modelo
+          include Msip::Modelo
 
           # Evita que rails la suponga en plural
           self.table_name = 'mr519_gen_campo'

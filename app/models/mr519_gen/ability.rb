@@ -1,10 +1,10 @@
 module Mr519Gen
-  class Ability  < Sip::Ability
+  class Ability  < Msip::Ability
 
     BASICAS_PROPIAS = []
 
     def tablasbasicas
-      Sip::Ability::BASICAS_PROPIAS +
+      Msip::Ability::BASICAS_PROPIAS +
         Mimotor::Ability::BASICAS_PROPIAS
     end
 
@@ -20,7 +20,7 @@ module Mr519Gen
 
     # Tablas no básicas pero que tienen índice *_seq_id
     def nobasicas_indice_seq_con_id
-      Sip::Ability::NOBASICAS_INDSEQID +
+      Msip::Ability::NOBASICAS_INDSEQID +
         NOBASICAS_INDSEQID
     end
 
@@ -47,7 +47,7 @@ module Mr519Gen
       #   https://github.com/ryanb/cancan/wiki/Defining-Abilities
 
 
-      initialize_sip(usuario)
+      initialize_msip(usuario)
       if usuario && usuario.rol then
         case usuario.rol 
         when Ability::ROLANALI

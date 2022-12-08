@@ -1,11 +1,11 @@
-# Extiende Sip::Modelo para facilitar presentar
+# Extiende Msip::Modelo para facilitar presentar
 # información de formularios
 module Mr519Gen
   module Modelo 
     extend ActiveSupport::Concern
 
     included do
-      include Sip::Modelo
+      include Msip::Modelo
 
       def presenta_gen_mr519(atr)
         if atr.to_s.include?(".")
@@ -44,7 +44,7 @@ module Mr519Gen
           end
           
         else
-          presenta_gen_sip(atr)
+          presenta_gen_msip(atr)
         end
       end
 

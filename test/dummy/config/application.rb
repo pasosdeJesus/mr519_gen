@@ -13,7 +13,9 @@ module Dummy
     # config/initializers
     # -- todos los archivos .rb en ese directorio se cargan automáticamente
     # tras cargar el entorno y cualquier gema en su aplicación.
-    
+
+    config.active_record.legacy_connection_handling = false
+
     # Establece Time.zone por defecto en la zona especificada y hace que
     # Active Record auto-convierta a esta zona.
     # Ejecute "rake -D time" para ver una lista de tareas para encontrar
@@ -25,7 +27,7 @@ module Dummy
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     config.i18n.default_locale = :es
 
-    config.railties_order = [:main_app, Sip::Engine, :all]
+    config.railties_order = [:main_app, Msip::Engine, :all]
 
     config.colorize_logging = true
 
@@ -37,12 +39,12 @@ module Dummy
 
     #config.web_console.whitelisted_ips = ['186.154.35.237']
 
-    # La siguiente puede producir rutas /sip/sip en las pruebas
+    # La siguiente puede producir rutas /msip/sip en las pruebas
     # En general debe bastar dejarla solo en
     #   config/initializers/punto_montaje.rb
-    # config.relative_url_root = ENV.fetch('RUTA_RELATIVA', '/sip')
+    # config.relative_url_root = ENV.fetch('RUTA_RELATIVA', '/msip')
 
-    # sip
+    # msip
     config.x.formato_fecha = ENV.fetch('FORMATO_FECHA', 'dd/M/yyyy')
     # En el momento soporta 3 formatos: yyyy-mm-dd, dd-mm-yyyy y dd/M/yyyy
 

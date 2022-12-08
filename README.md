@@ -32,16 +32,16 @@ Para ayudar a caracterizar los instrumentos para recolectar información:
 ## 2. Aspectos técnicos
 
 Aplican practicamente las mismas instrucciones de otros motores genéricos
-basados en sip, ver por ejemplo:
+basados en msip, ver por ejemplo:
 	https://github.com/pasosdeJesus/sal7711_gen
 
-Para incluirlo en su aplicación rails que ya usa sip, tenga en cuenta que deben incluirse CSS y Javascript sin módulos servidos por sprockets y además otro Javascript con módulos servido por Webpacker y paquetes manejados por yarn.
+Para incluirlo en su aplicación rails que ya usa msip, tenga en cuenta que deben incluirse CSS y Javascript sin módulos servidos por sprockets y además otro Javascript con módulos servido por Webpacker y paquetes manejados por yarn.
 
 1. Agregue las gemas necesarias en Gemfile:
 ```
 	gem 'mr519_gen', git: 'https://github.com/pasosdeJesus/mr519_gen.git'
 ```
-2. Agregue los paquetes npm típicos requeridos por `sip` (ver <https://github.com/pasosdeJesus/sip/blob/master/doc/iniciar-si-usando-sip.md>) y además:
+2. Agregue los paquetes npm típicos requeridos por `msip` (ver <https://github.com/pasosdeJesus/msip/blob/master/doc/iniciar-si-usando-msip.md>) y además:
 ```
 CXX=c++ yarn add gridstack
 CXX=c++ yarn install
@@ -64,11 +64,11 @@ import 'jquery-ui/ui/data'
 import 'jquery-ui/ui/focusable'
 ```
 4. Incluya el motor javascript en su app/assets/javascript/application.js
-   por ejemplo después de ```//= require sip/motor``` agregue:
+   por ejemplo después de ```//= require msip/motor``` agregue:
 ```
 //= require mr519_gen/motor
 ```
-   y despúes de ```sip_prepara_eventos_comunes...``` agregue:
+   y despúes de ```msip_prepara_eventos_comunes...``` agregue:
 ```
 mr519_gen_prepara_eventos_comunes(root);
 ```

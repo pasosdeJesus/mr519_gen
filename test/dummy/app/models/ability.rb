@@ -1,4 +1,4 @@
-class Ability  < Sip::Ability
+class Ability  < Msip::Ability
 
   ROLOPERADOR = 5
 
@@ -45,16 +45,16 @@ class Ability  < Sip::Ability
 
 
     # Sin autenticación puede consultarse información geográfica 
-    can :read, [Sip::Pais, Sip::Departamento, Sip::Municipio, Sip::Clase]
+    can :read, [Msip::Pais, Msip::Departamento, Msip::Municipio, Msip::Clase]
     # No se autorizan usuarios con fecha de deshabilitación
     if !usuario || usuario.fechadeshabilitacion
       return
     end
-    can :contar, Sip::Ubicacion
-    can :buscar, Sip::Ubicacion
-    can :lista, Sip::Ubicacion
-    can :descarga_anexo, Sip::Anexo
-    can :nuevo, Sip::Ubicacion
+    can :contar, Msip::Ubicacion
+    can :buscar, Msip::Ubicacion
+    can :lista, Msip::Ubicacion
+    can :descarga_anexo, Msip::Anexo
+    can :nuevo, Msip::Ubicacion
     if usuario && usuario.rol then
       case usuario.rol 
       when Ability::ROLANALI
@@ -63,21 +63,21 @@ class Ability  < Sip::Ability
         can [:edit, :update], 
             Mr519Gen::Encuestausuario.where(usuario_id: usuario.id)
 
-        can :read, Sip::Orgsocial
-        can :read, Sip::Persona
-        can :read, Sip::Ubicacion
-        can :new, Sip::Ubicacion
-        can [:update, :create, :destroy], Sip::Ubicacion
+        can :read, Msip::Orgsocial
+        can :read, Msip::Persona
+        can :read, Msip::Ubicacion
+        can :new, Msip::Ubicacion
+        can [:update, :create, :destroy], Msip::Ubicacion
 
       when Ability::ROLADMIN
         can :manage, [Mr519Gen::Encuestausuario, Mr519Gen::Encuestapersona]
         can :manage, Mr519Gen::Formulario
         can :manage, Mr519Gen::Planencuesta
 
-        can :manage, Sip::Orgsocial
-        can :manage, Sip::Persona
-        can :manage, Sip::Respaldo7z
-        can :manage, Sip::Ubicacion
+        can :manage, Msip::Orgsocial
+        can :manage, Msip::Persona
+        can :manage, Msip::Respaldo7z
+        can :manage, Msip::Ubicacion
 
         can :manage, ::Usuario
 
