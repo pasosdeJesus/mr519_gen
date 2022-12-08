@@ -84,7 +84,7 @@ module Mr519Gen
 
           def update
             params[:encuestausuario][:fechacambio_localizada] = 
-              Sip::FormatoFechaHelper::fecha_estandar_local(Date.today)
+              Msip::FormatoFechaHelper::fecha_estandar_local(Date.today)
             update_gen
           end
 

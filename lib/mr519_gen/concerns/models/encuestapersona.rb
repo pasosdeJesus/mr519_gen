@@ -5,18 +5,20 @@ module  Mr519Gen
         extend ActiveSupport::Concern
 
         included do
-          include Sip::Modelo 
-          include Sip::Localizacion
+          include Msip::Modelo 
+          include Msip::Localizacion
 
           has_secure_token :adurl
 
           # Evita que rails la suponga en plural
           self.table_name = 'mr519_gen_encuestapersona'
 
-          belongs_to :persona, class_name: 'Sip::Persona', 
+          belongs_to :persona, class_name: 'Msip::Persona', 
             foreign_key: 'persona_id', validate: true, optional: true
           belongs_to :formulariodec, class_name: 'Mr519Gen::Formulario', 
             foreign_key: 'formulario_id', validate: true, optional: true
+          belongs_to :planencuesta, class_name: 'Mr519Gen::Planencuesta',
+            foreign_key: :planencuesta_id 
           belongs_to :respuestafor, class_name: 'Mr519Gen::Respuestafor', 
             foreign_key: 'respuestafor_id', validate: true, optional: false
           accepts_nested_attributes_for :respuestafor,  reject_if: :all_blank

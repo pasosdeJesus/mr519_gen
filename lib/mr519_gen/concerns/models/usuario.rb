@@ -1,4 +1,4 @@
-require 'sip/concerns/models/usuario'
+require 'msip/concerns/models/usuario'
 
 
 module Mr519Gen
@@ -8,7 +8,7 @@ module Mr519Gen
         extend ActiveSupport::Concern
 
         included do
-          include Sip::Concerns::Models::Usuario
+          include Msip::Concerns::Models::Usuario
 
           has_many :encuestausuario, 
             class_name: 'Mr519Gen::Encuestausuario',

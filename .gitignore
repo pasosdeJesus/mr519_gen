@@ -31,5 +31,5 @@ herram/
 .byebug_history
 coverage
 test/dummy/public/mr519/
-test/dummy/app/javascript/controllers/sip
+test/dummy/app/javascript/controllers/msip
 test/dummy/app/javascript/controllers/mr519_gen

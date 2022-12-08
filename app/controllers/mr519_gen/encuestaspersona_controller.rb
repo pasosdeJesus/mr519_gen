@@ -1,7 +1,7 @@
 require 'mr519_gen/concerns/controllers/encuestaspersona_controller'
 
 module Mr519Gen
-  class EncuestaspersonaController < Sip::ModelosController
+  class EncuestaspersonaController < Msip::ModelosController
 
     load_and_authorize_resource class: Mr519Gen::Encuestapersona
     before_action :set_encuestapersona, 

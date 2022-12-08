@@ -4,7 +4,7 @@ class IniciarSesionTest < ApplicationSystemTestCase
 
   test "iniciar sesión" do
     skip
-    Sip::CapybaraHelper.iniciar_sesion(self, root_path, 'mr519', 'mr519')
+    Msip::CapybaraHelper.iniciar_sesion(self, root_path, 'mr519', 'mr519')
   end
 
 end

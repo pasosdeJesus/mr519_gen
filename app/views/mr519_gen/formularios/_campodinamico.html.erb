@@ -93,7 +93,7 @@
       Problema con tablabasica <%= tablabasica %> porque hay <%= tb.count %>
     <% else %>
       <% cla = Ability::tb_clase(tb[0]) %>
-      <% col = Sip::ModeloHelper.opciones_tabla_basica(cla, v, :valor_ids) %>
+      <% col = Msip::ModeloHelper.opciones_tabla_basica(cla, v, :valor_ids) %>
       <%= v.input :valor_ids,
         collection: col,
         label: etiqueta, 
@@ -111,7 +111,7 @@
     Problema con tablabasica <%= tablabasica %> porque hay <%= tb.count %>
   <% else %>
     <% cla = Ability::tb_clase(tb[0]) %>
-    <% col = Sip::ModeloHelper.opciones_tabla_basica(cla, v, :valor) %>
+    <% col = Msip::ModeloHelper.opciones_tabla_basica(cla, v, :valor) %>
     <%= v.input :valor,
       collection: col,
       label: etiqueta, 

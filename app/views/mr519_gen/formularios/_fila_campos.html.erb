@@ -51,7 +51,7 @@
       <% clasetb = 'display: block' %>
     <% end %>
     <% ntablas = {} %>
-    <% tablasor = Sip::ModeloHelper.lista_tablas_basicas(current_ability, ntablas) %>
+    <% tablasor = Msip::ModeloHelper.lista_tablas_basicas(current_ability, ntablas) %>
     <% ntablas = ntablas.map {|k,v| [k, v.delete_prefix('admin/')]}.to_h %>
     <% #byebug %>
     <div class="tablabasica" style="<%= clasetb %>">

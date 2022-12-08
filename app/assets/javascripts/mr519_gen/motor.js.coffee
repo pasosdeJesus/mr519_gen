@@ -2,7 +2,7 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-#//= require sip/motor
+#//= require msip/motor
 #//= require cocoon
 #//= require mr519_gen/edita_formulario
 

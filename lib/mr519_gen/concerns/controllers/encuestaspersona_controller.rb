@@ -25,9 +25,7 @@ module Mr519Gen
             r = [ :id ]
             if can?(:manage, Mr519Gen::Encuestapersona)
               r << :persona
-              r << :formulariodec
-              r << :fechaini_localizada
-              r << :fechafin_localizada
+              r << :planencuesta_id
               r << :fechacambio_localizada
               r << :adurl
             end
@@ -38,10 +36,6 @@ module Mr519Gen
 
           def atributos_form
             r = atributos_show - [:id]
-            if cannot?(:manage, Mr519Gen::Encuestapersona)
-              r = r - [:fechainicio_localizada, 
-                       :fechafin_localizada]
-            end
             return r
           end
 
@@ -58,11 +52,10 @@ module Mr519Gen
           def new
             authorize! :manage, Mr519Gen::Encuestapersona
             @registro = @encuestapersona = Encuestapersona.new
-            @registro.fechainicio = Date.today
             @registro.respuestafor = Respuestafor.new
             @registro.respuestafor.fechaini = Date.today
             @registro.respuestafor.fechacambio = Date.today
-            @registro.persona = Sip::Persona.all.take
+            @registro.persona = Msip::Persona.all.take
             #@registro.regenerate_adurl
             @registro.fecha = Date.today
             @registro.save!(validate: false)
@@ -93,6 +86,10 @@ module Mr519Gen
             authorize! :edit, @registro
             self.class.asegura_camposdinamicos(
               @registro, current_usuario.id)
+            if @registro.adurl.nil? || @registro.adurl == ''
+              @registro.regenerate_adurl
+              @registro.save
+            end
           end
 
           # GET /encuestaspersona/1/edit
@@ -116,7 +113,7 @@ module Mr519Gen
 
           def update
             params[:encuestapersona][:fechacambio_localizada] = 
-              Sip::FormatoFechaHelper::fecha_estandar_local(Date.today)
+              Msip::FormatoFechaHelper::fecha_estandar_local(Date.today)
             @encuestapersona = @registro = 
               Mr519Gen::Encuestapersona.find(params[:id])
             if @registro.update(encuestapersona_params) 

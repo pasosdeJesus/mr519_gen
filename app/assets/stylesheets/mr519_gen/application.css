@@ -11,7 +11,7 @@
  * It is generally better to create a new file per style scope.
  *
  *= require_tree .
- *= require sip/application.css
+ *= require msip/application.css
  *= require gridstack/dist/gridstack.css
  *= require gridstack/dist/gridstack-extra.css
  *= require_self
