@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/msip.git
-  revision: 0d31d41e04a53a3dae20ea1b7d55f0d18c98d65c
+  revision: 0086426a3f9e508249b58b0b37ad94f34cee1cb9
   branch: main
   specs:
     msip (2.2.0.alfa3)
@@ -146,6 +146,7 @@ GEM
     cuprite (0.14.3)
       capybara (~> 3.0)
       ferrum (~> 0.13.0)
+    date (3.3.1)
     debug (1.7.0)
       irb (>= 1.5.0)
       reline (>= 0.3.1)
@@ -175,7 +176,7 @@ GEM
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     io-console (0.5.11)
-    irb (1.5.1)
+    irb (1.6.0)
       reline (>= 0.3.0)
     jsbundling-rails (1.0.3)
       railties (>= 6.0.0)
@@ -197,7 +198,8 @@ GEM
     mini_mime (1.1.2)
     mini_portile2 (2.8.0)
     minitest (5.16.3)
-    net-imap (0.3.1)
+    net-imap (0.3.2)
+      date
       net-protocol
     net-pop (0.1.2)
       net-protocol
