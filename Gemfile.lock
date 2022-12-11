@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/msip.git
-  revision: 0bd8237429dbef8fc3e4148a91c7d4acd479dde7
+  revision: 39d0f07bd0cda550627122a1507f07592c926bc8
   branch: main
   specs:
     msip (2.2.0.alfa3)
