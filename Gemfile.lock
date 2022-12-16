@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: 099b7e2d2494a02aeeed5e207921b1ba31ef184d
+  revision: 3ee8371d11d99b499759d0d86100d29af9d5fafe
   branch: main
   specs:
     sip (2.1.0.beta1)
@@ -144,7 +144,7 @@ GEM
     cuprite (0.14.3)
       capybara (~> 3.0)
       ferrum (~> 0.13.0)
-    date (3.3.1)
+    date (3.3.2)
     debug (1.7.0)
       irb (>= 1.5.0)
       reline (>= 0.3.1)
@@ -173,13 +173,13 @@ GEM
       activesupport (>= 5.0)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
-    io-console (0.5.11)
-    irb (1.6.0)
+    io-console (0.6.0)
+    irb (1.6.1)
       reline (>= 0.3.0)
-    jsbundling-rails (1.0.3)
+    jsbundling-rails (1.1.1)
       railties (>= 6.0.0)
     json (2.6.3)
-    loofah (2.19.0)
+    loofah (2.19.1)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
     mail (2.8.0)
@@ -235,8 +235,8 @@ GEM
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
-    rails-html-sanitizer (1.4.3)
-      loofah (~> 2.3)
+    rails-html-sanitizer (1.4.4)
+      loofah (~> 2.19, >= 2.19.1)
     rails-i18n (7.0.6)
       i18n (>= 0.7, < 2)
       railties (>= 6.0.0, < 8)
@@ -250,7 +250,7 @@ GEM
     rake (13.0.6)
     redcarpet (3.5.1)
     regexp_parser (2.6.1)
-    reline (0.3.1)
+    reline (0.3.2)
       io-console (~> 0.5)
     responders (3.0.1)
       actionpack (>= 5.0)
