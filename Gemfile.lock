@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/msip.git
-  revision: 999528ab2edccc235757b09e7877fa3658884f5e
+  revision: 2a71204eb8f6a599ba7e9142b9ce65f943069ce9
   branch: main
   specs:
     msip (2.2.0.alfa3)
@@ -180,7 +180,6 @@ GEM
       reline (>= 0.3.0)
     jsbundling-rails (1.1.1)
       railties (>= 6.0.0)
-    json (2.6.3)
     loofah (2.19.1)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -197,7 +196,7 @@ GEM
     mime-types-data (3.2022.0105)
     mini_mime (1.1.2)
     mini_portile2 (2.8.1)
-    minitest (5.16.3)
+    minitest (5.17.0)
     net-imap (0.3.4)
       date
       net-protocol
@@ -214,7 +213,7 @@ GEM
     orm_adapter (0.5.0)
     pg (1.4.5)
     public_suffix (5.0.1)
-    puma (6.0.1)
+    puma (6.0.2)
       nio4r (~> 2.0)
     racc (1.6.2)
     rack (2.2.5)
@@ -268,11 +267,12 @@ GEM
     simple_form (5.1.0)
       actionpack (>= 5.2)
       activemodel (>= 5.2)
-    simplecov (0.17.1)
+    simplecov (0.22.0)
       docile (~> 1.1)
-      json (>= 1.8, < 3)
-      simplecov-html (~> 0.10.0)
-    simplecov-html (0.10.2)
+      simplecov-html (~> 0.11)
+      simplecov_json_formatter (~> 0.1)
+    simplecov-html (0.12.3)
+    simplecov_json_formatter (0.1.4)
     spring (4.1.0)
     sprockets (4.2.0)
       concurrent-ruby (~> 1.0)
@@ -340,7 +340,7 @@ DEPENDENCIES
   redcarpet
   sassc-rails
   simple_form
-  simplecov (~> 0.10, < 0.18)
+  simplecov
   spring
   sprockets-rails
   stimulus-rails
@@ -350,4 +350,4 @@ DEPENDENCIES
   will_paginate
 
 BUNDLED WITH
-   2.4.1
+   2.4.2

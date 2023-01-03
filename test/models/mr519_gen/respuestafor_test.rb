@@ -4,11 +4,6 @@ require_relative '../../test_helper'
 
 module Mr519Gen
   class RespuestaforTest < ActiveSupport::TestCase
-    PRUEBA_RESPUESTAFOR = {
-      fechaini: '2018-12-19',
-      fechacambio: '2018-12-19',
-    }
-
     setup do
       Rails.application.config.x.formato_fecha = 'yyyy-mm-dd'
     end

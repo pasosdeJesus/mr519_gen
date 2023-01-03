@@ -33,3 +33,7 @@ coverage
 test/dummy/public/mr519/
 test/dummy/app/javascript/controllers/msip
 test/dummy/app/javascript/controllers/mr519_gen
+cobertura-unitarias
+test/dummy/archivos
+test/dummy/cobertura-sistema
+cobertura-unitarias
