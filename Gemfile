@@ -74,5 +74,5 @@ end
 group :test do
   gem 'cuprite'
 
-  gem 'simplecov', '~>0.10', '<0.18'
+  gem 'simplecov'
 end

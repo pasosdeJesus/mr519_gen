@@ -30,12 +30,10 @@ module Mr519Gen
     end
 
     test "valido" do
-      f = Mr519Gen::Formulario.create(
-        ::Mr519Gen::FormularioTest::PRUEBA_FORMULARIO)
+      f = Mr519Gen::Formulario.create(PRUEBA_FORMULARIO)
       assert f.valid?
 
-      r = Mr519Gen::Respuestafor.new(
-        Mr519Gen::RespuestaforTest::PRUEBA_RESPUESTAFOR)
+      r = Mr519Gen::Respuestafor.new(PRUEBA_RESPUESTAFOR)
       r.formulario = f
       r.save
       assert r.valid?
