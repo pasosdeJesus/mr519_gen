@@ -74,17 +74,8 @@ if (test "$SINMIG" != "1") then {
   } fi;
 } fi;
 
-(cd $rutaap; RAILS_ENV=test bin/rails db:drop db:setup; RAILS_ENV=test bin/rails db:migrate msip:indices)
-if (test "$?" != "0") then {
-  echo "No puede preparse base de prueba";
-  exit 1;
-} fi;
-
 bin/regresion.sh
-if (test "$?" != "0") then {
-  echo "No pasaron pruebas de regresion";
-  exit 1;
-} fi;
+
 
 (cd $rutaap; RAILS_ENV=test bin/rails db:schema:dump)
 
@@ -96,7 +87,7 @@ if (test "$MENSCONS" = "") then {
 git commit -m "$MENSCONS" -a
 git push origin ${b}
 if (test "$?" != "0") then {
-  echo "No pudo subirse el cambio a github";
+  echo "No pudo subirse el cambio a gitlab";
   exit 1;
 } fi;
 

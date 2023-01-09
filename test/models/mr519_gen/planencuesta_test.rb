@@ -2,10 +2,6 @@ require_relative '../../test_helper'
 
 module Mr519Gen
   class PlanencuestaTest < ActiveSupport::TestCase
-    PRUEBA_FORMULARIO = {
-      nombre:'n',
-      nombreinterno:'n',
-    }
 
     setup do
       Rails.application.config.x.formato_fecha = 'yyyy-mm-dd'

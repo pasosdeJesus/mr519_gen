@@ -117,8 +117,8 @@ module Mr519Gen
             @encuestapersona = @registro = 
               Mr519Gen::Encuestapersona.find(params[:id])
             if @registro.update(encuestapersona_params) 
-              if current_usuario.nil? || URI(request.referer).path.
-                starts_with?('/encuestaexterna/')
+              if current_usuario.nil? || (request && request.referer &&
+                  URI(request.referer).path.starts_with?('/encuestaexterna/'))
                 render action: 'gracias', layout: 'externo'
               else
                 # Con usuarios autenticados si verificamos posibilidad

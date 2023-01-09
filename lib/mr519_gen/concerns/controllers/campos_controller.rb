@@ -37,9 +37,13 @@ module Mr519Gen
               @campo = Campo.find(params[:id])
               @campo.destroy
               respond_to do |format|
-                format.html { render inline: 'No implementado', 
-                              status: :unprocessable_entity }
-                format.json { head :no_content }
+                format.html { 
+                  render inline: 'No implementado', 
+                    status: :unprocessable_entity
+                }
+                format.json { 
+                  render json: '', status: :ok
+                }
               end
             end
           end
