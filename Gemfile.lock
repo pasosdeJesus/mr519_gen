@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/msip.git
-  revision: 5c4dd2cb73c1996cc49d60e2c2b007d3c1608994
+  revision: c9d3a940c6a139f08a5e637a452f299a5def41f9
   branch: main
   specs:
     msip (2.2.0.alfa3)
@@ -233,6 +233,10 @@ GEM
       activesupport (= 7.0.4)
       bundler (>= 1.15.0)
       railties (= 7.0.4)
+    rails-controller-testing (1.0.5)
+      actionpack (>= 5.0.1.rc1)
+      actionview (>= 5.0.1.rc1)
+      activesupport (>= 5.0.1.rc1)
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
@@ -336,6 +340,7 @@ DEPENDENCIES
   pg
   puma
   rails (~> 7)
+  rails-controller-testing
   rails-i18n
   redcarpet
   sassc-rails
@@ -350,4 +355,4 @@ DEPENDENCIES
   will_paginate
 
 BUNDLED WITH
-   2.4.2
+   2.4.3

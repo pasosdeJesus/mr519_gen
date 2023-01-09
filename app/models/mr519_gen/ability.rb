@@ -5,7 +5,7 @@ module Mr519Gen
 
     def tablasbasicas
       Msip::Ability::BASICAS_PROPIAS +
-        Mimotor::Ability::BASICAS_PROPIAS
+        Mr519Gen::Ability::BASICAS_PROPIAS
     end
 
     NOBASICAS_INDSEQID = [
@@ -56,8 +56,9 @@ module Mr519Gen
             Mr519Gen::Encuestausuario.where(usuario_id: usuario.id)
 
         when Ability::ROLADMIN
-          can :manage, [Mr519Gen::Encuestausuario, Mr519Gen::Encuestapersona]
-          can :manage, Mr519Gen::Formulario
+          can :manage, [Mr519Gen::Encuestausuario, Mr519Gen::Encuestapersona,
+                        Mr519Gen::Formulario, Mr519Gen::Campo,
+                        Mr519Gen::Planencuesta]
         end
       end
     end # def initialize_jn316_gen

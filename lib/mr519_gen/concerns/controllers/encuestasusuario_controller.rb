@@ -88,6 +88,12 @@ module Mr519Gen
             update_gen
           end
 
+          def create
+            authorize!(:new, clase.constantize)
+            debugger
+            create_gen
+          end
+
           def creartodousuario
             if !params || !params[:encuestausuario_id]
               render inline: 'Falta parámetro encuestausuario_id'

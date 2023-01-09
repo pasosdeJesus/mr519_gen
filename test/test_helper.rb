@@ -27,18 +27,9 @@ PRUEBA_ENCUESTAPERSONA = {
   adurl: 'xyz',
 }
 
-PRUEBA_USUARIO= {
-  nusuario: "mr519gen",
-  password: "mr519gen",
-  nombre: "admin",
-  descripcion: "admin",
-  rol: 1,
-  idioma: "es_CO",
-  email: "usuario1@localhost",
-  encrypted_password: '$2a$10$uMAciEcJuUXDnpelfSH6He7BxW0yBeq6VMemlWc5xEl6NZRDYVA3G',
-  sign_in_count: 0,
-  fechacreacion: "2018-12-19",
-  fechadeshabilitacion: nil,
+PRUEBA_ENCUESTAUSUARIO = {
+  usuario_id: 1,
+  fechainicio: '2018-12-01',
 }
 
 
@@ -72,6 +63,21 @@ PRUEBA_RESPUESTAFOR = {
   fechaini: '2018-12-19',
   fechacambio: '2018-12-19',
 }
+
+PRUEBA_USUARIO= {
+  nusuario: "mr519gen",
+  password: "mr519gen",
+  nombre: "admin",
+  descripcion: "admin",
+  rol: 1,
+  idioma: "es_CO",
+  email: "usuario1@localhost",
+  encrypted_password: '$2a$10$uMAciEcJuUXDnpelfSH6He7BxW0yBeq6VMemlWc5xEl6NZRDYVA3G',
+  sign_in_count: 0,
+  fechacreacion: "2018-12-19",
+  fechadeshabilitacion: nil,
+}
+
 
 PRUEBA_VALORCAMPO = {
   valor: 1

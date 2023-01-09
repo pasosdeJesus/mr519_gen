@@ -27,7 +27,7 @@ module Dummy
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     config.i18n.default_locale = :es
 
-    config.railties_order = [:main_app, Msip::Engine, :all]
+    config.railties_order = [:main_app, Mr519Gen::Engine, Msip::Engine, :all]
 
     config.colorize_logging = true
 

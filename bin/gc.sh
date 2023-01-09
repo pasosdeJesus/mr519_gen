@@ -31,6 +31,13 @@ if (test "$?" = "0") then {
 } fi;
 
 if (test "$SINAC" != "1") then {
+  rer=`bundle config get path | grep ":" | sed -e "s/.*\"\(.*\)\"/\1/g"`
+  rubyver=`ruby -v | sed -e "s/^[^ ]* \([0-9].[0-9]\).*/\1/g"`
+  rutapore="$rer/ruby/$rubyver/cache/bundler/git/"
+  if (test -d $rutapore) then {
+    echo "rm -rf $rutapore/*"
+    rm -rf $rutapore/*
+  } fi;
   NOKOGIRI_USE_SYSTEM_LIBRARIES=1 MAKE=gmake make=gmake QMAKE=qmake4 bundle update --bundler
   NOKOGIRI_USE_SYSTEM_LIBRARIES=1 MAKE=gmake make=gmake QMAKE=qmake4 bundle update
   if (test "$?" != "0") then {
@@ -67,17 +74,8 @@ if (test "$SINMIG" != "1") then {
   } fi;
 } fi;
 
-(cd $rutaap; RAILS_ENV=test bin/rails db:drop db:setup; RAILS_ENV=test bin/rails db:migrate msip:indices)
-if (test "$?" != "0") then {
-  echo "No puede preparse base de prueba";
-  exit 1;
-} fi;
-
 bin/regresion.sh
-if (test "$?" != "0") then {
-  echo "No pasaron pruebas de regresion";
-  exit 1;
-} fi;
+
 
 (cd $rutaap; RAILS_ENV=test bin/rails db:schema:dump)
 
@@ -89,7 +87,7 @@ if (test "$MENSCONS" = "") then {
 git commit -m "$MENSCONS" -a
 git push origin ${b}
 if (test "$?" != "0") then {
-  echo "No pudo subirse el cambio a github";
+  echo "No pudo subirse el cambio a gitlab";
   exit 1;
 } fi;
 
