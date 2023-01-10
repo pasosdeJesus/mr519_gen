@@ -10,14 +10,9 @@ GIT
       terrapin (~> 0.6.0)
 
 GIT
-  remote: https://github.com/vtamara/cocoon.git
-  revision: 9f1892403c3dbdb8f7d457a06f237ff58e7dfb07
-  branch: new_id_with_ajax
-  specs:
-    cocoon (1.2.11)
-
-PATH
-  remote: ../msip
+  remote: https://github.com/pasosdeJesus/msip.git
+  revision: e7210652245c2a05123da2462059851537fad5fc
+  branch: main
   specs:
     msip (2.2.0.alfa3)
       cancancan (~> 3)
@@ -33,6 +28,13 @@ PATH
       stimulus-rails (~> 1)
       twitter_cldr (~> 6)
       will_paginate (~> 3)
+
+GIT
+  remote: https://github.com/vtamara/cocoon.git
+  revision: 9f1892403c3dbdb8f7d457a06f237ff58e7dfb07
+  branch: new_id_with_ajax
+  specs:
+    cocoon (1.2.11)
 
 PATH
   remote: .
@@ -317,7 +319,7 @@ GEM
       simplecov_json_formatter (~> 0.1)
     simplecov-html (0.12.3)
     simplecov_json_formatter (0.1.4)
-    spring (4.1.0)
+    spring (4.1.1)
     sprockets (4.2.0)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
