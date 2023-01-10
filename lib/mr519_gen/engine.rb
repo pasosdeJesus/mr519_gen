@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Mr519Gen
   class Engine < ::Rails::Engine
     isolate_namespace Mr519Gen
@@ -9,7 +11,5 @@ module Mr519Gen
         end
       end
     end
-
-
   end
 end

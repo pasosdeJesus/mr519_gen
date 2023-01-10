@@ -1,4 +1,6 @@
-$:.push File.expand_path("lib", __dir__)
+# frozen_string_literal: true
+
+$:.push(File.expand_path("lib", __dir__))
 
 # Maintain your gem's version:
 require "mr519_gen/version"
@@ -16,8 +18,8 @@ Gem::Specification.new do |s|
 
   s.files = Dir["{app,config,db,lib}/**/*", "LICENCIA", "Rakefile", "README.md"]
 
-  s.add_dependency "rails"
-  s.add_dependency "msip"
+  s.add_dependency("msip")
+  s.add_dependency("rails")
 
-  s.add_development_dependency "pg"
+  s.add_development_dependency("pg")
 end

@@ -1,4 +1,6 @@
-require 'mr519_gen/concerns/models/planencuesta'
+# frozen_string_literal: true
+
+require "mr519_gen/concerns/models/planencuesta"
 
 module Mr519Gen
   class Planencuesta < ActiveRecord::Base

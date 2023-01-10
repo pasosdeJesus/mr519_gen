@@ -9,30 +9,35 @@ module Mr519Gen
     # include Cocoon::ViewHelpers
 
     setup do
-      if ENV["CONFIG_HOSTS"] != "www.example.com"
-        raise "CONFIG_HOSTS debe ser www.example.com"
-      end
+      raise "CONFIG_HOSTS debe ser www.example.com" if ENV["CONFIG_HOSTS"] != "www.example.com"
 
       @current_usuario = ::Usuario.find(1)
       sign_in @current_usuario
       @formulario = Mr519Gen::Formulario.create!(PRUEBA_FORMULARIO)
-      assert @formulario.valid?
-      @planencuesta =  Mr519Gen::Planencuesta.create!(
-        PRUEBA_PLANENCUESTA.merge(formulario_id: @formulario.id))
-      assert @planencuesta.valid?
+
+      assert_predicate @formulario, :valid?
+      @planencuesta = Mr519Gen::Planencuesta.create!(
+        PRUEBA_PLANENCUESTA.merge(formulario_id: @formulario.id),
+      )
+
+      assert_predicate @planencuesta, :valid?
       @respuestafor = Mr519Gen::Respuestafor.create!(
-        PRUEBA_RESPUESTAFOR.merge(formulario_id: @formulario.id))
-      assert @respuestafor.valid?
+        PRUEBA_RESPUESTAFOR.merge(formulario_id: @formulario.id),
+      )
+
+      assert_predicate @respuestafor, :valid?
       @persona = Msip::Persona.create!(PRUEBA_PERSONA)
-      assert @persona.valid?
-      @encuestapersona =  Mr519Gen::Encuestapersona.create!(
+
+      assert_predicate @persona, :valid?
+      @encuestapersona = Mr519Gen::Encuestapersona.create!(
         PRUEBA_ENCUESTAPERSONA.merge(
           planencuesta_id: @planencuesta.id,
           respuestafor_id: @respuestafor.id,
-          persona_id: @persona.id
-        )
+          persona_id: @persona.id,
+        ),
       )
-      assert @encuestapersona.valid?
+
+      assert_predicate @encuestapersona, :valid?
     end
 
     # Cada prueba que se ejecuta se hace en una transacción
@@ -68,16 +73,16 @@ module Mr519Gen
     test "debe crear nueva" do
       skip # No se hace create porque new, crea y redirige a edición
       # Arreglamos indice
-      #Msip::Encuestapersona.connection.execute(<<-SQL.squish)
+      # Msip::Encuestapersona.connection.execute(<<-SQL.squish)
       #  SELECT setval('public.mr519_gen.encuestapersona_id_seq', MAX(id))#{" "}
       #    FROM public.mr519_gen.encuestapersona;
-      #SQL
+      # SQL
       assert_difference("Encuestapersona.count") do
         post mr519_gen.encuestaspersona_path, params: {
           encuestapersona: {
             id: nil,
-            fechaini_localizada: '1/Ene/2022',
-            fechafin_localizada: '31/Ene/2022',
+            fechaini_localizada: "1/Ene/2022",
+            fechafin_localizada: "31/Ene/2022",
             formulario_id: @formulario.id,
 
             grupoper_attributes: {
@@ -98,7 +103,7 @@ module Mr519Gen
         params: {
           encuestapersona: {
             id: @encuestapersona.id,
-            adurl: 'abc'
+            adurl: "abc",
           },
         }
 

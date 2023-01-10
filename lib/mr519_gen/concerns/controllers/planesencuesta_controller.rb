@@ -1,17 +1,18 @@
+# frozen_string_literal: true
+
 module Mr519Gen
   module Concerns
     module Controllers
-      module PlanesencuestaController 
+      module PlanesencuestaController
         extend ActiveSupport::Concern
 
         included do
-
           helper ::ApplicationHelper
 
-          before_action :set_planencuesta, 
+          before_action :set_planencuesta,
             only: [:show, :edit, :update, :destroy]
 
-          def clase 
+          def clase
             "Mr519Gen::Planencuesta"
           end
 
@@ -22,7 +23,7 @@ module Mr519Gen
               :fechaini_localizada,
               :fechafin_localizada,
               :plantillacorreoinv_id,
-              :encuestapersona
+              :encuestapersona,
             ]
           end
 
@@ -31,23 +32,22 @@ module Mr519Gen
           end
 
           def index_reordenar(registros)
-            return registros.reorder(:id)
+            registros.reorder(:id)
           end
 
-          def new_modelo_path(o)
-            return new_planencuesta_path()
+          def new_modelo_path(_o)
+            new_planencuesta_path
           end
 
           def genclase
-            return 'F'
+            "F"
           end
-
 
           private
 
           def set_planencuesta
             @registro = @planencuesta = Mr519Gen::Planencuesta.find(
-              Mr519Gen::Planencuesta.connection.quote_string(params[:id]).to_i
+              Mr519Gen::Planencuesta.connection.quote_string(params[:id]).to_i,
             )
           end
 
@@ -55,17 +55,12 @@ module Mr519Gen
             atributos_form - [:id]
           end
 
-
           # No confiar parametros a Internet, sólo permitir lista blanca
           def planencuesta_params
             params.require(:planencuesta).permit(*lista_params)
           end
-
-        end #included
-
+        end # included
       end
     end
   end
 end
-
-

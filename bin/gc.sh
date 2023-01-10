@@ -31,15 +31,15 @@ if (test "$?" = "0") then {
 } fi;
 
 if (test "$SINAC" != "1") then {
-  rer=`bundle config get path | grep ":" | sed -e "s/.*\"\(.*\)\"/\1/g"`
+  rer=`bundle config get path | grep ":" | head -n 1 | sed -e "s/.*\"\(.*\)\"/\1/g"`
   rubyver=`ruby -v | sed -e "s/^[^ ]* \([0-9].[0-9]\).*/\1/g"`
   rutapore="$rer/ruby/$rubyver/cache/bundler/git/"
-  if (test -d $rutapore) then {
-    echo "rm -rf $rutapore/*"
+  if (test -d "$rutapore") then {
+    echo "Eliminando $rutapore/*"
     rm -rf $rutapore/*
   } fi;
-  NOKOGIRI_USE_SYSTEM_LIBRARIES=1 MAKE=gmake make=gmake QMAKE=qmake4 bundle update --bundler
   NOKOGIRI_USE_SYSTEM_LIBRARIES=1 MAKE=gmake make=gmake QMAKE=qmake4 bundle update
+  NOKOGIRI_USE_SYSTEM_LIBRARIES=1 MAKE=gmake make=gmake QMAKE=qmake4 bundle update --bundler
   if (test "$?" != "0") then {
     exit 1;
   } fi;

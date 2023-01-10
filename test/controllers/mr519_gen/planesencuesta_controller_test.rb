@@ -9,17 +9,20 @@ module Mr519Gen
     # include Cocoon::ViewHelpers
 
     setup do
-      if ENV["CONFIG_HOSTS"] != "www.example.com"
-        raise "CONFIG_HOSTS debe ser www.example.com"
-      end
+      raise "CONFIG_HOSTS debe ser www.example.com" if ENV["CONFIG_HOSTS"] != "www.example.com"
+
+      Rails.application.config.x.formato_fecha = "dd/M/yyyy"
 
       @current_usuario = ::Usuario.find(1)
       sign_in @current_usuario
       @formulario = Mr519Gen::Formulario.create!(PRUEBA_FORMULARIO)
-      assert @formulario.valid?
-      @planencuesta =  Mr519Gen::Planencuesta.create!(
-        PRUEBA_PLANENCUESTA.merge(formulario_id: @formulario.id))
-      assert @planencuesta.valid?
+
+      assert_predicate @formulario, :valid?
+      @planencuesta = Mr519Gen::Planencuesta.create!(
+        PRUEBA_PLANENCUESTA.merge(formulario_id: @formulario.id),
+      )
+
+      assert_predicate @planencuesta, :valid?
     end
 
     # Cada prueba que se ejecuta se hace en una transacción
@@ -54,17 +57,12 @@ module Mr519Gen
     end
 
     test "debe crear nueva" do
-      # Arreglamos indice
-      #Msip::Planencuesta.connection.execute(<<-SQL.squish)
-      #  SELECT setval('public.mr519_gen.planencuesta_id_seq', MAX(id))#{" "}
-      #    FROM public.mr519_gen.planencuesta;
-      #SQL
       assert_difference("Planencuesta.count") do
         post mr519_gen.planesencuesta_path, params: {
           planencuesta: {
             id: nil,
-            fechaini_localizada: '1/Ene/2022',
-            fechafin_localizada: '31/Ene/2022',
+            fechaini_localizada: "1/Ene/2022",
+            fechafin_localizada: "31/Ene/2022",
             formulario_id: @formulario.id,
 
             grupoper_attributes: {
@@ -85,8 +83,8 @@ module Mr519Gen
         params: {
           planencuesta: {
             id: @planencuesta.id,
-            fechaini_localizada: '2/Ene/2023',
-            fechafin_localizada: '31/Ene/2023'
+            fechaini_localizada: "2/Ene/2023",
+            fechafin_localizada: "31/Ene/2023",
           },
         }
 

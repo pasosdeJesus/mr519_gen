@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Mr519Gen
   module Concerns
     module Controllers
@@ -5,7 +7,6 @@ module Mr519Gen
         extend ActiveSupport::Concern
 
         included do
-
           # GET /campos/new
           def new
             if params[:formulario_id]
@@ -16,42 +17,43 @@ module Mr519Gen
               @campo.nombre += "_" + @campo.id.to_s
               if @campo.save(validate: false)
                 respond_to do |format|
-                  format.js { 
-                    render text: @campo.id.to_s 
-                  }
-                  format.json { 
-                    render json: @campo.id.to_s, status: :created 
-                  }
+                  format.js do
+                    render(text: @campo.id.to_s)
+                  end
+                  format.json do
+                    render(json: @campo.id.to_s, status: :created)
+                  end
                 end
               else
-                render inline: 'No implementado', status: :unprocessable_entity 
+                render(inline: "No implementado", status: :unprocessable_entity)
               end
             else
-              render inline: 'Falta id de formulario', 
-                status: :unprocessable_entity 
+              render(
+                inline: "Falta id de formulario",
+                status: :unprocessable_entity,
+              )
             end
           end
 
           def destroy
-            if params[:id]
-              @campo = Campo.find(params[:id])
-              @campo.destroy
-              respond_to do |format|
-                format.html { 
-                  render inline: 'No implementado', 
-                    status: :unprocessable_entity
-                }
-                format.json { 
-                  render json: '', status: :ok
-                }
+            return unless params[:id]
+
+            @campo = Campo.find(params[:id])
+            @campo.destroy
+            respond_to do |format|
+              format.html do
+                render(
+                  inline: "No implementado",
+                  status: :unprocessable_entity,
+                )
+              end
+              format.json do
+                render(json: "", status: :ok)
               end
             end
           end
-
-        end #included
-
+        end # included
       end
     end
   end
 end
-

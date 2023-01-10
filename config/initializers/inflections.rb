@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Be sure to restart your server when you modify this file.
 
 # Add new inflection rules using the following format. Inflections
@@ -15,10 +17,10 @@
 #   inflect.acronym 'RESTful'
 # end
 ActiveSupport::Inflector.inflections do |inflect|
-  inflect.irregular 'encuestapersona', 'encuestaspersona'
-  inflect.irregular 'encuestausuario', 'encuestasusuario'
-  inflect.irregular 'encuestapersona', 'encuestaspersona'
-  inflect.irregular 'opcioncs', 'opcionescs'
-  inflect.irregular 'planencuesta', 'planesencuesta'
-  inflect.irregular 'valorcampo', 'valorescampo'
+  inflect.irregular("encuestapersona", "encuestaspersona")
+  inflect.irregular("encuestausuario", "encuestasusuario")
+  inflect.irregular("encuestapersona", "encuestaspersona")
+  inflect.irregular("opcioncs", "opcionescs")
+  inflect.irregular("planencuesta", "planesencuesta")
+  inflect.irregular("valorcampo", "valorescampo")
 end

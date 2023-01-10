@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_dependency "mr519_gen/concerns/controllers/planesencuesta_controller"
 
 module Mr519Gen
