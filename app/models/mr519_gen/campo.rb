@@ -1,4 +1,6 @@
-require 'mr519_gen/concerns/models/campo'
+# frozen_string_literal: true
+
+require "mr519_gen/concerns/models/campo"
 
 module Mr519Gen
   class Campo < ActiveRecord::Base

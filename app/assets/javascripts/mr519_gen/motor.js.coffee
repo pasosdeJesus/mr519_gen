@@ -11,7 +11,7 @@
   ni = ni.toLowerCase()
   ni = ni.substring(0, 60)
   ni
-	
+
 @mr519_gen_prepara_eventos_comunes = (root, opciones = {}) ->
   $(document).on('change', '[id^=formulario_campo_attributes_][id$=_tipo]', (event) ->
     root = window
@@ -38,7 +38,7 @@
     root = window
     idni = $(this).attr('id').replace('nombre', 'nombreinterno')
     if  $('#' + idni).length == 0
-    	idni = $(this).attr('id').replace('nombre', 'valor')
+      idni = $(this).attr('id').replace('nombre', 'valor')
     if  $('#' + idni).length == 1 && ($('#' + idni).val() == '' || $('#' + idni).val() == 'N')
       $('#' + idni).val(mr519_gen_nombre_a_nombreinterno($(this).val()))
   )
@@ -47,6 +47,6 @@
     mr519ef_prepara();
 
   0
-	
+
 
 

@@ -9,14 +9,13 @@ module Mr519Gen
     # include Cocoon::ViewHelpers
 
     setup do
-      if ENV["CONFIG_HOSTS"] != "www.example.com"
-        raise "CONFIG_HOSTS debe ser www.example.com"
-      end
+      raise "CONFIG_HOSTS debe ser www.example.com" if ENV["CONFIG_HOSTS"] != "www.example.com"
 
       @current_usuario = ::Usuario.find(1)
       sign_in @current_usuario
       @formulario = Mr519Gen::Formulario.create!(PRUEBA_FORMULARIO)
-      assert @formulario.valid?
+
+      assert_predicate @formulario, :valid?
     end
 
     # Cada prueba que se ejecuta se hace en una transacción
@@ -51,16 +50,16 @@ module Mr519Gen
 
     test "debe crear nueva" do
       # Arreglamos indice
-      #Msip::Formulario.connection.execute(<<-SQL.squish)
+      # Msip::Formulario.connection.execute(<<-SQL.squish)
       #  SELECT setval('public.mr519_gen.formulario_id_seq', MAX(id))#{" "}
       #    FROM public.mr519_gen.formulario;
-      #SQL
+      # SQL
       assert_difference("Formulario.count") do
         post mr519_gen.formularios_path, params: {
           formulario: {
             id: nil,
-            nombre: 'z',
-            nombreinterno: 'z',
+            nombre: "z",
+            nombreinterno: "z",
           },
         }
       end
@@ -75,8 +74,8 @@ module Mr519Gen
         params: {
           formulario: {
             id: @formulario.id,
-            nombre: 'u',
-            nombreinterno: 'u'
+            nombre: "u",
+            nombreinterno: "u",
           },
         }
 

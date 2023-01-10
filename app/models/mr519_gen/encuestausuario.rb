@@ -1,4 +1,6 @@
-require 'mr519_gen/concerns/models/encuestausuario'
+# frozen_string_literal: true
+
+require "mr519_gen/concerns/models/encuestausuario"
 
 module Mr519Gen
   class Encuestausuario < ActiveRecord::Base

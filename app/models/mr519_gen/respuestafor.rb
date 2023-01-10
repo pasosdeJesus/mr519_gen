@@ -1,4 +1,6 @@
-require 'mr519_gen/concerns/models/respuestafor'
+# frozen_string_literal: true
+
+require "mr519_gen/concerns/models/respuestafor"
 
 module Mr519Gen
   class Respuestafor < ActiveRecord::Base

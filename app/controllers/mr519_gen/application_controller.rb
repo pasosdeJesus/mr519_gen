@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Mr519Gen
   class ApplicationController < ActionController::Base
     # Sin autorizacion porque es usada por otras
