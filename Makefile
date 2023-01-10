@@ -1,7 +1,7 @@
 
-valida: valida-js valida-ruby bundler-audit brakeman rubocop
+all: sintaxis-js sintaxis-ruby bundler-audit brakeman rubocop
 
-valida-js:
+sintaxis-js:
 	for i in `find app/assets/javascripts/ -name "*js" -or -name "*es6"`; do \
 	node -c $$i; \
 	done
@@ -9,7 +9,7 @@ valida-js:
 	coffee -o /tmp/ $$i; \
 	done
 
-valida-ruby:
+sintaxis-ruby:
 	find . -name "*\.rb" -exec ruby -w -W2 -c {} ';'
 
 instala-gemas:
@@ -17,11 +17,13 @@ instala-gemas:
 	doas chmod +x /tmp/i.sh
 	doas /tmp/i.sh
 
-erd:
+erd:  # Antes de esto instalar graphviz con doas pkg_add graphviz
 	(cd test/dummy; \
 	bundle exec erd)
 	mv test/dummy/erd.pdf doc/
-	convert doc/erd.pdf doc/erd.png
+	pdftoppm doc/erd.pdf doc/erd
+	convert doc/erd-1.ppm doc/erd.png
+	rm doc/erd-1.ppm
 
 doc/dependencias.png: doc/dependencias.dot
 	dot -Tpng doc/dependencias.dot  > doc/dependencias.png
@@ -42,5 +44,5 @@ c_brakeman:
 c_rubocop:
 	bin/rubocop -a
 
-
-
+yard:
+	yard
