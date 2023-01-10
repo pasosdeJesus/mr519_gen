@@ -37,3 +37,6 @@ cobertura-unitarias
 test/dummy/archivos
 test/dummy/cobertura-sistema
 cobertura-unitarias
+.yardoc
+yard_doc
+
