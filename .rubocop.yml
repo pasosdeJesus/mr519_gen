@@ -9,6 +9,9 @@ Style/FrozenStringLiteralComment:
   Enabled: true
     #  SafeAutoCorrect: false
 
+Minitest/AssertPredicate:
+  Enabled: false
+
 Minitest/MultipleAssertions:
   Enabled: false
 
