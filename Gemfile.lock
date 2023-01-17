@@ -10,22 +10,24 @@ GIT
       terrapin (~> 0.6.0)
 
 GIT
-  remote: https://github.com/pasosdeJesus/sip.git
-  revision: 78eb7d6b5065a35c00b2b969928b0bbe5f75c122
+  remote: https://github.com/pasosdeJesus/msip.git
+  revision: f71be0ae16947ec7af8776383923bd1b785a9857
   branch: main
   specs:
-    sip (2.1.0.beta1)
-      cancancan
-      coffee-rails
-      devise
-      devise-i18n
-      kt-paperclip
-      minitest
-      rails
-      rails-i18n
-      sassc-rails
-      simple_form
-      twitter_cldr
+    msip (2.2.0.alfa3)
+      cancancan (~> 3)
+      devise (~> 4)
+      devise-i18n (~> 1)
+      kt-paperclip (~> 7)
+      pg (~> 1)
+      rails (~> 7.0)
+      rails-i18n (~> 7)
+      sassc-rails (~> 2)
+      simple_form (~> 5)
+      sprockets-rails (~> 3)
+      stimulus-rails (~> 1)
+      twitter_cldr (~> 6)
+      will_paginate (~> 3)
 
 GIT
   remote: https://github.com/vtamara/cocoon.git
@@ -37,9 +39,9 @@ GIT
 PATH
   remote: .
   specs:
-    mr519_gen (2.1.0.beta1)
+    mr519_gen (2.2.0.beta1)
+      msip
       rails
-      sip
 
 GEM
   remote: https://rubygems.org/
@@ -111,13 +113,18 @@ GEM
       tzinfo (~> 2.0)
     addressable (2.8.1)
       public_suffix (>= 2.0.2, < 6.0)
+    ast (2.4.2)
     babel-source (5.8.35)
     babel-transpiler (0.7.0)
       babel-source (>= 4.0, < 6)
       execjs (~> 2.0)
     bcrypt (3.1.18)
     bindex (0.8.1)
+    brakeman (5.4.0)
     builder (3.2.4)
+    bundler-audit (0.9.1)
+      bundler (>= 1.2.0, < 3)
+      thor (~> 1.0)
     camertron-eprun (1.1.1)
     cancancan (3.4.0)
     capybara (3.38.0)
@@ -129,8 +136,11 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
+    choice (0.2.0)
     cldr-plurals-runtime-rb (1.1.0)
     climate_control (0.2.0)
+    code-scanning-rubocop (0.6.1)
+      rubocop (~> 1.0)
     coffee-rails (5.0.0)
       coffee-script (>= 2.2.0)
       railties (>= 5.2.0)
@@ -210,6 +220,9 @@ GEM
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
     orm_adapter (0.5.0)
+    parallel (1.22.1)
+    parser (3.2.0.0)
+      ast (~> 2.4.1)
     pg (1.4.5)
     public_suffix (5.0.1)
     puma (6.0.2)
@@ -232,9 +245,18 @@ GEM
       activesupport (= 7.0.4.1)
       bundler (>= 1.15.0)
       railties (= 7.0.4.1)
+    rails-controller-testing (1.0.5)
+      actionpack (>= 5.0.1.rc1)
+      actionview (>= 5.0.1.rc1)
+      activesupport (>= 5.0.1.rc1)
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
+    rails-erd (1.7.2)
+      activerecord (>= 4.2)
+      activesupport (>= 4.2)
+      choice (~> 0.2.0)
+      ruby-graphviz (~> 1.2)
     rails-html-sanitizer (1.4.4)
       loofah (~> 2.19, >= 2.19.1)
     rails-i18n (7.0.6)
@@ -247,6 +269,7 @@ GEM
       rake (>= 12.2)
       thor (~> 1.0)
       zeitwerk (~> 2.5)
+    rainbow (3.1.1)
     rake (13.0.6)
     redcarpet (3.5.1)
     regexp_parser (2.6.1)
@@ -255,6 +278,30 @@ GEM
     responders (3.0.1)
       actionpack (>= 5.0)
       railties (>= 5.0)
+    rexml (3.2.5)
+    rubocop (1.43.0)
+      json (~> 2.3)
+      parallel (~> 1.10)
+      parser (>= 3.2.0.0)
+      rainbow (>= 2.2.2, < 4.0)
+      regexp_parser (>= 1.8, < 3.0)
+      rexml (>= 3.2.5, < 4.0)
+      rubocop-ast (>= 1.24.1, < 2.0)
+      ruby-progressbar (~> 1.7)
+      unicode-display_width (>= 2.4.0, < 3.0)
+    rubocop-ast (1.24.1)
+      parser (>= 3.1.1.0)
+    rubocop-minitest (0.26.1)
+      rubocop (>= 0.90, < 2.0)
+    rubocop-rails (2.17.4)
+      activesupport (>= 4.2.0)
+      rack (>= 1.1)
+      rubocop (>= 1.33.0, < 2.0)
+    rubocop-shopify (2.11.1)
+      rubocop (~> 1.42)
+    ruby-graphviz (1.2.5)
+      rexml
+    ruby-progressbar (1.11.0)
     sassc (2.4.0)
       ffi (~> 1.9)
     sassc-rails (2.1.2)
@@ -266,11 +313,12 @@ GEM
     simple_form (5.1.0)
       actionpack (>= 5.2)
       activemodel (>= 5.2)
-    simplecov (0.17.1)
+    simplecov (0.22.0)
       docile (~> 1.1)
-      json (>= 1.8, < 3)
-      simplecov-html (~> 0.10.0)
-    simplecov-html (0.10.2)
+      simplecov-html (~> 0.11)
+      simplecov_json_formatter (~> 0.1)
+    simplecov-html (0.12.3)
+    simplecov_json_formatter (0.1.4)
     spring (4.1.1)
     sprockets (4.2.0)
       concurrent-ruby (~> 1.0)
@@ -296,6 +344,7 @@ GEM
       tzinfo
     tzinfo (2.0.5)
       concurrent-ruby (~> 1.0)
+    unicode-display_width (2.4.2)
     warden (1.2.9)
       rack (>= 2.0.9)
     web-console (4.2.0)
@@ -317,8 +366,11 @@ PLATFORMS
 
 DEPENDENCIES
   babel-transpiler
+  brakeman
+  bundler-audit
   cancancan
   cocoon!
+  code-scanning-rubocop
   coffee-rails
   colorize
   cuprite
@@ -329,16 +381,21 @@ DEPENDENCIES
   jsbundling-rails
   kt-paperclip!
   mr519_gen!
+  msip!
   nokogiri (>= 1.11.1)
   pg
   puma
   rails (~> 7)
+  rails-controller-testing
+  rails-erd
   rails-i18n
   redcarpet
+  rubocop-minitest
+  rubocop-rails
+  rubocop-shopify
   sassc-rails
   simple_form
-  simplecov (~> 0.10, < 0.18)
-  sip!
+  simplecov
   spring
   sprockets-rails
   stimulus-rails
