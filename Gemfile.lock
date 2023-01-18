@@ -10,8 +10,15 @@ GIT
       terrapin (~> 0.6.0)
 
 GIT
-  remote: https://github.com/pasosdeJesus/msip.git
-  revision: f71be0ae16947ec7af8776383923bd1b785a9857
+  remote: https://github.com/vtamara/cocoon.git
+  revision: 9f1892403c3dbdb8f7d457a06f237ff58e7dfb07
+  branch: new_id_with_ajax
+  specs:
+    cocoon (1.2.11)
+
+GIT
+  remote: https://gitlab.com/pasosdeJesus/msip.git
+  revision: 0f4dff0a6b63ea4acac59e70e189cfbfe3710033
   branch: main
   specs:
     msip (2.2.0.alfa3)
@@ -28,13 +35,6 @@ GIT
       stimulus-rails (~> 1)
       twitter_cldr (~> 6)
       will_paginate (~> 3)
-
-GIT
-  remote: https://github.com/vtamara/cocoon.git
-  revision: 9f1892403c3dbdb8f7d457a06f237ff58e7dfb07
-  branch: new_id_with_ajax
-  specs:
-    cocoon (1.2.11)
 
 PATH
   remote: .
