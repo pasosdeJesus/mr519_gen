@@ -48,7 +48,7 @@ module Dummy
     # config.relative_url_root = ENV.fetch('RUTA_RELATIVA', '/msip')
 
     # msip
-    config.x.formato_fecha = ENV.fetch("FORMATO_FECHA", "dd/M/yyyy")
+    config.x.formato_fecha = ENV.fetch("MSIP_FORMATO_FECHA", "dd/M/yyyy")
     # En el momento soporta 3 formatos: yyyy-mm-dd, dd-mm-yyyy y dd/M/yyyy
   end
 end
