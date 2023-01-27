@@ -18,7 +18,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/msip.git
-  revision: 720dc66d67d8015ccffa7dddece086619ed92954
+  revision: 918170d534e9d0e5fd3035b2e85fec797aa9c4d3
   branch: main
   specs:
     msip (2.2.0.alfa3)
@@ -352,7 +352,7 @@ GEM
       activemodel (>= 6.0.0)
       bindex (>= 0.4.0)
       railties (>= 6.0.0)
-    webrick (1.7.0)
+    webrick (1.8.1)
     websocket-driver (0.7.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
