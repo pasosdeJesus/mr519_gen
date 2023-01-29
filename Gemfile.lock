@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: 416f2305c075c5ac66b16e374d1bc19c1ebc482d
+  revision: 45b8d540df58a9c3b9df8ce6ccfb22160cf0dd65
   branch: v2.0
   specs:
     sip (2.0)
@@ -264,7 +264,7 @@ GEM
       camertron-eprun
       cldr-plurals-runtime-rb (~> 1.1)
       tzinfo
-    tzinfo (2.0.5)
+    tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     warden (1.2.9)
       rack (>= 2.0.9)
