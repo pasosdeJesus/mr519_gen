@@ -18,7 +18,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/msip.git
-  revision: 918170d534e9d0e5fd3035b2e85fec797aa9c4d3
+  revision: 86ddbe0cb764c9e32b211d2b11c4a5427aef2058
   branch: main
   specs:
     msip (2.2.0.alfa3)
@@ -342,7 +342,7 @@ GEM
       camertron-eprun
       cldr-plurals-runtime-rb (~> 1.1)
       tzinfo
-    tzinfo (2.0.5)
+    tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.4.2)
     warden (1.2.9)
