@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: 45b8d540df58a9c3b9df8ce6ccfb22160cf0dd65
+  revision: 1217cafabb5252fd6e3fac7291236a0aa748ff8e
   branch: v2.0
   specs:
     sip (2.0)
@@ -151,7 +151,7 @@ GEM
     loofah (2.19.1)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
-    mail (2.8.0.1)
+    mail (2.8.1)
       mini_mime (>= 0.1.1)
       net-imap
       net-pop
@@ -177,7 +177,7 @@ GEM
     net-smtp (0.3.3)
       net-protocol
     nio4r (2.5.8)
-    nokogiri (1.14.0)
+    nokogiri (1.14.1)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
     orm_adapter (0.5.0)
@@ -226,10 +226,10 @@ GEM
       rake (>= 12.2)
       thor (~> 1.0)
     rake (13.0.6)
-    redcarpet (3.5.1)
-    responders (3.0.1)
-      actionpack (>= 5.0)
-      railties (>= 5.0)
+    redcarpet (3.6.0)
+    responders (3.1.0)
+      actionpack (>= 5.2)
+      railties (>= 5.2)
     sassc (2.4.0)
       ffi (~> 1.9)
     sassc-rails (2.1.2)
@@ -239,7 +239,7 @@ GEM
       sprockets-rails
       tilt
     semantic_range (3.0.0)
-    simple_form (5.1.0)
+    simple_form (5.2.0)
       actionpack (>= 5.2)
       activemodel (>= 5.2)
     simplecov (0.17.1)
@@ -312,4 +312,4 @@ DEPENDENCIES
   will_paginate
 
 BUNDLED WITH
-   2.4.5
+   2.4.6
