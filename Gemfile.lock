@@ -18,7 +18,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/msip.git
-  revision: 797e041b9c973e02b7bc75c312d11b47ba566a7e
+  revision: 1411588b11d403b43996522959993d7d8bcb7b6e
   branch: main
   specs:
     msip (2.2.0.beta1)
@@ -120,7 +120,7 @@ GEM
       execjs (~> 2.0)
     bcrypt (3.1.18)
     bindex (0.8.1)
-    brakeman (5.4.0)
+    brakeman (5.4.1)
     builder (3.2.4)
     bundler-audit (0.9.1)
       bundler (>= 1.2.0, < 3)
@@ -164,8 +164,8 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
-    devise-i18n (1.10.3)
-      devise (>= 4.8.0)
+    devise-i18n (1.11.0)
+      devise (>= 4.9.0)
     docile (1.4.0)
     dotenv (2.8.1)
     dotenv-rails (2.8.1)
@@ -279,20 +279,20 @@ GEM
       actionpack (>= 5.2)
       railties (>= 5.2)
     rexml (3.2.5)
-    rubocop (1.45.1)
+    rubocop (1.46.0)
       json (~> 2.3)
       parallel (~> 1.10)
       parser (>= 3.2.0.0)
       rainbow (>= 2.2.2, < 4.0)
       regexp_parser (>= 1.8, < 3.0)
       rexml (>= 3.2.5, < 4.0)
-      rubocop-ast (>= 1.24.1, < 2.0)
+      rubocop-ast (>= 1.26.0, < 2.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 2.4.0, < 3.0)
     rubocop-ast (1.26.0)
       parser (>= 3.2.1.0)
-    rubocop-minitest (0.27.0)
-      rubocop (>= 0.90, < 2.0)
+    rubocop-minitest (0.28.0)
+      rubocop (>= 1.39, < 2.0)
     rubocop-rails (2.17.4)
       activesupport (>= 4.2.0)
       rack (>= 1.1)
