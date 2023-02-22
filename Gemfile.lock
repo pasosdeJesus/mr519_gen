@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: 1826a1a8dcdbd737a94ceefc00898d77c1c5242f
+  revision: 6d75f4505c990cde0a31b6302dcad5391e51d10f
   branch: v2.0
   specs:
     sip (2.0)
@@ -131,8 +131,8 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
-    devise-i18n (1.10.3)
-      devise (>= 4.8.0)
+    devise-i18n (1.11.0)
+      devise (>= 4.9.0)
     docile (1.4.0)
     dotenv (2.8.1)
     dotenv-rails (2.8.1)
