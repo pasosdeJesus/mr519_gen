@@ -18,7 +18,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/msip.git
-  revision: 5deb7f4402b33cbc0437bffa34ed4e53b0a59b44
+  revision: 4020edc2162440fb68c2c4cac072fdc46bef39cc
   branch: main
   specs:
     msip (2.2.0.beta1)
@@ -149,7 +149,7 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     colorize (0.8.1)
-    concurrent-ruby (1.2.0)
+    concurrent-ruby (1.2.2)
     crass (1.0.6)
     cuprite (0.14.3)
       capybara (~> 3.0)
@@ -223,9 +223,9 @@ GEM
     parallel (1.22.1)
     parser (3.2.1.0)
       ast (~> 2.4.1)
-    pg (1.4.5)
+    pg (1.4.6)
     public_suffix (5.0.1)
-    puma (6.1.0)
+    puma (6.1.1)
       nio4r (~> 2.0)
     racc (1.6.2)
     rack (2.2.6.2)
@@ -289,11 +289,11 @@ GEM
       rubocop-ast (>= 1.26.0, < 2.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 2.4.0, < 3.0)
-    rubocop-ast (1.26.0)
+    rubocop-ast (1.27.0)
       parser (>= 3.2.1.0)
     rubocop-minitest (0.28.0)
       rubocop (>= 1.39, < 2.0)
-    rubocop-rails (2.17.4)
+    rubocop-rails (2.18.0)
       activesupport (>= 4.2.0)
       rack (>= 1.1)
       rubocop (>= 1.33.0, < 2.0)
