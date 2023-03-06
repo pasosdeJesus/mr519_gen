@@ -107,7 +107,7 @@ GEM
     bindex (0.8.1)
     builder (3.2.4)
     camertron-eprun (1.1.1)
-    cancancan (3.4.0)
+    cancancan (3.5.0)
     chosen-rails (1.10.0)
       coffee-rails (>= 3.2)
       railties (>= 3.0)
@@ -166,7 +166,7 @@ GEM
       rake
     mini_mime (1.1.2)
     mini_portile2 (2.8.1)
-    minitest (5.17.0)
+    minitest (5.18.0)
     net-imap (0.3.4)
       date
       net-protocol
@@ -191,7 +191,7 @@ GEM
     puma (6.1.1)
       nio4r (~> 2.0)
     racc (1.6.2)
-    rack (2.2.6.2)
+    rack (2.2.6.3)
     rack-proxy (0.7.6)
       rack
     rack-test (2.0.2)
