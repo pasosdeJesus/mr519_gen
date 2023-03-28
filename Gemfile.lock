@@ -18,7 +18,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/msip.git
-  revision: 7fb23f69a665db884eeed5f7b87a07ace28309f4
+  revision: ce832af4e98368bf7a71a2da09f8bb9bd3b6f7e6
   branch: main
   specs:
     msip (2.2.0.beta1)
@@ -273,7 +273,7 @@ GEM
     rake (13.0.6)
     redcarpet (3.6.0)
     regexp_parser (2.7.0)
-    reline (0.3.2)
+    reline (0.3.3)
       io-console (~> 0.5)
     responders (3.1.0)
       actionpack (>= 5.2)
@@ -289,7 +289,7 @@ GEM
       rubocop-ast (>= 1.26.0, < 2.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 2.4.0, < 3.0)
-    rubocop-ast (1.27.0)
+    rubocop-ast (1.28.0)
       parser (>= 3.2.1.0)
     rubocop-minitest (0.29.0)
       rubocop (>= 1.39, < 2.0)
@@ -405,4 +405,4 @@ DEPENDENCIES
   will_paginate
 
 BUNDLED WITH
-   2.4.9
+   2.4.10
