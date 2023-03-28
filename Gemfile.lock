@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: 41962e2e50b9d46b9f807675343887b4d3676b8a
+  revision: 57d793a263bbc812d2d463176acf71cfe11938ed
   branch: v2.1
   specs:
     sip (2.1.0.beta1)
@@ -250,7 +250,7 @@ GEM
     rake (13.0.6)
     redcarpet (3.6.0)
     regexp_parser (2.7.0)
-    reline (0.3.2)
+    reline (0.3.3)
       io-console (~> 0.5)
     responders (3.1.0)
       actionpack (>= 5.2)
@@ -348,4 +348,4 @@ DEPENDENCIES
   will_paginate
 
 BUNDLED WITH
-   2.4.9
+   2.4.10
