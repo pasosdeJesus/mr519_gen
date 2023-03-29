@@ -18,7 +18,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/msip.git
-  revision: ce832af4e98368bf7a71a2da09f8bb9bd3b6f7e6
+  revision: 2cb580a670c021f1961d0d77047a99550c1f39de
   branch: main
   specs:
     msip (2.2.0.beta1)
@@ -155,7 +155,7 @@ GEM
       capybara (~> 3.0)
       ferrum (~> 0.13.0)
     date (3.3.3)
-    debug (1.7.1)
+    debug (1.7.2)
       irb (>= 1.5.0)
       reline (>= 0.3.1)
     devise (4.9.0)
@@ -225,7 +225,7 @@ GEM
       ast (~> 2.4.1)
     pg (1.4.6)
     public_suffix (5.0.1)
-    puma (6.1.1)
+    puma (6.2.0)
       nio4r (~> 2.0)
     racc (1.6.2)
     rack (2.2.6.4)
