@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/kreeti/kt-paperclip.git
-  revision: 11abf222dc31bff71160a1d138b445214f434b2b
+  revision: 4f45bd4c6b7d54ae3c88eede3d033542769c1f63
   specs:
     kt-paperclip (7.1.1)
       activemodel (>= 4.2.0)
@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: ced812765ed23ea7595bb38b08556a7c36067ad5
+  revision: 5ff415aa794c0fd67d3e8dee2c783852d2811bbd
   branch: v2.1
   specs:
     sip (2.1.0.beta1)
@@ -145,7 +145,7 @@ GEM
       capybara (~> 3.0)
       ferrum (~> 0.13.0)
     date (3.3.3)
-    debug (1.7.2)
+    debug (1.8.0)
       irb (>= 1.5.0)
       reline (>= 0.3.1)
     devise (4.9.2)
@@ -348,4 +348,4 @@ DEPENDENCIES
   will_paginate
 
 BUNDLED WITH
-   2.4.12
+   2.4.13
