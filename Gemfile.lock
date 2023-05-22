@@ -18,7 +18,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/msip.git
-  revision: a5e485d1594ce0f41a8a40f5e9bd3a2097310ae8
+  revision: 0cfaf1d7e7f4497a1941e2df85e8df448e78d7ae
   branch: main
   specs:
     msip (2.2.0.beta2)
@@ -216,7 +216,7 @@ GEM
     net-smtp (0.3.3)
       net-protocol
     nio4r (2.5.9)
-    nokogiri (1.15.0)
+    nokogiri (1.15.1)
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
     orm_adapter (0.5.0)
@@ -273,7 +273,7 @@ GEM
     rake (13.0.6)
     redcarpet (3.6.0)
     regexp_parser (2.8.0)
-    reline (0.3.3)
+    reline (0.3.4)
       io-console (~> 0.5)
     responders (3.1.0)
       actionpack (>= 5.2)
