@@ -143,7 +143,7 @@ GEM
     ffi (1.15.5)
     globalid (1.1.0)
       activesupport (>= 5.0)
-    i18n (1.14.0)
+    i18n (1.14.1)
       concurrent-ruby (~> 1.0)
     jquery-ui-rails (6.0.1)
       railties (>= 3.2.16)
@@ -259,7 +259,7 @@ GEM
     terrapin (0.6.0)
       climate_control (>= 0.0.3, < 1.0)
     thor (1.2.2)
-    tilt (2.1.0)
+    tilt (2.2.0)
     timeout (0.3.2)
     twitter_cldr (6.11.5)
       camertron-eprun
