@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: 5cdc0a2718342fac85d41b25f19f320b2a2cca9f
+  revision: 2a126bbc0a127915e64012c66921e5524a8d6b74
   branch: v2.0
   specs:
     sip (2.0)
@@ -167,7 +167,7 @@ GEM
     mini_mime (1.1.2)
     mini_portile2 (2.8.2)
     minitest (5.18.0)
-    net-imap (0.3.4)
+    net-imap (0.3.6)
       date
       net-protocol
     net-pop (0.1.2)
@@ -190,7 +190,7 @@ GEM
     pg (1.5.3)
     puma (6.3.0)
       nio4r (~> 2.0)
-    racc (1.7.0)
+    racc (1.7.1)
     rack (2.2.7)
     rack-proxy (0.7.6)
       rack
@@ -313,4 +313,4 @@ DEPENDENCIES
   will_paginate
 
 BUNDLED WITH
-   2.4.13
+   2.4.14
