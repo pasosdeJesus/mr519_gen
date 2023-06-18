@@ -18,7 +18,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/msip.git
-  revision: cbbf443dc7ed5ee29358c94560276d43dc679ff9
+  revision: 0c9a6fab4a43f436a2d68681337ce03fab68d28f
   branch: main
   specs:
     msip (2.2.0.beta2)
@@ -205,7 +205,7 @@ GEM
     mime-types-data (3.2023.0218.1)
     mini_mime (1.1.2)
     mini_portile2 (2.8.2)
-    minitest (5.18.0)
+    minitest (5.18.1)
     net-imap (0.3.6)
       date
       net-protocol
@@ -295,7 +295,7 @@ GEM
       parser (>= 3.2.1.0)
     rubocop-minitest (0.31.0)
       rubocop (>= 1.39, < 2.0)
-    rubocop-rails (2.19.1)
+    rubocop-rails (2.20.0)
       activesupport (>= 4.2.0)
       rack (>= 1.1)
       rubocop (>= 1.33.0, < 2.0)
