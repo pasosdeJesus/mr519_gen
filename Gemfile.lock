@@ -115,7 +115,7 @@ GEM
     babel-transpiler (0.7.0)
       babel-source (>= 4.0, < 6)
       execjs (~> 2.0)
-    bcrypt (3.1.18)
+    bcrypt (3.1.19)
     bindex (0.8.1)
     builder (3.2.4)
     camertron-eprun (1.1.1)
@@ -138,7 +138,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
-    colorize (1.0.1)
+    colorize (1.0.5)
     concurrent-ruby (1.2.2)
     crass (1.0.6)
     cuprite (0.14.3)
