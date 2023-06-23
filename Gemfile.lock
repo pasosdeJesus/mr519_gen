@@ -260,7 +260,7 @@ GEM
       climate_control (>= 0.0.3, < 1.0)
     thor (1.2.2)
     tilt (2.2.0)
-    timeout (0.3.2)
+    timeout (0.4.0)
     twitter_cldr (6.11.5)
       camertron-eprun
       cldr-plurals-runtime-rb (~> 1.1)
