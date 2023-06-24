@@ -18,7 +18,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/msip.git
-  revision: 808e9a3efe20e6b4824b1e72e78542e0e1861ba1
+  revision: 50061129551b86143281b857e9ed038a16c885f4
   branch: main
   specs:
     msip (2.2.0.beta4)
@@ -148,7 +148,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
-    colorize (1.0.5)
+    colorize (1.1.0)
     concurrent-ruby (1.2.2)
     crass (1.0.6)
     cuprite (0.14.3)
