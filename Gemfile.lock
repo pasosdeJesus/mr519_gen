@@ -18,7 +18,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/msip.git
-  revision: 50061129551b86143281b857e9ed038a16c885f4
+  revision: 642fcc4740a734e40b682a059b3e39f0338cb010
   branch: main
   specs:
     msip (2.2.0.beta4)
@@ -282,7 +282,7 @@ GEM
       actionpack (>= 5.2)
       railties (>= 5.2)
     rexml (3.2.5)
-    rubocop (1.53.0)
+    rubocop (1.53.1)
       json (~> 2.3)
       language_server-protocol (>= 3.17.0)
       parallel (~> 1.10)
