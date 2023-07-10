@@ -18,7 +18,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/msip.git
-  revision: e452f2595e3a3370af53afb079b7fba8318dc85c
+  revision: bfe18a8b4d5d799f10eb37d85258ffb706d6ffaf
   branch: main
   specs:
     msip (2.2.0.beta4)
@@ -277,7 +277,7 @@ GEM
     rake (13.0.6)
     redcarpet (3.6.0)
     regexp_parser (2.8.1)
-    reline (0.3.5)
+    reline (0.3.6)
       io-console (~> 0.5)
     responders (3.1.0)
       actionpack (>= 5.2)
@@ -410,4 +410,4 @@ DEPENDENCIES
   will_paginate
 
 BUNDLED WITH
-   2.4.15
+   2.4.16
