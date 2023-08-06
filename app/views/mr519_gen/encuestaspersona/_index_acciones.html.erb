@@ -1,6 +1,8 @@
 <% if can?(:edit, registro) %>
   <%= link_to t('.edit', :default => t("helpers.links.edit")),
-    edit_modelo_path(registro), :class => 'btn btn-sm' %>
+    edit_modelo_path(registro),
+    "data-turbo": false,
+    :class => 'btn btn-sm' %>
 <% end %>
 <%= render partial: 'index_mas_acciones', locals: {f: f, registro: registro} %>
 <% if can?(:destroy, registro) %>
