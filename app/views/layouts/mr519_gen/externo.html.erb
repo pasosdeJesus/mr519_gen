@@ -39,8 +39,8 @@
     <meta name="msapplication-config" content="/assets/browserconfig.xml">
 
 
-    <%= javascript_include_tag "application", media: 'all', 'data-turbo-track': 'reload' %>
-    <%= javascript_pack_tag "application", 'data-turbo-track': 'reload' %>
+    <%= javascript_include_tag "application", defer: true %>
+    <%= javascript_include_tag "recursos_sprockets", defer: true %>
   </head>
   <body>
 

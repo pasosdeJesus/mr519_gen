@@ -148,9 +148,9 @@ module Mr519Gen
             authorize!(:resultados, Mr519Gen::Formulario.find(fid))
             @registros = Encuestausuario.joins(:respuestafor)
               .where("mr519_gen_respuestafor.formulario_id" => fid)
-            @titulo = ""
+            @titulo = "".dup
             @consolidado = []
-            menserr = ""
+            menserr = "".dup
             unless Mr519Gen::ApplicationHelper.analiza_respuestas(
               @registros.map(&:respuestafor_id),
               @titulo,

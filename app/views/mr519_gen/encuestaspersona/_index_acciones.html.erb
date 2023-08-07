@@ -1,21 +1,9 @@
 <% if can?(:edit, registro) %>
-  <%= link_to t('.edit', :default => t("helpers.links.edit")),
-    edit_modelo_path(registro),
-    "data-turbo": false,
-    :class => 'btn btn-sm' %>
+  <%= render partial: 'boton_editar',
+    locals: {registro: registro, mas_clases: 'btn-sm'} %>
 <% end %>
 <%= render partial: 'index_mas_acciones', locals: {f: f, registro: registro} %>
 <% if can?(:destroy, registro) %>
-  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-    modelo_path(registro),
-    :method => :delete,
-    :data => { 
-      :confirm => 
-      t('.confirm', :default => 
-        t("helpers.links.confirm", 
-          :default => 'Are you sure?'
-         )
-       ) 
-    },
-    :class => 'btn btn-sm btn-danger' %>
+  <%= render partial: 'boton_eliminar',
+    locals: {registro: registro, mas_clases: 'btn-sm'} %>
 <% end %>

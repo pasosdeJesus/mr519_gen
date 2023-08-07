@@ -1,4 +1,6 @@
-<% if @registro.respuestafor && @registro.respuestafor.formulario %>
+<% if @registro.respond_to?(:respuestafor) && 
+    @registro.respuestafor.respond_to?(:formulario) &&
+    @registro.respuestafor.formulario %>
   <h1><%= @registro.respuestafor.formulario.nombre %></h1>
 <% else %>
   <h1>
@@ -7,7 +9,7 @@
   </h1>
 <% end %>
 <p>
-  <% if @registro.persona %>
+  <% if @registro.respond_to?(:persona) && @registro.persona %>
     Encuesta para <%= @registro.persona.presenta_nombre %>
   <% else %>
     Error con aplicación de encuesta <%= @registro.id %>: 
@@ -15,7 +17,7 @@
   <% end %>
 </p>
 <p>
-  <% if @registro.planencuesta %>
+  <% if @registro.respond_to?(:planencuesta) && @registro.planencuesta %>
     Por responder entre el 
     <%= @registro.planencuesta.fechaini_localizada %> 
     y el <%= @registro.planencuesta.fechafin_localizada %>
@@ -26,7 +28,7 @@
 </p>
 <% if current_usuario  && can?(:read, @registro) %>
   <p>
-  <% if @registro.fechainv %>
+  <% if @registro.respond_to?(:fechainv) %>
     Encuesta enviada el <%= @registro.fechainv %> a <%= @registro.destcorreoinv %> con confirmación <%= @registro.evidenciacorreoinv %>
   <% else %>
     Encuesta no enviada por correo 
@@ -34,7 +36,7 @@
   </p>
 <% end %>
 <p>
-  <% if @registro.respuestafor.fechacambio %>
+  <% if @registro.respuestafor.respond_to?(:fechacambio) %>
     Última edición el <%= @registro.respuestafor.fechacambio_localizada %>
   <% end %>
 </p>

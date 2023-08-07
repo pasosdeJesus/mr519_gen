@@ -114,7 +114,7 @@ module Mr519Gen
             self.class.asegura_camposdinamicos(
               @registro, current_usuario ? current_usuario.id : nil
             )
-            render(action: "externa", layout: "externo")
+            render(action: "externa", layout: "mr519_gen/externo")
           end
 
           def update
