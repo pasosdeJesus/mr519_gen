@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/kreeti/kt-paperclip.git
-  revision: edd1d9d6c6a9e66f5a31bf2068fc6777bfeade0a
+  revision: 743979bb57f5a680d9bc17399149a759d1e0b873
   specs:
     kt-paperclip (7.2.0)
       activemodel (>= 4.2.0)
@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: fd72faeccf51c21926c1185c7e47d2398b37c493
+  revision: 6f2d24eb20b60f13e4cd7fcb73b2d09efc146629
   branch: v2.0
   specs:
     sip (2.0)
@@ -188,7 +188,7 @@ GEM
       mimemagic (~> 0.3.0)
       terrapin (~> 0.6.0)
     pg (1.5.3)
-    puma (6.3.0)
+    puma (6.3.1)
       nio4r (~> 2.0)
     racc (1.7.1)
     rack (2.2.8)
@@ -218,7 +218,7 @@ GEM
     rails-html-sanitizer (1.6.0)
       loofah (~> 2.21)
       nokogiri (~> 1.14)
-    rails-i18n (7.0.7)
+    rails-i18n (7.0.8)
       i18n (>= 0.7, < 2)
       railties (>= 6.0.0, < 8)
     railties (6.1.7.4)
@@ -314,4 +314,4 @@ DEPENDENCIES
   will_paginate
 
 BUNDLED WITH
-   2.4.18
+   2.4.19
