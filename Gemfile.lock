@@ -18,7 +18,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/msip.git
-  revision: b702b56ef31ee7d6efaa086945a23e4c446e38da
+  revision: 21b4bc9dfa70211b8e900a469afe7aa3c55128bb
   branch: main
   specs:
     msip (2.2.0.beta4)
@@ -180,14 +180,14 @@ GEM
       webrick (~> 1.7)
       websocket-driver (>= 0.6, < 0.8)
     ffi (1.15.5)
-    globalid (1.2.0)
+    globalid (1.2.1)
       activesupport (>= 6.1)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
     io-console (0.6.0)
-    irb (1.8.0)
-      rdoc (~> 6.5)
-      reline (>= 0.3.6)
+    irb (1.8.1)
+      rdoc
+      reline (>= 0.3.8)
     jsbundling-rails (1.1.2)
       railties (>= 6.0.0)
     json (2.6.3)
