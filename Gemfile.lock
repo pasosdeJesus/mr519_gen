@@ -18,7 +18,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/msip.git
-  revision: 6d7d75b71145d95da21915407e24328f25294634
+  revision: f8e4f2f55de294504a8d9b20fec7a6f6375b7823
   branch: main
   specs:
     msip (2.2.0.beta4)
@@ -188,7 +188,7 @@ GEM
     irb (1.8.1)
       rdoc
       reline (>= 0.3.8)
-    jsbundling-rails (1.1.2)
+    jsbundling-rails (1.2.1)
       railties (>= 6.0.0)
     json (2.6.3)
     language_server-protocol (3.17.0.3)
@@ -305,7 +305,7 @@ GEM
       parser (>= 3.2.1.0)
     rubocop-minitest (0.31.1)
       rubocop (>= 1.39, < 2.0)
-    rubocop-rails (2.21.0)
+    rubocop-rails (2.21.1)
       activesupport (>= 4.2.0)
       rack (>= 1.1)
       rubocop (>= 1.33.0, < 2.0)
