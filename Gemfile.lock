@@ -18,7 +18,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/msip.git
-  revision: f8e4f2f55de294504a8d9b20fec7a6f6375b7823
+  revision: 45386527a092f83b8b3d68feb882105b39fcd919
   branch: main
   specs:
     msip (2.2.0.beta4)
@@ -345,7 +345,7 @@ GEM
     terrapin (0.6.0)
       climate_control (>= 0.0.3, < 1.0)
     thor (1.2.2)
-    tilt (2.2.0)
+    tilt (2.3.0)
     timeout (0.4.0)
     turbo-rails (1.4.0)
       actionpack (>= 6.0.0)
