@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: 583e80285dfc8b8afb29029959e2b2b21e26f47d
+  revision: 7e8559d6bcb51b5afecfda8dfe11f846d5761aa2
   branch: v2.0
   specs:
     sip (2.0)
@@ -139,7 +139,7 @@ GEM
       dotenv (= 2.8.1)
       railties (>= 3.2)
     erubi (1.12.0)
-    execjs (2.9.0)
+    execjs (2.9.1)
     ffi (1.15.5)
     globalid (1.2.1)
       activesupport (>= 6.1)
@@ -174,7 +174,7 @@ GEM
       net-protocol
     net-protocol (0.2.1)
       timeout
-    net-smtp (0.3.3)
+    net-smtp (0.4.0)
       net-protocol
     nio4r (2.5.9)
     nokogiri (1.15.4)
@@ -188,7 +188,7 @@ GEM
       mimemagic (~> 0.3.0)
       terrapin (~> 0.6.0)
     pg (1.5.4)
-    puma (6.3.1)
+    puma (6.4.0)
       nio4r (~> 2.0)
     racc (1.7.1)
     rack (2.2.8)
