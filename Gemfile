@@ -17,7 +17,7 @@ gem 'kt-paperclip',                 # Anexos
 
 gem 'nokogiri', '>=1.11.1'
 
-gem 'rails', '~> 6.1'
+gem 'rails', '~> 6.1', '< 7.0'
   #git: 'https://github.com/rails/rails.git', branch: '6-1-stable'
 
 gem 'rails-i18n'
