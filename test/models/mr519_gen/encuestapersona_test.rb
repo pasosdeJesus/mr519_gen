@@ -9,7 +9,6 @@ module Mr519Gen
     end
 
     test "valido" do
-      debugger
       f = Mr519Gen::Formulario.create(PRUEBA_FORMULARIO)
       assert_predicate f, :valid?
       pe = Mr519Gen::Planencuesta.create(PRUEBA_PLANENCUESTA.merge(
