@@ -24,9 +24,9 @@ gem "jsbundling-rails"
 gem "kt-paperclip", # Anexos
   git: "https://github.com/kreeti/kt-paperclip.git"
 
-gem "nokogiri", ">=1.11.1"
+gem "nokogiri"
 
-gem "rails", "~> 7"
+gem "rails", "~> 7.1"
 # git: 'https://github.com/rails/rails.git', branch: '6-1-stable'
 
 gem "rails-i18n"
@@ -52,7 +52,7 @@ gem "will_paginate" # Pagina listados
 # lógico y no alfabetico como las gemas anteriores)
 
 gem "msip", # Motor generico
-  git: 'https://gitlab.com/pasosdeJesus/msip.git', branch: 'main'
+  git: 'https://gitlab.com/pasosdeJesus/msip.git', branch: 'rails7.1'
   #path: "../msip"
 
 group :development do

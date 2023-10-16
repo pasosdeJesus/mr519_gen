@@ -16,7 +16,9 @@ module Dummy
     # -- todos los archivos .rb en ese directorio se cargan automáticamente
     # tras cargar el entorno y cualquier gema en su aplicación.
 
-    config.active_record.legacy_connection_handling = false
+    config.load_defaults 7.1
+
+    config.autoload_lib(ignore: %w(assets tasks))
 
     # Establece Time.zone por defecto en la zona especificada y hace que
     # Active Record auto-convierta a esta zona.

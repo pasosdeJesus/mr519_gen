@@ -3,9 +3,12 @@
 console.log('Hola Mundo desde ESM')
 
 import Rails from "@rails/ujs";
+if (typeof window.Rails == 'undefined') {
+  Rails.start();
+  window.Rails = Rails
+}
+
 import "@hotwired/turbo-rails";
-Rails.start();
-window.Rails = Rails
 
 import "./jquery"
 
@@ -16,6 +19,9 @@ import 'gridstack'
 import 'chosen-js/chosen.jquery';       // Cuadros de seleccion potenciados
 import 'bootstrap-datepicker'
 import 'bootstrap-datepicker/dist/locales/bootstrap-datepicker.es.min.js'
+
+import {AutocompletaAjaxExpreg} from '@pasosdejesus/autocompleta_ajax'
+window.AutocompletaAjaxExpreg = AutocompletaAjaxExpreg
 
 let esperarRecursosSprocketsYDocumento = function (resolver) {
   if (typeof window.puntomontaje == 'undefined') {
