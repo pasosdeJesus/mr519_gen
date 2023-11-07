@@ -16,8 +16,6 @@ module Dummy
     # -- todos los archivos .rb en ese directorio se cargan automáticamente
     # tras cargar el entorno y cualquier gema en su aplicación.
 
-    config.active_record.legacy_connection_handling = false
-
     # Establece Time.zone por defecto en la zona especificada y hace que
     # Active Record auto-convierta a esta zona.
     # Ejecute "rake -D time" para ver una lista de tareas para encontrar
