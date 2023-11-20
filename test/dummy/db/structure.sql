@@ -655,10 +655,10 @@ ALTER SEQUENCE public.msip_bitacora_id_seq OWNED BY public.msip_bitacora.id;
 
 
 --
--- Name: msip_clase_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+-- Name: msip_centropoblado_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
-CREATE SEQUENCE public.msip_clase_id_seq
+CREATE SEQUENCE public.msip_centropoblado_id_seq
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -667,15 +667,15 @@ CREATE SEQUENCE public.msip_clase_id_seq
 
 
 --
--- Name: msip_clase; Type: TABLE; Schema: public; Owner: -
+-- Name: msip_centropoblado; Type: TABLE; Schema: public; Owner: -
 --
 
-CREATE TABLE public.msip_clase (
-    id integer DEFAULT nextval('public.msip_clase_id_seq'::regclass) NOT NULL,
+CREATE TABLE public.msip_centropoblado (
+    id integer DEFAULT nextval('public.msip_centropoblado_id_seq'::regclass) NOT NULL,
     nombre character varying(500) NOT NULL COLLATE public.es_co_utf_8,
     municipio_id integer NOT NULL,
-    clalocal_cod integer,
-    tclase_id character varying(10) DEFAULT 'CP'::character varying NOT NULL,
+    cplocal_cod integer,
+    tcentropoblado_id character varying(10) DEFAULT 'CP'::character varying NOT NULL,
     latitud double precision,
     longitud double precision,
     fechacreacion date NOT NULL,
@@ -692,31 +692,31 @@ CREATE TABLE public.msip_clase (
     svgcdalto integer,
     svgrotx double precision,
     svgroty double precision,
-    CONSTRAINT clase_check CHECK (((fechadeshabilitacion IS NULL) OR (fechadeshabilitacion >= fechacreacion)))
+    CONSTRAINT msip_centropoblado_check CHECK (((fechadeshabilitacion IS NULL) OR (fechadeshabilitacion >= fechacreacion)))
 );
 
 
 --
--- Name: msip_clase_histvigencia; Type: TABLE; Schema: public; Owner: -
+-- Name: msip_centropoblado_histvigencia; Type: TABLE; Schema: public; Owner: -
 --
 
-CREATE TABLE public.msip_clase_histvigencia (
+CREATE TABLE public.msip_centropoblado_histvigencia (
     id bigint NOT NULL,
-    clase_id integer,
+    centropoblado_id integer,
     vigenciaini date,
     vigenciafin date NOT NULL,
     nombre character varying(256),
-    clalocal_cod integer,
-    tclase_id character varying,
+    cplocal_cod integer,
+    tcentropoblado_id character varying,
     observaciones character varying(5000)
 );
 
 
 --
--- Name: msip_clase_histvigencia_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+-- Name: msip_centropoblado_histvigencia_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
-CREATE SEQUENCE public.msip_clase_histvigencia_id_seq
+CREATE SEQUENCE public.msip_centropoblado_histvigencia_id_seq
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -725,10 +725,10 @@ CREATE SEQUENCE public.msip_clase_histvigencia_id_seq
 
 
 --
--- Name: msip_clase_histvigencia_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+-- Name: msip_centropoblado_histvigencia_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
-ALTER SEQUENCE public.msip_clase_histvigencia_id_seq OWNED BY public.msip_clase_histvigencia.id;
+ALTER SEQUENCE public.msip_centropoblado_histvigencia_id_seq OWNED BY public.msip_centropoblado_histvigencia.id;
 
 
 --
@@ -1395,7 +1395,7 @@ CREATE TABLE public.msip_persona (
     sexo character(1) NOT NULL,
     departamento_id integer,
     municipio_id integer,
-    clase_id integer,
+    centropoblado_id integer,
     numerodocumento character varying(100),
     created_at timestamp without time zone,
     updated_at timestamp without time zone,
@@ -1514,10 +1514,10 @@ CREATE TABLE public.msip_solicitud_usuarionotificar (
 
 
 --
--- Name: msip_tclase; Type: TABLE; Schema: public; Owner: -
+-- Name: msip_tcentropoblado; Type: TABLE; Schema: public; Owner: -
 --
 
-CREATE TABLE public.msip_tclase (
+CREATE TABLE public.msip_tcentropoblado (
     id character varying(10) NOT NULL,
     nombre character varying(500) NOT NULL COLLATE public.es_co_utf_8,
     fechacreacion date NOT NULL,
@@ -1525,7 +1525,7 @@ CREATE TABLE public.msip_tclase (
     created_at timestamp without time zone,
     updated_at timestamp without time zone,
     observaciones character varying(5000) COLLATE public.es_co_utf_8,
-    CONSTRAINT tclase_check CHECK (((fechadeshabilitacion IS NULL) OR (fechadeshabilitacion >= fechacreacion)))
+    CONSTRAINT msip_tcentropoblado_check CHECK (((fechadeshabilitacion IS NULL) OR (fechadeshabilitacion >= fechacreacion)))
 );
 
 
@@ -1754,7 +1754,7 @@ CREATE TABLE public.msip_ubicacion (
     id integer DEFAULT nextval('public.msip_ubicacion_id_seq'::regclass) NOT NULL,
     lugar character varying(500) COLLATE public.es_co_utf_8,
     sitio character varying(500) COLLATE public.es_co_utf_8,
-    clase_id integer,
+    centropoblado_id integer,
     municipio_id integer,
     departamento_id integer,
     tsitio_id integer DEFAULT 1 NOT NULL,
@@ -1776,7 +1776,7 @@ CREATE TABLE public.msip_ubicacionpre (
     pais_id integer,
     departamento_id integer,
     municipio_id integer,
-    clase_id integer,
+    centropoblado_id integer,
     lugar character varying(500),
     sitio character varying(500),
     tsitio_id integer,
@@ -1965,10 +1965,10 @@ ALTER TABLE ONLY public.msip_bitacora ALTER COLUMN id SET DEFAULT nextval('publi
 
 
 --
--- Name: msip_clase_histvigencia id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: msip_centropoblado_histvigencia id; Type: DEFAULT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY public.msip_clase_histvigencia ALTER COLUMN id SET DEFAULT nextval('public.msip_clase_histvigencia_id_seq'::regclass);
+ALTER TABLE ONLY public.msip_centropoblado_histvigencia ALTER COLUMN id SET DEFAULT nextval('public.msip_centropoblado_histvigencia_id_seq'::regclass);
 
 
 --
@@ -2193,27 +2193,27 @@ ALTER TABLE ONLY public.msip_bitacora
 
 
 --
--- Name: msip_clase_histvigencia msip_clase_histvigencia_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: msip_centropoblado_histvigencia msip_centropoblado_histvigencia_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY public.msip_clase_histvigencia
-    ADD CONSTRAINT msip_clase_histvigencia_pkey PRIMARY KEY (id);
-
-
---
--- Name: msip_clase msip_clase_id_municipio_id_clalocal_key; Type: CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.msip_clase
-    ADD CONSTRAINT msip_clase_id_municipio_id_clalocal_key UNIQUE (municipio_id, clalocal_cod);
+ALTER TABLE ONLY public.msip_centropoblado_histvigencia
+    ADD CONSTRAINT msip_centropoblado_histvigencia_pkey PRIMARY KEY (id);
 
 
 --
--- Name: msip_clase msip_clase_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: msip_centropoblado msip_centropoblado_id_municipio_id_cplocal_key; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY public.msip_clase
-    ADD CONSTRAINT msip_clase_pkey PRIMARY KEY (id);
+ALTER TABLE ONLY public.msip_centropoblado
+    ADD CONSTRAINT msip_centropoblado_id_municipio_id_cplocal_key UNIQUE (municipio_id, cplocal_cod);
+
+
+--
+-- Name: msip_centropoblado msip_centropoblado_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.msip_centropoblado
+    ADD CONSTRAINT msip_centropoblado_pkey PRIMARY KEY (id);
 
 
 --
@@ -2433,11 +2433,11 @@ ALTER TABLE ONLY public.msip_solicitud
 
 
 --
--- Name: msip_tclase msip_tclase_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: msip_tcentropoblado msip_tcentropoblado_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY public.msip_tclase
-    ADD CONSTRAINT msip_tclase_pkey PRIMARY KEY (id);
+ALTER TABLE ONLY public.msip_tcentropoblado
+    ADD CONSTRAINT msip_tcentropoblado_pkey PRIMARY KEY (id);
 
 
 --
@@ -2556,10 +2556,10 @@ CREATE INDEX index_msip_solicitud_usuarionotificar_on_usuarionotificar_id ON pub
 
 
 --
--- Name: index_msip_ubicacion_on_clase_id; Type: INDEX; Schema: public; Owner: -
+-- Name: index_msip_ubicacion_on_centropoblado_id; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX index_msip_ubicacion_on_clase_id ON public.msip_ubicacion USING btree (clase_id);
+CREATE INDEX index_msip_ubicacion_on_centropoblado_id ON public.msip_ubicacion USING btree (centropoblado_id);
 
 
 --
@@ -2637,22 +2637,6 @@ CREATE TRIGGER msip_eliminar_familiar AFTER DELETE ON public.msip_persona_trelac
 --
 
 CREATE TRIGGER msip_insertar_familiar AFTER INSERT OR UPDATE ON public.msip_persona_trelacion FOR EACH ROW EXECUTE FUNCTION public.msip_agregar_o_remplazar_familiar_inverso();
-
-
---
--- Name: msip_clase clase_id_municipio_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.msip_clase
-    ADD CONSTRAINT clase_id_municipio_fkey FOREIGN KEY (municipio_id) REFERENCES public.msip_municipio(id);
-
-
---
--- Name: msip_clase clase_id_tclase_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.msip_clase
-    ADD CONSTRAINT clase_id_tclase_fkey FOREIGN KEY (tclase_id) REFERENCES public.msip_tclase(id);
 
 
 --
@@ -2740,7 +2724,7 @@ ALTER TABLE ONLY public.msip_ubicacionpre
 --
 
 ALTER TABLE ONLY public.msip_ubicacionpre
-    ADD CONSTRAINT fk_rails_3b59c12090 FOREIGN KEY (clase_id) REFERENCES public.msip_clase(id);
+    ADD CONSTRAINT fk_rails_3b59c12090 FOREIGN KEY (centropoblado_id) REFERENCES public.msip_centropoblado(id);
 
 
 --
@@ -2944,10 +2928,10 @@ ALTER TABLE ONLY public.msip_orgsocial_sectororgsocial
 
 
 --
--- Name: msip_clase fk_rails_fb09f016e4; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: msip_centropoblado fk_rails_fb09f016e4; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY public.msip_clase
+ALTER TABLE ONLY public.msip_centropoblado
     ADD CONSTRAINT fk_rails_fb09f016e4 FOREIGN KEY (municipio_id) REFERENCES public.msip_municipio(id);
 
 
@@ -2960,6 +2944,22 @@ ALTER TABLE ONLY public.msip_solicitud
 
 
 --
+-- Name: msip_centropoblado msip_centropoblado_id_municipio_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.msip_centropoblado
+    ADD CONSTRAINT msip_centropoblado_id_municipio_fkey FOREIGN KEY (municipio_id) REFERENCES public.msip_municipio(id);
+
+
+--
+-- Name: msip_centropoblado msip_centropoblado_id_tcentropoblado_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.msip_centropoblado
+    ADD CONSTRAINT msip_centropoblado_id_tcentropoblado_fkey FOREIGN KEY (tcentropoblado_id) REFERENCES public.msip_tcentropoblado(id);
+
+
+--
 -- Name: msip_municipio msip_municipio_id_departamento_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -2968,11 +2968,19 @@ ALTER TABLE ONLY public.msip_municipio
 
 
 --
--- Name: msip_persona persona_id_clase_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: msip_persona msip_persona_centropoblado_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.msip_persona
-    ADD CONSTRAINT persona_id_clase_fkey FOREIGN KEY (clase_id) REFERENCES public.msip_clase(id);
+    ADD CONSTRAINT msip_persona_centropoblado_id_fkey FOREIGN KEY (centropoblado_id) REFERENCES public.msip_centropoblado(id);
+
+
+--
+-- Name: msip_ubicacion msip_ubicacion_centropoblado_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.msip_ubicacion
+    ADD CONSTRAINT msip_ubicacion_centropoblado_id_fkey FOREIGN KEY (centropoblado_id) REFERENCES public.msip_centropoblado(id);
 
 
 --
@@ -3032,14 +3040,6 @@ ALTER TABLE ONLY public.msip_persona_trelacion
 
 
 --
--- Name: msip_ubicacion ubicacion_id_clase_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.msip_ubicacion
-    ADD CONSTRAINT ubicacion_id_clase_fkey FOREIGN KEY (clase_id) REFERENCES public.msip_clase(id);
-
-
---
 -- Name: msip_ubicacion ubicacion_id_departamento_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -3078,6 +3078,7 @@ ALTER TABLE ONLY public.msip_ubicacion
 SET search_path TO "$user", public;
 
 INSERT INTO "schema_migrations" (version) VALUES
+('20231120094041'),
 ('20231007095930'),
 ('20230927001422'),
 ('20230723011110'),
