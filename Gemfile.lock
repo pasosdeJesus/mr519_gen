@@ -18,7 +18,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/msip.git
-  revision: b6b6b67bbad7571843b1f5d9838e4a3cfadd176a
+  revision: e54ff9f4a722a4a056e78c8b1414e1ec1de02263
   branch: main
   specs:
     msip (2.2.0.beta4)
@@ -120,7 +120,7 @@ GEM
       minitest (>= 5.1)
       mutex_m
       tzinfo (~> 2.0)
-    addressable (2.8.5)
+    addressable (2.8.6)
       public_suffix (>= 2.0.2, < 6.0)
     ast (2.4.2)
     babel-source (5.8.35)
