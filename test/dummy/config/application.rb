@@ -2,13 +2,30 @@
 
 require_relative "boot"
 
-require "rails/all"
+require "rails"
+# Pick the frameworks you want:
+require "active_model/railtie"
+require "active_job/railtie"
+require "active_record/railtie"
+# require "active_storage/engine"
+require "action_controller/railtie"
+require "action_mailer/railtie"
+# require "action_mailbox/engine"
+# require "action_text/engine"
+require "action_view/railtie"
+#require "action_cable/engine"
+require "rails/test_unit/railtie"
 
 Bundler.require(*Rails.groups)
 require "mr519_gen"
 
 module Dummy
   class Application < Rails::Application
+
+    config.load_defaults Rails::VERSION::STRING.to_f
+
+    config.autoload_lib(ignore: %w(assets tasks))
+
     # Las configuraciones en config/environments/* tiene precedencia sobre
     # las especificadas aquí.
     # La configuración de la aplicación puede ir en archivos en
@@ -40,10 +57,7 @@ module Dummy
 
     # config.web_console.whitelisted_ips = ['186.154.35.237']
 
-    # La siguiente puede producir rutas /msip/sip en las pruebas
-    # En general debe bastar dejarla solo en
-    #   config/initializers/punto_montaje.rb
-    # config.relative_url_root = ENV.fetch('RUTA_RELATIVA', '/msip')
+    config.relative_url_root = ENV.fetch('RUTA_RELATIVA', '/msip')
 
     # msip
     config.x.formato_fecha = ENV.fetch("MSIP_FORMATO_FECHA", "dd/M/yyyy")
