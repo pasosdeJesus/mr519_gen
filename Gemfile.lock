@@ -18,8 +18,8 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/msip.git
-  revision: f987643443a0a7b05ba4210a869c7450fc5f7fed
-  branch: main
+  revision: 89a073192a6f27559237d1966c044aeaee7c8837
+  branch: rails7.0fin
   specs:
     msip (2.2.0.beta4)
       cancancan (~> 3)
