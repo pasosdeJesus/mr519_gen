@@ -26,6 +26,7 @@ module Mr519Gen
       assert_predicate p, :valid?
       e.persona = p
 
+      debugger
       assert_predicate e, :valid?
 
       assert_equal "2018-12-19", e.fechaini_localizada
