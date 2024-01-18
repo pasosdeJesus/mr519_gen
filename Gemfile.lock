@@ -139,7 +139,7 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     colorize (1.1.0)
-    concurrent-ruby (1.2.2)
+    concurrent-ruby (1.2.3)
     crass (1.0.6)
     cuprite (0.15)
       capybara (~> 3.0)
@@ -173,10 +173,10 @@ GEM
       activesupport (>= 6.1)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
-    io-console (0.7.1)
-    irb (1.11.0)
+    io-console (0.7.2)
+    irb (1.11.1)
       rdoc
-      reline (>= 0.3.8)
+      reline (>= 0.4.2)
     jsbundling-rails (1.2.2)
       railties (>= 6.0.0)
     json (2.7.1)
@@ -196,7 +196,7 @@ GEM
     mime-types-data (3.2023.1205)
     mini_mime (1.1.5)
     mini_portile2 (2.8.5)
-    minitest (5.20.0)
+    minitest (5.21.2)
     net-imap (0.4.9.1)
       date
       net-protocol
