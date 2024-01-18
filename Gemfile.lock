@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: 42f1dc0788458747d92002c7cec8bd7a97d976cf
+  revision: 088c6dfc1bd39f29a486f27f1e180921b55d39bb
   branch: v2.0
   specs:
     sip (2.0)
@@ -122,7 +122,7 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     colorize (1.1.0)
-    concurrent-ruby (1.2.2)
+    concurrent-ruby (1.2.3)
     crass (1.0.6)
     date (3.3.4)
     devise (4.9.3)
@@ -166,7 +166,7 @@ GEM
       rake
     mini_mime (1.1.5)
     mini_portile2 (2.8.5)
-    minitest (5.20.0)
+    minitest (5.21.2)
     net-imap (0.4.9.1)
       date
       net-protocol
