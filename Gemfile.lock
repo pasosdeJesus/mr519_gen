@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/kreeti/kt-paperclip.git
-  revision: 1c6dfe65e73fb6bdd7a1ae326b551b45c501e5c5
+  revision: ff04ddc779102550b46aa6bb86b1632e36423574
   specs:
-    kt-paperclip (7.2.1)
+    kt-paperclip (7.2.2)
       activemodel (>= 4.2.0)
       activesupport (>= 4.2.0)
       marcel (~> 1.0.1)
@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: 088c6dfc1bd39f29a486f27f1e180921b55d39bb
+  revision: af30fe89b0e755807830252f8d6f42061327c9ac
   branch: v2.0
   specs:
     sip (2.0)
@@ -314,4 +314,4 @@ DEPENDENCIES
   will_paginate
 
 BUNDLED WITH
-   2.5.4
+   2.5.5
