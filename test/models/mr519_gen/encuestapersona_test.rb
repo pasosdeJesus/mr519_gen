@@ -13,6 +13,12 @@ module Mr519Gen
 
       assert_predicate f, :valid?
 
+      pe = Mr519Gen::Planencuesta.create(PRUEBA_PLANENCUESTA.merge(
+        formulario_id: f.id,
+      ))
+
+      assert_predicate pe, :valid?
+
       r = Mr519Gen::Respuestafor.create(PRUEBA_RESPUESTAFOR.merge(
         formulario_id: f.id,
       ))
@@ -21,12 +27,12 @@ module Mr519Gen
 
       e = Mr519Gen::Encuestapersona.new(PRUEBA_ENCUESTAPERSONA)
       e.respuestafor = r
+      e.planencuesta = pe
       p = Msip::Persona.create(PRUEBA_PERSONA)
 
       assert_predicate p, :valid?
       e.persona = p
 
-      debugger
       assert_predicate e, :valid?
 
       assert_equal "2018-12-19", e.fechaini_localizada
