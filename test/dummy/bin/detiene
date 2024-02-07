@@ -15,7 +15,7 @@ if (test "$RAILS_ENV" = "production") then {
   } fi;
 
   doas sh /etc/rc.d/$RC -d stop
-} elif (test "$RAILS_ENV" = "development") then {
+} else { # Debe ser desarrollo o prueba
   # Intentando detener rails
   if (test -f tmp/pids/server.pid) then { 
     pp=`cat tmp/pids/server.pid`
@@ -34,3 +34,6 @@ if (test "$RAILS_ENV" = "production") then {
   } fi;
 } fi;
 
+if (test -f "bin/detiene-local") then {
+  . bin/detiene-local;
+} fi;

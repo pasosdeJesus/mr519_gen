@@ -13,14 +13,14 @@
 #   Y si el valor es f o si no hay Procfile no intenta correr con foreman
 
 require "fileutils"
-# require 'byebug'
 
-# ENV.each {|l,v| puts "#{l}=#{v}" } # Depuración
+ENV.each {|l,v| puts "#{l}=#{v}" } # Depuración
 
 # Ruta a directorio raíz de aplicación
 RAIZ_AP = File.expand_path("..", __dir__)
 
 def system!(*args)
+  puts "args=", args
   system(*args) || abort("\n== Falló la orden #{args} ==")
 end
 
@@ -32,19 +32,27 @@ FileUtils.chdir(RAIZ_AP) do
 
   if !ENV["RC"] || ENV["RC"] == ""
     nap = %x(git remote -v | grep "(fetch)" | sed -e "s/.*\\/\\(.*\\) (fetch)/\\1/g")
-    nap = "apconsip" if !nap || nap == ""
+    if !nap || nap == ""
+      nap = "apconmsip"
+    end
     ENV["RC"] = nap.strip
   end
   puts "\n== Ejecutando aplicacion #{ENV["RC"]} =="
 
-  unless File.exist?("/tmp/node")
+  if File.exist?("/usr/local/bin/node") && !File.exist?("/tmp/node")
     puts "\n== Enlace a /usr/local/bin/node desde /tmp =="
     system! "doas ln -s /usr/local/bin/node /tmp"
   end
 
-  ENV["RAILS_ENV"] = "development" if !ENV["RAILS_ENV"] || ENV["RAILS_ENV"] == ""
-  ENV["PUERTODES"] = "2300" unless ENV["PUERTODES"]
-  ENV["IPDES"] = "127.0.0.1" if !ENV["IPDES"] || ENV["IPDES"] == ""
+  if !ENV["RAILS_ENV"] || ENV["RAILS_ENV"] == ""
+    ENV["RAILS_ENV"] = "development"
+  end
+  unless ENV["PUERTODES"]
+    ENV["PUERTODES"] = "2300"
+  end
+  if !ENV["IPDES"] || ENV["IPDES"] == ""
+    ENV["IPDES"] = "127.0.0.1"
+  end
 
   if !ENV["R"] || ENV["R"] == ""
     puts "\n== Instalando dependencias =="
@@ -77,22 +85,30 @@ FileUtils.chdir(RAIZ_AP) do
     system! "RAILS_ENV=#{ENV["RAILS_ENV"]} bin/rails assets:precompile --trace"
   end
 
-  if ENV["RAILS_ENV"] == "development"
+  puts "OJO antes dev"
+  if ENV["RAILS_ENV"] == "development" || ENV["RAILS_ENV"] == "test"
     puts "\n== Ejecutando en modo desarrollo  =="
 
     if File.exist?("Procfile") && ENV["R"] != "f"
       ord = "foreman start -f Procfile"
     else
       ord = ""
-      ord += "CONFIG_HOSTS=\"#{ENV["CONFIG_HOSTS"].downcase}\" " if ENV["CONFIG_HOSTS"] && ENV["CONFIG_HOSTS"] != ""
+      if ENV["CONFIG_HOSTS"] && ENV["CONFIG_HOSTS"] != ""
+        ord += "CONFIG_HOSTS=\"#{ENV["CONFIG_HOSTS"].downcase}\" "
+      end
       ord += "RAILS_RELATIVE_URL_ROOT='' "
-      ord += "bin/rails s "
-      ord += "-p #{ENV["PUERTODES"]} " if ENV["PUERTODES"] != ""
+      ord += "ruby --yjit bin/rails s " 
+      #ord += "ruby bin/rails s "
+      if ENV["PUERTODES"] != ""
+        ord += "-p #{ENV["PUERTODES"]} "
+      end
       ord += "-b '#{ENV["IPDES"]}' "
     end
-    puts "#{ord}"
+    puts ord
   elsif ENV["RAILS_ENV"] == "production"
-    system!("bin/corre-local") if File.exist?("bin/corre-local")
+    if File.exist?("bin/corre-local")
+      system!("bin/corre-local")
+    end
     unless File.exist?("/etc/rc.d/#{ENV["RC"]}")
       puts "\nFalta script /etc/rc.d/#{ENV["RC"]}"
       exit 1
@@ -100,5 +116,6 @@ FileUtils.chdir(RAIZ_AP) do
     puts "\n== Ejecutando en modo producción =="
     ord = "doas sh /etc/rc.d/#{ENV["RC"]} -d start"
   end
+  puts ord
   system!(ord)
 end
