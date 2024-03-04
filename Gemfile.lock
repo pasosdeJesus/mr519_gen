@@ -18,7 +18,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/msip.git
-  revision: d578b28bb40c145d4fb767f484a16914dd7c2d16
+  revision: 295f7a8a7a2f32b41a2e83b904efb9eaa0b68a4d
   branch: main
   specs:
     msip (2.2.0.beta5)
@@ -330,7 +330,7 @@ GEM
       rack (>= 1.1)
       rubocop (>= 1.33.0, < 2.0)
       rubocop-ast (>= 1.30.0, < 2.0)
-    rubocop-shopify (2.14.0)
+    rubocop-shopify (2.15.1)
       rubocop (~> 1.51)
     ruby-graphviz (1.2.5)
       rexml
