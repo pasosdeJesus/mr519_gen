@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: 7f72a4c21a420e84a089cc0622f3f58a649eb16c
+  revision: d5458165c9bfdaa07cf2c8e98c23fc90dca05f3c
   branch: v2.0
   specs:
     sip (2.0)
@@ -218,7 +218,7 @@ GEM
     rails-html-sanitizer (1.6.0)
       loofah (~> 2.21)
       nokogiri (~> 1.14)
-    rails-i18n (7.0.8)
+    rails-i18n (7.0.9)
       i18n (>= 0.7, < 2)
       railties (>= 6.0.0, < 8)
     railties (6.1.7.6)
