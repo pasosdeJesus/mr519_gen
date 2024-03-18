@@ -13,6 +13,9 @@ import 'popper.js'              // Dialogos emergentes usados por bootstrap
 import * as bootstrap from 'bootstrap'              // Maquetacion y elementos de diseño
 import 'gridstack'
 
+import {AutocompletaAjaxExpreg} from '@pasosdejesus/autocompleta_ajax'
+window.AutocompletaAjaxExpreg = AutocompletaAjaxExpreg
+
 import 'chosen-js/chosen.jquery';       // Cuadros de seleccion potenciados
 import 'bootstrap-datepicker'
 import 'bootstrap-datepicker/dist/locales/bootstrap-datepicker.es.min.js'
