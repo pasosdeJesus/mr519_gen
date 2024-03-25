@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: 9d8cc2703087de0e3ae25623130e51d23c950a5b
+  revision: b15e9e7ad939059d0dcdfcc7553088005dfedc4e
   branch: v2.1
   specs:
     sip (2.1.0.beta1)
@@ -257,7 +257,7 @@ GEM
       psych (>= 4.0.0)
     redcarpet (3.6.0)
     regexp_parser (2.9.0)
-    reline (0.4.3)
+    reline (0.5.0)
       io-console (~> 0.5)
     responders (3.1.1)
       actionpack (>= 5.2)
