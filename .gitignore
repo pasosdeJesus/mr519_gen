@@ -21,7 +21,7 @@ test/dummy/node_modules/
 test/dummy/yarn-error.log
 test/dummy/storage/
 test/dummy/tmp/
-test/dummy/public/packs/
+test/dummy/public/
 test/dummy/config/database.yml
 test/dummy/.sass-cache
 test/dummy/app/assets/builds/
@@ -30,7 +30,6 @@ herram/
 
 .byebug_history
 coverage
-test/dummy/public/mr519/
 test/dummy/app/javascript/controllers/msip
 test/dummy/app/javascript/controllers/mr519_gen
 cobertura-unitarias
