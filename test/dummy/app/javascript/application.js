@@ -20,20 +20,8 @@ import Msip__Motor from "./controllers/msip/motor"
 window.Msip__Motor = Msip__Motor
 Msip__Motor.iniciar()
 
-import TomSelect from 'tom-select';
-window.TomSelect = TomSelect;
-window.configuracionTomSelect = {
-  create: false,
-  diacritics: true, //no sensitivo a acentos
-  sortField: {
-    field: "text",
-    direction: "asc"
-  }
-}
-
 import {AutocompletaAjaxExpreg} from '@pasosdejesus/autocompleta_ajax'
 window.AutocompletaAjaxExpreg = AutocompletaAjaxExpreg
-
 
 let esperarRecursosSprocketsYDocumento = function (resolver) {
   if (typeof window.puntomontaje == 'undefined') {
