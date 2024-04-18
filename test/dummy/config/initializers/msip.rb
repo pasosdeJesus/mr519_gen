@@ -15,9 +15,9 @@ Msip.setup do |config|
   config.ruta_anexos = "#{Rails.root}/tmp/" unless ENV["HEROKU_POSTGRESQL_GREEN_URL"].nil?
   config.titulo = "mr519_gen #{Mr519Gen::VERSION}"
   config.descripcion = "Motor para manejar formularios y encuestas"
-  config.codigofuente = "https://github.com/pasosdeJesus/mr519_gen"
-  config.urlcontribuyentes = "https://github.com/pasosdeJesus/mr519_gen/graphs/contributors"
-  config.urlcreditos = "https://github.com/pasosdeJesus/mr519_gen/blob/master/CREDITOS.md"
+  config.codigofuente = "https://gitlab.com/pasosdeJesus/mr519_gen"
+  config.urlcontribuyentes = "https://gitlab.com/pasosdeJesus/mr519_gen/-/graphs/main"
+  config.urlcreditos = "https://gitlab.com/pasosdeJesus/mr519_gen/-/blob/main/CREDITOS.md"
   config.agradecimientoDios = "<p>
 Agradecemos a Jesús/Dios por su misericordia.
 </p>
