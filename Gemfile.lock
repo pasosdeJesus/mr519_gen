@@ -18,7 +18,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/msip.git
-  revision: 9ad803fbf57846d880d6c8d5ef50ca756ffd2697
+  revision: 2afa0ea67522a541655f758aa339fd82b68d5380
   branch: v2.2
   specs:
     msip (2.2.0.beta5)
@@ -351,7 +351,7 @@ GEM
       simplecov_json_formatter (~> 0.1)
     simplecov-html (0.12.3)
     simplecov_json_formatter (0.1.4)
-    spring (4.2.0)
+    spring (4.2.1)
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
