@@ -18,7 +18,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/msip.git
-  revision: 1f43ab095ac68a5e0bb233d4a55e8055ddaf6326
+  revision: 41569096df0c46447a9df8387386032b68355f95
   branch: main
   specs:
     msip (2.2.0.beta5)
@@ -39,7 +39,7 @@ GIT
 PATH
   remote: .
   specs:
-    mr519_gen (2.2.0.beta4)
+    mr519_gen (2.2.0.beta5)
       msip
       rails
 
@@ -168,10 +168,10 @@ GEM
       capybara (~> 3.0)
       ferrum (~> 0.14.0)
     date (3.3.4)
-    debug (1.9.1)
+    debug (1.9.2)
       irb (~> 1.10)
       reline (>= 0.3.8)
-    devise (4.9.3)
+    devise (4.9.4)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 4.1.0)
@@ -233,7 +233,7 @@ GEM
     net-smtp (0.4.0.1)
       net-protocol
     nio4r (2.7.0)
-    nokogiri (1.16.3)
+    nokogiri (1.16.4)
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
     orm_adapter (0.5.0)
@@ -353,7 +353,7 @@ GEM
       simplecov_json_formatter (~> 0.1)
     simplecov-html (0.12.3)
     simplecov_json_formatter (0.1.4)
-    spring (4.1.3)
+    spring (4.2.1)
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -440,4 +440,4 @@ DEPENDENCIES
   will_paginate
 
 BUNDLED WITH
-   2.5.7
+   2.5.9
