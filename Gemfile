@@ -12,8 +12,8 @@ gem "bootsnap"
 gem "cancancan" # Control de acceso
 
 gem "cocoon",
-  git: "https://github.com/vtamara/cocoon.git",
-  branch: "new_id_with_ajax" # Formularios anidados (algunos con ajax)
+git: "https://github.com/vtamara/cocoon.git",
+branch: "new_id_with_ajax" # Formularios anidados (algunos con ajax)
 
 gem "coffee-rails", "~> 4.2"
 
@@ -24,7 +24,7 @@ gem "devise-i18n"
 gem "jsbundling-rails"
 
 gem "kt-paperclip", # Anexos
-  git: "https://github.com/kreeti/kt-paperclip.git"
+git: "https://github.com/kreeti/kt-paperclip.git"
 
 gem "nokogiri", ">=1.11.1"
 
@@ -54,8 +54,8 @@ gem "will_paginate" # Pagina listados
 # lógico y no alfabetico como las gemas anteriores)
 
 gem "msip", # Motor generico
-  git: 'https://gitlab.com/pasosdeJesus/msip.git', branch: 'tomselect'
-  #path: "../msip"
+  git: 'https://gitlab.com/pasosdeJesus/msip.git', branch: 'v2.2'
+  #path: "../msip-2.2"
 
 group :development do
   gem "puma"
