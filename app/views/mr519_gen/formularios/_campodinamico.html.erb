@@ -61,7 +61,7 @@
   <span style="font-weight: bold"><%= etiqueta %></span>
 <% when Mr519Gen::ApplicationHelper::SELECCIONMULTIPLE %>
   <% ihtml.merge!({
-    class: 'chosen-select',
+    class: 'ton-select',
     multiple: true })
   %>
   <%= v.input :valor_ids,
@@ -72,7 +72,7 @@
   %>
 <% when Mr519Gen::ApplicationHelper::SELECCIONSIMPLE %>
   <% ihtml.merge!({
-    class: 'chosen-select' }) 
+    class: 'ton-select' }) 
   %>
   <%= v.input :valor,
     collection: Mr519Gen::Opcioncs.where(campo_id: v.object.campo_id),
@@ -82,7 +82,7 @@
   %>
 <% when Mr519Gen::ApplicationHelper::SMTABLABASICA %>
   <% ihtml.merge!({
-    class: 'chosen-select',
+    class: 'ton-select',
     multiple: true })
   %>
   <% if tablabasica.nil? %>
@@ -104,7 +104,7 @@
   <% end %>
 <% when Mr519Gen::ApplicationHelper::SSTABLABASICA %>
   <% ihtml.merge!({
-    class: 'chosen-select' }) 
+    class: 'tom-select' }) 
   %>
   <% tb = current_ability.tablasbasicas.select {|l| l[1] == tablabasica.singularize } %>
   <% if tb.count != 1 %>
