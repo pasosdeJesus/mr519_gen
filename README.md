@@ -55,7 +55,6 @@ import {$, jQuery} from "jquery";
  
 import "popper.js" 
 import "bootstrap" 
-import "chosen-js/chosen.jquery" 
 import 'bootstrap-datepicker' 
 import 'bootstrap-datepicker/dist/locales/bootstrap-datepicker.es.min.js' 
 import 'jquery-ui' 
