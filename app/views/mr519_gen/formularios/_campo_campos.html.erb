@@ -2,38 +2,51 @@
 <%= f.input :id, as: :hidden %>
 <div class='panel panel-default container-fluid'>
 
-  <div class='panel-heading'><h4><%= t('Esquema de tu formulario como texto') %></h4></div>
+  <div class='panel-heading'>
+    <h4><%= t('Esquema de tu formulario como texto') %></h4>
+  </div>
   <div class='panel-body'>
     <div class='div-campos'>
-      <table class='table table-bordered' border=1 width='100%'>
-        <thead>
-          <tr>
-            <th width='25%'><%= t('Pregunta-Texto') %><br> <%= t('Nombre interno') %></th>
-            <th><%= t('Tipo') %></th>
-            <th><%= t('Ayuda en el uso') %><br> <%= t('Opciones') %></th>
-            <th><%= t('Obligatorio') %></th>
-            <th><%= t('Fila') %> <br> <%= t('Columna') %> <br> <%= t('Ancho') %></th>
-            <th><%= t('Acciones') %></th>
-          </tr>
-        </thead>
-        <tbody id='campos'>
-          <% if f.object.campo.count > 0 %>
-            <%= f.simple_fields_for :campo, f.object.campo.
-              order(:fila, :columna, :id) do |o| %>
-                <%= render 'fila_campos', f:  o %>
-            <% end %>
+      <div class="div-tabla">
+        <div id="campos_marco" class="div-tabla-cuerpo">
+          <div class="div-tabla-fila">
+            <div class="div-tabla-celda-encabezado">
+              <%= t('Pregunta-Texto') %><br> <%= t('Nombre interno') %>
+            </div>
+            <div class="div-tabla-celda-encabezado"><%= t('Tipo') %></div>
+            <div class="div-tabla-celda-encabezado">
+              <%= t('Ayuda en el uso') %><br> <%= t('Opciones') %>
+            </div>
+            <div class="div-tabla-celda-encabezado">
+              <%= t('Obligatorio') %>
+            </div>
+            <div class="div-tabla-celda-encabezado">
+              <%= t('Fila') %> <br> <%= t('Columna') %> <br> <%= t('Ancho') %>
+            </div>
+            <div class="div-tabla-celda-encabezado">
+              <%= t('Acciones') %>
+            </div>
+          </div>
+          <%= f.simple_fields_for :campo, 
+            f.object.campo.order(:fila, :columna, :id) do |subf| %>
+            <%= render partial: 'fila_campos', 
+              locals: { f:  subf } %>
           <% end %>
-        </tbody>
-      </table>
-      <div class='links'>
-        <%= link_to_add_association t('Agregar campo'), f, :campo, {
-          :'data-association-insertion-node' => 'tbody#campos', 
-          :'data-association-insertion-method' => 'append', 
-          partial: 'fila_campos',
+        </div>
+      </div>
+      <div class='enlace-agregar-campo'>
+        <%= f.submit "Agregar campo", 
+          formaction: mr519_gen.crear_campo_path(
+            index: @registro.campo.size
+          ),
+          formmethod: :post,
+          formnovalidate: true,
           class: 'btn btn-sm btn-primary',
-          'data-ajax' => mr519_gen.new_campo_path,
-          'data-ajaxdata' => 'formulario_id' } %>
-    </div> <!-- links -->
+          name: "agregar-campo",
+          id: "agregar-campo",
+          data:  {
+            disable_with: false } %> 
+      </div> <!-- enlace-agregar-campo -->
     </div> <!-- .div-campos -->
   </div><!-- panel-body -->
 </div><!-- panel -->

@@ -14,8 +14,8 @@ module Mr519Gen
 
           belongs_to :formulario,
             class_name: "Mr519Gen::Formulario",
-            validate: true,
-            optional: false
+            optional: false,
+            validate: true
 
           has_many :valorcampo,
             dependent: :delete_all,
