@@ -53,7 +53,7 @@ gem "will_paginate" # Pagina listados
 
 gem "msip", # Motor generico
   git: 'https://gitlab.com/pasosdeJesus/msip.git', branch: 'tomselect'
-  #path: "../msip"
+  #path: "../msip-2.2"
 
 group :development do
   gem "puma"
