@@ -15,18 +15,19 @@ module Mr519Gen
 
           has_many :campo,
             class_name: "Mr519Gen::Campo",
+            dependent: :destroy,
             foreign_key: "formulario_id",
-            validate: true,
-            dependent: :destroy
+            inverse_of: :formulario,
+            validate: true
           accepts_nested_attributes_for :campo,
             allow_destroy: true,
             reject_if: :all_blank
 
           has_many :respuestafor,
             class_name: "Mr519Gen::Respuestafor",
+            dependent: :destroy,
             foreign_key: "formulario_id",
-            validate: true,
-            dependent: :destroy
+            validate: true
 
           validates :nombre,
             length: { maximum: 500 },

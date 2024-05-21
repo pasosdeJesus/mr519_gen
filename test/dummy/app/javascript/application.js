@@ -4,8 +4,11 @@ console.log('Hola Mundo desde ESM')
 
 import Rails from "@rails/ujs";
 import "@hotwired/turbo-rails";
-Rails.start();
-window.Rails = Rails
+if (typeof window.Rails == 'undefined') {
+  Rails.start();
+  window.Rails = Rails
+}
+import {Turbo} from '@hotwired/turbo-rails';
 
 import "./jquery"
 

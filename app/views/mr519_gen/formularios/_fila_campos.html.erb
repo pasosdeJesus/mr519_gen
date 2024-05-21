@@ -1,45 +1,45 @@
-<% f.object = Mr519Gen::Campo.new() if !f.object %>
-
-<tr class='nested-fields'>
-  <td>
+<%= turbo_frame_tag "campo_#{f.index}", class: 'div-tabla-fila nested-fields' do %>
+  <% f.object = Mr519Gen::Campo.new() if !f.object %>
+  <div class="div-tabla-celda">
     <%= f.input :nombre, 
       label: false %>
     <%= f.input :nombreinterno, 
-      label: false,
-      input_html: { 'data-toggle' => 'tooltip',
-        'title' => 'Sugerimos una palabra o algunas separadas por _. Máximo 60 caracteres. Puede constar de minúsculas, digitos y _.'
-    } %>
-  </td>
-  <td>
+    label: false,
+    input_html: { 
+      'data-toggle' => 'tooltip',
+      'title' => 'Sugerimos una palabra o algunas separadas por _. Máximo 60 caracteres. Puede constar de minúsculas, digitos y _.'
+} %>
+  </div>
+  <div class="div-tabla-celda">
     <%= f.input :tipo, 
       collection: Mr519Gen::ApplicationHelper::TIPOS_CAMPO,
       input_html: {
         style: 'width: 9em'
       },
       label: false %>
-  </td>
-  <td>
+  </div>
+  <div class="div-tabla-celda">
     <%= f.input :ayudauso, label: false %>
     <% clasedisp = 'display: none' %>
     <% if f.object.tipo == Mr519Gen::ApplicationHelper::SELECCIONMULTIPLE ||
-      f.object.tipo == Mr519Gen::ApplicationHelper::SELECCIONSIMPLE %>
+        f.object.tipo == Mr519Gen::ApplicationHelper::SELECCIONSIMPLE %>
       <% clasedisp = 'display: block' %>
     <% end %>
     <div class="espopciones" style="<%= clasedisp %>">
       <% if f.object.opcioncs.count > 0 %>
         <hr>
         <%= f.simple_fields_for :opcioncs, f.object.opcioncs.order(:id) do |o| %>
-          <%= render 'fila_opcionescs', f:  o %>
+          <%= render 'mr519_gen/formularios/fila_opcionescs', f:  o %>
         <% end %>
       <% end %>
       <div class="links-opcionescs">
         <%= link_to_add_association t('Agregar opción'), f, :opcioncs, {
           #:"data-association-insertion-node" => "tbody#opciones", 
           #:"data-association-insertion-method" => "append", 
-          partial: 'fila_opcionescs',
+          partial: 'mr519_gen/formularios/fila_opcionescs',
           class: 'btn btn-sm btn-primary', 
-            "data-ajax" => mr519_gen.new_opcioncs_path,
-            "data-ajaxdata" => "formulario_campo_id" 
+          "data-ajax" => mr519_gen.new_opcioncs_path,
+          "data-ajaxdata" => "formulario_campo_id" 
         } %>
       </div>
     </div>
@@ -47,7 +47,7 @@
     <% clasetb = 'display: none' %>
     <% ab = Ability.new %>
     <% if f.object.tipo == Mr519Gen::ApplicationHelper::SMTABLABASICA ||
-      f.object.tipo == Mr519Gen::ApplicationHelper::SSTABLABASICA %>
+        f.object.tipo == Mr519Gen::ApplicationHelper::SSTABLABASICA %>
       <% clasetb = 'display: block' %>
     <% end %>
     <% ntablas = {} %>
@@ -59,20 +59,26 @@
         collection: ntablas.sort.to_h,
         label: t("Tabla básica") %>
     </div>
-  </td>
-  <td>
+  </div>
+  <div class="div-tabla-celda">
     <%= f.input :obligatorio, label: false %>
-  </td>
-  <td>
+  </div>
+  <div class="div-tabla-celda">
     <%= f.input :fila, label: false %>
     <%= f.input :columna, label: false %>
     <%= f.input :ancho, label: false %>
-  </td>
-  <td>
+  </div>
+  <div class="div-tabla-celda">
     <%= f.input :id, as: :hidden %>
-    <%= link_to_remove_association t('Eliminar'), f, 
-      :class => 'btn-danger eliminaCampos',
-      "data-existing" => true %>
+    <%= f.submit "Eliminar",
+      formaction: eliminar_campo_path(id: f.object.id, index: f.index),
+      formmethod: :delete,
+      formnovalidate: true,
+      class: 'btn btn-sm btn-danger',
+      data: {
+        turbo_frame: "campo_#{f.index}",
+        disable_with: false
+      } %>
     <div><%= f.error_notification %></div>
-  </td>
-</tr>
+  </div>
+<% end %>
