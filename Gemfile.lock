@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: 1c1e202f09cafba182854137dd518023833f4dd2
+  revision: 400dec6c79d2923d23c421a2a60ddc8a47dd10fb
   branch: v2.1
   specs:
     sip (2.1.0.beta1)
@@ -196,7 +196,7 @@ GEM
     mime-types-data (3.2024.0507)
     mini_mime (1.1.5)
     mini_portile2 (2.8.6)
-    minitest (5.23.0)
+    minitest (5.23.1)
     net-imap (0.4.11)
       date
       net-protocol
