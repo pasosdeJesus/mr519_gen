@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/kreeti/kt-paperclip.git
-  revision: ff04ddc779102550b46aa6bb86b1632e36423574
+  revision: 254b5fe1c4e93964265183e554bca57614e51f06
   specs:
     kt-paperclip (7.2.2)
       activemodel (>= 4.2.0)
@@ -18,7 +18,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/msip.git
-  revision: 876f63094344ae3b61e15136399b96a5f8251c6f
+  revision: 136684529d3b838d2436ef54591ef8396b7c625a
   branch: tomselect
   specs:
     msip (2.2.0.beta6)
@@ -440,4 +440,4 @@ DEPENDENCIES
   will_paginate
 
 BUNDLED WITH
-   2.5.10
+   2.5.11
