@@ -35,15 +35,15 @@ module Mr519Gen
 
       assert_predicate e, :valid?
 
-      assert_equal "2018-12-19", e.fechaini_localizada
-      e.fechaini_localizada = "2019-12-19"
+      assert_equal "2018-12-19", e.fechaini.to_s
+      e.fechaini = "2019-12-19"
 
-      assert_equal "2019-12-19", e.fechaini_localizada
+      assert_equal "2019-12-19", e.fechaini.to_s
 
-      assert_equal "2018-12-19", e.fechacambio_localizada
-      e.fechacambio_localizada = "2019-12-19"
+      assert_equal "2018-12-19", e.fechacambio.to_s
+      e.fechacambio = "2019-12-19"
 
-      assert_equal "2019-12-19", e.fechacambio_localizada
+      assert_equal "2019-12-19", e.fechacambio.to_s
 
       assert_equal "", e.presenta("valorcampo")
 
