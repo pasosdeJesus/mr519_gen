@@ -83,8 +83,8 @@ module Mr519Gen
         params: {
           planencuesta: {
             id: @planencuesta.id,
-            fechaini_localizada: "2/Ene/2023",
-            fechafin_localizada: "31/Ene/2023",
+            fechaini: "2/Ene/2023",
+            fechafin: "31/Ene/2023",
           },
         }
 
