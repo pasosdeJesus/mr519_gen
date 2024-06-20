@@ -37,12 +37,24 @@ module Mr519Gen
           end
 
           def atributos_form
-            r = atributos_show - [:id, :formulario]
-            r += [:formulario_id]
+            r = atributos_show - [
+              :id, 
+              :formulario,
+              :fechaini_localizada,
+              :fechainicio_localizada,
+              :fechacambio_localizada,
+              :fechafin_localizada
+            ] + [
+              :formulario_id,
+              :fechaini,
+              :fechainicio,
+              :fechacambio,
+              :fechafin,
+            ]
             if cannot?(:manage, Mr519Gen::Encuestausuario)
               r -= [
-                :fechainicio_localizada,
-                :fechafin_localizada,
+                :fechainicio,
+                :fechafin,
               ]
             end
             r
@@ -84,8 +96,7 @@ module Mr519Gen
           end
 
           def update
-            params[:encuestausuario][:fechacambio_localizada] =
-              Msip::FormatoFechaHelper.fecha_estandar_local(Date.today)
+            params[:encuestausuario][:fechacambio] = Date.today
             update_gen
           end
 

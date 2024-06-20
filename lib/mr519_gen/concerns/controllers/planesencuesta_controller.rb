@@ -28,7 +28,14 @@ module Mr519Gen
           end
 
           def atributos_form
-            atributos_index - [:id]
+            atributos_index - [
+              :id,
+              :fechaini_localizada,
+              :fechafin_localizada,
+            ] + [
+              :fechaini,
+              :fechafin,
+            ]
           end
 
           def index_reordenar(registros)

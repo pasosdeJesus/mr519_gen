@@ -1,8 +1,10 @@
 <% if can? :manage, Mr519Gen::Encuestausuario %>
-  <%= f.input :fechacambio_localizada,
-    :input_html => { "data-behaviour" => "datepicker"}, 
-    :as => :string %>
+  <%= f.input :fechacambio,
+    input_html: { },
+    :as => :string 
+  %>
 <% else %>
-  <%= f.input :fechacambio_localizada, 
-    :input_html => { readonly: 'readonly' } %>
+  <%= f.input :fechacambio, 
+    input_html: { readonly: 'readonly' } 
+  %>
 <% end %>

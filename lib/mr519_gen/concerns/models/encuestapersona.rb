@@ -42,32 +42,32 @@ module Mr519Gen
             class_name: "Mr519Gen::Valorcampo"
           accepts_nested_attributes_for :valorcampo, reject_if: :all_blank
 
-          attr_accessor :fechaini_localizada
+          attr_accessor :fechaini
 
-          def fechaini_localizada
+          def fechaini
             if !respuestafor.nil? &&
-                !respuestafor.fechaini_localizada.nil?
-              respuestafor.fechaini_localizada
+                !respuestafor.fechaini.nil?
+              respuestafor.fechaini
             end
           end
 
-          def fechaini_localizada=(val)
+          def fechaini=(val)
             self.respuestafor = Mr519Gen::Respuestafor.new if respuestafor.nil?
-            respuestafor.fechaini_localizada = val
+            respuestafor.fechaini = val
           end
 
-          attr_accessor :fechacambio_localizada
+          attr_accessor :fechacambio
 
-          def fechacambio_localizada
+          def fechacambio
             if !respuestafor.nil? &&
-                !respuestafor.fechacambio_localizada.nil?
-              respuestafor.fechacambio_localizada
+                !respuestafor.fechacambio.nil?
+              respuestafor.fechacambio
             end
           end
 
-          def fechacambio_localizada=(val)
+          def fechacambio=(val)
             self.respuestafor = Mr519Gen::Respuestafor.new if respuestafor.nil?
-            respuestafor.fechacambio_localizada = val
+            respuestafor.fechacambio= val
           end
 
           attr_accessor :formulario_id

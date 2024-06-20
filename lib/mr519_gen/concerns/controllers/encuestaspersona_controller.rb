@@ -34,7 +34,12 @@ module Mr519Gen
           end
 
           def atributos_form
-            atributos_show - [:id]
+            atributos_show - [
+              :id, 
+              :fechacambio_localizada
+            ] + [
+              :fechacambio
+            ]
           end
 
           def atributos_show
