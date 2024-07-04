@@ -1,5 +1,5 @@
 # frozen_string_literal: true
 
 module Mr519Gen
-  VERSION = "2.2.0.beta6"
+  VERSION = "2.3.0.alfa1"
 end
