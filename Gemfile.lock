@@ -18,7 +18,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/msip.git
-  revision: 43b955afb9f21000363f988ed99c96c5311b41ab
+  revision: 3b4556e60dbac919320e23d24dc7f26dc18b7d69
   branch: v2.2
   specs:
     msip (2.2.0.beta6)
@@ -321,7 +321,7 @@ GEM
       unicode-display_width (>= 2.4.0, < 3.0)
     rubocop-ast (1.31.2)
       parser (>= 3.3.0.4)
-    rubocop-minitest (0.35.0)
+    rubocop-minitest (0.35.1)
       rubocop (>= 1.61, < 2.0)
       rubocop-ast (>= 1.31.1, < 2.0)
     rubocop-rails (2.25.1)
@@ -438,4 +438,4 @@ DEPENDENCIES
   will_paginate
 
 BUNDLED WITH
-   2.5.14
+   2.5.15
