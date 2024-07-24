@@ -691,14 +691,12 @@ CREATE SEQUENCE public.msip_anexo_id_seq
 
 CREATE TABLE public.msip_anexo (
     id integer DEFAULT nextval('public.msip_anexo_id_seq'::regclass) NOT NULL,
-    fecha date NOT NULL,
     descripcion character varying(1500) NOT NULL COLLATE public.es_co_utf_8,
-    archivo character varying(255),
     created_at timestamp without time zone,
     updated_at timestamp without time zone,
-    adjunto_file_name character varying(255),
-    adjunto_content_type character varying(255),
-    adjunto_file_size integer,
+    adjunto_file_name character varying(255) NOT NULL,
+    adjunto_content_type character varying(255) NOT NULL,
+    adjunto_file_size integer NOT NULL,
     adjunto_updated_at timestamp without time zone
 );
 
@@ -3386,6 +3384,7 @@ ALTER TABLE ONLY public.msip_ubicacion
 SET search_path TO "$user", public;
 
 INSERT INTO "schema_migrations" (version) VALUES
+('20240715230510'),
 ('20240221002426'),
 ('20240220164637'),
 ('20240220111410'),
