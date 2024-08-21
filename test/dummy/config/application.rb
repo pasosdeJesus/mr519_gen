@@ -13,7 +13,7 @@ require "action_mailer/railtie"
 # require "action_mailbox/engine"
 # require "action_text/engine"
 require "action_view/railtie"
-#require "action_cable/engine"
+require "action_cable/engine"
 require "rails/test_unit/railtie"
 
 Bundler.require(*Rails.groups)
@@ -44,7 +44,12 @@ module Dummy
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     config.i18n.default_locale = :es
 
-    config.railties_order = [:main_app, Mr519Gen::Engine, Msip::Engine, :all]
+    config.railties_order = [
+      :main_app, 
+      Mr519Gen::Engine, 
+      Msip::Engine, 
+      :all
+    ]
 
     config.colorize_logging = true
 
@@ -54,8 +59,6 @@ module Dummy
     config.hosts.concat(
       ENV.fetch("CONFIG_HOSTS", "defensor.info").downcase.split(";"),
     )
-
-    # config.web_console.whitelisted_ips = ['186.154.35.237']
 
     config.relative_url_root = ENV.fetch('RUTA_RELATIVA', '/msip')
 
