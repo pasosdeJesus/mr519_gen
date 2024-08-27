@@ -127,6 +127,8 @@ GEM
     bcrypt (3.1.20)
     bigdecimal (3.1.8)
     bindex (0.8.1)
+    bootsnap (1.18.4)
+      msgpack (~> 1.2)
     brakeman (6.2.1)
       racc
     builder (3.3.0)
@@ -149,9 +151,9 @@ GEM
     climate_control (1.2.0)
     code-scanning-rubocop (0.6.1)
       rubocop (~> 1.0)
-    coffee-rails (5.0.0)
+    coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
-      railties (>= 5.2.0)
+      railties (>= 4.0.0)
     coffee-script (2.4.1)
       coffee-script-source
       execjs
@@ -228,6 +230,7 @@ GEM
     mini_mime (1.1.5)
     mini_portile2 (2.8.7)
     minitest (5.25.1)
+    msgpack (1.7.2)
     net-imap (0.4.14)
       date
       net-protocol
@@ -436,12 +439,13 @@ PLATFORMS
 
 DEPENDENCIES
   babel-transpiler
+  bootsnap
   brakeman
   bundler-audit
   cancancan
   cocoon!
   code-scanning-rubocop
-  coffee-rails
+  coffee-rails (~> 4.2)
   colorize
   cuprite
   debug

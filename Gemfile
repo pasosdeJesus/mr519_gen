@@ -7,13 +7,15 @@ gemspec
 
 gem "babel-transpiler"
 
+gem "bootsnap"
+
 gem "cancancan" # Control de acceso
 
 gem "cocoon",
   git: "https://github.com/vtamara/cocoon.git",
   branch: "new_id_with_ajax" # Formularios anidados (algunos con ajax)
 
-gem "coffee-rails"
+gem "coffee-rails", "~> 4.2"
 
 gem "devise" # Autenticación
 
@@ -53,7 +55,7 @@ gem "will_paginate" # Pagina listados
 
 gem "msip", # Motor generico
   git: 'https://gitlab.com/pasosdeJesus/msip.git', branch: 'tomselect'
-  #path: "../msip-2.2"
+  #path: "../msip"
 
 group :development do
   gem "puma"
