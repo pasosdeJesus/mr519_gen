@@ -39,7 +39,7 @@ GIT
 PATH
   remote: .
   specs:
-    mr519_gen (2.3.0.alfa1)
+    mr519_gen (2.3.0.alfa2)
       msip
       rails
 
