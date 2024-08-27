@@ -18,10 +18,10 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/msip.git
-  revision: 0dcfbe542488a6bae6c86c64fd35365835b91e81
+  revision: 31bbedbafb0b8ce47e368f72adb50fb5ca5c413e
   branch: main
   specs:
-    msip (2.3.0.alfa1)
+    msip (2.3.0.alfa2)
       cancancan (~> 3)
       devise (~> 4)
       devise-i18n (~> 1)
