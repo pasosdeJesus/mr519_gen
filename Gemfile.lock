@@ -18,7 +18,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/msip.git
-  revision: 43e85f2a0415a379b743a433fcbb903ac7958eae
+  revision: 66f2261255569228429d712c751faf2cfcd3f29b
   branch: tomselect
   specs:
     msip (2.2.0.beta6)
@@ -343,7 +343,7 @@ GEM
       unicode-display_width (>= 2.4.0, < 3.0)
     rubocop-ast (1.32.1)
       parser (>= 3.3.1.0)
-    rubocop-minitest (0.35.1)
+    rubocop-minitest (0.36.0)
       rubocop (>= 1.61, < 2.0)
       rubocop-ast (>= 1.31.1, < 2.0)
     rubocop-rails (2.26.0)
