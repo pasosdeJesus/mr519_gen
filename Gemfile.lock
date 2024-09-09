@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: 21f8b8ab7fa2100d40b95ae6f853e89930e3055e
+  revision: 219090d1858201ac9d21066d3ddaf993b0b8efe9
   branch: v2.1
   specs:
     sip (2.1.0.beta1)
@@ -211,7 +211,7 @@ GEM
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
     orm_adapter (0.5.0)
-    pg (1.5.7)
+    pg (1.5.8)
     psych (5.1.2)
       stringio
     public_suffix (6.0.1)
