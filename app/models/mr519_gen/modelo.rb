@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-# Extiende Msip::Modelo para facilitar presentar
-# información de formularios
 module Mr519Gen
+  # Extiende Msip::Modelo para facilitar presentar
+  # información de formularios
   module Modelo
     extend ActiveSupport::Concern
 
