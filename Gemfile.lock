@@ -18,7 +18,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/msip.git
-  revision: 66f2261255569228429d712c751faf2cfcd3f29b
+  revision: e513fabeb9d56774f7eb00963430767c41657d4e
   branch: tomselect
   specs:
     msip (2.2.0.beta6)
@@ -261,7 +261,7 @@ GEM
     parser (3.3.4.2)
       ast (~> 2.4.1)
       racc
-    pg (1.5.7)
+    pg (1.5.8)
     psych (5.1.2)
       stringio
     public_suffix (6.0.1)
@@ -346,7 +346,7 @@ GEM
     rubocop-minitest (0.36.0)
       rubocop (>= 1.61, < 2.0)
       rubocop-ast (>= 1.31.1, < 2.0)
-    rubocop-rails (2.26.0)
+    rubocop-rails (2.26.1)
       activesupport (>= 4.2.0)
       rack (>= 1.1)
       rubocop (>= 1.52.0, < 2.0)
