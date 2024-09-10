@@ -3,7 +3,7 @@
 require "mr519_gen/concerns/models/planencuesta"
 
 module Mr519Gen
-  # Plan para una encuesta
+  # Plan para efectuar una encuesta (e.g. fechas de aplicación, formulario)
   class Planencuesta < ActiveRecord::Base
     include Mr519Gen::Concerns::Models::Planencuesta
   end
