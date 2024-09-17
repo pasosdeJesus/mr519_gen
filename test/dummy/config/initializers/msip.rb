@@ -18,6 +18,7 @@ Msip.setup do |config|
   config.codigofuente = "https://gitlab.com/pasosdeJesus/mr519_gen"
   config.urlcontribuyentes = "https://gitlab.com/pasosdeJesus/mr519_gen/-/graphs/main"
   config.urlcreditos = "https://gitlab.com/pasosdeJesus/mr519_gen/-/blob/main/CREDITOS.md"
+  config.urllicencia = "https://gitlab.com/pasosdeJesus/mr519_gen/-/blob/main/LICENCIA.md"
   config.agradecimientoDios = "<p>
 Agradecemos a Jesús/Dios por su misericordia.
 </p>
