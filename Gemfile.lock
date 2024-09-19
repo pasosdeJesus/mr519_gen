@@ -18,7 +18,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/msip.git
-  revision: 5651c8320eef9a1ccdd15c76e40968f1d6b29c33
+  revision: 5435b2db2b536198bdee3dfa37ea281bc6b26e68
   branch: v2.2
   specs:
     msip (2.2.0.beta6)
@@ -244,7 +244,7 @@ GEM
     psych (5.1.2)
       stringio
     public_suffix (5.0.5)
-    puma (6.4.2)
+    puma (6.4.3)
       nio4r (~> 2.0)
     racc (1.7.3)
     rack (3.0.10)
@@ -438,4 +438,4 @@ DEPENDENCIES
   will_paginate
 
 BUNDLED WITH
-   2.5.18
+   2.5.19
