@@ -18,7 +18,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/msip.git
-  revision: 9eb58a3c2904e8ea83b77678cd59d39d986ec5cd
+  revision: be592997647a379db03bcfb26205b3819dcdbe66
   branch: tomselect
   specs:
     msip (2.2.0.beta6)
@@ -265,7 +265,7 @@ GEM
     psych (5.1.2)
       stringio
     public_suffix (6.0.1)
-    puma (6.4.2)
+    puma (6.4.3)
       nio4r (~> 2.0)
     racc (1.8.1)
     rack (3.1.7)
@@ -346,7 +346,7 @@ GEM
     rubocop-minitest (0.36.0)
       rubocop (>= 1.61, < 2.0)
       rubocop-ast (>= 1.31.1, < 2.0)
-    rubocop-rails (2.26.1)
+    rubocop-rails (2.26.2)
       activesupport (>= 4.2.0)
       rack (>= 1.1)
       rubocop (>= 1.52.0, < 2.0)
@@ -479,4 +479,4 @@ DEPENDENCIES
   will_paginate
 
 BUNDLED WITH
-   2.5.18
+   2.5.19
