@@ -25,8 +25,10 @@ export default class Mr519Gen__Motor {
    *
    */
 
+  // Se ejecuta cada vez que se carga una página que no está en cache
+  // y tipicamente después de que se ha cargado la página y los recursos.
   static ejecutarAlCargarDocumentoYRecursos() {
-    Msip__Motor.configurarElementosTomSelect()
+    console.log("* Corriendo Mr519Gen__Motor::ejecutarAlCargarDocumentoYRecursos()")
   }
 
   // Llamar cada vez que se cargue una página detectada con turbo:load
@@ -35,10 +37,15 @@ export default class Mr519Gen__Motor {
   // Podría ser llamada varias veces consecutivas por lo que debe detectarlo
   // para no ejecutar dos veces lo que no conviene.
   static ejecutarAlCargarPagina() {
+    console.log("* Corriendo Mr519Gen__Motor::ejecutarAlCargarPagina()")
 
   }
 
+
+  // Se ejecuta desde app/javascript/application.js tras importar el motor
   static iniciar() {
-
+    console.log("* Corriendo Mr519Gen__Motor::iniciar()")
   }
+
+
 }
