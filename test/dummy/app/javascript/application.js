@@ -19,6 +19,9 @@ import 'gridstack'
 import Msip__Motor from "./controllers/msip/motor"
 window.Msip__Motor = Msip__Motor
 Msip__Motor.iniciar()
+import Mr519Gen__Motor from "./controllers/mr519_gen/motor"
+window.Mr519Gen__Motor = Mr519Gen__Motor
+Mr519Gen__Motor.iniciar()
 
 import {AutocompletaAjaxExpreg} from '@pasosdejesus/autocompleta_ajax'
 window.AutocompletaAjaxExpreg = AutocompletaAjaxExpreg
@@ -60,7 +63,8 @@ document.addEventListener('turbo:load', (e) => {
   console.log('Escuchador turbo:load')
 
   msip_ejecutarAlCargarPagina(window) // Establece root.puntomontaje
-  Msip__Motor.ejecutarAlCargarPagina()  // Este puede ejecutarse varias veces consecutivas cada vez que se termina de cargar una página que incluso pudiera estar en cache
+  Msip__Motor.ejecutarAlCargarPagina()
+  Mr519Gen__Motor.ejecutarAlCargarPagina()
 })
 
 
