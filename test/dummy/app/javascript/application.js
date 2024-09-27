@@ -71,7 +71,7 @@ document.addEventListener('turbo:load', (e) => {
  * tener cuidado porque puede dispararse el evento turbo varias
  * veces consecutivas al cargarse  la misma página.
  */
-  
+
   console.log('Escuchador turbo:load')
 
   msip_ejecutarAlCargarPagina(window) // Establece root.puntomontaje
