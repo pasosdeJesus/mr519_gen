@@ -35,4 +35,7 @@ export default class Mr519Gen__Motor {
 
   }
 
+  static iniciar() {
+
+  }
 }
