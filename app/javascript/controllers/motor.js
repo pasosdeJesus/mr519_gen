@@ -25,6 +25,9 @@ export default class Mr519Gen__Motor {
    *
    */
 
+  static ejecutarAlCargarDocumentoYRecursos() {
+    Msip__Motor.configurarElementosTomSelect()
+  }
 
   // Llamar cada vez que se cargue una página detectada con turbo:load
   // Tal vez en cache por lo que podría no haberse ejecutado iniciar 

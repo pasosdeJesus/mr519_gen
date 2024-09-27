@@ -49,6 +49,7 @@ promesaRecursosSprocketsYDocumento.then((mensaje) => {
   root = window;
 
   Msip__Motor.ejecutarAlCargarDocumentoYRecursos()  // Este se ejecuta cada vez que se carga una página que no está en cache y tipicamente después de que se ha cargado la página completa y los recursos
+  Mr519Gen__Motor.ejecutarAlCargarDocumentoYRecursos()
   msip_prepara_eventos_comunes(root);
   mr519_gen_prepara_eventos_comunes(root);
 })
