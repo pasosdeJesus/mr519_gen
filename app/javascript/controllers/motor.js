@@ -32,7 +32,7 @@ export default class Mr519Gen__Motor {
   // Podría ser llamada varias veces consecutivas por lo que debe detectarlo
   // para no ejecutar dos veces lo que no conviene.
   static ejecutarAlCargarPagina() {
-
+    console.log("* Corriendo Mr519Gen__Motor::ejecutarAlCargarPagina()")
   }
 
 }
