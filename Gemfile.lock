@@ -18,10 +18,10 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/msip.git
-  revision: e199505b7aa60942c39571d39414eec200e99ce2
+  revision: 8f7591822636c09f1ecb4a286e412682fca61bd3
   branch: v2.2
   specs:
-    msip (2.2.0.beta6)
+    msip (2.2.0.beta7)
       cancancan (~> 3)
       devise (~> 4)
       devise-i18n (~> 1)
@@ -39,7 +39,7 @@ GIT
 PATH
   remote: .
   specs:
-    mr519_gen (2.2.0.beta6)
+    mr519_gen (2.2.0.beta7)
       msip
       rails
 
