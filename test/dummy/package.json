@@ -1,7 +1,7 @@
 {
   "name": "mr519_gen",
   "private": true,
-  "version": "0.1.0",
+  "version": "2.2.0.beta7",
   "scripts": {
     "build": "esbuild app/javascript/*.* --preserve-symlinks --bundle --sourcemap --outdir=app/assets/builds",
     "start": "node esbuild-des.config.mjs"
