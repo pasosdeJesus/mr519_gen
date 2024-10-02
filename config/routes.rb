@@ -2,7 +2,7 @@
 
 Mr519Gen::Engine.routes.draw do
 
-  resources :campos, only: [], param: :index do
+  resources :campos, only: [:new, :destroy], param: :index do
     member do
       delete '(:id)', to: "campos#destroy", as: "eliminar"
       post '/' => "campos#create", as: "crear"
