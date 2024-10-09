@@ -102,5 +102,5 @@ La documentación técnica de las clases de este motor está disponible en
   <https://rubydoc.info/github/pasosdeJesus/mr519_gen/>
 
 Aunque antes le podría resultar útil la documentación de msip disponible en:
-<https://gitlab.com/pasosdeJesus/msip/blob/main/doc/README.md>
+<https://gitlab.com/pasosdeJesus/msip/-/blob/main/doc/README.md>
 
