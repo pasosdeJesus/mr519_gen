@@ -27,7 +27,7 @@ import {AutocompletaAjaxExpreg} from '@pasosdejesus/autocompleta_ajax'
 window.AutocompletaAjaxExpreg = AutocompletaAjaxExpreg
 
 let esperarRecursosSprocketsYDocumento = function (resolver) {
-  if (typeof window.puntomontaje == 'undefined') {
+  if (typeof window.puntoMontaje == 'undefined') {
     setTimeout(esperarRecursosSprocketsYDocumento, 100, resolver)
     return false
   }
@@ -50,7 +50,6 @@ promesaRecursosSprocketsYDocumento.then((mensaje) => {
 
   Msip__Motor.ejecutarAlCargarDocumentoYRecursos()  // Este se ejecuta cada vez que se carga una página que no está en cache y tipicamente después de que se ha cargado la página completa y los recursos
   Mr519Gen__Motor.ejecutarAlCargarDocumentoYRecursos()
-  msip_prepara_eventos_comunes(root);
   mr519_gen_prepara_eventos_comunes(root);
 })
 
@@ -63,7 +62,6 @@ document.addEventListener('turbo:load', (e) => {
   
   console.log('Escuchador turbo:load')
 
-  msip_ejecutarAlCargarPagina(window) // Establece root.puntomontaje
   Msip__Motor.ejecutarAlCargarPagina()
   Mr519Gen__Motor.ejecutarAlCargarPagina()
 })

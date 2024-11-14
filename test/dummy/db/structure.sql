@@ -2688,7 +2688,7 @@ CREATE TABLE public.msip_vereda (
     id bigint NOT NULL,
     nombre character varying(500) NOT NULL COLLATE public.es_co_utf_8,
     municipio_id integer,
-    verlocal_id integer,
+    verlocal_cod integer,
     observaciones character varying(5000),
     latitud double precision,
     longitud double precision,
@@ -4242,6 +4242,7 @@ ALTER TABLE ONLY public.msip_ubicacion
 SET search_path TO "$user", public;
 
 INSERT INTO "schema_migrations" (version) VALUES
+('20241113141404'),
 ('20240723152453'),
 ('20240723140427'),
 ('20240722133233'),
