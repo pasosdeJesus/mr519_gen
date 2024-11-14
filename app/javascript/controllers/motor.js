@@ -29,6 +29,53 @@ export default class Mr519Gen__Motor {
   // y tipicamente después de que se ha cargado la página y los recursos.
   static ejecutarAlCargarDocumentoYRecursos() {
     console.log("* Corriendo Mr519Gen__Motor::ejecutarAlCargarDocumentoYRecursos()")
+
+    document.addEventListener('change', event => {
+      if (event.target.id.matches(/^formulario_campo_attributes_/) &&
+        event.target.id.matches(/tipo$/) ) {
+        root = window
+        if (this.querySelectorAll('option:selected').length > 0 && (
+          this.querySelector('option:selected').innerText == 'Selección Múltiple' || 
+          this.querySelector('option:selected').innerText == 'Selección Simple')) {
+          this.parentElement.parentElement.parentElement.querySelector('.espopciones').style.display = 'block'
+        } else {
+          this.parentElement.parentElement.parentElement.querySelector('.espopciones').style.display = 'none'
+        }
+        if (this.querySelectorAll('option:selected').length > 0 && (
+          this.querySelector('option:selected').innerText == 'Selección Múltiple con Tabla Básica' || 
+          this.querySelector('option:selected').innerText == 'Selección Simple con Tabla Básica')) {
+          this.parentElement.parentElement.parentElement.querySelector('.tablabasica').style.display = "block"
+        } else {
+          this.parentElement.parentElement.parentElement.querySelector('.tablabasica').style.display = "none"
+        }
+      } else if (event.target.id == "formulario_nombre") {
+        root = window
+        idni = $(this).attr('id').replace('nombre', 'nombreinterno')
+        if  (document.querySelectorAll('#' + idni).length == 1 && (
+          document.querySelector('#' + idni).value == '' || 
+          document.querySelector('#' + idni).value == 'N')) {
+          document.querySelector('#' + idni).value = Mr519__Motor.nombreANombreInterno(this.value)
+        }
+      } else if (event.target.id.matches(/^formulario_campo_attributes_/) &&
+        event.target.id.matches(/_nombre$/) ) {
+        // Cubre tanto nombre de campos como nombre de opciones
+        root = window
+        idni = this.getAttribute('id').replace('nombre', 'nombreinterno')
+        if  (document.querySelectorAll('#' + idni).length == 0) {
+          idni = this.getAttrribute('id').replace('nombre', 'valor')
+        }
+        if  (document.querySelectorAll('#' + idni).length == 1 && (
+          document.querySelector('#' + idni).value == '' || 
+          document.querySelector('#' + idni).value == 'N')) {
+          document.querySelector('#' + idni).value = Mr519__Motor.nombreANombreInterno(this.value)
+        }
+      }
+    })
+
+    if  (document.querySelectorAll('.grid-stack').length > 0) {
+      Mr519__EditaFormulario.preparar();
+    }
+
   }
 
   // Llamar cada vez que se cargue una página detectada con turbo:load
@@ -45,6 +92,14 @@ export default class Mr519Gen__Motor {
   // Se ejecuta desde app/javascript/application.js tras importar el motor
   static iniciar() {
     console.log("* Corriendo Mr519Gen__Motor::iniciar()")
+  }
+
+
+  static nombreANombreInterno(nombre) {
+    ni = nombre.replace(/[^A-Za-z0-9_]/g, '_') 
+    ni = ni.toLowerCase()
+    ni = ni.substring(0, 60)
+    return ni
   }
 
 

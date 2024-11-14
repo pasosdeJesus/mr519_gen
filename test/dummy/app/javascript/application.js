@@ -19,6 +19,7 @@ import 'gridstack'
 import Msip__Motor from "./controllers/msip/motor"
 window.Msip__Motor = Msip__Motor
 Msip__Motor.iniciar()
+
 import Mr519Gen__Motor from "./controllers/mr519_gen/motor"
 window.Mr519Gen__Motor = Mr519Gen__Motor
 Mr519Gen__Motor.iniciar()
@@ -50,7 +51,6 @@ promesaRecursosSprocketsYDocumento.then((mensaje) => {
 
   Msip__Motor.ejecutarAlCargarDocumentoYRecursos()  // Este se ejecuta cada vez que se carga una página que no está en cache y tipicamente después de que se ha cargado la página completa y los recursos
   Mr519Gen__Motor.ejecutarAlCargarDocumentoYRecursos()
-  mr519_gen_prepara_eventos_comunes(root);
 })
 
 
