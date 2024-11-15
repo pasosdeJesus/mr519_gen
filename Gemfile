@@ -54,8 +54,8 @@ gem "will_paginate" # Pagina listados
 # lógico y no alfabetico como las gemas anteriores)
 
 gem "msip", # Motor generico
-  #git: 'https://gitlab.com/pasosdeJesus/msip.git', branch: 'main'
-  path: "../msip"
+  git: 'https://gitlab.com/pasosdeJesus/msip.git', branch: 'main'
+  #path: "../msip"
 
 group :development do
   gem "puma"

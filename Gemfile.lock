@@ -16,8 +16,10 @@ GIT
   specs:
     cocoon (1.2.11)
 
-PATH
-  remote: ../msip
+GIT
+  remote: https://gitlab.com/pasosdeJesus/msip.git
+  revision: ddfcfe60ecd0553b0f407284f01341b6762f53d3
+  branch: main
   specs:
     msip (2.3.0.alfa3)
       cancancan (~> 3)
