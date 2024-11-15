@@ -1,4 +1,3 @@
-
 export default class Mr519Gen__Motor {
   /* 
    * Librería de funciones comunes.
@@ -31,9 +30,8 @@ export default class Mr519Gen__Motor {
     console.log("* Corriendo Mr519Gen__Motor::ejecutarAlCargarDocumentoYRecursos()")
 
     document.addEventListener('change', event => {
-      if (event.target.id.matches(/^formulario_campo_attributes_/) &&
-        event.target.id.matches(/tipo$/) ) {
-        root = window
+      if (event.target.matches("[id^=formulario_campo_attributes_]") &&
+        event.target.matches("[id$=tipo]") ) {
         if (this.querySelectorAll('option:selected').length > 0 && (
           this.querySelector('option:selected').innerText == 'Selección Múltiple' || 
           this.querySelector('option:selected').innerText == 'Selección Simple')) {
@@ -49,17 +47,15 @@ export default class Mr519Gen__Motor {
           this.parentElement.parentElement.parentElement.querySelector('.tablabasica').style.display = "none"
         }
       } else if (event.target.id == "formulario_nombre") {
-        root = window
         idni = $(this).attr('id').replace('nombre', 'nombreinterno')
         if  (document.querySelectorAll('#' + idni).length == 1 && (
           document.querySelector('#' + idni).value == '' || 
           document.querySelector('#' + idni).value == 'N')) {
           document.querySelector('#' + idni).value = Mr519__Motor.nombreANombreInterno(this.value)
         }
-      } else if (event.target.id.matches(/^formulario_campo_attributes_/) &&
-        event.target.id.matches(/_nombre$/) ) {
+      } else if (event.target.matches("[id^=formulario_campo_attributes_]") &&
+        event.target.matches("[id$=_nombre]") ) {
         // Cubre tanto nombre de campos como nombre de opciones
-        root = window
         idni = this.getAttribute('id').replace('nombre', 'nombreinterno')
         if  (document.querySelectorAll('#' + idni).length == 0) {
           idni = this.getAttrribute('id').replace('nombre', 'valor')

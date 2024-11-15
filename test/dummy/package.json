@@ -17,12 +17,10 @@
     "esbuild": "^0.19.4",
     "gridstack": "^0.6.0",
     "is-svg": "^4.3.1",
-    "jquery": "^3.7.1",
     "popper.js": "^2.0.0-next.4",
     "tom-select": "^2.3.1"
   },
   "devDependencies": {
-    "babel-plugin-macros": "^3.1.0",
     "glob-parent": "^6.0.1",
     "normalize-url": "^4.5.1",
     "postcss": "^8.2.10"

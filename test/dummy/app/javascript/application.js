@@ -14,6 +14,8 @@ import "./jquery"
 
 import 'popper.js'              // Dialogos emergentes usados por bootstrap
 import * as bootstrap from 'bootstrap'              // Maquetacion y elementos de diseño
+window.bootstrap = bootstrap
+
 import 'gridstack'
 
 import Msip__Motor from "./controllers/msip/motor"

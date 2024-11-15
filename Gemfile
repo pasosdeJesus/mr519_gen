@@ -5,17 +5,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 gemspec
 
-gem "babel-transpiler"
-
 gem "bootsnap"
 
 gem "cancancan" # Control de acceso
-
-gem "cocoon",
-  git: "https://github.com/vtamara/cocoon.git",
-  branch: "new_id_with_ajax" # Formularios anidados (algunos con ajax)
-
-gem "coffee-rails", "~> 4.2"
 
 gem "devise" # Autenticación
 
@@ -88,8 +80,6 @@ group :development, :test do
 end
 
 group :test do
-  gem "cuprite"
-
   gem "rails-controller-testing"
 
   gem "simplecov"
