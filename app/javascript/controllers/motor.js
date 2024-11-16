@@ -51,7 +51,7 @@ export default class Mr519Gen__Motor {
         if  (document.querySelectorAll('#' + idni).length == 1 && (
           document.querySelector('#' + idni).value == '' || 
           document.querySelector('#' + idni).value == 'N')) {
-          document.querySelector('#' + idni).value = Mr519__Motor.nombreANombreInterno(this.value)
+          document.querySelector('#' + idni).value = Mr519Gen__Motor.nombreANombreInterno(this.value)
         }
       } else if (event.target.matches("[id^=formulario_campo_attributes_]") &&
         event.target.matches("[id$=_nombre]") ) {
@@ -63,7 +63,7 @@ export default class Mr519Gen__Motor {
         if  (document.querySelectorAll('#' + idni).length == 1 && (
           document.querySelector('#' + idni).value == '' || 
           document.querySelector('#' + idni).value == 'N')) {
-          document.querySelector('#' + idni).value = Mr519__Motor.nombreANombreInterno(this.value)
+          document.querySelector('#' + idni).value = Mr519Gen__Motor.nombreANombreInterno(this.value)
         }
       }
     })
