@@ -18,7 +18,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/msip.git
-  revision: a80677a21b501f510f8f440c0e2e21e2a5a02166
+  revision: 2d3c67b8ee6923d7acf534045e75d47117e331e8
   branch: v2.2
   specs:
     msip (2.2.0.beta7)
@@ -265,7 +265,7 @@ GEM
     psych (5.1.2)
       stringio
     public_suffix (6.0.1)
-    puma (6.4.3)
+    puma (6.5.0)
       nio4r (~> 2.0)
     racc (1.8.1)
     rack (3.1.7)
