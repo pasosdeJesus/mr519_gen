@@ -27,7 +27,9 @@ module Mr519Gen
             dependent: :delete_all,
             class_name: "Mr519Gen::Opcioncs",
             foreign_key: "campo_id",
+            inverse_of: :campo,
             validate: true
+
           accepts_nested_attributes_for :opcioncs,
             allow_destroy: true,
             reject_if: :all_blank

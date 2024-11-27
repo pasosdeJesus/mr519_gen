@@ -26,21 +26,31 @@
       <% clasedisp = 'display: block' %>
     <% end %>
     <div class="espopciones" style="<%= clasedisp %>">
-      <% if f.object.opcioncs.count > 0 %>
-        <hr>
-        <%= f.simple_fields_for :opcioncs, f.object.opcioncs.order(:id) do |o| %>
-          <%= render 'mr519_gen/formularios/fila_opcionescs', f:  o %>
-        <% end %>
-      <% end %>
-      <div class="links-opcionescs">
-        <%= link_to_add_association t('Agregar opción'), f, :opcioncs, {
-          #:"data-association-insertion-node" => "tbody#opciones", 
-          #:"data-association-insertion-method" => "append", 
-          partial: 'mr519_gen/formularios/fila_opcionescs',
-          class: 'btn btn-sm btn-primary', 
-          "data-ajax" => mr519_gen.new_opcioncs_path,
-          "data-ajaxdata" => "formulario_campo_id" 
-        } %>
+      <hr>
+      <div class="div-tabla">
+        <% index_campo = f.index %>
+        <div id=<%= "campo_#{index_campo}_opcioncs_marco" %> class="panel-body table responsive" >
+          <%= f.simple_fields_for :opcioncs, 
+            child_index: params[:index] do |opf| %>
+            <%= render "mr519_gen/formularios/fila_opcionescs", 
+              f: opf, 
+              subf: f,
+              index_op: params[:index]
+            %>
+          <% end %>
+        </div>
+        <%= f.submit "Agregar opción", 
+          formaction: mr519_gen.crear_opcioncs_path(
+            index: f.object.opcioncs.size,
+            index_campo: index_campo
+          ),
+          formmethod: :post,
+          formnovalidate: true,
+          class: 'btn btn-sm btn-primary',
+          name: "agregar-opcion-#{index_campo}",
+          id: "agregar-opcion-#{index_campo}",
+          data:  {
+            disable_with: false } %> 
       </div>
     </div>
 

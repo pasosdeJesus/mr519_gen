@@ -32,38 +32,39 @@ export default class Mr519Gen__Motor {
     document.addEventListener('change', event => {
       if (event.target.matches("[id^=formulario_campo_attributes_]") &&
         event.target.matches("[id$=tipo]") ) {
-        if (this.querySelectorAll('option:selected').length > 0 && (
-          this.querySelector('option:selected').innerText == 'Selección Múltiple' || 
-          this.querySelector('option:selected').innerText == 'Selección Simple')) {
-          this.parentElement.parentElement.parentElement.querySelector('.espopciones').style.display = 'block'
-        } else {
-          this.parentElement.parentElement.parentElement.querySelector('.espopciones').style.display = 'none'
-        }
-        if (this.querySelectorAll('option:selected').length > 0 && (
-          this.querySelector('option:selected').innerText == 'Selección Múltiple con Tabla Básica' || 
-          this.querySelector('option:selected').innerText == 'Selección Simple con Tabla Básica')) {
-          this.parentElement.parentElement.parentElement.querySelector('.tablabasica').style.display = "block"
-        } else {
-          this.parentElement.parentElement.parentElement.querySelector('.tablabasica').style.display = "none"
-        }
-      } else if (event.target.id == "formulario_nombre") {
-        idni = $(this).attr('id').replace('nombre', 'nombreinterno')
+        if (event.target.value){
+          const elementoSelect = event.target;
+          const indexSeleccionado = elementoSelect.selectedIndex;
+          const opcion = elementoSelect.options[indexSeleccionado].textContent;
+          if(opcion == 'Selección Múltiple' || opcion == 'Selección Simple') {
+            event.target.parentElement.parentElement.parentElement.querySelector('.espopciones').style.display = 'block'
+          } else {
+            event.target.parentElement.parentElement.parentElement.querySelector('.espopciones').style.display = 'none'
+          }
+          if(opcion == 'Selección Múltiple con Tabla Básica' || opcion == 'Selección Simple con Tabla Básica') {
+            event.target.parentElement.parentElement.parentElement.querySelector('.tablabasica').style.display = 'block'
+          } else {
+            event.target.parentElement.parentElement.parentElement.querySelector('.tablabasica').style.display = 'none'
+          }
+      }
+    } else if (event.target.id == "formulario_nombre") {
+        let idni = event.target.id.replace('nombre', 'nombreinterno')
         if  (document.querySelectorAll('#' + idni).length == 1 && (
           document.querySelector('#' + idni).value == '' || 
           document.querySelector('#' + idni).value == 'N')) {
-          document.querySelector('#' + idni).value = Mr519Gen__Motor.nombreANombreInterno(this.value)
+          document.querySelector('#' + idni).value = Mr519Gen__Motor.nombreANombreInterno(event.target.value)
         }
       } else if (event.target.matches("[id^=formulario_campo_attributes_]") &&
         event.target.matches("[id$=_nombre]") ) {
         // Cubre tanto nombre de campos como nombre de opciones
-        idni = this.getAttribute('id').replace('nombre', 'nombreinterno')
+        let idni = event.target.id.replace('nombre', 'nombreinterno')
         if  (document.querySelectorAll('#' + idni).length == 0) {
-          idni = this.getAttrribute('id').replace('nombre', 'valor')
+          idni = event.target.id.replace('nombre', 'valor')
         }
         if  (document.querySelectorAll('#' + idni).length == 1 && (
           document.querySelector('#' + idni).value == '' || 
           document.querySelector('#' + idni).value == 'N')) {
-          document.querySelector('#' + idni).value = Mr519Gen__Motor.nombreANombreInterno(this.value)
+          document.querySelector('#' + idni).value = Mr519Gen__Motor.nombreANombreInterno(event.target.value)
         }
       }
     })
@@ -92,7 +93,7 @@ export default class Mr519Gen__Motor {
 
 
   static nombreANombreInterno(nombre) {
-    ni = nombre.replace(/[^A-Za-z0-9_]/g, '_') 
+    let ni = nombre.replace(/[^A-Za-z0-9_]/g, '_') 
     ni = ni.toLowerCase()
     ni = ni.substring(0, 60)
     return ni

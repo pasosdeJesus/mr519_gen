@@ -1,23 +1,33 @@
-<div class="nested-fields opcioncs" style="display: flex">
-  <% #byebug %>
-  <% f.object = Mr519Gen::Opcioncs.new() if !f.object  %>
-  <div>
-    <%= f.input :nombre, 
-      label: false,
-      placeholder: 'Nombre'
-    %>
-  </div>
-  <div>
-    <%= f.input :valor, 
-      label: false,
-      placeholder: 'Valor'
-    %>
-  </div>
-  <div>
+<%= turbo_frame_tag "opcioncs_#{subf.index}_#{f.index}", class: 'div-tabla-fila nested-fields' do %>
+  <div class="nested-fields opcioncs">
     <%= f.input :id, as: :hidden %>
-    <%= link_to_remove_association t("Eliminar"), f, 
-      :class => 'btn btn-sm btn-danger', "data-existing" => true 
-    %>
-    <div><%= f.error_notification %></div>
+    <div class="div-tabla-celda">
+      <%= f.input :nombre, 
+        label: false,
+        placeholder: 'Nombre'
+      %>
+    </div>
+    <div class="div-tabla-celda">
+      <%= f.input :valor, 
+        label: false,
+        placeholder: 'Valor'
+      %>
+    </div>
+    <div class="div-tabla-celda">
+      <%= f.submit "Eliminar",
+        formaction: mr519_gen.eliminar_opcioncs_path(
+          id: f.object.id, 
+          index: f.index,
+          index_campo: subf.index
+        ),
+        formmethod: :delete,
+        formnovalidate: true,
+        class: 'btn btn-sm btn-danger',
+        data: {
+          turbo_frame: "opcioncs_#{subf.index}_#{f.index}",
+          disable_with: false
+        } %>
+      <div><%= f.error_notification %></div>
+    </div>
   </div>
-</div>
+<% end %>

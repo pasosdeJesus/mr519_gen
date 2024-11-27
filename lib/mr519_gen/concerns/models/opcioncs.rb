@@ -14,7 +14,8 @@ module Mr519Gen
 
           belongs_to :campo,
             class_name: "Mr519Gen::Campo",
-            optional: false,
+            inverse_of: :opcioncs,
+            optional: true,
             validate: true
 
           validates :valor,

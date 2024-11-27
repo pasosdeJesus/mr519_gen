@@ -64,6 +64,7 @@ module Mr519Gen
           Mr519Gen::Encuestapersona,
           Mr519Gen::Formulario,
           Mr519Gen::Campo,
+          Mr519Gen::Opcioncs,
           Mr519Gen::Planencuesta,
         ])
       end
