@@ -9,14 +9,19 @@ Mr519Gen::Engine.routes.draw do
     end
   end
 
+  resources :opcionescs, only: [], param: :index do
+    member do
+      delete '(:id)', to: "opcionescs#destroy", as: "eliminar"
+      post '/' => "opcionescs#create", as: "crear"
+    end
+  end
+
   resources :encuestaspersona, path_names: { new: "nueva", edit: "edita" }
   resources :encuestasusuario, path_names: { new: "nueva", edit: "edita" }
   resources :formularios, path_names: { new: "nuevo", edit: "edita" }
   get "/formularios/copia/:formulario_id" =>
   "formularios#copia",
     as: :copia_formulario
-
-  resources :opcionescs, only: [:new, :destroy]
 
   resources :planesencuesta,
     path_names: { new: "nuevo", edit: "edita" }

@@ -38,6 +38,7 @@ module Mr519Gen
           end
 
           # GET /formularios/new
+          
           def new
             @registro = @formulario = Formulario.new
             @formulario.nombre = "Formulario Nuevo"
@@ -104,7 +105,7 @@ module Mr519Gen
 
           def mr519_gen_params
             atributos_form +
-              [
+              [ :id,
                 campo_attributes: [
                   :ancho,
                   :ayudauso,
@@ -117,15 +118,12 @@ module Mr519Gen
                   :tipo,
                   :tablabasica,
                   :_destroy,
-                  {
-                    opcioncs_attributes: [
-                      :id,
-                      :campo_id,
-                      :nombre,
-                      :valor,
-                      :_destroy,
-                    ],
-                  },
+                  opcioncs_attributes: [
+                    :id,
+                    :nombre,
+                    :valor,
+                    :_destroy,
+                  ],
                 ],
               ]
           end

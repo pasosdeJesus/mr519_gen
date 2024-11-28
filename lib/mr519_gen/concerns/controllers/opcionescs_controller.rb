@@ -7,47 +7,22 @@ module Mr519Gen
         extend ActiveSupport::Concern
 
         included do
-          # GET /opcionescs/new
-          def new
-            if params[:formulario_campo_id]
-              @opcioncs = Opcioncs.new
-              @opcioncs.campo_id = params[:formulario_campo_id]
-              @opcioncs.nombre = "N"
-              @opcioncs.valor = "N"
-              if @opcioncs.save(validate: false)
-                respond_to do |format|
-                  format.js do
-                    render(text: @opcioncs.id.to_s)
-                  end
-                  format.json do
-                    render(json: @opcioncs.id.to_s, status: :created)
-                  end
-                end
-              else
-                render(inline: "No implementado", status: :unprocessable_entity)
-              end
-            else
-              render(
-                inline: "Falta id de campo",
-                status: :unprocessable_entity,
-              )
-            end
+
+          def create
           end
 
           def destroy
-            return unless params[:id]
+          end
 
-            @opcioncs = Opcioncs.find(params[:id])
-            @opcioncs.destroy
-            respond_to do |format|
-              format.html do
-                render(
-                  inline: "No implementado",
-                  status: :unprocessable_entity,
-                )
-              end
-              format.json { head(:no_content) }
-            end
+          def update
+          end
+
+          private
+
+          def preparar_opcion_campo_formulario
+            @campo = Mr519Gen::Campo.new(opcioncs: [Mr519Gen::Opcioncs.new])
+            @formulario = Mr519Gen::Formulario.new(campo: [@campo])
+            @campo.opcioncs[0].campo = Mr519Gen::Campo.new()
           end
         end # included
       end

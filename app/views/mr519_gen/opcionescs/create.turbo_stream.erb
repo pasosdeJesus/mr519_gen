@@ -1,0 +1,26 @@
+<%= simple_form_for @formulario do |form| %>
+  <%= form.simple_fields_for :campo, 
+    child_index: params[:index_campo] do |subf| %>
+    <%= subf.simple_fields_for :opcioncs, 
+      child_index: params[:index] do |opf| %>
+      <%= turbo_stream.replace "agregar-opcion-#{params[:index_campo]}" do %>
+        <%= opf.submit "Agregar opción", 
+          formaction: mr519_gen.crear_opcioncs_path(
+            index: params[:index].to_i + 1,
+            index_campo: params[:index_campo].to_i
+          ), 
+          formmethod: :post, 
+          formnovalidate: true,
+          class: 'btn btn-sm btn-primary',
+          name: "agregar-opcion-#{params[:index_campo]}",
+          id: "agregar-opcion-#{params[:index_campo]}",
+          data:  {
+            disable_with: false 
+          } %>
+      <% end %>
+      <%= turbo_stream.append "campo_#{params[:index_campo]}_opcioncs_marco" do %>
+        <%= render "mr519_gen/formularios/fila_opcionescs", f: opf, subf: subf %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>
