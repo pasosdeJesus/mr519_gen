@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/kreeti/kt-paperclip.git
-  revision: f35ca58fad8ae4681b26240adc4eb43d2b0d767f
+  revision: 26139d89d34bcfefae0e9c724c4573a8fae089ab
   specs:
     kt-paperclip (7.2.2)
       activemodel (>= 4.2.0)
@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/msip.git
-  revision: 50fcaf96a97f7855363a84f8eb6648b943d752af
+  revision: 0136dd131717e22a6c5e9d027e38e8ffcea55e5e
   branch: main
   specs:
     msip (2.3.0.alfa3)
@@ -118,7 +118,7 @@ GEM
     bindex (0.8.1)
     bootsnap (1.18.4)
       msgpack (~> 1.2)
-    brakeman (6.2.2)
+    brakeman (7.0.0)
       racc
     builder (3.3.0)
     bundler-audit (0.9.2)
@@ -136,7 +136,7 @@ GEM
     connection_pool (2.4.1)
     crass (1.0.6)
     date (3.4.1)
-    debug (1.9.2)
+    debug (1.10.0)
       irb (~> 1.10)
       reline (>= 0.3.8)
     devise (4.9.4)
@@ -205,20 +205,24 @@ GEM
     net-smtp (0.5.0)
       net-protocol
     nio4r (2.7.4)
-    nokogiri (1.17.0)
+    nokogiri (1.18.1)
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
-    nokogiri (1.17.0-aarch64-linux)
+    nokogiri (1.18.1-aarch64-linux-gnu)
       racc (~> 1.4)
-    nokogiri (1.17.0-arm-linux)
+    nokogiri (1.18.1-aarch64-linux-musl)
       racc (~> 1.4)
-    nokogiri (1.17.0-arm64-darwin)
+    nokogiri (1.18.1-arm-linux-gnu)
       racc (~> 1.4)
-    nokogiri (1.17.0-x86-linux)
+    nokogiri (1.18.1-arm-linux-musl)
       racc (~> 1.4)
-    nokogiri (1.17.0-x86_64-darwin)
+    nokogiri (1.18.1-arm64-darwin)
       racc (~> 1.4)
-    nokogiri (1.17.0-x86_64-linux)
+    nokogiri (1.18.1-x86_64-darwin)
+      racc (~> 1.4)
+    nokogiri (1.18.1-x86_64-linux-gnu)
+      racc (~> 1.4)
+    nokogiri (1.18.1-x86_64-linux-musl)
       racc (~> 1.4)
     orm_adapter (0.5.0)
     parallel (1.26.3)
@@ -307,7 +311,7 @@ GEM
     rubocop-minitest (0.36.0)
       rubocop (>= 1.61, < 2.0)
       rubocop-ast (>= 1.31.1, < 2.0)
-    rubocop-rails (2.27.0)
+    rubocop-rails (2.28.0)
       activesupport (>= 4.2.0)
       rack (>= 1.1)
       rubocop (>= 1.52.0, < 2.0)
@@ -434,4 +438,4 @@ DEPENDENCIES
   will_paginate
 
 BUNDLED WITH
-   2.5.23
+   2.6.2
