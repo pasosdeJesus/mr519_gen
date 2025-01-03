@@ -9,6 +9,7 @@ module Mr519Gen
     end
 
     test "valido" do
+
       f = Mr519Gen::Formulario.create(PRUEBA_FORMULARIO)
 
       assert_predicate f, :valid?
@@ -45,7 +46,7 @@ module Mr519Gen
       v.campo.tipo = Mr519Gen::ApplicationHelper::BOOLEANO
 
       assert_equal "SI", v.presenta_valor(false)
-      o = Mr519Gen::Opcioncs.new(id: 1, campo_id: 1, nombre: "x", valor: "x")
+      o = Mr519Gen::Opcioncs.new(id: 1, campo_id: c.id, nombre: "x", valor: "x")
       o.save
       v.campo.tipo = Mr519Gen::ApplicationHelper::SELECCIONMULTIPLE
       v.valor_ids = [1, 2]
