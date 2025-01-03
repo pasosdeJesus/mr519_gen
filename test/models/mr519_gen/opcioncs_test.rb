@@ -27,6 +27,7 @@ module Mr519Gen
 
     test "no valido" do
       c = Mr519Gen::Opcioncs.new(PRUEBA_OPCIONCS)
+      c.nombre = nil
 
       assert_not c.valid?
       c.destroy
