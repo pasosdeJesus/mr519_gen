@@ -14,7 +14,7 @@
 
 require "fileutils"
 
-ENV.each {|l,v| puts "#{l}=#{v}" } # Depuración
+ENV.each { |l, v| puts "#{l}=#{v}" } # Depuración
 
 # Ruta a directorio raíz de aplicación
 RAIZ_AP = File.expand_path("..", __dir__)
@@ -97,8 +97,8 @@ FileUtils.chdir(RAIZ_AP) do
         ord += "CONFIG_HOSTS=\"#{ENV["CONFIG_HOSTS"].downcase}\" "
       end
       ord += "RAILS_RELATIVE_URL_ROOT='' "
-      ord += "ruby --yjit bin/rails s " 
-      #ord += "ruby bin/rails s "
+      ord += "ruby --yjit bin/rails s "
+      # ord += "ruby bin/rails s "
       if ENV["PUERTODES"] != ""
         ord += "-p #{ENV["PUERTODES"]} "
       end

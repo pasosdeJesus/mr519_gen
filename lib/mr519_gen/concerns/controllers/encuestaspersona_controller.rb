@@ -28,17 +28,17 @@ module Mr519Gen
               r << :fechacambio_localizada
               r << :adurl
             end
-            r += [
+            r + [
               :respuestafor,
             ]
           end
 
           def atributos_form
             atributos_show - [
-              :id, 
-              :fechacambio_localizada
+              :id,
+              :fechacambio_localizada,
             ] + [
-              :fechacambio
+              :fechacambio,
             ]
           end
 
@@ -114,8 +114,7 @@ module Mr519Gen
                 Mr519Gen::Encuestapersona,
               )
             end
-            @registro = Mr519Gen::Encuestapersona.where(adurl: adurl)
-              .take
+            @registro = Mr519Gen::Encuestapersona.find_by(adurl: adurl)
             self.class.asegura_camposdinamicos(
               @registro, current_usuario ? current_usuario.id : nil
             )

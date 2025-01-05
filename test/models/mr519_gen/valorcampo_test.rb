@@ -9,7 +9,6 @@ module Mr519Gen
     end
 
     test "valido" do
-
       f = Mr519Gen::Formulario.create(PRUEBA_FORMULARIO)
 
       assert_predicate f, :valid?

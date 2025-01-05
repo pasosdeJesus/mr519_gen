@@ -51,7 +51,7 @@ module Mr519Gen
       assert Mr519Gen::Encuestapersona.filtro_fechainifin("2010-01-01")
       assert Mr519Gen::Encuestapersona.filtro_persona(1)
 
-      assert e.formulario_id > 0
+      assert_operator e.formulario_id, :>, 0
       e.formulario_id = 1
 
       assert_equal 1, e.formulario_id

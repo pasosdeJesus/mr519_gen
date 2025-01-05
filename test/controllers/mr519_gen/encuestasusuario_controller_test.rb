@@ -43,7 +43,7 @@ module Mr519Gen
     test "debe mostrar nuevo" do
       get new_encuestausuario_url
 
-      assert_response 302
+      assert_response :found
     end
 
     test "debe crear encuestausuario" do

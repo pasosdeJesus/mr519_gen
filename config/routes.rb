@@ -1,18 +1,17 @@
 # frozen_string_literal: true
 
 Mr519Gen::Engine.routes.draw do
-
   resources :campos, only: [], param: :index do
     member do
-      delete '(:id)', to: "campos#destroy", as: "eliminar"
-      post '/' => "campos#create", as: "crear"
+      delete "(:id)", to: "campos#destroy", as: "eliminar"
+      post "/" => "campos#create", as: "crear"
     end
   end
 
   resources :opcionescs, only: [], param: :index do
     member do
-      delete '(:id)', to: "opcionescs#destroy", as: "eliminar"
-      post '/' => "opcionescs#create", as: "crear"
+      delete "(:id)", to: "opcionescs#destroy", as: "eliminar"
+      post "/" => "opcionescs#create", as: "crear"
     end
   end
 

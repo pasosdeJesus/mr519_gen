@@ -21,10 +21,9 @@ require "mr519_gen"
 
 module Dummy
   class Application < Rails::Application
+    config.load_defaults(Rails::VERSION::STRING.to_f)
 
-    config.load_defaults Rails::VERSION::STRING.to_f
-
-    config.autoload_lib(ignore: %w(assets tasks))
+    config.autoload_lib(ignore: ["assets", "tasks"])
 
     # Las configuraciones en config/environments/* tiene precedencia sobre
     # las especificadas aquí.
@@ -45,10 +44,10 @@ module Dummy
     config.i18n.default_locale = :es
 
     config.railties_order = [
-      :main_app, 
-      Mr519Gen::Engine, 
-      Msip::Engine, 
-      :all
+      :main_app,
+      Mr519Gen::Engine,
+      Msip::Engine,
+      :all,
     ]
 
     config.colorize_logging = true
@@ -60,7 +59,7 @@ module Dummy
       ENV.fetch("CONFIG_HOSTS", "defensor.info").downcase.split(";"),
     )
 
-    config.relative_url_root = ENV.fetch('RUTA_RELATIVA', '/msip')
+    config.relative_url_root = ENV.fetch("RUTA_RELATIVA", "/msip")
 
     # msip
     config.x.formato_fecha = ENV.fetch("MSIP_FORMATO_FECHA", "dd/M/yyyy")

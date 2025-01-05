@@ -66,12 +66,11 @@ module Mr519Gen
     module_function :nombre_a_nombreinterno
 
     # resps es una serie de registros con asociación respuestafor a
-    # Mr519::Respuestafor para una
-    # mismo formulario
+    # Mr519::Respuestafor para un mismo formulario
     def analiza_respuestas(respuestafor_ids, titulo, consolidado, _menserr)
       resps = Mr519Gen::Respuestafor.where(id: respuestafor_ids)
       if resps.count == 0
-        menserr = "No hay encuestas respondidas"
+        _menserr << "No hay encuestas respondidas"
         return false
       end
       titulo << "Resultados de encuesta: " +
@@ -156,11 +155,11 @@ module Mr519Gen
     # Dado un objeto que puede tener varios respuestafor  y un formulario_id
     # y un campo_id retorna el valor del campo en el formulario o nil
     def presenta_valor(objeto, formulario_id, campo_id)
-      rf = objeto.respuestafor.where(formulario_id: formulario_id).take
-      return nil unless rf
+      rf = objeto.respuestafor.find_by(formulario_id: formulario_id)
+      return unless rf
 
-      vc = rf.valorcampo.where(campo_id: campo_id).take
-      return nil unless vc
+      vc = rf.valorcampo.find_by(campo_id: campo_id)
+      return unless vc
 
       vc.presenta_valor(false)
     end

@@ -70,4 +70,4 @@ module Mr519Gen
       end
     end # def initialize_jn316_gen
   end # class
-end  # module
+end # module
