@@ -5,6 +5,8 @@ gemspec
 
 gem 'babel-transpiler'
 
+gem "bigdecimal"
+
 gem 'cancancan'                   # Control de acceso
 
 gem "cocoon", git: "https://github.com/vtamara/cocoon.git",
@@ -16,10 +18,14 @@ gem 'devise'   # Autenticación
 
 gem 'devise-i18n'
 
+gem "drb"
+
 gem 'jsbundling-rails'
 
 gem 'kt-paperclip',                 # Anexos
   git: 'https://github.com/kreeti/kt-paperclip.git'
+
+gem "mutex_m"
 
 gem 'nokogiri', '>=1.11.1'
 
