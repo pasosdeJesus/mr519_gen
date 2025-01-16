@@ -14,6 +14,8 @@ gem "cocoon", git: "https://github.com/vtamara/cocoon.git",
 
 gem 'coffee-rails'
 
+gem "concurrent-ruby", "1.3.4" #https://stackoverflow.com/questions/79360526/uninitialized-constant-activesupportloggerthreadsafelevellogger-nameerror
+
 gem 'devise'   # Autenticación
 
 gem 'devise-i18n'
