@@ -1,10 +1,9 @@
-<%= simple_form_for @formulario do |form| %>
+<%= fields model: @formulario do |form| %>
   <%= form.simple_fields_for :campo, child_index: params[:index_campo]  do |subf| %>
-    <%= subf.simple_fields_for :opcioncs do |opf| %>
+    <%= subf.simple_fields_for :opcioncs, child_index: params[:index] do |opf| %>
       <%= turbo_frame_tag "opcioncs_#{params[:index_campo]}_#{params[:index]}" do %>
-        <% opf.object = Mr519Gen::Opcioncs.find(params[:id]) %>
         <%= opf.hidden_field :id, value: params[:id] %> 
-        <%= opf.hidden_field :_destroy, value: 1 %> 
+        <%= opf.hidden_field :_destroy, value: true %> 
       <% end %>
     <% end %>
   <% end %>
