@@ -4242,6 +4242,10 @@ ALTER TABLE ONLY public.msip_ubicacion
 SET search_path TO "$user", public;
 
 INSERT INTO "schema_migrations" (version) VALUES
+('20250128142614'),
+('20250128092632'),
+('20250126220001'),
+('20250124170451'),
 ('20241113141404'),
 ('20240723152453'),
 ('20240723140427'),

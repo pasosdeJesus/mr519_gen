@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/kreeti/kt-paperclip.git
-  revision: 26139d89d34bcfefae0e9c724c4573a8fae089ab
+  revision: 83dc8d92e63e4c360bb9f45af1cf3b63d99bed54
   specs:
     kt-paperclip (7.2.2)
       activemodel (>= 4.2.0)
@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/msip.git
-  revision: c948e3fcddf8e55df60cc80c67c6b4b3238340b2
+  revision: 90af35902c9d86c4a52241d6cf25bf97d58a8fdd
   branch: main
   specs:
     msip (2.3.0.alfa3)
@@ -233,7 +233,7 @@ GEM
     psych (5.2.2)
       date
       stringio
-    puma (6.5.0)
+    puma (6.6.0)
       nio4r (~> 2.0)
     racc (1.8.1)
     rack (3.1.8)
@@ -312,7 +312,7 @@ GEM
     rubocop-minitest (0.36.0)
       rubocop (>= 1.61, < 2.0)
       rubocop-ast (>= 1.31.1, < 2.0)
-    rubocop-rails (2.29.0)
+    rubocop-rails (2.29.1)
       activesupport (>= 4.2.0)
       rack (>= 1.1)
       rubocop (>= 1.52.0, < 2.0)
