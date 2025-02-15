@@ -36,7 +36,7 @@ export default class Mr519__EditaFormulario {
             '_fila').value
           let vancho = +document.querySelector('#formulario_campo_attributes_' + 
             idc + '_ancho').value
-          let vnombre = msip_escapaHtml(
+          let vnombre = msip_escaparHtml(
             document.querySelector('#formulario_campo_attributes_' + 
               idc + '_nombre').value
           )
