@@ -2,19 +2,19 @@
   <div class="nested-fields opcioncs">
     <%= f.input :id, as: :hidden %>
     <div class="div-tabla-celda">
-      <%= f.input :nombre, 
+      <%= f.input(:nombre, 
         label: false,
-        placeholder: 'Nombre'
+        placeholder: "Nombre")
       %>
     </div>
     <div class="div-tabla-celda">
-      <%= f.input :valor, 
+      <%= f.input(:valor, 
         label: false,
-        placeholder: 'Valor'
+        placeholder: "Valor")
       %>
     </div>
     <div class="div-tabla-celda">
-      <%= f.submit "Eliminar",
+      <%= f.submit("Eliminar",
         formaction: mr519_gen.eliminar_opcioncs_path(
           id: f.object.id, 
           index: f.index,
@@ -22,11 +22,11 @@
         ),
         formmethod: :delete,
         formnovalidate: true,
-        class: 'btn btn-sm btn-danger',
+        class: "btn btn-sm btn-danger",
         data: {
           turbo_frame: "opcioncs_#{subf.index}_#{f.index}",
           disable_with: false
-        } %>
+        }) %>
       <div><%= f.error_notification %></div>
     </div>
   </div>

@@ -1,12 +1,12 @@
-<%= f.input :busformulario,
-  collection: ::Mr519Gen::Formulario.all,
+<%= f.input(:busformulario,
+  collection: Mr519Gen::Formulario.all,
   include_blank: true,
-  label_method: :presenta_nombre,
-  value_method: :id,
-  label: false,
-  selected: Msip::ModeloHelper.poromision(params, :busformulario),
   input_html: {
-    class: 'tom-select',
-    'data-enviarautomatico' => ''
-  }
+    class: "tom-select",
+    "data-enviarautomatico" => ""
+  },
+  label: false,
+  label_method: :presenta_nombre,
+  selected: Msip::ModeloHelper.poromision(params, :busformulario),
+  value_method: :id)
 %>

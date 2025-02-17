@@ -76,19 +76,19 @@
   <div class="div-tabla-celda">
     <%= f.input :fila, label: false %>
     <%= f.input :columna, label: false %>
-    <%= f.input :ancho, label: false %>
+    <%= f.input(:ancho, label: false) %>
   </div>
   <div class="div-tabla-celda">
-    <%= f.input :id, as: :hidden %>
-    <%= f.submit "Eliminar",
+    <%= f.input(:id, as: :hidden) %>
+    <%= f.submit("Eliminar",
       formaction: eliminar_campo_path(id: f.object.id, index: f.index),
       formmethod: :delete,
       formnovalidate: true,
-      class: 'btn btn-sm btn-danger',
+      class: "btn btn-sm btn-danger",
       data: {
         turbo_frame: "campo_#{f.index}",
         disable_with: false
-      } %>
+      }) %>
     <div><%= f.error_notification %></div>
   </div>
 <% end %>

@@ -1,15 +1,15 @@
 <% if can?(:edit, registro) %>
-  <%= link_to t('.responder', :default => t("helpers.links.responder")),
-    edit_modelo_path(registro), "data-turbo": false, :class => 'btn btn-sm' %>
+  <%= link_to t(".responder", default: t("helpers.links.responder")),
+    edit_modelo_path(registro), "data-turbo": false, class: "btn btn-sm" %>
 <% end %>
 <% if can?(:resultado, registro) %>
-  <%= link_to t('.ver_resultado', :default => t("helpers.links.ver_resultado")),
+  <%= link_to t(".ver_resultado", default: t("helpers.links.ver_resultado")),
     resultadosencuestausuario_path(registro), 
-    :class => 'btn btn-sm' %>
+    class: "btn btn-sm" %>
 <% end %>
 
-<%= render partial: 'index_mas_acciones', locals: {f: f, registro: registro} %>
+<%= render partial: "index_mas_acciones", locals: { f: f, registro: registro } %>
 <% if can?(:destroy, registro) %>
-  <%= render partial: 'boton_eliminar',
-    locals: {registro: registro, mas_clases: 'btn-sm'} %>
+  <%= render partial: "boton_eliminar",
+    locals: { registro: registro, mas_clases: "btn-sm" } %>
 <% end %>

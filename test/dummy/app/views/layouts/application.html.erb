@@ -53,14 +53,15 @@
           <%= opcion_menu 'Tablas básicas', msip.tablasbasicas_path, 
             desplegable: true %>
         <% end %>
-        <%= opcion_menu 'Ayuda CA', msip.ayuda_controldeacceso_path, 
+        <%= opcion_menu "Ayuda CA", 
+msip.ayuda_controldeacceso_path, 
           desplegable: true %>
       <% end %>
       <%= opcion_menu "Salir #{current_usuario.nusuario}", 
           main_app.sign_out_path %>
     <% else %>
-      <%= opcion_menu 'Ayuda CA', msip.ayuda_controldeacceso_path %>
-      <%= opcion_menu 'Iniciar Sesión', 
+      <%= opcion_menu "Ayuda CA", msip.ayuda_controldeacceso_path %>
+      <%= opcion_menu "Iniciar Sesión", 
         main_app.new_usuario_session_path %>
     <% end %>
   <% end %>

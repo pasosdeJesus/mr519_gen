@@ -1,21 +1,21 @@
 <%= simple_form_for @formulario do |f| %>
   <%= f.simple_fields_for :campo,
     child_index: params[:index] do |subf| %>
-    <%= turbo_stream.replace "agregar-campo" do %>
-      <%= f.submit "Agregar campo",
+    <%= turbo_stream.replace("agregar-campo") do %>
+      <%= f.submit("Agregar campo",
         formaction: mr519_gen.crear_campo_path(
           subf.index.to_i + 1
         ),
         formmethod: :post,
         formnovalidate: true,
-        class: 'btn btn-sm btn-primary',
+        class: "btn btn-sm btn-primary",
         id: "agregar-campo",
         data:  {
             disable_with: false
-        } %>
+        }) %>
     <% end %>
 
-    <%= turbo_stream.append "campos_marco" do %>
+    <%= turbo_stream.append("campos_marco") do %>
       <%= render "/mr519_gen/formularios/fila_campos", f: subf %>
     <% end %>
   <% end %>

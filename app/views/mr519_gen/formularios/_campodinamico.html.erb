@@ -108,16 +108,16 @@
   <% end %>
 
 <% when Mr519Gen::ApplicationHelper::TEXTO %>
-  <%= v.input :valor,
+  <%= v.input(:valor,
     label: etiqueta, 
-    input_html: ihtml
+    input_html: ihtml)
   %>
 <% when Mr519Gen::ApplicationHelper::TEXTOLARGO %>
-  <% ihtml.merge!({ rows: 5}) %>
-  <%= v.input :valor,
+  <% ihtml.merge!({ rows: 5 }) %>
+  <%= v.input(:valor,
     label: etiqueta, 
     as: :text,
-    input_html: ihtml
+    input_html: ihtml)
   %>
 
 <% else %>

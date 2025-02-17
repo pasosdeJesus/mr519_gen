@@ -6,7 +6,7 @@
     f.object.valorcampo.joins(:campo).
     order('mr519_gen_campo.fila', 'mr519_gen_campo.columna') do |v| %>
     <% campo = v.object.campo %>
-    <% fila = (campo.fila && campo.fila > 0) ? campo.fila : ultfila + 1 %>
+    <% fila = campo.fila && campo.fila > 0 ? campo.fila : ultfila + 1 %>
     <% while ultfila < fila - 1 %>
       <div class="row"><div class="col-md-12">   </div></div>
       <% ultfila += 1 %>
@@ -21,15 +21,15 @@
       <% proxcol = 1 %> 
       <% ultfila = fila %>
     <% end %>
-    <% cl = '' %>
+    <% cl = "" %>
     <% columna = campo.columna || 1 %>
     <% ancho = campo.ancho || 12 %>
     <% cl += " offset-md-#{columna - proxcol}" %>
     <% cl += " col-md-#{ancho}" %>
     <% proxcol = columna + ancho %>
     <div class="<%= cl %>">
-      <%= render partial: 'mr519_gen/formularios/valorcampo_campos', 
-        locals: { f: f, v: v} %>
+      <%= render partial: "mr519_gen/formularios/valorcampo_campos", 
+        locals: { f: f, v: v } %>
     </div>
   <% end %>
   <% if divabierto %>

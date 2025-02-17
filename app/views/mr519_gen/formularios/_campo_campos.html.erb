@@ -24,28 +24,28 @@
               <%= t('Fila') %> <br> <%= t('Columna') %> <br> <%= t('Ancho') %>
             </div>
             <div class="div-tabla-celda-encabezado">
-              <%= t('Acciones') %>
+              <%= t("Acciones") %>
             </div>
           </div>
-          <%= f.simple_fields_for :campo, 
-            f.object.campo.order(:fila, :columna, :id) do |subf| %>
-            <%= render partial: 'fila_campos', 
-              locals: { f:  subf } %>
+          <%= f.simple_fields_for(:campo, 
+            f.object.campo.order(:fila, :columna, :id)) do |subf| %>
+            <%= render partial: "fila_campos", 
+              locals: { f: subf } %>
           <% end %>
         </div>
       </div>
       <div class='enlace-agregar-campo'>
-        <%= f.submit "Agregar campo", 
+        <%= f.submit("Agregar campo", 
           formaction: mr519_gen.crear_campo_path(
             index: @registro.campo.size
           ),
           formmethod: :post,
           formnovalidate: true,
-          class: 'btn btn-sm btn-primary',
+          class: "btn btn-sm btn-primary",
           name: "agregar-campo",
           id: "agregar-campo",
           data:  {
-            disable_with: false } %> 
+            disable_with: false }) %> 
       </div> <!-- enlace-agregar-campo -->
     </div> <!-- .div-campos -->
   </div><!-- panel-body -->

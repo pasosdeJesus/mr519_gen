@@ -26,7 +26,7 @@
     no tiene planencuesta
   <% end %>
 </p>
-<% if current_usuario  && can?(:read, @registro) %>
+<% if current_usuario && can?(:read, @registro) %>
   <p>
   <% if @registro.respond_to?(:fechainv) %>
     Encuesta enviada el <%= @registro.fechainv %> a <%= @registro.destcorreoinv %> con confirmación <%= @registro.evidenciacorreoinv %>

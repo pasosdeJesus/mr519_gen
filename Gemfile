@@ -73,6 +73,8 @@ group :development, :test do
 
   gem "rails-erd"
 
+  gem "rubocop-erb"
+
   gem "rubocop-minitest"
 
   gem "rubocop-rails"

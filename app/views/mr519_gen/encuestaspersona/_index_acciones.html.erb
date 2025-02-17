@@ -1,9 +1,9 @@
 <% if can?(:edit, registro) %>
-  <%= render partial: 'boton_editar',
-    locals: {registro: registro, mas_clases: 'btn-sm'} %>
+  <%= render partial: "boton_editar",
+    locals: { registro: registro, mas_clases: "btn-sm" } %>
 <% end %>
-<%= render partial: 'index_mas_acciones', locals: {f: f, registro: registro} %>
+<%= render partial: "index_mas_acciones", locals: { f: f, registro: registro } %>
 <% if can?(:destroy, registro) %>
-  <%= render partial: 'boton_eliminar',
-    locals: {registro: registro, mas_clases: 'btn-sm'} %>
+  <%= render partial: "boton_eliminar",
+    locals: { registro: registro, mas_clases: "btn-sm" } %>
 <% end %>

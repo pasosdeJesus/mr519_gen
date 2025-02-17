@@ -1,10 +1,10 @@
 <% if can? :manage, Mr519Gen::Encuestausuario %>
-  <%= f.input :fechaini,
-    input_html: { },
-    :as => :string
+  <%= f.input(:fechaini,
+    input_html: {},
+    as: :string)
   %>
 <% else %>
-  <%= f.input :fechaini,
-    input_html: { readonly: 'readonly' }
+  <%= f.input(:fechaini,
+    input_html: { readonly: "readonly" })
   %>
 <% end %>

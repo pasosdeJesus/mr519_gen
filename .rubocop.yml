@@ -1,4 +1,7 @@
 require:
+  - rubocop-erb
+
+plugins:
   - rubocop-minitest
   - rubocop-rails
 

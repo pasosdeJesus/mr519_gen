@@ -1,15 +1,15 @@
 <% if can?(:manage, Mr519Gen::Formulario) %>
-  <%= f.input :formulario_id,
-    collection: Mr519Gen::Formulario.all ,
+  <%= f.input(:formulario_id,
+    collection: Mr519Gen::Formulario.all,
     label_method: :presenta_nombre,
     value_method: :id,
     selected: f.object.formulario.nil? ? nil : f.object.formulario.id,
     input_html: { 
-      class: 'tom-select'
-    } %>
+      class: "tom-select"
+    }) %>
 <% else %>
   <% if can?(:update, Mr519Gen::Encuestausuario) || 
       (f.object && can?(:update, f.object)) %>
-    <%= render partial: 'campo_respuestafor', locals: {f: f} %>
+    <%= render partial: "campo_respuestafor", locals: { f: f } %>
   <% end %>
 <% end %>
