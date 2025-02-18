@@ -29,7 +29,7 @@
       <hr>
       <div class="div-tabla">
         <% index_campo = f.index %>
-        <div id=<%= "campo_#{index_campo}_opcioncs_marco" %> class="panel-body table responsive" >
+        <div id="<%= "campo_#{index_campo}_opcioncs_marco" %>" class="panel-body table responsive" >
           <%= f.simple_fields_for :opcioncs, 
             child_index: params[:index] do |opf| %>
             <%= render "mr519_gen/formularios/fila_opcionescs", 
