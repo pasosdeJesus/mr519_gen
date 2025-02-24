@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/msip.git
-  revision: 294fbfdbe826628f45a17a1caadd3033c5a7f30b
+  revision: 87affe27de0eae4f8c0c3221f300007fe3850060
   branch: main
   specs:
     msip (2.3.0.alfa4)
@@ -379,7 +379,7 @@ GEM
       actionpack (>= 6.0.0)
       activejob (>= 6.0.0)
       railties (>= 6.0.0)
-    twitter_cldr (6.13.0)
+    twitter_cldr (6.14.0)
       base64
       camertron-eprun
       cldr-plurals-runtime-rb (~> 1.1)
@@ -461,4 +461,4 @@ DEPENDENCIES
   will_paginate
 
 BUNDLED WITH
-   2.6.4
+   2.6.5
