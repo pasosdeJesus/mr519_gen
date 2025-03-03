@@ -13,8 +13,6 @@ module Mr519Gen
           def destroy
           end
 
-          def update
-          end
 
           private
 

@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/msip.git
-  revision: ab4f1a4276a649f97b8f107b5b7003fba3514e8e
+  revision: 9168e4cd45479cfc61737e3ec4ce143bc169e81c
   branch: main
   specs:
     msip (2.3.0.alfa4)
@@ -329,7 +329,7 @@ GEM
       lint_roller (~> 1.1)
       rubocop (>= 1.72.1, < 2.0)
       rubocop-ast (>= 1.38.0, < 2.0)
-    rubocop-rails (2.30.2)
+    rubocop-rails (2.30.3)
       activesupport (>= 4.2.0)
       lint_roller (~> 1.1)
       rack (>= 1.1)
