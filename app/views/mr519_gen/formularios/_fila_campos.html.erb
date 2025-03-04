@@ -32,16 +32,20 @@
           <%= render 'mr519_gen/formularios/fila_opcionescs', f:  o %>
         <% end %>
       <% end %>
-      <div class="links-opcionescs">
-        <%= link_to_add_association t('Agregar opción'), f, :opcioncs, {
-          #:"data-association-insertion-node" => "tbody#opciones", 
-          #:"data-association-insertion-method" => "append", 
-          partial: 'mr519_gen/formularios/fila_opcionescs',
-          class: 'btn btn-sm btn-primary', 
-          "data-ajax" => mr519_gen.new_opcioncs_path,
-          "data-ajaxdata" => "formulario_campo_id" 
-        } %>
-      </div>
+      <% if f.object.id.nil? %>
+        Guardar y volver a editar para agregar opciones
+      <% else %>
+        <div class="links-opcionescs">
+          <%= link_to_add_association t('Agregar opción'), f, :opcioncs, {
+            #:"data-association-insertion-node" => "tbody#opciones", 
+            #:"data-association-insertion-method" => "append", 
+            partial: 'mr519_gen/formularios/fila_opcionescs',
+            class: 'btn btn-sm btn-primary', 
+            "data-ajax" => mr519_gen.new_opcioncs_path,
+            "data-ajaxdata" => "formulario_campo_id" 
+          } %>
+        </div>
+      <% end %>
     </div>
 
     <% clasetb = 'display: none' %>
