@@ -18,7 +18,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/msip.git
-  revision: 7121acdc058de0d3bb5ed6140499d1090941c973
+  revision: 3236799e07d3dec84bde58f4edefe2d607b4c937
   branch: v2.2
   specs:
     msip (2.2.0.beta8)
@@ -175,8 +175,9 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
-    devise-i18n (1.12.1)
+    devise-i18n (1.13.0)
       devise (>= 4.9.0)
+      rails-i18n
     docile (1.4.1)
     dotenv (3.1.7)
     dotenv-rails (3.1.7)
@@ -351,14 +352,14 @@ GEM
       lint_roller (~> 1.1)
       rubocop (>= 1.72.1, < 2.0)
       rubocop-ast (>= 1.38.0, < 2.0)
-    rubocop-rails (2.30.2)
+    rubocop-rails (2.30.3)
       activesupport (>= 4.2.0)
       lint_roller (~> 1.1)
       rack (>= 1.1)
       rubocop (>= 1.72.1, < 2.0)
       rubocop-ast (>= 1.38.0, < 2.0)
-    rubocop-shopify (2.15.1)
-      rubocop (~> 1.51)
+    rubocop-shopify (2.16.0)
+      rubocop (~> 1.62)
     ruby-graphviz (1.2.5)
       rexml
     ruby-progressbar (1.13.0)
