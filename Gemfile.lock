@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/msip.git
-  revision: 4d5c248f89e9fc3c130c83aafcc777a7fcd55dab
+  revision: 24f05fb0d04e40a4f3af51b14a7c780c474047d7
   branch: rails8
   specs:
     msip (2.3.0.alfa4)
@@ -108,7 +108,7 @@ GEM
       securerandom (>= 0.3)
       tzinfo (~> 2.0, >= 2.0.5)
       uri (>= 0.13.1)
-    ast (2.4.2)
+    ast (2.4.3)
     base64 (0.2.0)
     bcrypt (3.1.20)
     benchmark (0.4.0)
@@ -173,10 +173,10 @@ GEM
       reline (>= 0.4.2)
     jsbundling-rails (1.3.1)
       railties (>= 6.0.0)
-    json (2.10.1)
+    json (2.10.2)
     language_server-protocol (3.17.0.4)
     lint_roller (1.1.0)
-    logger (1.6.6)
+    logger (1.7.0)
     loofah (2.24.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
@@ -186,13 +186,13 @@ GEM
       net-pop
       net-smtp
     marcel (1.0.4)
-    mime-types (3.6.0)
+    mime-types (3.6.2)
       logger
       mime-types-data (~> 3.2015)
-    mime-types-data (3.2025.0204)
+    mime-types-data (3.2025.0325)
     mini_mime (1.1.5)
     mini_portile2 (2.8.8)
-    minitest (5.25.4)
+    minitest (5.25.5)
     msgpack (1.8.0)
     net-imap (0.5.6)
       date
@@ -204,34 +204,35 @@ GEM
     net-smtp (0.5.1)
       net-protocol
     nio4r (2.7.4)
-    nokogiri (1.18.6)
+    nokogiri (1.18.7)
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
-    nokogiri (1.18.6-aarch64-linux-gnu)
+    nokogiri (1.18.7-aarch64-linux-gnu)
       racc (~> 1.4)
-    nokogiri (1.18.6-aarch64-linux-musl)
+    nokogiri (1.18.7-aarch64-linux-musl)
       racc (~> 1.4)
-    nokogiri (1.18.6-arm-linux-gnu)
+    nokogiri (1.18.7-arm-linux-gnu)
       racc (~> 1.4)
-    nokogiri (1.18.6-arm-linux-musl)
+    nokogiri (1.18.7-arm-linux-musl)
       racc (~> 1.4)
-    nokogiri (1.18.6-arm64-darwin)
+    nokogiri (1.18.7-arm64-darwin)
       racc (~> 1.4)
-    nokogiri (1.18.6-x86_64-darwin)
+    nokogiri (1.18.7-x86_64-darwin)
       racc (~> 1.4)
-    nokogiri (1.18.6-x86_64-linux-gnu)
+    nokogiri (1.18.7-x86_64-linux-gnu)
       racc (~> 1.4)
-    nokogiri (1.18.6-x86_64-linux-musl)
+    nokogiri (1.18.7-x86_64-linux-musl)
       racc (~> 1.4)
     orm_adapter (0.5.0)
     parallel (1.26.3)
-    parser (3.3.7.1)
+    parser (3.3.7.4)
       ast (~> 2.4.1)
       racc
     pg (1.5.9)
     pp (0.6.2)
       prettyprint
     prettyprint (0.2.0)
+    prism (1.4.0)
     propshaft (1.1.0)
       actionpack (>= 7.0.0)
       activesupport (>= 7.0.0)
@@ -243,7 +244,7 @@ GEM
     puma (6.6.0)
       nio4r (~> 2.0)
     racc (1.8.1)
-    rack (3.1.10)
+    rack (3.1.12)
     rack-session (2.1.0)
       base64 (>= 0.1.0)
       rack (>= 3.0.0)
@@ -294,7 +295,7 @@ GEM
       zeitwerk (~> 2.6)
     rainbow (3.1.1)
     rake (13.2.1)
-    rdoc (6.12.0)
+    rdoc (6.13.1)
       psych (>= 4.0.0)
     redcarpet (3.6.1)
     regexp_parser (2.10.0)
@@ -304,7 +305,7 @@ GEM
       actionpack (>= 5.2)
       railties (>= 5.2)
     rexml (3.4.1)
-    rubocop (1.72.1)
+    rubocop (1.75.1)
       json (~> 2.3)
       language_server-protocol (~> 3.17.0.2)
       lint_roller (~> 1.1.0)
@@ -312,23 +313,24 @@ GEM
       parser (>= 3.3.0.2)
       rainbow (>= 2.2.2, < 4.0)
       regexp_parser (>= 2.9.3, < 3.0)
-      rubocop-ast (>= 1.38.0, < 2.0)
+      rubocop-ast (>= 1.43.0, < 2.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 2.4.0, < 4.0)
-    rubocop-ast (1.38.0)
-      parser (>= 3.3.1.0)
+    rubocop-ast (1.43.0)
+      parser (>= 3.3.7.2)
+      prism (~> 1.4)
     rubocop-erb (0.5.5)
       better_html
       rubocop (~> 1.45)
-    rubocop-minitest (0.37.1)
+    rubocop-minitest (0.38.0)
       lint_roller (~> 1.1)
-      rubocop (>= 1.72.1, < 2.0)
+      rubocop (>= 1.75.0, < 2.0)
       rubocop-ast (>= 1.38.0, < 2.0)
-    rubocop-rails (2.30.3)
+    rubocop-rails (2.31.0)
       activesupport (>= 4.2.0)
       lint_roller (~> 1.1)
       rack (>= 1.1)
-      rubocop (>= 1.72.1, < 2.0)
+      rubocop (>= 1.75.0, < 2.0)
       rubocop-ast (>= 1.38.0, < 2.0)
     rubocop-shopify (2.16.0)
       rubocop (~> 1.62)
@@ -349,8 +351,8 @@ GEM
     spring (4.3.0)
     stimulus-rails (1.3.4)
       railties (>= 6.0.0)
-    stringio (3.1.3)
-    terrapin (1.0.1)
+    stringio (3.1.6)
+    terrapin (1.1.0)
       climate_control
     thor (1.3.2)
     timeout (0.4.3)
@@ -382,22 +384,16 @@ GEM
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
     will_paginate (4.0.1)
-    zeitwerk (2.7.1)
+    zeitwerk (2.7.2)
 
 PLATFORMS
-  aarch64-linux
   aarch64-linux-gnu
   aarch64-linux-musl
-  arm-linux
   arm-linux-gnu
   arm-linux-musl
   arm64-darwin
   ruby
-  x86-linux
-  x86-linux-gnu
-  x86-linux-musl
   x86_64-darwin
-  x86_64-linux
   x86_64-linux-gnu
   x86_64-linux-musl
   x86_64-openbsd
