@@ -60,8 +60,8 @@ if (test "$SININS" != "1") then {
   } fi;
 
   if (test "$MSIP_API" != "1") then {
-    echo "\n== Enlaza controladores stimulus de motores =="
-    (cd $rutaap; bin/rails msip:stimulus_motores)
+    echo "\n== Enlaza controladores stimulus y hojas de estio de motores =="
+    (cd $rutaap; bin/rails msip:enlaces_motores)
     if (test "$?" != "0") then {
       exit 1;
     } fi;
