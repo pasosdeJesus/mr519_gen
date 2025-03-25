@@ -38,6 +38,4 @@ test/dummy/cobertura-sistema
 cobertura-unitarias
 .yardoc
 yard_doc
-test/dummy/app/assets/stylesheets/actiontext
-test/dummy/app/assets/stylesheets/mr519_gen
-test/dummy/app/assets/stylesheets/msip
+
