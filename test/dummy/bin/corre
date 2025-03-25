@@ -63,7 +63,7 @@ FileUtils.chdir(RAIZ_AP) do
     system! "CXX=c++ bin/yarn"
 
     puts "\n== Preparando base de datos =="
-    system! "RAILS_ENV=#{ENV["RAILS_ENV"]} bin/rails db:migrate"
+    system! "RAILS_ENV=#{ENV["RAILS_ENV"]} bin/rails db:prepare"
 
     puts "\n== Actualizando índices =="
     system!("RAILS_ENV=#{ENV["RAILS_ENV"]} bin/rails msip:indices")
@@ -79,7 +79,7 @@ FileUtils.chdir(RAIZ_AP) do
     system! "rm -rf app/assets/builds/*"
 
     puts "\n== Enlaza controladores stimulus de motores =="
-    system! "bin/rails msip:enlaces_motores"
+    system! "bin/rails msip:stimulus_motores"
 
     puts "\n== Crea recursos CSS y Javascript =="
     system! "RAILS_ENV=#{ENV["RAILS_ENV"]} bin/rails assets:precompile --trace"
@@ -97,7 +97,8 @@ FileUtils.chdir(RAIZ_AP) do
         ord += "CONFIG_HOSTS=\"#{ENV["CONFIG_HOSTS"].downcase}\" "
       end
       ord += "RAILS_RELATIVE_URL_ROOT='' "
-      ord += "bin/rails s "
+      ord += "ruby --yjit bin/rails s "
+      # ord += "ruby bin/rails s "
       if ENV["PUERTODES"] != ""
         ord += "-p #{ENV["PUERTODES"]} "
       end
@@ -113,7 +114,8 @@ FileUtils.chdir(RAIZ_AP) do
       exit 1
     end
     puts "\n== Ejecutando en modo producción =="
-    ord = "doas rcctl -d start #{ENV["RC"]}"
+    ord = "doas sh /etc/rc.d/#{ENV["RC"]} -d start"
   end
+  puts ord
   system!(ord)
 end
