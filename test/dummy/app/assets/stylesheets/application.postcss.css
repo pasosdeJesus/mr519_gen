@@ -13,10 +13,8 @@
 
 @import "gridstack/dist/gridstack.min.css";
 @import "gridstack/dist/gridstack-extra.min.css";
-
-@import 'msip/propio.css';
-
-@import 'mr519_gen/propio.css';
+@import 'msip/motor.css';
+@import 'mr519_gen/motor.css';
 
 
 $fa-font-path:        "@fortawesome/fontawesome-free/webfonts/";
