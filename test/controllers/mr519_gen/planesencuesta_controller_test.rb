@@ -11,6 +11,8 @@ module Mr519Gen
     setup do
       raise "CONFIG_HOSTS debe ser www.example.com" if ENV["CONFIG_HOSTS"] != "www.example.com"
 
+
+      Rails.application.try(:reload_routes_unless_loaded)
       Rails.application.config.x.formato_fecha = "dd/M/yyyy"
 
       @current_usuario = ::Usuario.find(1)
