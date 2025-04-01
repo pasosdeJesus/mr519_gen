@@ -9,6 +9,8 @@ gem "bootsnap"
 
 gem "cancancan" # Control de acceso
 
+gem "cssbundling-rails"
+
 gem "devise" # Autenticación
 
 gem "devise-i18n"
@@ -20,18 +22,18 @@ gem "kt-paperclip", # Anexos
 
 gem "nokogiri", ">=1.11.1"
 
-gem "rails", "~> 7.2"
-# git: 'https://github.com/rails/rails.git', branch: '6-1-stable'
+gem "pg"
+
+gem "propshaft"
 
 gem "rails-i18n"
 
+gem "rails", "~> 8.0"
+# git: 'https://github.com/rails/rails.git', branch: '6-1-stable'
+
 gem "redcarpet" # Descripciones en heb412_gen
 
-gem "sassc-rails"
-
 gem "simple_form" # Formularios
-
-gem "sprockets-rails"
 
 gem "stimulus-rails"
 
