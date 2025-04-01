@@ -37,7 +37,7 @@ gem "simple_form" # Formularios
 
 gem "stimulus-rails"
 
-gem "turbo-rails", "~> 1.0"
+gem "turbo-rails"
 
 gem "twitter_cldr" # Localiación e internacionalización
 
@@ -48,8 +48,8 @@ gem "will_paginate" # Pagina listados
 # lógico y no alfabetico como las gemas anteriores)
 
 gem "msip", # Motor generico
-  git: "https://gitlab.com/pasosdeJesus/msip.git", branch: "rails8"
-  #path: "../msip-rails8"
+  git: "https://gitlab.com/pasosdeJesus/msip.git", branch: "main"
+  #path: "../msip"
 
 group :development do
   gem "puma"

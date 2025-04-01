@@ -11,8 +11,8 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/msip.git
-  revision: 24f05fb0d04e40a4f3af51b14a7c780c474047d7
-  branch: rails8
+  revision: 9bcb21704d8612652695bdeed5274ba0c624030f
+  branch: main
   specs:
     msip (2.3.0.alfa4)
       cancancan (~> 3)
@@ -356,10 +356,9 @@ GEM
       climate_control
     thor (1.3.2)
     timeout (0.4.3)
-    turbo-rails (1.5.0)
-      actionpack (>= 6.0.0)
-      activejob (>= 6.0.0)
-      railties (>= 6.0.0)
+    turbo-rails (2.0.13)
+      actionpack (>= 7.1.0)
+      railties (>= 7.1.0)
     twitter_cldr (6.14.0)
       base64
       camertron-eprun
@@ -431,7 +430,7 @@ DEPENDENCIES
   simplecov
   spring
   stimulus-rails
-  turbo-rails (~> 1.0)
+  turbo-rails
   twitter_cldr
   web-console
   will_paginate
