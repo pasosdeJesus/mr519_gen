@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: fe89fd8ae0218ba3f6c815c664ed911178889d42
+  revision: c5a093eecdcb5110532dcda5b41f2e24bb436bba
   branch: v2.1
   specs:
     sip (2.1.0.beta1)
@@ -160,9 +160,9 @@ GEM
       devise (>= 4.9.0)
       rails-i18n
     docile (1.4.1)
-    dotenv (3.1.7)
-    dotenv-rails (3.1.7)
-      dotenv (= 3.1.7)
+    dotenv (3.1.8)
+    dotenv-rails (3.1.8)
+      dotenv (= 3.1.8)
       railties (>= 6.1)
     drb (2.2.1)
     erubi (1.13.1)
@@ -200,7 +200,7 @@ GEM
     mime-types (3.6.2)
       logger
       mime-types-data (~> 3.2015)
-    mime-types-data (3.2025.0402)
+    mime-types-data (3.2025.0408)
     mini_mime (1.1.5)
     mini_portile2 (2.8.8)
     minitest (5.25.5)
@@ -374,4 +374,4 @@ DEPENDENCIES
   will_paginate
 
 BUNDLED WITH
-   2.6.7
+   2.6.8
