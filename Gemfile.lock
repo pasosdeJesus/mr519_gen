@@ -39,7 +39,7 @@ GIT
 PATH
   remote: .
   specs:
-    mr519_gen (2.2.0.beta8)
+    mr519_gen (2.2.0)
       msip
       rails
 
@@ -488,4 +488,4 @@ DEPENDENCIES
   will_paginate
 
 BUNDLED WITH
-   2.6.8
+   2.6.9

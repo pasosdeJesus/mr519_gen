@@ -5,14 +5,14 @@ require "mr519_gen/version"
 Msip.setup do |config|
   config.ruta_anexos = ENV.fetch(
     "MSIP_RUTA_ANEXOS",
-    "#{Rails.root}/archivos/anexos",
+    "#{Rails.root.join("archivos/anexos")}",
   )
   config.ruta_volcados = ENV.fetch(
     "MSIP_RUTA_VOLCADOS",
-    "#{Rails.root}/archivos/bd",
+    "#{Rails.root.join("archivos/bd")}",
   )
   # En heroku los anexos son super-temporales
-  config.ruta_anexos = "#{Rails.root}/tmp/" unless ENV["HEROKU_POSTGRESQL_GREEN_URL"].nil?
+  config.ruta_anexos = "#{Rails.root.join("tmp/")}" unless ENV["HEROKU_POSTGRESQL_GREEN_URL"].nil?
   config.titulo = "mr519_gen #{Mr519Gen::VERSION}"
   config.descripcion = "Motor para manejar formularios y encuestas"
   config.codigofuente = "https://gitlab.com/pasosdeJesus/mr519_gen"

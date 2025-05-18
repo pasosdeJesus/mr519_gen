@@ -29,7 +29,7 @@ module Mr519Gen
                 :fechainicio_localizada,
               ]
             end
-            r += [
+            r + [
               :formulario,
               :fechacambio_localizada,
               :fechafin_localizada,
@@ -38,12 +38,12 @@ module Mr519Gen
 
           def atributos_form
             r = atributos_show - [
-              :id, 
+              :id,
               :formulario,
               :fechaini_localizada,
               :fechainicio_localizada,
               :fechacambio_localizada,
-              :fechafin_localizada
+              :fechafin_localizada,
             ] + [
               :formulario_id,
               :fechaini,

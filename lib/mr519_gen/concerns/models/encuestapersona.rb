@@ -67,7 +67,7 @@ module Mr519Gen
 
           def fechacambio=(val)
             self.respuestafor = Mr519Gen::Respuestafor.new if respuestafor.nil?
-            respuestafor.fechacambio= val
+            respuestafor.fechacambio = val
           end
 
           attr_accessor :formulario_id

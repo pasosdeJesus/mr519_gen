@@ -7,7 +7,6 @@ module Mr519Gen
         extend ActiveSupport::Concern
 
         included do
-
           def destroy
           end
 
@@ -18,12 +17,11 @@ module Mr519Gen
 
           def preparar_campo_formulario
             @registro = @formulario = Mr519Gen::Formulario.new(
-              campo: [Mr519Gen::Campo.new])
+              campo: [Mr519Gen::Campo.new],
+            )
           end
         end # included
-
       end
     end
   end
 end
-

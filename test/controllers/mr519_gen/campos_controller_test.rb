@@ -8,7 +8,6 @@ module Mr519Gen
     include Devise::Test::IntegrationHelpers
 
     setup do
-
       raise "CONFIG_HOSTS debe ser www.example.com" if ENV["CONFIG_HOSTS"] != "www.example.com"
 
       Rails.application.config.x.formato_fecha = "yyyy-mm-dd"
@@ -29,10 +28,10 @@ module Mr519Gen
     test "debe mostrar nuevo" do
       skip
       assert_difference("Mr519Gen::Campo.count", +1) do
-      debugger
-        get crear_campo_url(index: 0) + "?formulario_id=#{@formulario.id}&index=0", 
+        debugger
+        get crear_campo_url(index: 0) + "?formulario_id=#{@formulario.id}&index=0",
           as: :json
-      debugger
+        debugger
 
         assert_response :success
       end
@@ -44,7 +43,8 @@ module Mr519Gen
         debugger
         delete eliminar_campo_url(@campo.id, 0), as: :json
 
-         debugger
+        debugger
+
         assert_response :success
       end
     end

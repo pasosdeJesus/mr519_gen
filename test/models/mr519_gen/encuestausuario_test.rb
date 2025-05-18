@@ -45,7 +45,7 @@ module Mr519Gen
       assert Mr519Gen::Encuestausuario.filtro_usuario(1)
       assert Mr519Gen::Encuestausuario.filtro_formulario(22)
 
-      assert e.formulario_id > 0
+      assert_operator e.formulario_id, :>, 0
       e.formulario_id = 1
 
       assert_equal 1, e.formulario_id
