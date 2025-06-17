@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/msip.git
-  revision: 4478d7d5208c83fff10ace14b38140eddcf2112b
+  revision: ab8aafb862e81fd33a5c268081f8bd14bfcb28c2
   branch: main
   specs:
     msip (2.3.0.alfa4)
@@ -143,7 +143,7 @@ GEM
     cssbundling-rails (1.4.3)
       railties (>= 6.0.0)
     date (3.4.1)
-    debug (1.10.0)
+    debug (1.11.0)
       irb (~> 1.10)
       reline (>= 0.3.8)
     devise (4.9.4)
@@ -333,7 +333,7 @@ GEM
       rack (>= 1.1)
       rubocop (>= 1.75.0, < 2.0)
       rubocop-ast (>= 1.44.0, < 2.0)
-    rubocop-shopify (2.17.0)
+    rubocop-shopify (2.17.1)
       rubocop (~> 1.62)
     ruby-graphviz (1.2.5)
       rexml
