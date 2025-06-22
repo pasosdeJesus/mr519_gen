@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/msip.git
-  revision: ab8aafb862e81fd33a5c268081f8bd14bfcb28c2
+  revision: 50400741f5749f3074b58b87c9b37d72c00654d9
   branch: main
   specs:
     msip (2.3.0.alfa4)
@@ -152,7 +152,7 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
-    devise-i18n (1.13.0)
+    devise-i18n (1.14.0)
       devise (>= 4.9.0)
       rails-i18n
     docile (1.4.1)
