@@ -58,7 +58,7 @@ test:
     - bin/rails assets:precompile
     - cd ../..
   script:
-    - NOPRUEBAJS=1 bin/regresion
+    - NOPRUEBAJS=1 bin/regresion.sh
     - export exit_code0=$?
   after_script:
     - if (test "${exit_code}" == "") then { exit_code=0; } fi; ./cc-test-reporter after-build -t simplecov --exit-code "${exit_code}" || true
