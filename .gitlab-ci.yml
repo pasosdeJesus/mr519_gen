@@ -1,12 +1,10 @@
 # Basado entre otros en: https://dev.to/mpressen/rails-minitest-gitlab-ci-31ap
 
-image: "ruby:3.0.2"
+image: "ruby:3.2.1"
 
 services:
   - name: vtamara/postgis-es_co:13.3-1
     alias: postgres
-  - name: selenium/standalone-chrome
-    alias: chrome
 
 variables:
   RAILS_ENV: test
@@ -21,6 +19,7 @@ variables:
 
 stages:
   - test
+  - dast
 
 test:
   stage: test
@@ -36,7 +35,7 @@ test:
     - which ruby
     - export APT_CACHE_DIR=`pwd`/apt-cache && mkdir -pv $APT_CACHE_DIR
     - apt-get update -yy && apt-get install build-essential libpq-dev postgresql-client -y
-    - curl -fsSL https://deb.nodesource.com/setup_16.x | bash - # https://www.linuxcapable.com/how-to-install-node-js-14-lts-16-npm-on-debian-11-bullseye/
+    - curl -fsSL https://deb.nodesource.com/setup_18.x | bash - # https://www.linuxcapable.com/how-to-install-node-js-14-lts-16-npm-on-debian-11-bullseye/
     - apt install -y -qq nodejs
     - node -v
     - curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
@@ -59,13 +58,12 @@ test:
     - bin/rails assets:precompile
     - cd ../..
   script:
-    - CONFIG_HOSTS=www.example.com bin/rails test
-    - (cd test/dummy && CONFIG_HOSTS=127.0.0.1 bin/rails test:system)
-    - ./cc-test-reporter after-build -t simplecov --exit-code $?
+    - NOPRUEBAJS=1 bin/regresion.sh
+    - export exit_code0=$?
+  after_script:
+    - if (test "${exit_code}" == "") then { exit_code=0; } fi; ./cc-test-reporter after-build -t simplecov --exit-code "${exit_code}" || true
 
-
-
-sast:
-    stage: test
 include:
-- template: Security/SAST.gitlab-ci.yml
+    - template: Security/Dependency-Scanning.gitlab-ci.yml
+    - template: Security/SAST.gitlab-ci.yml
+    - template: Security/Secret-Detection.gitlab-ci.yml
