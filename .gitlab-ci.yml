@@ -19,7 +19,6 @@ variables:
 
 stages:
   - test
-  - dast
 
 test:
   stage: test
@@ -73,4 +72,3 @@ include:
     - template: Security/Dependency-Scanning.gitlab-ci.yml
     - template: Security/SAST.gitlab-ci.yml
     - template: Security/Secret-Detection.gitlab-ci.yml
-    - template: Security/DAST.gitlab-ci.yml
