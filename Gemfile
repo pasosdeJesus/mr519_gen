@@ -9,13 +9,9 @@ gem "bootsnap"
 
 gem "cancancan" # Control de acceso
 
-gem "cssbundling-rails"
-
 gem "devise" # Autenticación
 
 gem "devise-i18n"
-
-gem "jsbundling-rails"
 
 gem "kt-paperclip", # Anexos
   git: "https://github.com/kreeti/kt-paperclip.git"
@@ -23,8 +19,6 @@ gem "kt-paperclip", # Anexos
 gem "nokogiri", ">=1.11.1"
 
 gem "pg"
-
-gem "propshaft"
 
 gem "rails-i18n"
 
@@ -34,6 +28,8 @@ gem "rails", "~> 8.0"
 gem "redcarpet" # Descripciones en heb412_gen
 
 gem "simple_form" # Formularios
+
+gem "sprockets-rails"
 
 gem "stimulus-rails"
 
