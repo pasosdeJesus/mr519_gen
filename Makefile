@@ -45,4 +45,4 @@ yard:
 	yard
 
 sintaxis-erb:
-	rake app:sintaxis:erb
+	bundle exec rake app:sintaxis:erb
