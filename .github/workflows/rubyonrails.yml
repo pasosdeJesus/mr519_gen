@@ -58,7 +58,7 @@ jobs:
       - name: Sacar código fuente
         uses: actions/checkout@v4
       - name: Instalar Ruby y gemas
-        uses: ruby/setup-ruby@78c01b705fd9d5ad960d432d3a0cfa341d50e410
+        uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.4.5'
           bundler-cache: true
