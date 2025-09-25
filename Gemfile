@@ -70,7 +70,7 @@ group :development, :test do
 
   gem "rails-erd"
 
-  gem "rubocop-erb", "< 0.7.0"
+  gem "rubocop-erb" #, "< 0.7.0"
 
   gem "rubocop-minitest"
 
