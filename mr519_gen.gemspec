@@ -10,11 +10,11 @@ Gem::Specification.new do |s|
   s.name        = "mr519_gen"
   s.version     = Mr519Gen::VERSION
   s.authors     = ["Vladimir Tamara"]
-  s.email       = ["vtamara@pasosdeJesus.org"]
-  s.homepage    = "https://github.com/pasosdeJesus/mr519_gen"
+  s.email       = ["vtamara@pasosdejesus.org"]
+  s.homepage    = "https://gitlab.com/pasosdeJesus/mr519_gen"
   s.summary     = "Formularios"
   s.description = "Formularios"
-  s.license     = "Dominio público de acuerdo a la legislación colombiana"
+  s.license     = "ISC"
 
   s.files = Dir["{app,config,db,lib}/**/*", "LICENCIA", "Rakefile", "README.md"]
 
