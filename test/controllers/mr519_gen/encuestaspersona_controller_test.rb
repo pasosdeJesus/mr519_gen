@@ -6,6 +6,7 @@ module Mr519Gen
   class EncuestaspersonaControllerTest < ActionDispatch::IntegrationTest
     include Rails.application.routes.url_helpers
     include Devise::Test::IntegrationHelpers
+
     # include Cocoon::ViewHelpers
 
     setup do
