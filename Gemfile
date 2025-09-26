@@ -46,8 +46,6 @@ gem "rails", ">= 7.2.2.2", "< 7.3"
 
 gem "rails-i18n", "~> 7.0"      # Localización e Internacionalización
 
-gem "redis"
-
 gem "rexml", ">= 3.4.2"
 
 gem "sassc-rails", "~> 2.1"     # Conversión a CSS

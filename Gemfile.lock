@@ -18,7 +18,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/msip.git
-  revision: e5f2ce71c7a6ec255e773063d6eb7534bcbb4ee2
+  revision: 4de34a5c8752930a42fcfed4cca6f7abdb6cd4c1
   branch: v2.2
   specs:
     msip (2.2.0)
@@ -347,10 +347,6 @@ GEM
     rdoc (6.14.2)
       erb
       psych (>= 4.0.0)
-    redis (5.4.1)
-      redis-client (>= 0.22.0)
-    redis-client (0.26.0)
-      connection_pool
     regexp_parser (2.11.3)
     reline (0.6.2)
       io-console (~> 0.5)
@@ -358,7 +354,7 @@ GEM
       actionpack (>= 5.2)
       railties (>= 5.2)
     rexml (3.4.4)
-    rubocop (1.81.0)
+    rubocop (1.81.1)
       json (~> 2.3)
       language_server-protocol (~> 3.17.0.2)
       lint_roller (~> 1.1.0)
@@ -504,7 +500,6 @@ DEPENDENCIES
   rails-controller-testing
   rails-erd
   rails-i18n (~> 7.0)
-  redis
   rexml (>= 3.4.2)
   rubocop-minitest
   rubocop-rails
