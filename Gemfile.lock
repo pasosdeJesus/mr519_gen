@@ -18,7 +18,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/msip.git
-  revision: 542d1d8109a13ce99da6d24a5f0850a7a982115a
+  revision: 8a75ae9cbd7eaf6b1327c9ec1a3690f1e2dc0440
   branch: v2.2
   specs:
     msip (2.2.0)
@@ -161,9 +161,9 @@ GEM
       devise (>= 4.9.0)
       rails-i18n
     docile (1.4.1)
-    dotenv (3.1.8)
-    dotenv-rails (3.1.8)
-      dotenv (= 3.1.8)
+    dotenv (3.2.0)
+    dotenv-rails (3.2.0)
+      dotenv (= 3.2.0)
       railties (>= 6.1)
     drb (2.2.3)
     erb (5.0.2)
@@ -492,7 +492,7 @@ DEPENDENCIES
   yard
 
 RUBY VERSION
-   ruby 3.4.5p51
+  ruby 3.4.5p51
 
 BUNDLED WITH
-   2.7.2
+  4.0.0
