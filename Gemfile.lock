@@ -18,7 +18,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/msip.git
-  revision: e3ce718b18a3446865ece61f96a4dc51cda5c9ac
+  revision: 387044e7d7060f1b568b01b4d762161eaf13eaee
   branch: v2.2
   specs:
     msip (2.2.0)
@@ -148,7 +148,7 @@ GEM
     connection_pool (3.0.2)
     crass (1.0.6)
     date (3.4.1)
-    debug (1.11.0)
+    debug (1.11.1)
       irb (~> 1.10)
       reline (>= 0.3.8)
     devise (4.9.4)
