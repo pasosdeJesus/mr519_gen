@@ -18,7 +18,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/msip.git
-  revision: 1237907ef0720451fa170c9fd57217dab96e45e3
+  revision: 4a1595b11c207bd833712c3cf3ca352d98bc964a
   branch: v2.2
   specs:
     msip (2.2.0)
@@ -121,7 +121,7 @@ GEM
     benchmark (0.5.0)
     bigdecimal (3.2.3)
     bindex (0.8.1)
-    bootsnap (1.19.0)
+    bootsnap (1.20.0)
       msgpack (~> 1.2)
     brakeman (7.1.1)
       racc
@@ -495,4 +495,4 @@ RUBY VERSION
   ruby 3.4.5p51
 
 BUNDLED WITH
-  4.0.2
+  4.0.3
