@@ -18,7 +18,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/msip.git
-  revision: 4a1595b11c207bd833712c3cf3ca352d98bc964a
+  revision: 2593894b0c98961d7f8f9cb1f726a593d8065a69
   branch: v2.2
   specs:
     msip (2.2.0)
@@ -121,9 +121,9 @@ GEM
     benchmark (0.5.0)
     bigdecimal (3.2.3)
     bindex (0.8.1)
-    bootsnap (1.20.0)
+    bootsnap (1.20.1)
       msgpack (~> 1.2)
-    brakeman (7.1.1)
+    brakeman (7.1.2)
       racc
     builder (3.3.0)
     bundler-audit (0.9.3)
