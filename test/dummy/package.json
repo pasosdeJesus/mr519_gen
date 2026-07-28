@@ -19,7 +19,7 @@
     "is-svg": "^5.1.0",
     "jquery": "^3.7.1",
     "popper.js": "^2.0.0-next.4",
-    "tom-select": "^2.3.1"
+    "tom-select": "2.6.0"
   },
   "devDependencies": {
     "babel-plugin-macros": "^3.1.0",
