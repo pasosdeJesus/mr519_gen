@@ -7,7 +7,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/msip.git
-  revision: e5e0345f7b3c396a8285ab87f7112d70e7a7e790
+  revision: 373911046d5c4f47402ba214695902bb4583cbc8
   branch: v2.2
   specs:
     msip (2.2.0)
@@ -225,7 +225,7 @@ GEM
       net-protocol
     net-pop (0.1.2)
       net-protocol
-    net-protocol (0.2.2)
+    net-protocol (0.3.0)
       timeout
     net-smtp (0.5.1)
       net-protocol
@@ -380,7 +380,7 @@ GEM
       activemodel (>= 7.0)
     simplecov (1.1.1)
     spork (0.9.2)
-    sprockets (4.4.0)
+    sprockets (4.4.1)
       concurrent-ruby (~> 1.1)
       logger
       rack (>= 2.2.4, < 4)
