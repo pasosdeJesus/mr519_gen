@@ -7,7 +7,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/msip.git
-  revision: 373911046d5c4f47402ba214695902bb4583cbc8
+  revision: b2721c66927d2be700bdfeac0e91dc578800ee59
   branch: v2.2
   specs:
     msip (2.2.0)
@@ -250,7 +250,6 @@ GEM
     nokogiri (1.19.4-x86_64-linux-musl)
       racc (~> 1.4)
     orm_adapter (0.5.0)
-    ostruct (0.6.3)
     parallel (2.1.0)
     parser (3.3.12.0)
       ast (~> 2.4.1)
@@ -299,11 +298,10 @@ GEM
       activesupport (>= 5.0.0)
       minitest
       nokogiri (>= 1.6)
-    rails-erd (2.1.0)
+    rails-erd (2.2.0)
       activerecord (>= 7.0)
       activesupport (>= 7.0)
       choice (~> 0.2.0)
-      ostruct
     rails-html-sanitizer (1.7.1)
       loofah (~> 2.25, >= 2.25.2)
       nokogiri (>= 1.15.7, != 1.16.7, != 1.16.6, != 1.16.5, != 1.16.4, != 1.16.3, != 1.16.2, != 1.16.1, != 1.16.0.rc1, != 1.16.0)
@@ -334,7 +332,7 @@ GEM
     regexp_parser (2.12.0)
     reline (0.7.0)
       io-console (~> 0.5)
-    responders (3.2.0)
+    responders (3.2.1)
       actionpack (>= 7.0)
       railties (>= 7.0)
     rexml (3.4.4)
