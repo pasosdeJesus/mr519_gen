@@ -28,6 +28,8 @@ gem "devise-i18n"               # Localización e Internacionalización
 
 gem "jbuilder", ">= 2.7"        # Json
 
+gem "json", "< 3" # Por rails 7
+
 gem "jsbundling-rails"
 
 gem "kt-paperclip"             # Anexos
