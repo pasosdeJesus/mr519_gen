@@ -13,8 +13,8 @@ gem "devise" # Autenticación
 
 gem "devise-i18n"
 
-gem "kt-paperclip", # Anexos
-  git: "https://github.com/kreeti/kt-paperclip.git"
+gem "kt-paperclip"#, # Anexos
+  #git: "https://github.com/kreeti/kt-paperclip.git"
 
 gem "nokogiri", ">=1.11.1"
 
