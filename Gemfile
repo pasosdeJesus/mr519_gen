@@ -37,9 +37,11 @@ gem "kt-paperclip"             # Anexos
 # git: 'https://github.com/vtamara/paperclip.git', branch: 'fix-ruby3'
 # path: '../tmp/paperclip'
 
-gem "nokogiri", ">=1.11.1"
+gem "nokogiri", "1.19.4" # Fallan 1.19.5 a 1.19.7 en OpenBSD
 
 gem "pg" # PostgreSQL
+
+gem "prism", "~> 1.9" # 2.1 falla
 
 gem "puma" # Lanza en modo desarrollo
 
